@@ -3286,7 +3286,9 @@ function initSketchbook(api) {
  const experimentsButton=document.createElement('button');experimentsButton.id='sketch-experiments';experimentsButton.textContent='Experiments & rules';experimentsButton.onclick=()=>{menu.close();$('#open-experiments').click();};
  menu.querySelector('.sketch-menu-items').prepend(fleetButton,experimentsButton);
  $('#sketch-fleet-close').onclick=()=>fleet.close();
- const normal=new URL(location.href);normal.searchParams.delete('sketchbook');$('#sketch-normal').href=normal.href;
+ const normal=new URL(location.href);normal.searchParams.set('sketchbook','0');$('#sketch-normal').href=normal.href;
+ $('#sketch-normal').textContent='Open classic layout & original fleet';
+ menu.querySelector('p').textContent='This mobile shipyard keeps its own saved fleet. If you tried the preview, your progress continues here. Otherwise, your classic fleet is copied on your first visit. Your original fleet is still available in the classic layout.';
  const enemies=document.createElement('dialog');enemies.id='sketch-enemies-dialog';enemies.setAttribute('aria-labelledby','sketch-enemies-title');
  enemies.innerHTML='<div class="sketch-dialog-heading"><h2 id="sketch-enemies-title">Make some trouble</h2><button id="sketch-enemies-close">Done</button></div><p>Your fleet fights automatically.</p><div class="sketch-menu-items"><button id="sketch-wave" class="sketch-primary">Send a wave</button><button id="sketch-encounters">Choose a special encounter</button></div>';
  document.body.append(enemies);
@@ -3359,7 +3361,8 @@ const {saveShipDesign,validateShipDesign,shipDesignCost,buildShipDesign} = modul
 const {dreadnoughtStatus} = modules["toy-core.mjs"];
 const $=s=>document.querySelector(s),canvas=$('#space'),ctx=canvas.getContext('2d'),audio=createToyAudio();
 const mobileVisibility=matchMedia('(max-width:800px), (max-width:950px) and (pointer:coarse)');
-const sketchbookMode=new URLSearchParams(location.search).get('sketchbook')==='1';
+const sketchbookPreference=new URLSearchParams(location.search).get('sketchbook');
+const sketchbookMode=sketchbookPreference==='1'||(sketchbookPreference!=='0'&&mobileVisibility.matches);
 document.body.classList.toggle('sketchbook',sketchbookMode);
 let localStorage=null,sketchStorageFailed=false;
 try{localStorage=sketchbookMode?sketchbookStorage(globalThis.localStorage):globalThis.localStorage;}catch{sketchStorageFailed=sketchbookMode;}
