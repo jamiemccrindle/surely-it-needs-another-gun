@@ -1061,6 +1061,39 @@ function shipBounds(w) {
   for (const p of parts) for (const q of [p, ...(p.points || [])]) { minX = Math.min(minX, q.x - p.radius); maxX = Math.max(maxX, q.x + p.radius); minY = Math.min(minY, q.y - p.radius); maxY = Math.max(maxY, q.y + p.radius); }
   return { minX, maxX, minY, maxY, x: (minX + maxX) / 2, y: (minY + maxY) / 2, radius: Math.max(100, Math.hypot(maxX - minX, maxY - minY) / 2) };
 }
+function rememberCorePosition(w, core){
+ // Navigation is already persisted by the ship save format. Keep the last
+ // bridge pose there so a reload between defeat and rebuilding is safe.
+ w.flight={...w.flight,lostCore:{id:core.id,x:core.x,y:core.y,angle:core.flightHeading??core.angle??0}};
+}
+function rebuildCore(w, fallback={x:0,y:0}){
+ if(w.parts.some(p=>p.kind==='core'&&p.hp>0))return null;
+ const lost=w.flight?.lostCore,saved=w.blueprint?.parts?.find(p=>p.kind==='core');
+ const valid=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.y)&&Math.abs(p.x)<=100000&&Math.abs(p.y)<=100000;
+ const ownerId=lost?.id||saved?.id||w.parts.find(p=>String(p.shipId).startsWith('core-'))?.shipId;
+ const survivors=w.parts.filter(p=>p.hp>0&&p.shipId===ownerId);
+ let pose=valid(lost)?lost:null;
+ // Older saves have no loss pose. Infer the moved/rotated bridge from a
+ // surviving piece and its pre-battle blueprint, not the old world origin.
+ if(!pose&&saved){
+  const originals=new Map(w.blueprint.parts.map(p=>[p.id,p]));
+  const member=survivors.find(p=>valid(p)&&valid(originals.get(p.id)));
+  if(member){const original=originals.get(member.id),turn=(member.angle||0)-(original.angle||0),dx=saved.x-original.x,dy=saved.y-original.y;
+   pose={x:member.x+dx*Math.cos(turn)-dy*Math.sin(turn),y:member.y+dx*Math.sin(turn)+dy*Math.cos(turn),angle:(saved.flightHeading??saved.angle??0)+turn};
+  }
+ }
+ if(!valid(pose)&&survivors.length){
+  // With no usable blueprint, reconnect at a central surviving hull piece.
+  const candidates=survivors.filter(p=>p.kind==='hull'&&valid(p));
+  const pieces=candidates.length?candidates:survivors.filter(valid);
+  if(pieces.length){const cx=pieces.reduce((n,p)=>n+p.x,0)/pieces.length,cy=pieces.reduce((n,p)=>n+p.y,0)/pieces.length;pose=pieces.reduce((best,p)=>Math.hypot(p.x-cx,p.y-cy)<Math.hypot(best.x-cx,best.y-cy)?p:best,pieces[0]);}
+ }
+ if(!valid(pose))pose=valid(fallback)?fallback:{x:0,y:0};
+ const core=createWorld().parts[0];core.id=id(w,'core');core.shipId=core.id;core.x=pose.x;core.y=pose.y;core.angle=Number.isFinite(pose.angle)?pose.angle:0;core.flightHeading=core.angle;core.vx=0;core.vy=0;
+ for(const p of survivors)p.shipId=core.id;
+ w.parts.push(core);w.defeated=false;w.paused=true;w.flight=null;
+ emit(w,'coreRebuilt',{shipId:core.id,x:core.x,y:core.y});return core;
+}
 // Isolated live-fire range. No references to the player's fleet or recorder.
 function createTestFire(source, bearing = 0) {
  const {diagnostic,...data}=source,w=structuredClone(data),bounds=shipBounds(w);
@@ -1104,6 +1137,7 @@ function eraseParts(w, a, b = a, radius = 12) {
   }
  }
  if(!removed.size)return 0;
+ const erasedCore=w.parts.find(p=>p.kind==='core'&&removed.has(p.id));if(erasedCore)rememberCorePosition(w,erasedCore);
  w.parts=w.parts.filter(p=>!removed.has(p.id));
  if(w.blueprint)w.blueprint={...w.blueprint,parts:w.blueprint.parts.filter(p=>!removed.has(p.id)),anchors:w.blueprint.anchors.filter(p=>!removed.has(p.id))};
  w.defeated=!w.parts.some(p=>p.kind==='core'&&p.hp>0);
@@ -1312,6 +1346,7 @@ if(w.diagnostic){const shooter=projectile?.sourceId&&w.parts.find(p=>p.id===proj
   if (part.kind === 'core') { w.defeated = true; w.paused = true; emit(w, 'defeat'); }
 }
 function destroyPart(w, part, cause = 'direct') {
+  if(part.kind==='core')rememberCorePosition(w,part);
   evacuateCrew(w, part);
   part.hp = 0;
   w.parts = w.parts.filter(p => p !== part);
@@ -1862,7 +1897,7 @@ function moveEscorts(w, dt) {
   }
 }
 
-return {powerSummary,setPowerMode,createWorld,shipBounds,createTestFire,stepTestFire,eraseParts,addStroke,addReactor,addEscort,sendWave,sendConvoy,sendCapital,enemyTargets,dreadnoughtStatus,firstHit,damagePart,damageEnemy,missileAvoidanceAngle,torpedoLaunchAngle,stepWorld,beamStats,fortressFields};
+return {powerSummary,setPowerMode,createWorld,shipBounds,rebuildCore,createTestFire,stepTestFire,eraseParts,addStroke,addReactor,addEscort,sendWave,sendConvoy,sendCapital,enemyTargets,dreadnoughtStatus,firstHit,damagePart,damageEnemy,missileAvoidanceAngle,torpedoLaunchAngle,stepWorld,beamStats,fortressFields};
 })();
 modules["toy-launch-preview.mjs"]=(()=>{
 const { firstHit, torpedoLaunchAngle } = modules["toy-core.mjs"];
@@ -3355,7 +3390,7 @@ const {createShipExport,parseShipImport,MAX_SHIP_FILE_BYTES,sanitizeBlueprint,sa
 const {createRecorder} = modules["toy-recorder.mjs"];
 const {initGameDownload} = modules["toy-export.mjs"];
 const {launchPreview} = modules["toy-launch-preview.mjs"];
-const {eraseParts} = modules["toy-core.mjs"];
+const {eraseParts,rebuildCore} = modules["toy-core.mjs"];
 const {createTestFire,stepTestFire} = modules["toy-core.mjs"];
 const {saveShipDesign,validateShipDesign,shipDesignCost,buildShipDesign} = modules["toy-save.mjs"];
 const {dreadnoughtStatus} = modules["toy-core.mjs"];
@@ -3505,7 +3540,11 @@ function move(e){const screen=pointer(e);if(pan){view.x=pan.view.x-(screen.x-pan
 function end(){if(pan){pan=null;save();return;}if(!stroke)return;const drawn=stroke;stroke=null;if(['reactor','shield'].includes(drawn.kind)&&drawn.points.length>2){const a=drawn.points[0],b=drawn.points.at(-1);if(Math.hypot(a.x-b.x,a.y-b.y)<=24/view.zoom)drawn.points.push({...a});}if(drawn.kind!=='repair'){const parts=drawn.kind==='shield'?addShield(world,drawn.points,drawn.ownerId):drawn.kind==='reactor'?addReactor(world,drawn.points):drawn.kind==='escort'?addEscort(world,drawn.points):addStroke(world,drawn.kind,drawn.points,drawn.ownerId);if(drawn.kind==='shield'){if(parts.length)setShieldMode(world,true);toast(parts.length?'SHIELD FIELD DRAWN · Let time run to charge it.':'Close the blue loop around a bridge. One field per ship.');}if(drawn.kind==='reactor')toast(parts.length?(world.powerMode?'REACTOR BUILT · More power for the barrage.':'REACTOR BUILT · Enable reactor power in Experiments.'):'Close the outline of a room: join the end back to the beginning.');parts.forEach((p,i)=>born.set(p.id,performance.now()+i*17));audio.event({type:'build',power:Math.min(3,parts.length/3)});if(drawn.kind==='beam'&&parts.length){const stats=beamStats(parts[0]);toast(`SPINAL BEAM · ${Math.round(stats.damage)} damage/sec · ${Math.round(stats.energy)} energy when reactor power is on`);}if(drawn.kind==='missile')toast(`${parts.length*10} MISSILES PER SALVO · DRAWN & ARMED`);if(drawn.kind==='escort')toast(parts.length?'ESCORT BUILT · Draw its weapons, then let it fly.':'Escort limit reached, or outline too short.');}save();updateUI();}
 canvas.addEventListener('pointerdown',begin);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('contextmenu',e=>e.preventDefault());canvas.addEventListener('wheel',e=>{e.preventDefault();const unit=e.deltaMode===1?16:e.deltaMode===2?height:1;if(e.ctrlKey||e.metaKey)zoom(Math.exp(-e.deltaY*unit*.01),pointer(e));else{view.x+=e.deltaX*unit/view.zoom;view.y+=e.deltaY*unit/view.zoom;save();}},{passive:false});
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.tool)));
-function togglePause(){if(world.defeated){const core=createWorld().parts[0];core.id=`core-${++world._id}`;core.shipId=core.id;const escorts=new Set(world.parts.filter(p=>p.kind==='escortCore').map(p=>p.id));for(const p of world.parts)if(!escorts.has(p.shipId))p.shipId=core.id;world.parts.push(core);world.defeated=false;world.paused=true;toast('Core rebuilt. Patch your ship, then let it fly.');save();}else{if(world.paused)history=[];world.paused=!world.paused;}updateUI();}
+function togglePause(){
+ if(world.defeated){const core=rebuildCore(world,view);if(core){history=[];view.x=core.x;view.y=core.y;toast('Bridge rebuilt at your ship. Draw repairs or restore the fleet.');save();}}
+ else{if(world.paused)history=[];world.paused=!world.paused;}
+ updateUI();
+}
 $('#pause').onclick=()=>{void audio.unlock();togglePause();};
 function attack(siege=false){void audio.unlock();if(world.defeated){toast('Rebuild your command core first.');return;}if(!world.parts.some(p=>p.kind==='missile'||p.kind==='gun'||p.kind==='torpedo'||p.kind==='beam')){choose('missile');toast('Give it some teeth first. Draw a red row of missile racks.');return;}history=[];sendWave(world,{siege});fit(true);toast(siege?'SIEGE CONTACT · Three heavy ships. Armour up.':`ATTACK ${world.wave} · Freeze time whenever you want the pen back.`);save();updateUI();}
 $('#attack').onclick=()=>attack();$('#siege').onclick=()=>attack(true);
