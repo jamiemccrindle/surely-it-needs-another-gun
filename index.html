@@ -135,6 +135,65 @@ body.shipyard.mobile-battle{padding:0}
 @media(max-width:800px),(max-width:950px) and (pointer:coarse){
  #touch-navigation button[aria-pressed=true]{background:#263f49;color:#e0f4ef;border-color:#8bb9b4}
 }
+
+body.sketchbook{padding:0!important;margin:0;min-width:0;height:100dvh;overflow:hidden;background:#0c1724;color:#f4f6f7;font-family:system-ui,sans-serif}
+body.sketchbook>header,body.sketchbook>main,body.sketchbook>footer{display:none!important}
+body.sketchbook #sketch-shell{height:100dvh;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;padding:env(safe-area-inset-top) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));gap:8px}
+body.sketchbook button,body.sketchbook dialog button{font:650 18px/1.2 system-ui,sans-serif;min-height:48px;padding:10px 12px;border:1px solid #879ead;border-radius:12px;color:#f5f7f9;background:#213549;letter-spacing:0;text-transform:none}
+body.sketchbook button:hover{background:#314d64}
+body.sketchbook button:focus-visible,body.sketchbook a:focus-visible{outline:3px solid #ffda79;outline-offset:2px}
+body.sketchbook button:disabled{opacity:.5}
+body.sketchbook #sketch-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:5px}
+body.sketchbook #sketch-title{font-size:21px;line-height:1.2}
+body.sketchbook #sketch-wallet{display:block;font-size:16px;line-height:1.4;color:#b7efda;margin-top:3px}
+body.sketchbook #sketch-instruction{font-size:17px;line-height:1.35;color:#e2edf3;min-height:23px}
+body.sketchbook #sketch-stage-slot{min-height:0;position:relative}
+body.sketchbook #stage{width:100%;height:100%;min-height:0;border:1px solid #5b7487;border-radius:15px;overflow:hidden}
+body.sketchbook #stage>.camera,body.sketchbook #stage>.mode,body.sketchbook #canvas-caption,body.sketchbook #touch-navigation{display:none!important}
+body.sketchbook #space{width:100%;height:100%;touch-action:none}
+body.sketchbook #sketch-draw-controls{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px}
+body.sketchbook #sketch-parts{grid-column:1;text-align:left;display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0}
+body.sketchbook #sketch-parts>span:last-child{font-size:14px;font-weight:500;color:#e1eaf1}
+body.sketchbook #sketch-watch{grid-column:2/4}
+body.sketchbook button.sketch-primary{background:#b7efda;border-color:#b7efda;color:#092c26}
+body.sketchbook button.sketch-primary:hover{background:#d2ffeb}
+body.sketchbook #sketch-move[aria-pressed=true]{background:#fff0b8;color:#332600;border-color:#fff0b8}
+body.sketchbook #sketch-battle-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+body.sketchbook #sketch-pause{grid-column:1/-1}
+body.sketchbook [hidden]{display:none!important}
+body.sketchbook #sketch-restoration{display:flex;flex-direction:column;gap:5px;padding:8px;border-radius:12px;background:#243426}
+body.sketchbook #sketch-repair-detail{font-size:16px;line-height:1.3}
+body.sketchbook dialog{font-family:system-ui,sans-serif;font-size:18px;color:#f5f7f9;background:#101f30;padding:18px;border:1px solid #879ead;border-radius:18px;width:min(650px,calc(100vw - 20px));max-width:650px;max-height:calc(100dvh - 24px);overflow-y:auto}
+body.sketchbook dialog p{font-size:17px;line-height:1.45;color:#e0eaf1}
+body.sketchbook .sketch-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+body.sketchbook .sketch-dialog-heading h2{font:750 24px/1.2 system-ui,sans-serif;margin:0}
+body.sketchbook #sketch-picker{width:100vw;max-width:none;height:100dvh;max-height:100dvh;border:0;border-radius:0;margin:0;padding: max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+body.sketchbook #sketch-picker .sketch-dialog-heading{position:sticky;top:-16px;background:#101f30;z-index:1;padding:8px 0}
+body.sketchbook #sketch-picker h3{font-size:18px;color:#bedaca;margin:22px 0 10px}
+body.sketchbook .sketch-part-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.sketchbook .sketch-part-grid button{display:grid;grid-template-columns:28px 1fr;gap:8px;text-align:left;align-content:start;padding:14px 10px}
+body.sketchbook .sketch-part-grid b{font-size:18px;align-self:center;overflow-wrap:normal}
+body.sketchbook .sketch-part-grid button>span:last-child{grid-column:1/-1;font-weight:400;font-size:16px;line-height:1.35;color:#e2eaf1}
+body.sketchbook .sketch-part-icon{font-size:26px;color:#b7efda}
+body.sketchbook .sketch-part-grid button[aria-pressed=true]{border:2px solid #b7efda;padding:13px 9px;background:#304d49}
+body.sketchbook .sketch-menu-items{display:grid;gap:12px;margin-top:22px}
+body.sketchbook #sketch-fleet-dialog .battle-sidebar{display:block;position:static;width:auto;max-height:none;overflow:visible;background:transparent;border:0;padding:14px 0 0}
+body.sketchbook #sketch-fleet-dialog .battle-sidebar h2{font-size:20px}
+body.sketchbook .sketch-menu-items a{color:#b7efda;font-size:18px;padding:16px 4px;text-decoration:underline}
+body.sketchbook .toast{font-size:17px;bottom:12px}
+body.sketchbook .boss-status{top:8px;right:8px;max-width:calc(100% - 16px)}
+@media(max-height:550px) and (min-width:600px){
+ body.sketchbook #sketch-shell{grid-template-rows:auto minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr) 230px;gap:8px}
+ body.sketchbook #sketch-heading{grid-column:1;grid-row:1}
+ body.sketchbook #sketch-instruction{grid-column:2;grid-row:1/3;align-self:start;padding-top:10px}
+ body.sketchbook #sketch-stage-slot{grid-column:1;grid-row:2/4}
+ body.sketchbook #sketch-draw-controls,body.sketchbook #sketch-battle-controls{grid-column:2;grid-row:3;align-self:end;grid-template-columns:1fr 1fr}
+ body.sketchbook #sketch-parts{grid-column:1/-1}
+ body.sketchbook #sketch-watch{grid-column:2}
+ body.sketchbook #sketch-fit{grid-column:1}
+ body.sketchbook #sketch-restoration{grid-column:2;grid-row:2;align-self:end;z-index:1}
+ body.sketchbook:has(#sketch-restoration:not([hidden])) #sketch-instruction{display:none}
+}
 </style></head>
 <body class="shipyard">
 <header><h1>Surely it needs <i>another gun.</i></h1><div class="warshards-hud"><span>WARSHARDS</span><b id="warshards">0</b><small id="warshards-detail">Draw a tractor beam to harvest.</small></div><nav aria-label="Game menus"><button id="mobile-status" aria-expanded="false">FLEET STATUS</button><button id="open-help">HOW TO PLAY</button><button id="open-experiments">EXPERIMENTS</button><button id="open-menu">SAVE & SHARE</button></nav></header>
@@ -2573,6 +2632,7 @@ modules["toy-bundle.mjs"]=(()=>{
 const GAME_FILES = ['toy.html','toy.css','toy-crew.mjs','toy-power.mjs','toy-structure.mjs','toy-shields.mjs','toy-warshards.mjs','toy-flight.mjs','toy-restore.mjs','toy-core.mjs','toy-launch-preview.mjs','toy-audio.mjs','toy-capital-render.mjs','toy-reactor-render.mjs','toy-shield-render.mjs','toy-warshard-render.mjs','toy-flight-render.mjs','toy-save.mjs','toy-bundle.mjs','toy-export.mjs','toy-recorder.mjs','toy.mjs'];
 
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs','toy-mobile-craft.mjs','toy-enemy-visibility.mjs');
+GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-sketchbook-storage.mjs','toy-sketchbook-camera.mjs','toy-sketchbook.mjs','toy-sketchbook.css');
 
 async function buildStandalone(read) {
   const sources=Object.fromEntries(await Promise.all(GAME_FILES.map(async name=>[name,await read(name)])));
@@ -2588,9 +2648,9 @@ async function buildStandalone(read) {
     return `modules[${JSON.stringify(name)}]=(()=>{\n${source}\nreturn {${exports.join(',')}};\n})();`;
   }).join('\n');
   const script=`globalThis.TOY_STANDALONE=true;\nconst modules={};\n${code}`.replace(/<\/script/gi,'<\\/script');
-  const css=sources['toy.css'].replace(/^@import[^\n]*\n/gm,'');
+  const css=(sources['toy.css']+'\n'+sources['toy-sketchbook.css']).replace(/^@import[^\n]*\n/gm,'');
   if(/url\s*\(/i.test(css))throw Error('Standalone CSS needs embedded assets, not URL references');
-  return sources['toy.html'].replace('<link rel="stylesheet" href="toy.css">',()=>`<style>${css}</style>`)
+  return sources['toy.html'].replace('<link rel="stylesheet" href="toy-sketchbook.css">','').replace('<link rel="stylesheet" href="toy.css">',()=>`<style>${css}</style>`)
     .replace('<script type="module" src="toy.mjs"><\/script>',()=>`<script type="module">${script}<\/script>`);
 }
 
@@ -2860,7 +2920,8 @@ const steps=[
  ['FIGHT','Let it fly → More Enemies','On mobile, fly first, then send enemies in. On desktop, use Send in an attack. Freeze & Draw gives you the pen back.',5],
  ['COLLECT → REBUILD','Tractor Beam / Fast Restore','Attached green tractors scoop up Warshards while time runs. With no enemies left, spend them to restore your fleet.',6]
 ];
-function initWelcome({fresh=false,pause=()=>{},resume=()=>{}}={}){
+function initWelcome({fresh=false,pause=()=>{},resume=()=>{},storage}={}){
+ let welcomeStorage=storage;try{if(welcomeStorage===undefined)welcomeStorage=globalThis.localStorage;}catch{}
  const dialog=document.querySelector('#guide-dialog');
  dialog.classList.add('welcome-dialog');
  dialog.innerHTML='<div class="welcome-heading"><div><span class="welcome-eyebrow">FIRST FLIGHT · QUICK-START CARD</span><h2>Your scribbles.<br>Unreasonable firepower.</h2></div><button data-welcome-close aria-label="Close welcome guide">✕</button></div>'+
@@ -2885,11 +2946,11 @@ function initWelcome({fresh=false,pause=()=>{},resume=()=>{}}={}){
  const open=()=>{if(dialog.open)return;wasPaused=pause();dialog.showModal();dialog.scrollTop=0;};
  dialog.addEventListener('close',()=>{video.pause();resume(wasPaused);});
  dialog.querySelector('[data-welcome-close]').onclick=()=>dialog.close();
- const start=()=>{try{localStorage.setItem('one-more-gun.welcome.v1','seen');}catch{}dialog.close();};
+ const start=()=>{try{welcomeStorage?.setItem('one-more-gun.welcome.v1','seen');}catch{}dialog.close();};
  dialog.querySelector('#welcome-start').onclick=start;dialog.querySelector('#welcome-start-top').onclick=start;
  document.querySelector('#open-guide').onclick=open;
  document.querySelector('#open-help').onclick=open;
- let seen=false;try{seen=localStorage.getItem('one-more-gun.welcome.v1')==='seen';}catch{}
+ let seen=false;try{seen=welcomeStorage?.getItem('one-more-gun.welcome.v1')==='seen';}catch{}
  const query=new URLSearchParams(location.search);
  if(query.has('welcome')||(!query.has('test')&&fresh&&!seen))open();
 }
@@ -3069,12 +3130,211 @@ function drawEnemyCues(ctx,cues){
 
 return {enemyCues,drawEnemyCues};
 })();
+modules["toy-sketchbook-storage.mjs"]=(()=>{
+const SKETCHBOOK_PREFIX='one-more-gun.sketchbook.v1:';
+function sketchbookStorage(storage){
+ if(!storage)return null;
+ const scoped={getItem:key=>storage.getItem(SKETCHBOOK_PREFIX+key),setItem:(key,value)=>storage.setItem(SKETCHBOOK_PREFIX+key,value),removeItem:key=>storage.removeItem(SKETCHBOOK_PREFIX+key)};
+ // Copy on first visit only. Never fall back to the baseline after this point.
+ // Individual writes may fail (private browsing/quota); baseline data stays untouched.
+ if(scoped.getItem('initialized')!=='yes'){
+  for(const key of ['one-more-gun.toy.v1','one-more-gun.designs.v1']){
+   const source=storage.getItem(key);
+   if(scoped.getItem(key)===null&&source!==null)scoped.setItem(key,source);
+  }
+  scoped.setItem('initialized','yes');
+ }
+ return scoped;
+}
+
+return {SKETCHBOOK_PREFIX,sketchbookStorage};
+})();
+modules["toy-sketchbook-camera.mjs"]=(()=>{
+// DOM-free framing. View coordinates are world coordinates at canvas center.
+const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+const finite = (n, fallback = 0) => Number.isFinite(n) ? n : fallback;
+// Beyond the game's coordinate range; keeps subtraction and interpolation finite.
+const coordinate = n => clamp(finite(n), -1e150, 1e150);
+const live = p => p && (p.hp === undefined || p.hp > 0);
+
+function viewport(width, height, { top = 72, bottom = 160 } = {}) {
+  const w = Math.max(1, finite(width, 390)), h = Math.max(1, finite(height, 844));
+  top = clamp(finite(top), 0, h - 1);
+  bottom = clamp(finite(bottom), 0, h - top - 1);
+  return { w, h, safeHeight: h - top - bottom, offsetY: (top - bottom) / 2 };
+}
+
+function extent(parts) {
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  const include = (q, radius) => {
+    if (!q || !Number.isFinite(q.x) || !Number.isFinite(q.y)) return;
+    const x = coordinate(q.x), y = coordinate(q.y);
+    minX = Math.min(minX, x - radius); maxX = Math.max(maxX, x + radius);
+    minY = Math.min(minY, y - radius); maxY = Math.max(maxY, y + radius);
+  };
+  for (const p of parts.filter(live)) {
+    const radius = clamp(finite(p.radius), 0, 1e150);
+    const points = Array.isArray(p.points) ? p.points : [];
+    // Polygon radii describe the whole shape, not stroke thickness. Expanding
+    // every reactor vertex by that radius would substantially overframe it.
+    const padding = p.kind === 'reactor' || p.kind === 'shield' ? 3 : Math.min(radius, 18);
+    include(p, points.length ? padding : radius);
+    for (const point of points) include(point, padding);
+    // Enemy capital hulls can be much larger than their collision radius.
+    if (Number.isFinite(p.length) && Number.isFinite(p.width)) {
+      const angle = finite(p.angle), c = Math.cos(angle), s = Math.sin(angle);
+      const dx = (Math.abs(c) * Math.abs(p.length) + Math.abs(s) * Math.abs(p.width)) / 2;
+      const dy = (Math.abs(s) * Math.abs(p.length) + Math.abs(c) * Math.abs(p.width)) / 2;
+      include({ x: coordinate(p.x) - coordinate(dx), y: coordinate(p.y) - coordinate(dy) }, 0);
+      include({ x: coordinate(p.x) + coordinate(dx), y: coordinate(p.y) + coordinate(dy) }, 0);
+    }
+    for (const module of Array.isArray(p.modules) ? p.modules : []) {
+      if (live(module)) include(module, clamp(finite(module.radius), 0, 1e150));
+    }
+  }
+  if (minX === Infinity) return { x: 0, y: 0, width: 48, height: 48 };
+  return { x: minX / 2 + maxX / 2, y: minY / 2 + maxY / 2, width: Math.max(1, maxX - minX), height: Math.max(1, maxY - minY) };
+}
+
+function fit(parts, width, height, insets, occupancy, minimumZoom) {
+  const screen = viewport(width, height, insets), bounds = extent(parts);
+  const zoom = clamp(Math.min(screen.w * occupancy / bounds.width, screen.safeHeight * occupancy / bounds.height), minimumZoom, 1.5);
+  return { x: bounds.x, y: bounds.y - screen.offsetY / zoom, zoom };
+}
+
+/** Follow only the surviving flagship's owned drawing; fallback to an escort.
+ * No world geometry is changed. Pass null currentView to frame immediately.
+ * dt is seconds. Fixed-target interpolation composes independently of frame rate.
+ */
+function sketchbookFollowView(parts, currentView, width, height, dt, insets = {}) {
+  const survivors = (Array.isArray(parts) ? parts : []).filter(live);
+  const core = survivors.find(p => p.kind === 'core') || survivors.find(p => p.kind === 'escortCore');
+  const selected = core ? survivors.filter(p => p === core || (core.id != null && p.shipId === core.id)) : [];
+  const target = fit(selected, width, height, insets, .65, .025);
+  if (!currentView || !Number.isFinite(currentView.x) || !Number.isFinite(currentView.y) || !Number.isFinite(currentView.zoom) || currentView.zoom <= 0) return target;
+  const alpha = -Math.expm1(-5 * Math.max(0, finite(dt)));
+  const previous = { x: coordinate(currentView.x), y: coordinate(currentView.y), zoom: clamp(currentView.zoom, .025, 1.5) };
+  return {
+    x: previous.x * (1 - alpha) + target.x * alpha,
+    y: previous.y * (1 - alpha) + target.y * alpha,
+    zoom: previous.zoom * (1 - alpha) + target.zoom * alpha,
+  };
+}
+
+/** Explicit overview frames all live ships immediately, including distant enemies.
+ * Overview reaches .001 for game-scale separation while bounding renderer work.
+ */
+function sketchbookOverviewView(parts, enemies, width, height, insets = {}) {
+  return fit([...(Array.isArray(parts) ? parts : []), ...(Array.isArray(enemies) ? enemies : [])], width, height, insets, .84, .001);
+}
+
+return {sketchbookFollowView,sketchbookOverviewView};
+})();
+modules["toy-sketchbook.mjs"]=(()=>{
+const PARTS = [
+ ['reactor','Reactor room','Close a loop to supply power.','◇','Build'],
+ ['hull','Armour','Draw walls touching the gold bridge.','⬡','Build'],
+ ['engine','Engines','Connect thrust to your ship’s armour.','≋','Build'],
+ ['escort','Escort ship','Draw a separate outline, then equip it.','△','Build'],
+ ['missile','Missiles','Draw racks along armour. Longer racks fire more.','↗','Weapons'],
+ ['gun','Cannons','Attach outside armour, with a clear shot.','⊕','Weapons'],
+ ['torpedo','Torpedoes','Draw tubes on the outside of armour.','➤','Weapons'],
+ ['beam','Spinal beam','Draw tail to tip. Keep the tip clear.','→','Weapons'],
+ ['shield','Shield field','Close a loop around your ship.','◯','Protect & collect'],
+ ['pd','Point defence','Intercept missiles near your fleet.','✳','Protect & collect'],
+ ['tractor','Tractor beam','Connected emitters collect Warshards.','⌁','Protect & collect'],
+ ['repair','Patch','Paint over damaged parts to repair.','+','Edit'],
+ ['erase','Eraser','Remove whole parts. Undo brings them back.','−','Edit'],
+];
+
+function initSketchbook(api) {
+ const $ = s => document.querySelector(s);
+ let resumeAfterInspection=false;
+ // Dialog handoffs close one dialog before opening the next. Defer the check
+ // until the entire close dispatch finishes (including legacy resume handlers),
+ // and keep nested inspectors paused as well.
+ document.addEventListener('close',()=>setTimeout(()=>{
+  if(!resumeAfterInspection||document.querySelector('dialog[open]'))return;
+  resumeAfterInspection=false;
+  if(!api.state().defeated)api.resume();
+ },0),true);
+ const shell = document.createElement('section');
+ shell.id = 'sketch-shell';
+ shell.innerHTML = `<div id="sketch-heading"><div><strong id="sketch-title">Your sketchbook</strong><span id="sketch-wallet"></span></div><button id="sketch-menu" aria-label="Open sketchbook menu">Menu</button></div>
+ <div id="sketch-instruction"></div><div id="sketch-stage-slot"></div>
+ <div id="sketch-restoration" hidden><button id="sketch-restore"></button><span id="sketch-repair-detail"></span></div>
+ <nav id="sketch-draw-controls" aria-label="Drawing controls"><button id="sketch-parts" aria-haspopup="dialog"><span id="sketch-part-name"></span><span>Change part ▾</span></button><button id="sketch-move" aria-pressed="false">Move</button><button id="sketch-undo">Undo</button><button id="sketch-fit">Find fleet</button><button id="sketch-watch" class="sketch-primary">Watch fleet</button></nav>
+ <nav id="sketch-battle-controls" aria-label="Battle controls" hidden><button id="sketch-pause" class="sketch-primary">Pause & draw</button><button id="sketch-camera">Overview</button><button id="sketch-add" aria-haspopup="dialog">Add enemies</button></nav>`;
+ document.body.append(shell);
+ $('#sketch-stage-slot').append($('#stage'));
+ const picker = document.createElement('dialog');picker.id = 'sketch-picker';picker.setAttribute('aria-labelledby','sketch-picker-title');
+ picker.innerHTML = '<div class="sketch-dialog-heading"><h2 id="sketch-picker-title">Choose a part</h2><button id="sketch-picker-close">Done</button></div><p>Pick your pen, then draw on your fleet.</p>';
+ for (const group of [...new Set(PARTS.map(p => p[4]))]) {
+  const section=document.createElement('section');section.innerHTML=`<h3>${group}</h3><div class="sketch-part-grid"></div>`;
+  for (const [kind,name,description,icon] of PARTS.filter(p=>p[4]===group)) {
+   const button=document.createElement('button');button.id=`sketch-tool-${kind}`;button.dataset.sketchTool=kind;button.innerHTML=`<span class="sketch-part-icon" aria-hidden="true">${icon}</span><b>${name}</b><span>${description}</span>`;
+   button.onclick=()=>{api.choose(kind);picker.close();sync();};section.lastElementChild.append(button);
+  }
+  picker.append(section);
+ }
+ document.body.append(picker);
+ const menu=document.createElement('dialog');menu.id='sketch-menu-dialog';menu.setAttribute('aria-labelledby','sketch-menu-title');
+ menu.innerHTML='<div class="sketch-dialog-heading"><h2 id="sketch-menu-title">Your sketchbook</h2><button id="sketch-menu-close">Done</button></div><p>This prototype starts with a copy of your fleet and saves separately. Drawing and battles here leave your normal game’s saved fleet untouched.</p><div class="sketch-menu-items"><button id="sketch-sound">Sound</button><button id="sketch-help">How to draw & play</button><button id="sketch-saved">Saved designs</button><button id="sketch-save">Save, share & settings</button><a id="sketch-normal">Return to normal game</a></div>';
+ document.body.append(menu);
+ const fleet=document.createElement('dialog');fleet.id='sketch-fleet-dialog';fleet.setAttribute('aria-labelledby','sketch-fleet-title');fleet.innerHTML='<div class="sketch-dialog-heading"><h2 id="sketch-fleet-title">Fleet status</h2><button id="sketch-fleet-close">Done</button></div>';fleet.append($('.battle-sidebar'));document.body.append(fleet);
+ const fleetButton=document.createElement('button');fleetButton.id='sketch-fleet';fleetButton.textContent='Fleet status & power';fleetButton.onclick=()=>{menu.close();fleet.showModal();};
+ const experimentsButton=document.createElement('button');experimentsButton.id='sketch-experiments';experimentsButton.textContent='Experiments & rules';experimentsButton.onclick=()=>{menu.close();$('#open-experiments').click();};
+ menu.querySelector('.sketch-menu-items').prepend(fleetButton,experimentsButton);
+ $('#sketch-fleet-close').onclick=()=>fleet.close();
+ const normal=new URL(location.href);normal.searchParams.delete('sketchbook');$('#sketch-normal').href=normal.href;
+ const enemies=document.createElement('dialog');enemies.id='sketch-enemies-dialog';enemies.setAttribute('aria-labelledby','sketch-enemies-title');
+ enemies.innerHTML='<div class="sketch-dialog-heading"><h2 id="sketch-enemies-title">Make some trouble</h2><button id="sketch-enemies-close">Done</button></div><p>Your fleet fights automatically.</p><div class="sketch-menu-items"><button id="sketch-wave" class="sketch-primary">Send a wave</button><button id="sketch-encounters">Choose a special encounter</button></div>';
+ document.body.append(enemies);
+ $('#sketch-parts').onclick=()=>picker.showModal();$('#sketch-picker-close').onclick=()=>picker.close();
+ $('#sketch-menu').onclick=()=>{const state=api.state();resumeAfterInspection=!state.paused&&!state.defeated;if(resumeAfterInspection)api.pause();menu.showModal();sync();};$('#sketch-menu-close').onclick=()=>menu.close();
+ $('#sketch-move').onclick=()=>{api.move(!api.state().moving);sync();};
+ $('#sketch-undo').onclick=()=>api.undo();$('#sketch-fit').onclick=()=>api.camera('fit');
+ $('#sketch-watch').onclick=()=>{api.watch();sync();};$('#sketch-pause').onclick=()=>{api.pause();sync();};
+ $('#sketch-camera').onclick=()=>{api.camera(api.state().camera==='follow'?'overview':'follow');sync();};
+ $('#sketch-add').onclick=()=>enemies.showModal();$('#sketch-enemies-close').onclick=()=>enemies.close();
+ $('#sketch-wave').onclick=()=>{enemies.close();api.attack();};$('#sketch-encounters').onclick=()=>{enemies.close();api.encounters();};
+ $('#sketch-restore').onclick=()=>{api.restore();sync();};
+ $('#sketch-sound').onclick=()=>{api.sound();sync();};
+ $('#sketch-help').onclick=()=>{menu.close();api.help();};$('#sketch-save').onclick=()=>{menu.close();api.menu();};
+ $('#sketch-saved').onclick=()=>{menu.close();$('#design-library').click();};
+ function sync() {
+  const state=api.state(),drawing=state.paused||state.defeated,part=PARTS.find(p=>p[0]===state.tool)||PARTS[0],repair=state.restoration||{};
+  shell.classList.toggle('sketch-watching',!drawing);
+  $('#sketch-title').textContent=drawing?'Your sketchbook':'Your fleet, alive';
+  $('#sketch-wallet').textContent=`${state.warshards.toLocaleString()} Warshards`;
+  $('#sketch-draw-controls').hidden=!drawing;$('#sketch-battle-controls').hidden=drawing;
+  $('#sketch-part-name').textContent=part[1];$('#sketch-parts').setAttribute('aria-label',`Change part: ${part[1]}`);
+  $('#sketch-move').setAttribute('aria-pressed',String(state.moving));$('#sketch-move').textContent=state.moving?'Draw':'Move';
+  $('#sketch-instruction').textContent=drawing?(state.moving?'Drag to move. Pinch to zoom.':state.parts.length<=1&&state.tool==='reactor'?'Close a reactor room near the gold bridge.':part[2]):state.enemies.some(e=>e.hp>0)?'Fighting automatically · Pinch to zoom':'All quiet. Add enemies when you’re ready.';
+  $('#sketch-camera').textContent=state.camera==='overview'?'Follow fleet':state.camera==='manual'?'Follow fleet':'Overview';
+  $('#sketch-undo').disabled=$('#undo').disabled;
+  $('#sketch-watch').textContent=state.defeated?'Rebuild bridge':'Watch fleet';
+  $('#sketch-restoration').hidden=!drawing||!repair.remaining;
+  $('#sketch-restore').disabled=!repair.available||repair.capacityBlocked||repair.shortfall>0;
+  $('#sketch-restore').textContent=repair.cost>state.warshards?'Restore what I can':`Restore fleet · ${repair.cost} Warshards`;
+  $('#sketch-repair-detail').textContent=!repair.available?'Clear the enemies to restore':repair.capacityBlocked?'Fleet capacity reached':repair.shortfall>0?`Next repair needs ${repair.nextCost} Warshards`:repair.cost>state.warshards?`${repair.cost} Warshards needed for everything`:`${repair.remaining} ${repair.remaining===1?'part':'parts'} to restore`;
+  const sound=state.sound;$('#sketch-sound').textContent=sound?.enabled&&sound?.state==='running'?'Sound on · mute':'Sound off · enable';
+  for(const button of picker.querySelectorAll('[data-sketch-tool]'))button.setAttribute('aria-pressed',String(button.dataset.sketchTool===state.tool));
+ }
+ sync();return {sync};
+}
+
+return {initSketchbook};
+})();
 modules["toy.mjs"]=(()=>{
 const {initWelcome} = modules["toy-welcome.mjs"];
 const {initMobileBattle} = modules["toy-mobile-battle.mjs"];
 const {initTouchCamera} = modules["toy-touch-camera.mjs"];
 const {initMobileCraft} = modules["toy-mobile-craft.mjs"];
 const {enemyCues,drawEnemyCues} = modules["toy-enemy-visibility.mjs"];
+const {sketchbookStorage} = modules["toy-sketchbook-storage.mjs"];
+const {initSketchbook} = modules["toy-sketchbook.mjs"];
+const {sketchbookFollowView,sketchbookOverviewView} = modules["toy-sketchbook-camera.mjs"];
 const {fleetAdvice} = modules["toy-readiness.mjs"];
 const {createWorld,addStroke,addEscort,stepWorld,sendWave,sendCapital,sendConvoy,shipBounds,addReactor,powerSummary,setPowerMode,beamStats} = modules["toy-core.mjs"];
 const {setCrewMode,syncCrew,rescueCrew,crewSummary,assignCrew,crewRoleFor,crewOperational} = modules["toy-crew.mjs"];
@@ -3099,6 +3359,10 @@ const {saveShipDesign,validateShipDesign,shipDesignCost,buildShipDesign} = modul
 const {dreadnoughtStatus} = modules["toy-core.mjs"];
 const $=s=>document.querySelector(s),canvas=$('#space'),ctx=canvas.getContext('2d'),audio=createToyAudio();
 const mobileVisibility=matchMedia('(max-width:800px), (max-width:950px) and (pointer:coarse)');
+const sketchbookMode=new URLSearchParams(location.search).get('sketchbook')==='1';
+document.body.classList.toggle('sketchbook',sketchbookMode);
+let localStorage=null,sketchStorageFailed=false;
+try{localStorage=sketchbookMode?sketchbookStorage(globalThis.localStorage):globalThis.localStorage;}catch{sketchStorageFailed=sketchbookMode;}
 $('#friendly-fire').onclick=()=>{world.friendlyFire=world.friendlyFire===false;recorder.event('action',{name:'friendlyFire',enabled:world.friendlyFire});save();updateUI();toast(world.friendlyFire?'FRIENDLY FIRE ON · Other ships can take hits. Your own ship is protected.':'FRIENDLY FIRE OFF · Friendly hits are harmless.');};
 $('#dreadnought').onclick=()=>{void audio.unlock();const enemy=sendCapital(world,{dreadnought:true});if(!enemy){toast('Clear the battlefield and restore your fleet first.');return;}history=[];fit(true);toast('THE LAST ARGUMENT · Break two missile batteries to expose its reactor.');save();updateUI();};
 $('#open-experiments').onclick=()=>$('#experiments-dialog').showModal();
@@ -3117,7 +3381,8 @@ let hoverScreen=null,launchCheck=null;
 let touchPanMode=false;
 let mobileBattle=null;
 let mobileCraft=null;
-initTouchCamera({canvas,readView:()=>view,screenToWorld:toWorld,applyView:next=>{view=next;},cancelStroke:()=>{
+let sketchbook=null,sketchCamera='follow',sketchWasPaused=true;
+initTouchCamera({canvas,readView:()=>view,screenToWorld:toWorld,applyView:next=>{view=next;if(sketchbookMode)sketchCamera='manual';},cancelStroke:()=>{
  if(stroke){const previous=history.pop();if(previous){world.parts=structuredClone(previous.parts||previous);if(previous.parts)world.blueprint=structuredClone(previous.blueprint);}stroke=null;}pan=null;hoverScreen=null;
 },finish:()=>{save();updateUI();}});
 const firingKinds=new Set(['missile','gun','torpedo','beam']);
@@ -3203,7 +3468,13 @@ function toWorld(p){return{x:(p.x-width/2)/view.zoom+view.x,y:(p.y-height/2)/vie
 function pointer(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
 function resize(){const r=canvas.getBoundingClientRect();width=r.width;height=r.height;ratio=Math.min(2,devicePixelRatio||1);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);}
 new ResizeObserver(resize).observe(canvas);
-function fit(includeEnemies=false,includeGate=false){const b=shipBounds(world);let minX=b.minX-100,maxX=b.maxX+100,minY=b.minY-100,maxY=b.maxY+100;if(includeEnemies)for(const e of world.enemies){const margin=e.kind==='capital'?e.length*.85+80:50;minX=Math.min(minX,e.x-margin);maxX=Math.max(maxX,e.x+margin);minY=Math.min(minY,e.y-margin);maxY=Math.max(maxY,e.y+margin);}if(includeGate&&world.convoy){const c=world.convoy;minX=Math.min(minX,c.gateX-300);maxX=Math.max(maxX,c.gateX+300);minY=Math.min(minY,c.gateY-500);maxY=Math.max(maxY,c.gateY+500);}view={x:(minX+maxX)/2,y:(minY+maxY)/2,zoom:clamp(Math.min(width/(maxX-minX),height/(maxY-minY)),.025,1.5)};save();}
+function fit(includeEnemies=false,includeGate=false){
+ if(sketchbookMode){
+  if(includeEnemies&&sketchCamera==='follow')view=sketchbookFollowView(world.parts,null,width,height,0,{top:12,bottom:12});
+  else view=sketchbookOverviewView(world.parts,includeEnemies?world.enemies:[],width,height,{top:12,bottom:12});
+  save();return;
+ }
+ const b=shipBounds(world);let minX=b.minX-100,maxX=b.maxX+100,minY=b.minY-100,maxY=b.maxY+100;if(includeEnemies)for(const e of world.enemies){const margin=e.kind==='capital'?e.length*.85+80:50;minX=Math.min(minX,e.x-margin);maxX=Math.max(maxX,e.x+margin);minY=Math.min(minY,e.y-margin);maxY=Math.max(maxY,e.y+margin);}if(includeGate&&world.convoy){const c=world.convoy;minX=Math.min(minX,c.gateX-300);maxX=Math.max(maxX,c.gateX+300);minY=Math.min(minY,c.gateY-500);maxY=Math.max(maxY,c.gateY+500);}view={x:(minX+maxX)/2,y:(minY+maxY)/2,zoom:clamp(Math.min(width/(maxX-minX),height/(maxY-minY)),.025,1.5)};save();}
 function zoom(factor,screen={x:width/2,y:height/2}){const anchor=toWorld(screen);view.zoom=clamp(view.zoom*factor,.025,3);view.x=anchor.x-(screen.x-width/2)/view.zoom;view.y=anchor.y-(screen.y-height/2)/view.zoom;save();}
 function choose(kind){selectedCrew=null;tool=kind;document.querySelectorAll('[data-tool]').forEach(b=>(b.classList.toggle('selected',b.dataset.tool===kind),b.setAttribute('aria-pressed',String(b.dataset.tool===kind))));$('#tool-hint').textContent=kind==='erase'?'Drag across any drawn part to erase it, including weapons and bridges. Removes whole parts touched, not individual pixels. Undo restores your cut. Zoom in for precision.':hints[kind];}
 function patch(point){for(const p of world.parts)if(Math.hypot(p.x-point.x,p.y-point.y)<35/view.zoom){p.hp=p.maxHp;born.set(p.id,performance.now()-100);}}
@@ -3242,7 +3513,7 @@ $('#restore-fleet').onclick=()=>{void audio.unlock();history=[];startRestoration
 $('#fast-restore').onclick=()=>{void audio.unlock();history=[];fastRestoration(world);save();updateUI();};
 async function toggleSound(){if(sound&&audio.status().state==='running'){sound=false;audio.setEnabled(false);}else{sound=true;audio.setEnabled(true);if(await audio.unlock())audio.event({type:'build'});}save();updateUI();}
 $('#sound').onclick=toggleSound;
-document.addEventListener('pointerup',e=>{if(e.target.closest('#sound,#mobile-sound,#battle-sound,#test-sound'))return;if(sound&&audio.status().state!=='running')void audio.unlock();},true);
+document.addEventListener('pointerup',e=>{if(e.target.closest('#sound,#mobile-sound,#battle-sound,#test-sound,#sketch-sound'))return;if(sound&&audio.status().state!=='running')void audio.unlock();},true);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)audio.background();});
 $('#undo').onclick=()=>{if(!history.length)return;const previous=history.pop();if(Array.isArray(previous))world.parts=previous;else{world.parts=previous.parts;world.blueprint=previous.blueprint;}world.defeated=!world.parts.some(p=>p.kind==='core');save();updateUI();};
 let restartWasPaused=true;
@@ -3278,6 +3549,7 @@ const lines=['DAMAGE BY SHIP / WEAPON',...totals.slice(-24).map(t=>`Wave ${t.wav
  $('#battle-records-dialog').showModal();
 };
 function updateUI(){
+ if(sketchbook&&world.paused!==sketchWasPaused){sketchWasPaused=world.paused;touchMode(!world.paused);}
  $('#fit').textContent=world.paused?'Fit fleet':'Show battle';
  $('#fit').title=world.paused?'Frame your fleet':'Frame your fleet and the enemies';
  mobileBattle?.sync();
@@ -3367,6 +3639,7 @@ function updateUI(){
  $('#readout').textContent=`${(pods*10).toLocaleString()} missiles / salvo\n${world.parts.filter(p=>p.kind==='torpedo').length} torpedo tubes · ${world.parts.filter(p=>p.kind==='beam').length} spinal beams\n${escorts} escorts\n${world.parts.length.toLocaleString()} fleet parts\nCore ${Math.ceil(core?.hp||0)} / 240\n${world.enemies.length} hostiles · ${world.stats.enemyKills} wrecks`;
  $('#sound').textContent=sound?'SOUND ON':'SOUND OFF';$('#sound').setAttribute('aria-pressed',String(sound));$('#undo').disabled=!history.length;
  mobileCraft?.sync();
+ sketchbook?.sync();
 }
 function line(points,color,widthPx){if(!points?.length)return;ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle=color;ctx.lineWidth=widthPx;ctx.stroke();}
 function drawIntercept(f){ctx.save();ctx.globalAlpha=clamp(f.life/f.maxLife,0,1);ctx.globalCompositeOperation='lighter';line([f,{x:f.toX,y:f.toY}],f.hostile?'#ff65d955':'#7affbe55',7/view.zoom);line([f,{x:f.toX,y:f.toY}],'#e6fff5',2/view.zoom);ctx.strokeStyle=f.hostile?'#ff82d8':'#b9ffda';ctx.lineWidth=2/view.zoom;ctx.beginPath();ctx.arc(f.toX,f.toY,(4+(1-f.life/f.maxLife)*14)/view.zoom,0,Math.PI*2);ctx.stroke();ctx.restore();}
@@ -3460,9 +3733,9 @@ drawConnectionHints();drawLaunchCheck();
 if(tool==='pd'&&world.paused&&hoverScreen){const point=stroke?.kind==='pd'?stroke.points[0]:toWorld(hoverScreen);ctx.save();ctx.strokeStyle='#a7ffd480';ctx.lineWidth=1/view.zoom;ctx.setLineDash([6/view.zoom,6/view.zoom]);ctx.beginPath();ctx.arc(point.x,point.y,240,0,Math.PI*2);ctx.stroke();ctx.restore();}
 if(tool==='erase'&&hoverScreen&&!pan){const p=toWorld(hoverScreen);ctx.save();ctx.strokeStyle='#ff9a9a';ctx.lineWidth=1.5/view.zoom;ctx.fillStyle='#ff777722';ctx.beginPath();ctx.arc(p.x,p.y,12,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore();}
  ctx.restore();
- if(mobileVisibility.matches){
+ if(mobileVisibility.matches||sketchbookMode){
   const flying=document.body.classList.contains('mobile-battle');
-  drawEnemyCues(ctx,enemyCues(world.enemies,view,width,height,{top:flying?155:32,bottom:flying?94:46}));
+  drawEnemyCues(ctx,enemyCues(world.enemies,view,width,height,{top:sketchbookMode?36:flying?155:32,bottom:sketchbookMode?42:flying?94:46}));
  }
 }
 function drawConnectionHints(){
@@ -3533,7 +3806,9 @@ function frame(now){
  const gap=now-last,dt=Math.min(.05,gap/1000);last=now;
  const hub=world.parts.find(p=>p.kind==='core'),ox=hub?.x||0,oy=hub?.y||0;
  let started=performance.now();stepWorld(world,dt);recorder.cost('sim',performance.now()-started);
- if(world.flightMode&&hub&&!pan){view.x+=hub.x-ox;view.y+=hub.y-oy;}
+ if(sketchbookMode){
+  if(!world.paused&&!pan&&sketchCamera==='follow')view=sketchbookFollowView(world.parts,view,width,height,dt,{top:12,bottom:12});
+ }else if(world.flightMode&&hub&&!pan){view.x+=hub.x-ox;view.y+=hub.y-oy;}
  started=performance.now();processEvents();render(now);recorder.cost('render',performance.now()-started);
  if(now-lastUI>150){started=performance.now();updateUI();recorder.cost('ui',performance.now()-started);lastUI=now;}
  if(now>toastUntil)$('#toast').classList.remove('visible');
@@ -3585,9 +3860,31 @@ function touchMode(panMode){touchPanMode=panMode;$('#touch-pan').setAttribute('a
 $('#touch-draw').onclick=()=>touchMode(false);$('#touch-pan').onclick=()=>touchMode(true);
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>touchMode(false)));
 $('#mobile-status').onclick=()=>{const open=document.body.classList.toggle('mobile-inspect');$('#mobile-status').setAttribute('aria-expanded',String(open));$('#mobile-status').textContent=open?'CLOSE STATUS':'FLEET STATUS';};
-initWelcome({fresh:world.parts.length<=1&&world.wave===0,pause:()=>{const was=world.paused;world.paused=true;updateUI();return was;},resume:was=>{world.paused=was;updateUI();}});
-mobileBattle=initMobileBattle({isPaused:()=>world.paused,isDefeated:()=>world.defeated,freeze:()=>{world.paused=true;updateUI();save();},setPan:touchMode,attack:()=>attack(),chooseEnemy:()=>$('#encounters-dialog').showModal()});
-mobileCraft=initMobileCraft({getTool:()=>tool,getHint:()=>$('#tool-hint').textContent,getAudio:()=>audio.status(),toggleSound,isPaused:()=>world.paused,testSound:async()=>{sound=true;audio.setEnabled(true);const ready=await audio.unlock();if(ready)audio.event({type:'build'});$('#sound-check-result').textContent=ready?'Test chime sent. If you cannot hear it, check media volume and your speaker/headphone output. Older iPhones may also need Silent Mode off.':'The browser has not enabled audio. Tap Play test sound again. If it stays silent, reload the page.';save();updateUI();}});
+initWelcome({storage:localStorage,fresh:!sketchbookMode&&world.parts.length<=1&&world.wave===0,pause:()=>{const was=world.paused;world.paused=true;updateUI();return was;},resume:was=>{world.paused=was;updateUI();}});
+if(!sketchbookMode){
+ mobileBattle=initMobileBattle({isPaused:()=>world.paused,isDefeated:()=>world.defeated,freeze:()=>{world.paused=true;updateUI();save();},setPan:touchMode,attack:()=>attack(),chooseEnemy:()=>$('#encounters-dialog').showModal()});
+ mobileCraft=initMobileCraft({getTool:()=>tool,getHint:()=>$('#tool-hint').textContent,getAudio:()=>audio.status(),toggleSound,isPaused:()=>world.paused,testSound:async()=>{sound=true;audio.setEnabled(true);const ready=await audio.unlock();if(ready)audio.event({type:'build'});$('#sound-check-result').textContent=ready?'Test chime sent. If you cannot hear it, check media volume and your speaker/headphone output. Older iPhones may also need Silent Mode off.':'The browser has not enabled audio. Tap Play test sound again. If it stays silent, reload the page.';save();updateUI();}});
+}else{
+ sketchbook=initSketchbook({
+  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,enemies:world.enemies,warshards:world.warshards,restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent}),
+  choose:kind=>{choose(kind);touchMode(false);updateUI();},move:value=>{touchMode(value);updateUI();},undo:()=>$('#undo').click(),
+  watch:()=>{void audio.unlock();if(world.paused&&!world.defeated)sketchCamera='follow';if(world.paused||world.defeated)togglePause();},
+  resume:()=>{if(world.paused&&!world.defeated)togglePause();},pause:()=>{world.paused=true;updateUI();save();},
+  attack:()=>attack(),encounters:()=>$('#encounters-dialog').showModal(),restore:()=>$('#fast-restore').click(),
+  camera:mode=>{sketchCamera=mode==='fit'?'manual':mode;view=mode==='follow'?sketchbookFollowView(world.parts,null,width,height,0,{top:12,bottom:12}):sketchbookOverviewView(world.parts,mode==='overview'?world.enemies:[],width,height,{top:12,bottom:12});save();updateUI();},
+  menu:()=>$('#menu-dialog').showModal(),sound:toggleSound,help:()=>$('#open-help').click()
+ });
+ canvas.addEventListener('pointerdown',()=>{if(!world.paused)sketchCamera='manual';},true);
+ canvas.addEventListener('wheel',()=>{sketchCamera='manual';},{passive:true});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!world.paused&&!document.querySelector('dialog[open]')){world.paused=true;updateUI();save();}});
+ document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement){world.paused=true;updateUI();save();}});
+ resize();view=sketchbookFollowView(world.parts,null,width,height,0,{top:12,bottom:12});updateUI();
+ if(sketchStorageFailed){
+  const warning=document.createElement('dialog');warning.id='sketch-storage-warning';warning.setAttribute('aria-labelledby','sketch-storage-title');
+  warning.innerHTML='<h2 id="sketch-storage-title">Your saved fleet could not be copied</h2><p>This is a temporary, empty sketchbook. Changes here will not be saved. Your normal game’s fleet has not been changed.</p><p>You can return to the normal game, or try drawing here and use Save & share → Export ship to keep your work.</p><button id="sketch-temporary">Try a temporary sketchbook</button><p><a id="sketch-storage-return">Return to normal game</a></p>';
+  document.body.append(warning);$('#sketch-storage-return').href=$('#sketch-normal').href;$('#sketch-temporary').onclick=()=>warning.close();warning.showModal();
+ }
+}
 
 return {};
 })();</script>
