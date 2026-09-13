@@ -170,6 +170,8 @@ body.sketchbook .sketch-dialog-heading h2{font:750 24px/1.2 system-ui,sans-serif
 body.sketchbook #sketch-picker{width:100vw;max-width:none;height:100dvh;max-height:100dvh;border:0;border-radius:0;margin:0;padding: max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
 body.sketchbook #sketch-picker .sketch-dialog-heading{position:sticky;top:-16px;background:#101f30;z-index:1;padding:8px 0}
 body.sketchbook #sketch-picker h3{font-size:18px;color:#bedaca;margin:22px 0 10px}
+body.sketchbook #sketch-picker .sketch-new-ship{display:flex;flex-direction:column;gap:5px;width:100%;text-align:left;padding:14px;background:#304d49;border-color:#b7efda}
+body.sketchbook .sketch-new-ship>span{font-size:16px;font-weight:400;line-height:1.35}
 body.sketchbook .sketch-part-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 body.sketchbook .sketch-part-grid button{display:grid;grid-template-columns:28px 1fr;gap:8px;text-align:left;align-content:start;padding:14px 10px}
 body.sketchbook .sketch-part-grid b{font-size:18px;align-self:center;overflow-wrap:normal}
@@ -211,7 +213,7 @@ body.sketchbook .boss-status{top:8px;right:8px;max-width:calc(100% - 16px)}
 <button data-tool="beam" style="border-left-color:#dcc0ff;border-bottom-color:#dcc0ff"><b>B · SPINAL BEAM</b><small>Draw tail → tip. Charge. Cut.</small></button>
 <button data-tool="tractor"><b>8 · TRACTOR BEAM</b><small>Harvest glowing Warshards.</small></button>
 <button data-tool="pd" style="border-left-color:#a7ffd4"><b>P · POINT DEFENCE</b><small>Draw a missile-killing screen.</small></button>
-<button data-tool="escort"><b>5 · ESCORT SHIP</b><small>Draw its outline. Then arm it.</small></button>
+<button data-tool="escort"><b>5 · NEW SHIP</b><small>Place a bridge. Draw the rest.</small></button>
 <button data-tool="repair"><b>4 · PATCH</b><small>Paint over damaged parts</small></button>
 <button data-tool="erase"><b>E · ERASER</b><small>Erase any part. Undo restores.</small></button>
 </section>
@@ -252,7 +254,7 @@ body.sketchbook .boss-status{top:8px;right:8px;max-width:calc(100% - 16px)}
 <footer><div><b id="build-phase">Shipyard ready</b><span id="build-detail">Your build feed stays here.</span></div></footer>
 </main>
 <dialog id="encounters-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Choose your next mistake</h2><button data-close-dialog>BACK</button></div><p>Regular attacks grow with your wave count. These are special encounters — choose what you want to test your fleet against. Time continues unless you freeze it.</p><div class="encounter-grid"><section><button id="capital">CAPITAL SHIP</button><p>A bigger hull to tear apart.</p></section><section><button id="missile-storm">MISSILE STORM</button><p>Hostile missile volleys. Bring point defence.</p></section><section><button id="aegis">AEGIS · ENEMY POINT DEFENCE</button><p>Enemy interceptors will thin your salvos.</p></section><section><button id="convoy" title="Catch a fleeing freighter. Break its engines before it jumps away.">RAID A CONVOY</button><p>A fleeing prize. Fast escorts and engines matter.</p></section><section><button id="carrier">UNLEASH A CARRIER</button><p>Break its hangars to stop reinforcements.</p></section><section><button id="fortress">SHIELD FORTRESS</button><p>Destroy exposed generators to bring down its shields.</p></section><section><button id="dreadnought" title="A major encounter. Clear the current battle first.">SIEGE DREADNOUGHT</button><p>The major siege encounter. Bring an unreasonable fleet.</p></section></div></dialog>
-<dialog id="guide-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Your first unreasonable ship</h2><button data-close-dialog>LET ME DRAW</button></div><ol class="build-guide"><li><b>Power it.</b> Select Reactor Room and draw a closed cyan loop. More area supports more sustained fire. Each ship needs its own supply.</li><li><b>Connect it.</b> Draw armour touching the gold bridge, then attach weapons and engines to that armour. Grey parts are offline. Eraser removes whole pieces; Undo brings them back.</li><li><b>Arm it.</b> Draw red missile racks. Longer strokes launch bigger salvos. Keep their outward exit clear of armour. While frozen, hover a mount for a firing check, or use Test Fire on a safe copy.</li><li><b>Move it.</b> Add engines to each ship. Bigger ships need more thrust. Escorts are separate outlines that you equip just like your flagship.</li><li><b>Make trouble.</b> Send in an attack. Space switches between drawing and automatic flight. You manage the design; the fleet fights itself.</li><li><b>Get paid. Rebuild. Go bigger.</b> Connected green tractors collect Warshards automatically while time runs. When enemies are gone, Fast Restore spends them to rebuild your pre-battle fleet.</li></ol><p>Scroll to pan · Pinch to zoom · F to fit the fleet. Shields and point defence are optional ways to survive bigger fights. Friendly fire can hurt other ships when switched on; weapons never damage their own ship.</p></dialog>
+<dialog id="guide-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Your first unreasonable ship</h2><button data-close-dialog>LET ME DRAW</button></div><ol class="build-guide"><li><b>Power it.</b> Select Reactor Room and draw a closed cyan loop. More area supports more sustained fire. Each ship needs its own supply.</li><li><b>Connect it.</b> Draw armour touching the gold bridge, then attach weapons and engines to that armour. Grey parts are offline. Eraser removes whole pieces; Undo brings them back.</li><li><b>Arm it.</b> Draw red missile racks. Longer strokes launch bigger salvos. Keep their outward exit clear of armour. While frozen, hover a mount for a firing check, or use Test Fire on a safe copy.</li><li><b>Move it.</b> Add engines to each ship. Bigger ships need more thrust. Choose New ship, tap to place its bridge, then equip it just like your flagship. Tap any bridge to switch ships.</li><li><b>Make trouble.</b> Send in an attack. Space switches between drawing and automatic flight. You manage the design; the fleet fights itself.</li><li><b>Get paid. Rebuild. Go bigger.</b> Connected green tractors collect Warshards automatically while time runs. When enemies are gone, Fast Restore spends them to rebuild your pre-battle fleet.</li></ol><p>Scroll to pan · Pinch to zoom · F to fit the fleet. Shields and point defence are optional ways to survive bigger fights. Friendly fire can hurt other ships when switched on; weapons never damage their own ship.</p></dialog>
 <dialog id="test-fire-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Live-fire range · Safe copy</h2><button data-close-dialog>BACK TO DRAWING</button></div><p>8 seconds against an unarmed target. Weapons start ready; your current power, connections, crew and flight rules apply. Your real fleet stays untouched.</p><label>Target starts <select id="test-bearing"><option value="0">Right</option><option value="3.141592653589793">Left</option><option value="-1.5707963267948966">Above</option><option value="1.5707963267948966">Below</option></select></label> <button id="test-again">RUN AGAIN</button><canvas id="test-canvas" width="900" height="460" style="display:block;width:100%;height:auto;background:#0b1725;margin-top:12px" aria-label="Simulated test fleet and friendly impacts"></canvas><p id="test-result" style="font-size:17px;min-height:3em"></p><p>Red × = friendly hit. Amber ring = launcher responsible. Last 128 impacts shown. No hits is not a guarantee against other enemy positions or a longer battle.</p></dialog>
 <dialog id="battle-records-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Battle black box</h2><button data-close-dialog aria-label="Close battle records">DONE</button></div><p>Protected damage and destruction records. Older battles before this update cannot be reconstructed. Export the flight recorder from Menu for the full retained data.</p><pre id="battle-records-text" style="white-space:pre-wrap;font:15px/1.6 system-ui;max-height:65vh;overflow:auto"></pre></dialog>
 <dialog id="experiments-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Experiments</h2><button data-close-dialog aria-label="Close experiments">DONE</button></div><p>Try different rules. Your drawings stay yours.</p>
@@ -1066,6 +1068,25 @@ function rememberCorePosition(w, core){
  // bridge pose there so a reload between defeat and rebuilding is safe.
  w.flight={...w.flight,lostCore:{id:core.id,x:core.x,y:core.y,angle:core.flightHeading??core.angle??0}};
 }
+function repairLegacyRebuiltCore(w){
+ const core=w.parts.find(p=>p.kind==='core'&&p.hp>0),saved=w.blueprint?.parts?.find(p=>p.kind==='core');
+ // Old free rebuilds uniquely replaced the bridge ID but left it at (0,0).
+ // Require agreement from two surviving blueprint pieces before moving it.
+ if(!core||!saved||core.id===saved.id||core.x!==0||core.y!==0)return false;
+ const originals=new Map(w.blueprint.parts.filter(p=>p.shipId===saved.id).map(p=>[p.id,p]));
+ let inferred=null,count=0;
+ for(const p of w.parts){
+  const original=originals.get(p.id);if(p.hp<=0||p.shipId!==core.id||!original||p.kind==='core')continue;
+  const turn=(p.angle||0)-(original.angle||0),dx=saved.x-original.x,dy=saved.y-original.y;
+  const pose={x:p.x+dx*Math.cos(turn)-dy*Math.sin(turn),y:p.y+dx*Math.sin(turn)+dy*Math.cos(turn),angle:(saved.flightHeading??saved.angle??0)+turn};
+  if(!Number.isFinite(pose.x)||!Number.isFinite(pose.y)||Math.abs(pose.x)>100000||Math.abs(pose.y)>100000)return false;
+  if(inferred&&Math.hypot(pose.x-inferred.x,pose.y-inferred.y)>2)return false;
+  inferred??=pose;count++;
+ }
+ if(count<2||Math.hypot(inferred.x,inferred.y)<500)return false;
+ core.x=inferred.x;core.y=inferred.y;core.angle=inferred.angle;core.flightHeading=inferred.angle;core.vx=0;core.vy=0;w.flight=null;
+ return true;
+}
 function rebuildCore(w, fallback={x:0,y:0}){
  if(w.parts.some(p=>p.kind==='core'&&p.hp>0))return null;
  const lost=w.flight?.lostCore,saved=w.blueprint?.parts?.find(p=>p.kind==='core');
@@ -1200,6 +1221,13 @@ function addEscort(w, rawPoints) {
   const hull = addStroke(w, 'hull', points, coreId);
   emit(w, 'escortBuilt', { shipId: coreId, x: core.x, y: core.y });
   return [core, ...hull];
+}
+function addShipCore(w, point){
+ if(!point||!Number.isFinite(point.x)||!Number.isFinite(point.y)||Math.abs(point.x)>100000||Math.abs(point.y)>100000)return [];
+ const hubs=w.parts.filter(p=>['core','escortCore'].includes(p.kind)&&p.hp>0);
+ if(hubs.filter(p=>p.kind==='escortCore').length>=12||hubs.some(p=>dist(p,point)<60))return [];
+ const coreId=id(w,'escort'),core={id:coreId,shipId:coreId,kind:'escortCore',x:point.x,y:point.y,homeX:point.x,homeY:point.y,vx:0,vy:0,navPhase:random(w)*TAU,angle:0,radius:18,hp:160,maxHp:160,cooldown:0,points:[]};
+ w.parts.push(core);emit(w,'escortBuilt',{shipId:coreId,x:core.x,y:core.y});return [core];
 }
 function sendWave(w, { siege = false, missileStorm = false } = {}) {
   if (w.defeated) return false;
@@ -1897,7 +1925,7 @@ function moveEscorts(w, dt) {
   }
 }
 
-return {powerSummary,setPowerMode,createWorld,shipBounds,rebuildCore,createTestFire,stepTestFire,eraseParts,addStroke,addReactor,addEscort,sendWave,sendConvoy,sendCapital,enemyTargets,dreadnoughtStatus,firstHit,damagePart,damageEnemy,missileAvoidanceAngle,torpedoLaunchAngle,stepWorld,beamStats,fortressFields};
+return {powerSummary,setPowerMode,createWorld,shipBounds,repairLegacyRebuiltCore,rebuildCore,createTestFire,stepTestFire,eraseParts,addStroke,addReactor,addEscort,addShipCore,sendWave,sendConvoy,sendCapital,enemyTargets,dreadnoughtStatus,firstHit,damagePart,damageEnemy,missileAvoidanceAngle,torpedoLaunchAngle,stepWorld,beamStats,fortressFields};
 })();
 modules["toy-launch-preview.mjs"]=(()=>{
 const { firstHit, torpedoLaunchAngle } = modules["toy-core.mjs"];
@@ -2965,7 +2993,7 @@ function initWelcome({fresh=false,pause=()=>{},resume=()=>{},storage}={}){
  '<section class="intro-film"><button id="watch-intro">▶ WATCH A SHIP COME ALIVE</button><span id="intro-weight"></span><video id="intro-video" controls playsinline preload="none" hidden aria-label="Captioned recording: drawing and fighting a first ship"></video><p id="intro-fallback" hidden>Video unavailable? The complete illustrated guide is below. Nothing to download.</p></section><button id="welcome-start-top">I’LL TRY DRAWING →</button>'+
  '<div class="safety-strip"><b>Before launch</b><span>Reactor → connected armour → missiles → engines</span></div>'+
  '<div class="safety-grid">'+steps.map(([title,tool,detail,n])=>'<article class="safety-card"><div class="safety-card-title"><span>'+n+'</span><h3>'+title+'</h3></div>'+diagram(n)+'<b>'+tool+'</b><p>'+detail+'</p></article>').join('')+'</div>'+
- '<section class="safety-checks"><h3>IF IT DOESN’T WORK</h3><div><p><b>Grey weapons?</b> Join their armour to their own gold bridge. A gap breaks the connection.</p><p><b>Firing stops?</b> Check power. Enlarge that ship’s reactor; unfreeze to recharge. Hover a mount on desktop to check its launch.</p><p><b>Need to change something?</b> Freeze, use Eraser, then redraw. Undo restores a mistaken cut.</p><p><b>Building an escort?</b> Each one needs its own reactor, connected weapons and engines. Ships cannot share power.</p></div></section>'+
+ '<section class="safety-checks"><h3>IF IT DOESN’T WORK</h3><div><p><b>Grey weapons?</b> Join their armour to their own gold bridge. A gap breaks the connection.</p><p><b>Firing stops?</b> Check power. Enlarge that ship’s reactor; unfreeze to recharge. Hover a mount on desktop to check its launch.</p><p><b>Need to change something?</b> Freeze, use Eraser, then redraw. Undo restores a mistaken cut.</p><p><b>Building an escort?</b> Choose New ship and tap to place its bridge. Draw its reactor, connected armour, weapons and engines. Tap another bridge to switch ships.</p></div></section>'+
  '<p class="welcome-controls">Desktop: drag to draw · scroll to pan · pinch to zoom · F to fit · Space to freeze.<br>Phone: one finger draws, two fingers pan and pinch to zoom. PAN switches to one-finger camera movement. Let it fly opens full-screen battle; exiting freezes the game.</p>'+
  '<div class="welcome-bottom"><button id="welcome-start" class="primary">GIVE ME THE PEN →</button><span>This guide is always under HOW TO PLAY.</span></div>';
  const video=dialog.querySelector('video'),watch=dialog.querySelector('#watch-intro');
@@ -3072,7 +3100,7 @@ const tools={
  beam:['Spinal beam','Draw tail to tip. Keep the tip clear of armour.'],
  tractor:['Tractor beam','Attach green emitters to collect Warshards automatically.'],
  pd:['Point defence','Attach emitters to shoot down nearby enemy missiles.'],
- escort:['Escort ship','Draw a separate outline. Add its reactor and weapons.'],
+ escort:['New ship','Tap to place a bridge. Then draw its reactor, armour and weapons.'],
  repair:['Patch','Paint over damaged parts to restore them.'],
  erase:['Eraser','Drag across parts to remove them. Undo brings them back.']
 };
@@ -3268,9 +3296,9 @@ return {sketchbookFollowView,sketchbookOverviewView};
 modules["toy-sketchbook.mjs"]=(()=>{
 const PARTS = [
  ['reactor','Reactor room','Close a loop to supply power.','◇','Build'],
- ['hull','Armour','Draw walls touching the gold bridge.','⬡','Build'],
+ ['hull','Armour','Draw walls touching your ship’s bridge.','⬡','Build'],
  ['engine','Engines','Connect thrust to your ship’s armour.','≋','Build'],
- ['escort','Escort ship','Draw a separate outline, then equip it.','△','Build'],
+ ['escort','New ship','Tap empty space to place a new ship’s bridge.','+','Build'],
  ['missile','Missiles','Draw racks along armour. Longer racks fire more.','↗','Weapons'],
  ['gun','Cannons','Attach outside armour, with a clear shot.','⊕','Weapons'],
  ['torpedo','Torpedoes','Draw tubes on the outside of armour.','➤','Weapons'],
@@ -3303,10 +3331,11 @@ function initSketchbook(api) {
  document.body.append(shell);
  $('#sketch-stage-slot').append($('#stage'));
  const picker = document.createElement('dialog');picker.id = 'sketch-picker';picker.setAttribute('aria-labelledby','sketch-picker-title');
- picker.innerHTML = '<div class="sketch-dialog-heading"><h2 id="sketch-picker-title">Choose a part</h2><button id="sketch-picker-close">Done</button></div><p>Pick your pen, then draw on your fleet.</p>';
+ picker.innerHTML = '<div class="sketch-dialog-heading"><h2 id="sketch-picker-title">Choose a part</h2><button id="sketch-picker-close">Done</button></div><p>Pick a part and draw. Tap a ship’s bridge to switch which ship you’re building.</p>';
+ const newShip=document.createElement('button');newShip.id='sketch-tool-escort';newShip.dataset.sketchTool='escort';newShip.className='sketch-new-ship';newShip.innerHTML='<b>New ship</b><span>Place a bridge, then draw its parts.</span>';newShip.onclick=()=>{api.choose('escort');picker.close();sync();};picker.append(newShip);
  for (const group of [...new Set(PARTS.map(p => p[4]))]) {
   const section=document.createElement('section');section.innerHTML=`<h3>${group}</h3><div class="sketch-part-grid"></div>`;
-  for (const [kind,name,description,icon] of PARTS.filter(p=>p[4]===group)) {
+  for (const [kind,name,description,icon] of PARTS.filter(p=>p[4]===group&&p[0]!=='escort')) {
    const button=document.createElement('button');button.id=`sketch-tool-${kind}`;button.dataset.sketchTool=kind;button.innerHTML=`<span class="sketch-part-icon" aria-hidden="true">${icon}</span><b>${name}</b><span>${description}</span>`;
    button.onclick=()=>{api.choose(kind);picker.close();sync();};section.lastElementChild.append(button);
   }
@@ -3342,7 +3371,8 @@ function initSketchbook(api) {
  function sync() {
   const state=api.state(),drawing=state.paused||state.defeated,part=PARTS.find(p=>p[0]===state.tool)||PARTS[0],repair=state.restoration||{};
   shell.classList.toggle('sketch-watching',!drawing);
-  $('#sketch-title').textContent=drawing?'Your sketchbook':'Your fleet, alive';
+  $('#sketch-title').textContent=drawing?(state.tool==='escort'?'Place a new ship':state.buildShip?`Editing ${state.buildShip.label}`:'Your sketchbook'):'Your fleet, alive';
+  $('#sketch-title').dataset.buildShip=drawing&&state.buildShip?state.buildShip.id:'';
   $('#sketch-wallet').textContent=`${state.warshards.toLocaleString()} Warshards`;
   $('#sketch-draw-controls').hidden=!drawing;$('#sketch-battle-controls').hidden=drawing;
   $('#sketch-part-name').textContent=part[1];$('#sketch-parts').setAttribute('aria-label',`Change part: ${part[1]}`);
@@ -3390,7 +3420,7 @@ const {createShipExport,parseShipImport,MAX_SHIP_FILE_BYTES,sanitizeBlueprint,sa
 const {createRecorder} = modules["toy-recorder.mjs"];
 const {initGameDownload} = modules["toy-export.mjs"];
 const {launchPreview} = modules["toy-launch-preview.mjs"];
-const {eraseParts,rebuildCore} = modules["toy-core.mjs"];
+const {eraseParts,rebuildCore,repairLegacyRebuiltCore,addShipCore} = modules["toy-core.mjs"];
 const {createTestFire,stepTestFire} = modules["toy-core.mjs"];
 const {saveShipDesign,validateShipDesign,shipDesignCost,buildShipDesign} = modules["toy-save.mjs"];
 const {dreadnoughtStatus} = modules["toy-core.mjs"];
@@ -3420,6 +3450,12 @@ let touchPanMode=false;
 let mobileBattle=null;
 let mobileCraft=null;
 let sketchbook=null,sketchCamera='follow',sketchWasPaused=true;
+let buildShipId=null;
+function buildShip(){
+ const core=world.parts.find(p=>p.id===buildShipId&&p.hp>0&&['core','escortCore'].includes(p.kind));
+ if(!core){buildShipId=null;return null;}
+ return {id:core.id,label:core.kind==='core'?'Flagship':`Escort ${world.parts.filter(p=>p.kind==='escortCore').findIndex(p=>p.id===core.id)+1}`};
+}
 initTouchCamera({canvas,readView:()=>view,screenToWorld:toWorld,applyView:next=>{view=next;if(sketchbookMode)sketchCamera='manual';},cancelStroke:()=>{
  if(stroke){const previous=history.pop();if(previous){world.parts=structuredClone(previous.parts||previous);if(previous.parts)world.blueprint=structuredClone(previous.blueprint);}stroke=null;}pan=null;hoverScreen=null;
 },finish:()=>{save();updateUI();}});
@@ -3490,6 +3526,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const hints={beam:'Draw a spinal beam from its tail to its firing tip. Attach it to armour; leave the tip clear. Longer beams hit harder. Your ship turns to line up, charges for 2 seconds, then cuts loose. Reactor power mode adds an energy cost.',torpedo:'Draw heavy torpedo tubes. Slow-turning capital hunters: 600 damage, a short impact fuse, then a 150-unit blast. One shot per tube every 6 seconds. Reactor mode costs 30 energy per shot. More drawings queue when 128 torpedoes are in flight.',engine:'Draw engines on each ship. Forward starts to the right; exhaust points aft. More engines push heavier ships. Without engines a ship has no thrust. With Structure on, connect engines to their own bridge.',tractor:'Draw lime-green tractor emitters on your ship. They automatically reel in Warshards from destroyed enemies. Connect them to the bridge when Structure is on. No dragging or spending.',shield:'Draw a closed blue loop around a ship. Its bridge projects a circular field reaching the farthest point. Bigger coverage, same strength. One field per ship; redrawing does not refill it.',reactor:'Draw a closed cyan room. Bigger occupied area powers more missiles; overlapping rooms do not multiply power. Each ship powers itself. Escorts need their own reactor.',hull:'Armour intercepts shots. Draw a protective outline, not a filled-in shape.',missile:'Your red stroke IS the launcher. Longer drawings launch bigger homing salvos.',gun:'Cannons track targets automatically. Put them outside armour for a clear shot.',repair:'Paint across damaged parts to restore them. Draw fresh armour to replace missing sections.',escort:'Draw a separate ship’s outline. Add red weapons beside it; they belong to the nearest ship. Up to 12 escorts.'};
 hints.torpedo='Tubes eject away from their own bridge for 0.6 seconds, then turn slowly toward the target. Leave the outward exit clear; separate armour still blocks it. At the bridge centre, the drawn tube direction sets the exit. '+hints.torpedo;
 hints.pd='Draw mint-green emitters on escorts or your flagship. Each shoots down one hostile missile every 0.18s within 240 units, protecting any nearby ship. Needs a clear line past armour. Reactor mode: 2 energy per interception. Cannot attack ships or stop cannon shells. Escorts with only point defence screen the flagship; add engines for flight.';
+hints.escort='Tap empty space to place a new ship’s bridge. Then draw its reactor, connected armour, engines and weapons, just like your flagship. Tap a bridge to choose which ship you are building. Up to 12 escorts.';
 $('#aegis').onclick=()=>{void audio.unlock();if(world.defeated)return;history=[];const enemy=sendCapital(world,{defence:true});fit(true);save();updateUI();toast(`${enemy.name} · Four pink point-defence mounts. Overwhelm them, use torpedoes, or destroy the mounts with guns.`);};
 $('#missile-storm').onclick=()=>{void audio.unlock();if(world.defeated)return;history=[];sendWave(world,{missileStorm:true});fit(true);save();updateUI();toast('MISSILE STORM · Three arsenal ships. Put your point-defence escorts between the storm and your flagship.');};
 function save(){if(testMode)return;const started=performance.now();try{localStorage.setItem(KEY,JSON.stringify({version:1,blueprint:world.blueprint,flightMode:world.flightMode,flight:world.flight,warshards:world.warshards,shards:world.shards,crewMode:world.crewMode,crewVersion:world.crewVersion,structureMode:world.structureMode,shieldMode:world.shieldMode,crew:world.crew,parts:world.parts,wave:world.wave,stats:world.stats,id:world._id,friendlyFire:world.friendlyFire,powerMode:world.powerMode,powerReserves:world.powerReserves,powerCharge:world.powerCharge,powerInitialized:world.powerInitialized,view,sound}));}catch{toast('Save unavailable. Keep this page open.');}finally{recorder.cost('save',performance.now()-started);}}
@@ -3535,9 +3572,23 @@ for(const event of ['pointerup','pointercancel'])canvas.addEventListener(event,e
  toast(count?`${count} parts erased · Undo restores this cut.`:'No parts here. Drag across the drawing to erase.');
 },true);
 window.addEventListener('keydown',e=>{if(!e.target.closest('dialog')&&!e.ctrlKey&&!e.metaKey&&e.key.toLowerCase()==='e')choose('erase');});
-function begin(e){void audio.unlock();if(touchPanMode||e.button===2||e.button===1||e.shiftKey){pan={screen:pointer(e),view:{...view}};canvas.setPointerCapture(e.pointerId);return;}if(e.button!==0)return;if(selectedCrew){placeCrew(toWorld(pointer(e)));return;}if(!world.paused){world.paused=true;history=[];toast('Time frozen for your drawing. Space to unleash it.');}history.push(structuredClone(world.parts));if(history.length>20)history.shift();const p=toWorld(pointer(e));const anchor=world.parts.find(q=>['core','escortCore'].includes(q.kind)&&Math.hypot(q.x-p.x,q.y-p.y)<=q.radius+6);stroke={points:[p],kind:tool,ownerId:anchor?.id};if(tool==='repair')patch(p);canvas.setPointerCapture(e.pointerId);}
+function begin(e){void audio.unlock();if(touchPanMode||e.button===2||e.button===1||e.shiftKey){pan={screen:pointer(e),view:{...view}};canvas.setPointerCapture(e.pointerId);return;}if(e.button!==0)return;if(selectedCrew){placeCrew(toWorld(pointer(e)));return;}if(!world.paused){world.paused=true;history=[];toast('Time frozen for your drawing. Space to unleash it.');}history.push(structuredClone(world.parts));if(history.length>20)history.shift();const p=toWorld(pointer(e));const anchor=world.parts.find(q=>['core','escortCore'].includes(q.kind)&&Math.hypot(q.x-p.x,q.y-p.y)<=q.radius+6);if(anchor&&tool!=='escort')buildShipId=anchor.id;stroke={points:[p],kind:tool,ownerId:anchor?.id||buildShip()?.id,selectShip:tool!=='escort'&&!!anchor};if(tool==='repair')patch(p);canvas.setPointerCapture(e.pointerId);}
 function move(e){const screen=pointer(e);if(pan){view.x=pan.view.x-(screen.x-pan.screen.x)/view.zoom;view.y=pan.view.y-(screen.y-pan.screen.y)/view.zoom;return;}if(!stroke)return;const p=toWorld(screen);if(stroke.kind==='repair')patch(p);const last=stroke.points.at(-1);if(Math.hypot(p.x-last.x,p.y-last.y)>3/view.zoom&&stroke.points.length<3000)stroke.points.push(p);}
-function end(){if(pan){pan=null;save();return;}if(!stroke)return;const drawn=stroke;stroke=null;if(['reactor','shield'].includes(drawn.kind)&&drawn.points.length>2){const a=drawn.points[0],b=drawn.points.at(-1);if(Math.hypot(a.x-b.x,a.y-b.y)<=24/view.zoom)drawn.points.push({...a});}if(drawn.kind!=='repair'){const parts=drawn.kind==='shield'?addShield(world,drawn.points,drawn.ownerId):drawn.kind==='reactor'?addReactor(world,drawn.points):drawn.kind==='escort'?addEscort(world,drawn.points):addStroke(world,drawn.kind,drawn.points,drawn.ownerId);if(drawn.kind==='shield'){if(parts.length)setShieldMode(world,true);toast(parts.length?'SHIELD FIELD DRAWN · Let time run to charge it.':'Close the blue loop around a bridge. One field per ship.');}if(drawn.kind==='reactor')toast(parts.length?(world.powerMode?'REACTOR BUILT · More power for the barrage.':'REACTOR BUILT · Enable reactor power in Experiments.'):'Close the outline of a room: join the end back to the beginning.');parts.forEach((p,i)=>born.set(p.id,performance.now()+i*17));audio.event({type:'build',power:Math.min(3,parts.length/3)});if(drawn.kind==='beam'&&parts.length){const stats=beamStats(parts[0]);toast(`SPINAL BEAM · ${Math.round(stats.damage)} damage/sec · ${Math.round(stats.energy)} energy when reactor power is on`);}if(drawn.kind==='missile')toast(`${parts.length*10} MISSILES PER SALVO · DRAWN & ARMED`);if(drawn.kind==='escort')toast(parts.length?'ESCORT BUILT · Draw its weapons, then let it fly.':'Escort limit reached, or outline too short.');}save();updateUI();}
+function end(){
+ if(pan){pan=null;save();return;}if(!stroke)return;const drawn=stroke;stroke=null;
+ if(drawn.selectShip&&drawn.points.length===1&&drawn.kind!=='repair'){history.pop();updateUI();return;}
+ if(['reactor','shield'].includes(drawn.kind)&&drawn.points.length>2){const a=drawn.points[0],b=drawn.points.at(-1);if(Math.hypot(a.x-b.x,a.y-b.y)<=24/view.zoom)drawn.points.push({...a});}
+ if(drawn.kind!=='repair'){
+  const parts=drawn.kind==='shield'?addShield(world,drawn.points,drawn.ownerId):drawn.kind==='reactor'?addReactor(world,drawn.points,drawn.ownerId):drawn.kind==='escort'?addShipCore(world,drawn.points[0]):addStroke(world,drawn.kind,drawn.points,drawn.ownerId);
+  if(drawn.kind==='shield'){if(parts.length)setShieldMode(world,true);toast(parts.length?'SHIELD FIELD DRAWN · Let time run to charge it.':'Close the blue loop around a bridge. One field per ship.');}
+  if(drawn.kind==='reactor')toast(parts.length?(world.powerMode?'REACTOR BUILT · More power for the barrage.':'REACTOR BUILT · Enable reactor power in Experiments.'):'Close the outline of a room: join the end back to the beginning.');
+  parts.forEach((p,i)=>born.set(p.id,performance.now()+i*17));audio.event({type:'build',power:Math.min(3,parts.length/3)});
+  if(drawn.kind==='beam'&&parts.length){const stats=beamStats(parts[0]);toast(`SPINAL BEAM · ${Math.round(stats.damage)} damage/sec · ${Math.round(stats.energy)} energy when reactor power is on`);}
+  if(drawn.kind==='missile')toast(`${parts.length*10} MISSILES PER SALVO · DRAWN & ARMED`);
+  if(drawn.kind==='escort'){if(parts.length){buildShipId=parts[0].id;choose('reactor');toast('New ship’s bridge placed. Draw its reactor room next.');}else{history.pop();toast('Place the bridge away from other bridges. Maximum 12 escorts.');}}
+ }
+ save();updateUI();
+}
 canvas.addEventListener('pointerdown',begin);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('contextmenu',e=>e.preventDefault());canvas.addEventListener('wheel',e=>{e.preventDefault();const unit=e.deltaMode===1?16:e.deltaMode===2?height:1;if(e.ctrlKey||e.metaKey)zoom(Math.exp(-e.deltaY*unit*.01),pointer(e));else{view.x+=e.deltaX*unit/view.zoom;view.y+=e.deltaY*unit/view.zoom;save();}},{passive:false});
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.tool)));
 function togglePause(){
@@ -3772,6 +3823,7 @@ function render(now){ctx.setTransform(ratio,0,0,ratio,0,0);ctx.fillStyle='#101b2
  drawBeamDischarges();
  if(world.crewMode)drawCrew();
 drawConnectionHints();drawLaunchCheck();
+if(world.paused&&buildShipId){const core=world.parts.find(p=>p.id===buildShipId);if(core){ctx.save();ctx.strokeStyle='#fff0ac';ctx.lineWidth=2/view.zoom;ctx.beginPath();ctx.arc(core.x,core.y,core.radius+9/view.zoom,0,Math.PI*2);ctx.stroke();ctx.restore();}}
 if(tool==='pd'&&world.paused&&hoverScreen){const point=stroke?.kind==='pd'?stroke.points[0]:toWorld(hoverScreen);ctx.save();ctx.strokeStyle='#a7ffd480';ctx.lineWidth=1/view.zoom;ctx.setLineDash([6/view.zoom,6/view.zoom]);ctx.beginPath();ctx.arc(point.x,point.y,240,0,Math.PI*2);ctx.stroke();ctx.restore();}
 if(tool==='erase'&&hoverScreen&&!pan){const p=toWorld(hoverScreen);ctx.save();ctx.strokeStyle='#ff9a9a';ctx.lineWidth=1.5/view.zoom;ctx.fillStyle='#ff777722';ctx.beginPath();ctx.arc(p.x,p.y,12,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore();}
  ctx.restore();
@@ -3867,7 +3919,7 @@ window.addEventListener('pagehide',()=>recorder.flush());
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)recorder.event('action',{id:b.id||b.dataset.tool||'button'});});
 
 async function buildFeed(){try{const b=await(await fetch(`toy-build.json?t=${Date.now()}`,{cache:'no-store'})).json();$('#build-phase').textContent=b.phase;$('#build-detail').textContent=b.detail;if(buildRevision&&buildRevision!==b.revision&&!stroke){recorder.event('buildReload',{revision:b.revision});recorder.flush();save();location.reload();}buildRevision??=b.revision;}catch{$('#build-detail').textContent='Build feed reconnecting. Your drawing stays here.';}}
-restore();restoreLegacyLauncherTraces();resize();updateUI();requestAnimationFrame(frame);
+restore();if(repairLegacyRebuiltCore(world)){const core=world.parts.find(p=>p.kind==='core');view.x=core.x;view.y=core.y;save();toast('Misplaced bridge returned to its surviving ship.');}restoreLegacyLauncherTraces();resize();updateUI();requestAnimationFrame(frame);
 if(globalThis.TOY_STANDALONE){document.querySelector('#menu-dialog a[href="/"]')?.remove();$('#build-phase').textContent='Offline shipyard · Draw. Fight. Share.';$('#build-detail').textContent='Export your ship to keep a backup or send it to a friend. Download Game saves a playable HTML copy.';}else{buildFeed();setInterval(buildFeed,1500);}
 window.toy={status:()=>({parts:world.parts.length,pods:world.parts.filter(p=>p.kind==='missile').length,paused:world.paused,wave:world.wave,enemies:world.enemies.length,missiles:world.missiles.length,stats:{...world.stats},view:{...view},core:world.parts.find(p=>p.kind==='core')?.hp,tool,flight:flightSummary(world),harvest:warshardSummary(world),shields:shieldSummary(world),structure:structureSummary(world),crew:crewSummary(world),power:powerSummary(world)}),restoration:()=>restorationSummary(world),world:()=>world,logs:()=>recorder.export(),fit,excess};
 const DESIGN_KEY='one-more-gun.designs.v1';let designLibrary=[];
@@ -3908,7 +3960,7 @@ if(!sketchbookMode){
  mobileCraft=initMobileCraft({getTool:()=>tool,getHint:()=>$('#tool-hint').textContent,getAudio:()=>audio.status(),toggleSound,isPaused:()=>world.paused,testSound:async()=>{sound=true;audio.setEnabled(true);const ready=await audio.unlock();if(ready)audio.event({type:'build'});$('#sound-check-result').textContent=ready?'Test chime sent. If you cannot hear it, check media volume and your speaker/headphone output. Older iPhones may also need Silent Mode off.':'The browser has not enabled audio. Tap Play test sound again. If it stays silent, reload the page.';save();updateUI();}});
 }else{
  sketchbook=initSketchbook({
-  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,enemies:world.enemies,warshards:world.warshards,restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent}),
+  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,enemies:world.enemies,warshards:world.warshards,restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent,buildShip:buildShip()}),
   choose:kind=>{choose(kind);touchMode(false);updateUI();},move:value=>{touchMode(value);updateUI();},undo:()=>$('#undo').click(),
   watch:()=>{void audio.unlock();if(world.paused&&!world.defeated)sketchCamera='follow';if(world.paused||world.defeated)togglePause();},
   resume:()=>{if(world.paused&&!world.defeated)togglePause();},pause:()=>{world.paused=true;updateUI();save();},
