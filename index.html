@@ -2572,7 +2572,7 @@ modules["toy-bundle.mjs"]=(()=>{
 // Deliberately public-only. Never traverse server imports or configuration.
 const GAME_FILES = ['toy.html','toy.css','toy-crew.mjs','toy-power.mjs','toy-structure.mjs','toy-shields.mjs','toy-warshards.mjs','toy-flight.mjs','toy-restore.mjs','toy-core.mjs','toy-launch-preview.mjs','toy-audio.mjs','toy-capital-render.mjs','toy-reactor-render.mjs','toy-shield-render.mjs','toy-warshard-render.mjs','toy-flight-render.mjs','toy-save.mjs','toy-bundle.mjs','toy-export.mjs','toy-recorder.mjs','toy.mjs'];
 
-GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs','toy-mobile-craft.mjs');
+GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs','toy-mobile-craft.mjs','toy-enemy-visibility.mjs');
 
 async function buildStandalone(read) {
   const sources=Object.fromEntries(await Promise.all(GAME_FILES.map(async name=>[name,await read(name)])));
@@ -3022,11 +3022,59 @@ function initMobileCraft({getTool,getHint,getAudio,toggleSound,testSound,isPause
 
 return {initMobileCraft};
 })();
+modules["toy-enemy-visibility.mjs"]=(()=>{
+// Presentation only: CSS-pixel cues never alter ship geometry or targeting.
+function enemyCues(enemies,view,width,height,{top=28,bottom=36}={}){
+ const left=34,right=width-34,low=height-bottom,high=Math.min(top,low-40);
+ const cx=(left+right)/2,cy=(high+low)/2,targets=[],groups=new Map();
+ for(const e of enemies){
+  if(e.hp<=0)continue;
+  const x=(e.x-view.x)*view.zoom+width/2,y=(e.y-view.y)*view.zoom+height/2;
+  if(x>=left&&x<=right&&y>=high&&y<=low){
+   const extent=(e.kind==='capital'?(e.length||e.radius||40)*.55:Math.max(29,e.radius||20))*view.zoom;
+   targets.push({x,y,r:Math.max(16,extent+5),hp:Math.max(0,Math.min(1,e.hp/e.maxHp))});
+  }else{
+   const dx=x-cx,dy=y-cy,t=Math.min((right-cx)/Math.max(.001,Math.abs(dx)),(low-cy)/Math.max(.001,Math.abs(dy)));
+   const px=cx+dx*t,py=cy+dy*t;
+   const side=Math.abs(px-left)<1?'left':Math.abs(px-right)<1?'right':py<cy?'top':'bottom';
+   const coordinate=side==='left'||side==='right'?py:px,key=side+Math.round(coordinate/90);
+   const g=groups.get(key);
+   if(g){g.count++;}else groups.set(key,{x:px,y:py,angle:Math.atan2(dy,dx),count:1,side});
+  }
+ }
+ return {targets,edges:[...groups.values()],width};
+}
+
+function drawEnemyCues(ctx,cues){
+ ctx.save();ctx.lineJoin='round';ctx.lineCap='round';
+ const outlined=()=>{ctx.strokeStyle='#080f19';ctx.lineWidth=6;ctx.stroke();ctx.strokeStyle='#ffe1a5';ctx.lineWidth=2.5;ctx.stroke();};
+ for(const {x,y,r,hp} of cues.targets){
+  ctx.beginPath();
+  for(const sx of [-1,1])for(const sy of [-1,1]){ctx.moveTo(x+sx*(r-7),y+sy*r);ctx.lineTo(x+sx*r,y+sy*r);ctx.lineTo(x+sx*r,y+sy*(r-7));}
+  outlined();
+  ctx.fillStyle='#080f19';ctx.fillRect(x-18,y+r+5,36,7);
+  ctx.fillStyle='#ffe1a5';ctx.fillRect(x-16,y+r+7,32*hp,3);
+ }
+ ctx.font='bold 13px system-ui';ctx.textBaseline='middle';
+ for(const e of cues.edges){
+  ctx.save();ctx.translate(e.x,e.y);ctx.rotate(e.angle);ctx.beginPath();ctx.moveTo(-7,-7);ctx.lineTo(3,0);ctx.lineTo(-7,7);outlined();ctx.restore();
+  const left=e.side==='left',right=e.side==='right';
+  ctx.textAlign=left?'left':right?'right':'center';
+  const x=left||right?e.x+(left?13:-13):Math.max(70,Math.min(cues.width-70,e.x)),y=e.y+(e.side==='top'?19:e.side==='bottom'?-19:0);
+  const label=`${e.count} ${e.count===1?'enemy':'enemies'}`;
+  ctx.strokeStyle='#080f19';ctx.lineWidth=5;ctx.strokeText(label,x,y);ctx.fillStyle='#fff0ce';ctx.fillText(label,x,y);
+ }
+ ctx.restore();
+}
+
+return {enemyCues,drawEnemyCues};
+})();
 modules["toy.mjs"]=(()=>{
 const {initWelcome} = modules["toy-welcome.mjs"];
 const {initMobileBattle} = modules["toy-mobile-battle.mjs"];
 const {initTouchCamera} = modules["toy-touch-camera.mjs"];
 const {initMobileCraft} = modules["toy-mobile-craft.mjs"];
+const {enemyCues,drawEnemyCues} = modules["toy-enemy-visibility.mjs"];
 const {fleetAdvice} = modules["toy-readiness.mjs"];
 const {createWorld,addStroke,addEscort,stepWorld,sendWave,sendCapital,sendConvoy,shipBounds,addReactor,powerSummary,setPowerMode,beamStats} = modules["toy-core.mjs"];
 const {setCrewMode,syncCrew,rescueCrew,crewSummary,assignCrew,crewRoleFor,crewOperational} = modules["toy-crew.mjs"];
@@ -3050,6 +3098,7 @@ const {createTestFire,stepTestFire} = modules["toy-core.mjs"];
 const {saveShipDesign,validateShipDesign,shipDesignCost,buildShipDesign} = modules["toy-save.mjs"];
 const {dreadnoughtStatus} = modules["toy-core.mjs"];
 const $=s=>document.querySelector(s),canvas=$('#space'),ctx=canvas.getContext('2d'),audio=createToyAudio();
+const mobileVisibility=matchMedia('(max-width:800px), (max-width:950px) and (pointer:coarse)');
 $('#friendly-fire').onclick=()=>{world.friendlyFire=world.friendlyFire===false;recorder.event('action',{name:'friendlyFire',enabled:world.friendlyFire});save();updateUI();toast(world.friendlyFire?'FRIENDLY FIRE ON · Other ships can take hits. Your own ship is protected.':'FRIENDLY FIRE OFF · Friendly hits are harmless.');};
 $('#dreadnought').onclick=()=>{void audio.unlock();const enemy=sendCapital(world,{dreadnought:true});if(!enemy){toast('Clear the battlefield and restore your fleet first.');return;}history=[];fit(true);toast('THE LAST ARGUMENT · Break two missile batteries to expose its reactor.');save();updateUI();};
 $('#open-experiments').onclick=()=>$('#experiments-dialog').showModal();
@@ -3188,7 +3237,7 @@ function attack(siege=false){void audio.unlock();if(world.defeated){toast('Rebui
 $('#attack').onclick=()=>attack();$('#siege').onclick=()=>attack(true);
 $('#capital').onclick=()=>{void audio.unlock();if(world.defeated){toast('Rebuild your command core first.');return;}history=[];const enemy=sendCapital(world);if(!enemy)return;fit(true);toast(`CAPITAL CONTACT · ${enemy.name} · Destroy its batteries to silence them.`);save();updateUI();};
 $('#carrier').onclick=()=>{void audio.unlock();if(world.defeated){toast('Rebuild your command core first.');return;}history=[];const enemy=sendCapital(world,{carrier:true,boss:true});if(!enemy)return;fit(true);toast('THE THOUSAND TEETH · Break the four bays to stop fighters AND hull repairs.');save();updateUI();};
-$('#zoom-out').onclick=()=>zoom(.8);$('#zoom-in').onclick=()=>zoom(1.25);$('#fit').onclick=()=>fit(false);
+$('#zoom-out').onclick=()=>zoom(.8);$('#zoom-in').onclick=()=>zoom(1.25);$('#fit').onclick=()=>fit(!world.paused);
 $('#restore-fleet').onclick=()=>{void audio.unlock();history=[];startRestoration(world);save();updateUI();};
 $('#fast-restore').onclick=()=>{void audio.unlock();history=[];fastRestoration(world);save();updateUI();};
 async function toggleSound(){if(sound&&audio.status().state==='running'){sound=false;audio.setEnabled(false);}else{sound=true;audio.setEnabled(true);if(await audio.unlock())audio.event({type:'build'});}save();updateUI();}
@@ -3229,6 +3278,8 @@ const lines=['DAMAGE BY SHIP / WEAPON',...totals.slice(-24).map(t=>`Wave ${t.wav
  $('#battle-records-dialog').showModal();
 };
 function updateUI(){
+ $('#fit').textContent=world.paused?'Fit fleet':'Show battle';
+ $('#fit').title=world.paused?'Frame your fleet':'Frame your fleet and the enemies';
  mobileBattle?.sync();
  $('#active-tool-hint').textContent=$('#tool-hint').textContent;
  $('#friendly-fire').textContent=world.friendlyFire===false?'FRIENDLY FIRE: OFF':'FRIENDLY FIRE: ON';$('#friendly-fire').setAttribute('aria-pressed',String(world.friendlyFire!==false));
@@ -3408,7 +3459,12 @@ function render(now){ctx.setTransform(ratio,0,0,ratio,0,0);ctx.fillStyle='#101b2
 drawConnectionHints();drawLaunchCheck();
 if(tool==='pd'&&world.paused&&hoverScreen){const point=stroke?.kind==='pd'?stroke.points[0]:toWorld(hoverScreen);ctx.save();ctx.strokeStyle='#a7ffd480';ctx.lineWidth=1/view.zoom;ctx.setLineDash([6/view.zoom,6/view.zoom]);ctx.beginPath();ctx.arc(point.x,point.y,240,0,Math.PI*2);ctx.stroke();ctx.restore();}
 if(tool==='erase'&&hoverScreen&&!pan){const p=toWorld(hoverScreen);ctx.save();ctx.strokeStyle='#ff9a9a';ctx.lineWidth=1.5/view.zoom;ctx.fillStyle='#ff777722';ctx.beginPath();ctx.arc(p.x,p.y,12,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore();}
- ctx.restore();}
+ ctx.restore();
+ if(mobileVisibility.matches){
+  const flying=document.body.classList.contains('mobile-battle');
+  drawEnemyCues(ctx,enemyCues(world.enemies,view,width,height,{top:flying?155:32,bottom:flying?94:46}));
+ }
+}
 function drawConnectionHints(){
  if(!connectionHints.length)return;
  ctx.save();ctx.strokeStyle='#ffd784';ctx.lineWidth=2/view.zoom;ctx.setLineDash([6/view.zoom,5/view.zoom]);
