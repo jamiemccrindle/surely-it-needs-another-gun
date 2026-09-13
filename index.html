@@ -247,6 +247,24 @@ body.td-mode{margin:0;overflow:hidden;background:#080f19;color:#edf4f7;font-fami
 @media(max-height:550px) and (min-width:600px) and (max-width:950px){
   #td-app.td-fighting .td-main{grid-template-columns:minmax(0,1fr) 210px}#td-app.td-fighting .td-side{justify-content:flex-end}#td-app.td-fighting .td-command-row.has-siege{grid-template-columns:1fr}#td-app.td-fighting #td-unleash{font-size:12px}#td-app.td-complete .td-side{overflow:auto}#td-app .td-result-card h2{font-size:24px}
 }
+
+#td-app.kb-app{font-family:system-ui,sans-serif;background:#09151d;grid-template-rows:auto minmax(0,1fr)}
+#td-app.kb-app .kb-header{display:flex;min-height:0;max-height:none;margin:0;flex-wrap:nowrap;padding:14px 20px;gap:12px}#td-app.kb-app .kb-dock h1{font-family:system-ui,sans-serif;font-weight:750;letter-spacing:-.6px;line-height:1.12}
+#td-app.kb-app .kb-primary:hover{background:#ffedc4;color:#18232a}#td-app.kb-app .kb-dock{position:relative}#td-app.kb-app #kb-status{position:absolute;bottom:calc(100% + 39px);left:14px;right:14px;background:#172a35ed;border:1px solid #7d8e87;border-radius:8px;padding:8px;text-align:center;z-index:2;pointer-events:none}
+#kb-result details{font-size:13px;color:#c9e2e8;margin-top:10px}#kb-result summary{cursor:pointer;padding:8px 0;color:#ffdf9e}#kb-result details p{font-size:12px}#td-app #kb-continue{width:100%;margin-bottom:12px;border-color:#9ef0c5;color:#c7ffdb}
+#td-app.kb-moving .kb-sites{display:grid}#td-app #kb-move{border-color:#9bc4d1}
+.kb-header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid #39505b;background:#101e28;gap:16px}.kb-header strong{font-size:24px;letter-spacing:2px}.kb-header small{display:block;color:#acc7cf;font-size:10px;letter-spacing:1.5px;margin-top:4px}.kb-meters{display:flex;gap:26px}.kb-meters b{font-size:23px;font-variant-numeric:tabular-nums}.kb-meters>div:first-child b{color:#a7ffcb}
+.kb-main{display:grid;grid-template-columns:minmax(0,1fr) 340px;min-height:0}.kb-arena{position:relative;min-height:0;overflow:hidden}.kb-arena canvas{display:block;width:100%;height:100%;touch-action:none}.kb-view-controls{position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;gap:8px}.kb-map-key{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-size:13px;line-height:1.4;color:#dbebee;pointer-events:none;background:#08151dd9;padding:8px;border-radius:8px}.kb-battle-call{position:absolute;top:70px;left:12px;right:12px;text-align:center;color:#a3ffd0;font-size:14px;font-weight:800;letter-spacing:1px;text-shadow:0 2px 5px #000;pointer-events:none}
+.kb-dock{display:flex;flex-direction:column;gap:15px;min-height:0;overflow:auto;padding:20px;background:#10212c;border-left:1px solid #39505b}.kb-eyebrow,#kb-result>span{color:#ffdb98;font-size:11px;font-weight:750;letter-spacing:2px}.kb-dock h1{font:850 30px/1.05 system-ui;margin:8px 0 12px;letter-spacing:-1px}.kb-dock p{font-size:14px;line-height:1.5;color:#c5d9e0;margin:6px 0}.kb-sites{display:grid;grid-template-columns:1fr 1fr;gap:6px}#td-app .kb-sites button{text-align:left;padding:10px;font-size:12px;display:flex;align-items:center;gap:8px;min-height:49px;background:#172e3a}.kb-sites b{font-size:17px;color:#ffdb98}.kb-sites span{line-height:1.15}#td-app.kb-app button[aria-pressed=true]{border-color:#ffe09a;background:#39483e;color:#fff2cd;box-shadow:inset 0 0 0 1px #ffe09a}
+.kb-site-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:15px;margin-bottom:10px}.kb-site-heading>span{font-size:12px;color:#b5cbd5;white-space:nowrap}.kb-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}#td-app .kb-tools button{border-top:3px solid var(--ink);padding:10px 5px;min-height:68px}.kb-tools strong{display:block;font-size:13px;color:var(--ink)}.kb-tools span{display:block;font-size:11px;margin-top:5px;color:#d2e1e5}#td-app .kb-tool-fact{min-height:63px;margin:10px 0;font-size:14px;color:#ecf4f4}.kb-edit-row{display:flex;gap:5px}.kb-edit-row>*{flex:1}#td-app .kb-edit-row button{font-size:11px;padding:6px;min-height:42px}.kb-honest{font-size:11px!important;color:#abc6d0!important;margin-top:9px!important}.kb-actions{margin-top:auto;display:grid;gap:8px}#td-app .kb-primary{background:#ffdc94;border-color:#ffdc94;color:#18232a;font-weight:850;font-size:17px;min-height:54px}.kb-utilities{display:flex;gap:6px}.kb-utilities button{flex:1;font-size:12px!important;padding:7px!important;white-space:nowrap}#td-app #kb-share{flex:1.5;border-color:#93bbc8}
+#kb-status{min-height:20px;font-size:13px;line-height:1.4;color:#ffe3a8}#kb-status:empty{display:none}#td-app #kb-threats-toggle{width:100%;margin-top:12px;text-align:left;font-size:13px;font-weight:750;padding:10px}#kb-threats-toggle span{display:block;color:#a9c8d6;font-size:11px;font-weight:400;margin-top:3px}#kb-threats{color:#ffe4b7;font-size:13px;line-height:1.5;padding:10px;border-left:2px solid #ffdb98;margin-top:8px}.kb-target{display:flex;gap:6px;align-items:center;font-size:12px}.kb-target button{font-size:12px!important;padding:8px!important}#kb-inspect-data{font-variant-numeric:tabular-nums}#kb-result h2{font-size:29px;line-height:1.08;margin:8px 0 15px}#kb-result p{font-size:14px}.kb-app [hidden]{display:none!important}
+#td-app #kb-menu{background:#142b38;color:#edf7f8;border:1px solid #81a7b7;border-radius:16px;max-width:420px;width:calc(100% - 32px);max-height:90dvh;padding:22px}#kb-menu::backdrop{background:#020b12cc}#kb-menu h2{margin:0 0 12px;font-size:26px}#kb-menu p{font-size:14px;line-height:1.5;color:#c7dfe7}#kb-menu button,#kb-menu a{display:block;width:100%;margin:8px 0;text-align:left}#kb-menu a{color:#c0ebff;padding:12px 0;font-size:14px}.kb-battle .kb-sites{grid-template-columns:repeat(4,1fr)}#td-app.kb-battle .kb-sites button{display:block;text-align:center;padding:7px 3px;font-size:10px}.kb-battle .kb-sites b{display:block;margin-bottom:4px}.kb-done .kb-map-key{font-size:12px}
+@media(max-width:760px){
+ .kb-header{padding:11px 14px;gap:8px}.kb-header strong{font-size:18px;letter-spacing:1px}.kb-header small{font-size:8px;letter-spacing:.6px}.kb-meters{gap:14px}.kb-meters b{font-size:19px}.kb-meters small{font-size:8px}.kb-main{grid-template-columns:1fr;grid-template-rows:minmax(190px,1fr) auto}.kb-dock{padding:13px 14px max(12px,env(safe-area-inset-bottom));border-left:0;border-top:1px solid #39505b;gap:10px;max-height:55dvh;overflow:auto}.kb-dock h1{font-size:24px;margin:3px 0 6px}.kb-dock p{font-size:13px;line-height:1.4}.kb-eyebrow{display:none}.kb-sites{grid-template-columns:repeat(4,1fr);gap:5px}#td-app .kb-sites button{display:block;font-size:10px;min-height:46px;padding:6px 3px;text-align:center}.kb-sites b{font-size:14px;margin-right:4px}.kb-sites span{display:block;margin-top:3px}.kb-view-controls{top:9px;left:10px;right:10px}#td-app .kb-view-controls button{font-size:12px;padding:7px 10px;min-height:40px}.kb-map-key{font-size:11px;bottom:5px;padding:5px;left:6px;right:6px}.kb-battle-call{top:58px;font-size:12px}.kb-site-heading{font-size:14px;margin-bottom:7px}#td-app .kb-tools button{min-height:54px;padding:6px 4px}.kb-tools strong{font-size:13px}.kb-tools span{font-size:11px;margin-top:3px}#td-app .kb-tool-fact{font-size:12px;line-height:1.4;min-height:34px;margin:7px 0}.kb-honest{font-size:10px!important;line-height:1.3!important;margin-top:6px!important}#td-app .kb-edit-row button{min-height:36px}.kb-actions{gap:6px}#td-app .kb-primary{min-height:48px;font-size:16px}.kb-utilities button{min-height:38px!important;font-size:11px!important}.kb-building .kb-dock{gap:7px}.kb-building .kb-sites{display:none}.kb-building .kb-main{grid-template-rows:minmax(190px,1fr) auto}.kb-battle .kb-dock{max-height:35dvh}.kb-done .kb-dock{max-height:46dvh}.kb-done #kb-result h2{font-size:26px;margin:6px 0 9px}.kb-done #kb-result p{font-size:12px;margin:6px 0}.kb-battle .kb-sites span{font-size:9px}#kb-status{font-size:12px;min-height:0}#td-app #kb-threats-toggle{margin-top:7px;padding:7px 10px;min-height:40px}#kb-threats-toggle span{display:inline;margin-left:10px;font-size:10px}
+}
+@media(max-width:380px){.kb-header strong{font-size:16px}.kb-header small{font-size:7px}.kb-dock{gap:7px;padding:10px}.kb-dock h1{font-size:21px}.kb-dock p{font-size:12px}.kb-building .kb-honest{display:none}.kb-main,.kb-building .kb-main{grid-template-rows:minmax(155px,1fr) auto}.kb-building .kb-dock{max-height:59dvh}.kb-tools strong{font-size:12px}}
+@media(max-height:550px) and (min-width:600px){.kb-header{padding:8px 16px}.kb-header strong{font-size:18px}.kb-header small{font-size:8px}.kb-main,.kb-building .kb-main{grid-template-columns:minmax(0,1fr) 285px;grid-template-rows:minmax(0,1fr)}.kb-dock,.kb-building .kb-dock,.kb-battle .kb-dock,.kb-done .kb-dock{max-height:none;padding:10px;gap:8px}.kb-dock h1{font-size:23px}.kb-dock p{font-size:12px}.kb-sites{grid-template-columns:repeat(4,1fr)}#td-app .kb-sites button{font-size:9px;padding:5px 2px;display:block;text-align:center}.kb-sites b{display:block;font-size:13px}.kb-dock .kb-honest{display:none}#td-app .kb-tool-fact{min-height:0;font-size:12px}#td-app .kb-tools button{min-height:49px}.kb-tools strong{font-size:12px}#td-app .kb-primary{min-height:44px;font-size:15px}.kb-battle .kb-dock{justify-content:flex-end}.kb-building .kb-sites{display:none}}
+@media(max-height:550px) and (min-width:600px){#td-app.kb-app .kb-header{height:58px;padding:6px 16px}.kb-dock{overflow:hidden}.kb-actions{flex-shrink:0}#kb-workbench,#kb-brief,#kb-result{min-height:0;overflow:auto;flex:0 1 auto}#td-app .kb-tools button{padding:5px}.kb-tools strong{font-size:11px}.kb-site-heading{margin-bottom:6px}#td-app .kb-tool-fact{font-size:11px;line-height:1.35;margin:6px 0}.kb-site-heading strong{font-size:14px}.kb-edit-row button{min-height:38px!important}#td-app .kb-utilities button{min-height:38px}}
 </style></head>
 <body class="shipyard">
 <header><h1>Surely it needs <i>another gun.</i></h1><div class="warshards-hud"><span>WARSHARDS</span><b id="warshards">0</b><small id="warshards-detail">Draw a tractor beam to harvest.</small></div><nav aria-label="Game menus"><button id="mobile-status" aria-expanded="false">FLEET STATUS</button><button id="open-help">HOW TO PLAY</button><button id="open-experiments">EXPERIMENTS</button><button id="open-menu">SAVE & SHARE</button></nav></header>
@@ -2747,7 +2765,7 @@ const GAME_FILES = ['toy.html','toy.css','toy-crew.mjs','toy-power.mjs','toy-str
 
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs','toy-mobile-craft.mjs','toy-enemy-visibility.mjs');
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-sketchbook-storage.mjs','toy-sketchbook-camera.mjs','toy-sketchbook.mjs','toy-sketchbook.css');
-GAME_FILES.push('toy-td-core.mjs','toy-td-render.mjs','toy-td-audio.mjs','toy-td.mjs','toy-td.css','toy-entry.mjs');
+GAME_FILES.push('toy-td-core.mjs','toy-td-render.mjs','toy-td-audio.mjs','toy-td-record.mjs','toy-td-killbox-session.mjs','toy-td.mjs','toy-td.css','toy-td-killbox.mjs','toy-td-killbox.css','toy-entry.mjs');
 
 async function buildStandalone(read) {
   const sources=Object.fromEntries(await Promise.all(GAME_FILES.map(async name=>[name,await read(name)])));
@@ -2763,10 +2781,10 @@ async function buildStandalone(read) {
     return `modules[${JSON.stringify(name)}]=(()=>{\n${source}\nreturn {${exports.join(',')}};\n})();`;
   }).join('\n');
   const script=`globalThis.TOY_STANDALONE=true;\nconst modules={};\n${code}`.replace(/<\/script/gi,'<\\/script');
-  const css=(sources['toy.css']+'\n'+sources['toy-sketchbook.css']+'\n'+sources['toy-td.css']).replace(/^@import[^\n]*\n/gm,'');
+  const css=(sources['toy.css']+'\n'+sources['toy-sketchbook.css']+'\n'+sources['toy-td.css']+'\n'+sources['toy-td-killbox.css']).replace(/^@import[^\n]*\n/gm,'');
   if(/url\s*\(/i.test(css))throw Error('Standalone CSS needs embedded assets, not URL references');
   return sources['toy.html'].replace('<link rel="stylesheet" href="toy-sketchbook.css">','').replace('<link rel="stylesheet" href="toy.css">',()=>`<style>${css}</style>`)
-    .replace('<link rel="stylesheet" href="toy-td.css">','').replace('<script type="module" src="toy-entry.mjs"><\/script>',()=>`<script type="module">${script}<\/script>`);
+    .replace('<link rel="stylesheet" href="toy-td.css">','').replace('<link rel="stylesheet" href="toy-td-killbox.css">','').replace('<script type="module" src="toy-entry.mjs"><\/script>',()=>`<script type="module">${script}<\/script>`);
 }
 
 return {GAME_FILES,buildStandalone};
@@ -4047,7 +4065,7 @@ const TD_WEAPONS={
  missile:{label:'Missile rack',cost:30,range:310,reload:3.2,damage:6,salvo:12,speed:260,color:'#ffd17e'},
  cannon:{label:'Pulse cannon',cost:25,range:195,reload:.7,damage:22,splash:35,color:'#89e9ff'},
  torpedo:{label:'Torpedo tube',cost:45,range:355,reload:4.2,damage:105,speed:155,color:'#ff91e3'},
- tractor:{label:'Tractor beam',cost:35,range:220,slow:.45,damage:0,color:'#7cf5a5'}
+ tractor:{label:'Stasis beam',cost:35,range:220,slow:.45,damage:0,color:'#7cf5a5'}
 };
 const TD_ENEMIES={
  scout:{label:'Raider',hp:65,speed:66,radius:10,reward:3,leak:1,color:'#f88479'},
@@ -4064,7 +4082,16 @@ const TD_WAVES=[
  {name:'The umbrella',hint:'Green point-defence ships intercept missiles. Pulse cannons bypass them.',reward:180,groups:[['screen',12,1.1],['armour',13,.6],['runner',26,.25]]},
  {name:'The last exit',hint:'The siege flagship and its escorts. Hold until the gate opens.',reward:0,groups:[['screen',8,.8],['flagship',1,1],['armour',14,.65],['runner',30,.25]]}
 ];
+const TD_KILLBOX_ROUTE=[{x:-30,y:220},{x:1010,y:220},{x:1060,y:300},{x:1010,y:400},{x:190,y:400},{x:130,y:500},{x:230,y:580},{x:1220,y:580}];
+const TD_KILLBOX_ANCHORS=[{id:'anchor-a',name:'Crossfire bend',x:860,y:310},{id:'anchor-b',name:'Double pass',x:510,y:310},{id:'anchor-c',name:'Last chance',x:490,y:490},{id:'anchor-d',name:'Entrance',x:140,y:110}];
+const TD_KILLBOX_WEAPONS={missile:{...TD_WEAPONS.missile,range:275,damage:8},cannon:{...TD_WEAPONS.cannon,range:170,damage:38,splash:48},tractor:{...TD_WEAPONS.tractor,range:200,slow:.35,targets:3}};
+const TD_KILLBOX_WAVES=[{name:'The Killbox',hint:'Raiders arrive together. Cruisers follow. Fast runners bring up the rear. Make their route work against them.',reward:0,groups:[['scout',16,.35],['armour',7,1.6],['runner',18,.3]]}];
+function tdRoute(s){return s?.scenario==='killbox'?TD_KILLBOX_ROUTE:TD_ROUTE;}
+function tdWaves(s){return s?.scenario==='killbox'?TD_KILLBOX_WAVES:TD_WAVES;}
+function tdWeapons(s){return s?.scenario==='killbox'?TD_KILLBOX_WEAPONS:TD_WEAPONS;}
+function routeSegments(s){return s?.scenario==='killbox'?killboxSegments:segments;}
 const segments=TD_ROUTE.slice(1).map((p,i)=>Math.hypot(p.x-TD_ROUTE[i].x,p.y-TD_ROUTE[i].y));
+const killboxSegments=TD_KILLBOX_ROUTE.slice(1).map((p,i)=>Math.hypot(p.x-TD_KILLBOX_ROUTE[i].x,p.y-TD_KILLBOX_ROUTE[i].y));
 const TD_ROUTE_LENGTH=segments.reduce((a,b)=>a+b,0);
 const clone=value=>JSON.parse(JSON.stringify(value));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
@@ -4073,22 +4100,23 @@ function nextId(s,prefix){return `${prefix}-${++s.nextId}`;}
 function event(s,type,data={}){s.events.push({seq:++s.eventSeq,type,time:s.time,...data});if(s.events.length>100)s.events.shift();}
 function effect(s,kind,x,y,radius=20,extra={}){if(s.effects.length>=180)s.effects.shift();s.effects.push({kind,x,y,radius,life:.45,maxLife:.45,...extra});}
 function record(s){s.history.push({platforms:clone(s.platforms),credits:s.credits,spent:s.stats.spent});if(s.history.length>40)s.history.shift();}
-function createTD(seed=1){return {seed:seed>>>0,nextId:0,eventSeq:0,time:0,phase:'prep',wave:0,gateHp:20,maxGateHp:20,credits:150,platforms:TD_ANCHORS.map(p=>({...p,priority:'First',capacity:4,strokes:[],modules:[]})),enemies:[],missiles:[],effects:[],shards:[],events:[],history:[],records:[],spawnQueue:[],waveTime:0,stats:{kills:0,leaks:0,launched:0,damage:0,spent:0,earned:0,intercepted:0,peakMissiles:0}};}
+function createTD(seed=1,scenario='campaign'){const killbox=scenario==='killbox';return {scenario,initialSeed:seed>>>0,seed:seed>>>0,nextId:0,eventSeq:0,time:0,phase:'prep',wave:0,gateHp:killbox?8:20,maxGateHp:killbox?8:20,credits:killbox?240:150,platforms:(killbox?TD_KILLBOX_ANCHORS:TD_ANCHORS).map(p=>({...p,priority:'First',capacity:4,strokes:[],modules:[]})),enemies:[],missiles:[],effects:[],shards:[],events:[],history:[],records:[],spawnQueue:[],waveTime:0,stats:{kills:0,leaks:0,launched:0,damage:0,spent:0,earned:0,intercepted:0,peakMissiles:0}};}
 function getTDCost(kind){return TD_WEAPONS[kind]?.cost??(kind==='reactor'?50:kind==='siege'?TD_SIEGE.cost:0);}
 function platformRadiusTD(p){return p.siege?TD_SIEGE.radius:90;}
-function weaponRangeTD(p,m){return (TD_WEAPONS[m.kind]?.range||0)*(p.siege?.activeRemaining>0?TD_SIEGE.rangeMultiplier:1);}
+function weaponRangeTD(p,m,s){return (tdWeapons(s)[m.kind]?.range||0)*(p.siege?.activeRemaining>0?TD_SIEGE.rangeMultiplier:1);}
 function capacityTD(p){return 4+(p.strokes.some(t=>t.kind==='reactor')?4:0)+(p.siege?4:0);}
 function batteryOriginTD(platform,module){const points=module.points;if(!points?.length)return {x:platform.x,y:platform.y};let x=0,y=0,length=0;for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],d=distance(a,b);x+=(a.x+b.x)*.5*d;y+=(a.y+b.y)*.5*d;length+=d;}return length?{x:x/length,y:y/length}:{x:points[0].x,y:points[0].y};}
 function buildTD(s,anchorId,kind,points){
  if(s.phase!=='prep')return {ok:false,reason:'Build between waves.'};
  const p=s.platforms.find(p=>p.id===anchorId);
+ if(s.scenario==='killbox'&&!['missile','cannon','tractor','armour'].includes(kind))return {ok:false,reason:'This encounter uses missiles, cannons and stasis beams.'};
  if(!p||!['reactor','siege','armour',...Object.keys(TD_WEAPONS)].includes(kind))return {ok:false,reason:'Choose a platform and a drawing tool.'};
  if(!Array.isArray(points)||!points.length||points.length>10000||points.some(q=>!q||!Number.isFinite(q.x)||!Number.isFinite(q.y)||distance(q,p)>platformRadiusTD(p)))return {ok:false,reason:'Draw inside the selected platform.'};
  if(kind==='siege'&&s.wave<TD_SIEGE.unlockWave)return {ok:false,reason:'Survive wave 2 to forge a Siege Heart.'};
  if(kind==='siege'&&s.platforms.some(site=>site.siege))return {ok:false,reason:'One flagship per defence. Your Siege Heart is already forged.'};
  if(p.strokes.length>=80)return {ok:false,reason:'This platform is full. Erase a part first.'};
  if(kind==='reactor'&&p.strokes.some(t=>t.kind==='reactor'))return {ok:false,reason:'This platform already has its reactor expansion.'};
- if(TD_WEAPONS[kind]&&p.modules.length>=p.capacity)return {ok:false,reason:'Power full. Draw a reactor for four more batteries.'};
+ if(TD_WEAPONS[kind]&&p.modules.length>=p.capacity)return {ok:false,reason:s.scenario==='killbox'?'Four batteries per ship. Try another position or erase a battery.':'Power full. Draw a reactor for four more batteries.'};
  const cost=getTDCost(kind);if(s.credits<cost)return {ok:false,reason:`Need ${cost} Warshards. Erase a part for a full refund.`};
  record(s);const stride=Math.max(1,Math.ceil(points.length/180));
  const stroke={id:nextId(s,'part'),kind,cost,points:points.filter((_,i)=>i%stride===0).map(q=>({x:q.x,y:q.y}))};
@@ -4110,6 +4138,20 @@ function eraseTD(s,anchorId,point){
  s.credits+=stroke.cost;s.stats.spent-=stroke.cost;event(s,'erased',{anchorId,kind:stroke.kind,refund:stroke.cost});return {ok:true,refund:stroke.cost};
 }
 function undoTD(s){if(s.phase!=='prep'||!s.history.length)return false;const old=s.history.pop();s.platforms=old.platforms;s.credits=old.credits;s.stats.spent=old.spent;return true;}
+function repositionKillbox(s,fromId,toId){
+ if(s.scenario!=='killbox'||s.phase!=='prep')return {ok:false,reason:'Move ships while preparing the Killbox.'};
+ const from=s.platforms.find(p=>p.id===fromId),to=s.platforms.find(p=>p.id===toId);
+ if(!from||!to||from===to)return {ok:false,reason:'Choose a different ship position.'};
+ const fixed=['id','name','x','y'];
+ const payload=p=>Object.fromEntries(Object.entries(clone(p)).filter(([key])=>!fixed.includes(key)));
+ const translate=(data,dx,dy)=>{for(const collection of [data.strokes,data.modules])for(const part of collection||[])for(const point of part.points||[]){point.x+=dx;point.y+=dy;}return data;};
+ const fromPayload=translate(payload(from),to.x-from.x,to.y-from.y),toPayload=translate(payload(to),from.x-to.x,from.y-to.y);
+ record(s);
+ for(const key of Object.keys(from))if(!fixed.includes(key))delete from[key];
+ for(const key of Object.keys(to))if(!fixed.includes(key))delete to[key];
+ Object.assign(from,toPayload);Object.assign(to,fromPayload);
+ event(s,'repositioned',{fromId,toId});return {ok:true};
+}
 function setPriorityTD(s,id,priority){const p=s.platforms.find(p=>p.id===id);if(!p)return false;p.priority=String(priority).toLowerCase()==='strong'?'Strong':'First';return true;}
 function unleashTD(s,id){
  const p=s.platforms.find(p=>p.id===id);
@@ -4126,56 +4168,81 @@ function unleashTD(s,id){
  return {ok:true};
 }
 function launchTD(s){
- if(s.phase!=='prep'||s.wave>=TD_WAVES.length)return false;
+ if(s.phase!=='prep'||s.wave>=tdWaves(s).length)return false;
  s.phase='battle';s.wave++;s.waveTime=0;s.history=[];s.spawnQueue=[];let time=0;
  s.records.push({wave:s.wave,gateBefore:s.gateHp,gateAfter:null,creditsBefore:s.credits,loadout:s.platforms.map(p=>({id:p.id,priority:p.priority,siege:!!p.siege,weapons:p.modules.map(m=>m.kind)})),kills:0,leaks:{},damage:{missile:0,cannon:0,torpedo:0,tractor:0},shots:{missile:0,cannon:0,torpedo:0,tractor:0},slowedSeconds:0,unleashes:0,outcome:'running'});
- for(const [kind,count,gap] of TD_WAVES[s.wave-1].groups)for(let i=0;i<count;i++){s.spawnQueue.push({kind,time});time+=gap;}
+ const r=s.records.at(-1);r.modules={};r.leakDetails=[];for(const p of s.platforms)for(const m of p.modules)r.modules[m.id]={id:m.id,platformId:p.id,kind:m.kind,damage:0,kills:0,shots:0,slowedSeconds:0};
+ for(const [kind,count,gap] of tdWaves(s)[s.wave-1].groups)for(let i=0;i<count;i++){s.spawnQueue.push({kind,time});time+=gap;}
  for(const p of s.platforms){if(p.siege){p.siege.ready=true;p.siege.activeRemaining=0;p.siege.ventRemaining=0;}for(const m of p.modules){m.cooldown=random(s)*.35;m.salvoRemaining=0;m.salvoTimer=0;}}
  event(s,'waveStarted',{wave:s.wave});return true;
 }
-function pointOnTDRoute(progress){let left=Math.max(0,progress);for(let i=0;i<segments.length;i++){if(left<=segments[i]){const a=TD_ROUTE[i],b=TD_ROUTE[i+1],t=left/segments[i];return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,angle:Math.atan2(b.y-a.y,b.x-a.x)};}left-=segments[i];}return {...TD_ROUTE.at(-1),angle:0};}
+function pointOnTDRoute(progress,s){const route=tdRoute(s),lengths=s?.scenario==='killbox'?routeSegments(s):segments;let left=Math.max(0,progress);for(let i=0;i<lengths.length;i++){if(left<=lengths[i]){const a=route[i],b=route[i+1],t=left/lengths[i];return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,angle:Math.atan2(b.y-a.y,b.x-a.x)};}left-=lengths[i];}return {...route.at(-1),angle:0};}
 function target(s,p,range){const candidates=s.enemies.filter(e=>e.hp>0&&distance(p,e)<=range);candidates.sort(p.priority==='Strong'?(a,b)=>b.maxHp-a.maxHp||b.progress-a.progress:(a,b)=>b.progress-a.progress);return candidates[0];}
-function damage(s,e,amount,kind){if(e.hp<=0)return;const factor=e.kind==='armour'?(kind==='torpedo'?1.5:kind==='missile'?.45:.2):e.kind==='runner'&&kind==='torpedo'?.25:e.kind==='flagship'&&kind==='cannon'?.45:1;const hit=Math.min(e.hp,amount*factor);e.hp-=hit;s.stats.damage+=hit;const record=s.records.at(-1);if(record)record.damage[kind]+=hit;if(e.hp<=0){s.stats.kills++;if(record)record.kills++;s.credits+=e.reward;s.stats.earned+=e.reward;effect(s,'explosion',e.x,e.y,e.radius*2,{color:e.color,life:.7,maxLife:.7});if(s.shards.length<100)s.shards.push({x:e.x,y:e.y,life:.8,maxLife:.8,value:e.reward});event(s,'kill',{kind:e.kind,reward:e.reward});}}
-function launchProjectile(s,p,m,e){const w=TD_WEAPONS[m.kind];if(s.missiles.length>=420)return;const a=Math.atan2(e.y-p.y,e.x-p.x)+(random(s)-.5)*1.8;s.missiles.push({id:nextId(s,'missile'),kind:m.kind,x:p.x,y:p.y,vx:Math.cos(a)*w.speed,vy:Math.sin(a)*w.speed,targetId:e.id,sourceId:p.id,life:6,age:0,trail:[],color:w.color});s.stats.launched++;if(s.records.at(-1))s.records.at(-1).shots[m.kind]++;s.stats.peakMissiles=Math.max(s.stats.peakMissiles,s.missiles.length);}
+// Multipliers are public so preview and reports describe the exact combat rules.
+function damageFactorTD(s,enemyKind,weaponKind){return enemyKind==='armour'?(weaponKind==='torpedo'?1.5:weaponKind==='missile'?.45:.2):enemyKind==='runner'&&weaponKind==='torpedo'?.25:enemyKind==='flagship'&&weaponKind==='cannon'?.45:1;}
+function damage(s,e,amount,kind,moduleId){if(e.hp<=0)return;const factor=damageFactorTD(s,e.kind,kind);const hit=Math.min(e.hp,amount*factor);e.hp-=hit;s.stats.damage+=hit;const record=s.records.at(-1);if(record){record.damage[kind]+=hit;if(record.modules?.[moduleId])record.modules[moduleId].damage+=hit;}if(e.hp<=0){s.stats.kills++;if(record){record.kills++;if(record.modules?.[moduleId])record.modules[moduleId].kills++;}s.credits+=e.reward;s.stats.earned+=e.reward;effect(s,'explosion',e.x,e.y,e.radius*2,{color:e.color,life:.7,maxLife:.7});if(s.shards.length<100)s.shards.push({x:e.x,y:e.y,life:.8,maxLife:.8,value:e.reward});event(s,'kill',{kind:e.kind,reward:e.reward});}}
+function launchProjectile(s,p,m,e){const w=tdWeapons(s)[m.kind];if(s.missiles.length>=420)return;const a=Math.atan2(e.y-p.y,e.x-p.x)+(random(s)-.5)*1.8;s.missiles.push({id:nextId(s,'missile'),kind:m.kind,x:p.x,y:p.y,vx:Math.cos(a)*w.speed,vy:Math.sin(a)*w.speed,targetId:e.id,sourceId:p.id,moduleId:m.id,life:6,age:0,trail:[],color:w.color});s.stats.launched++;if(s.records.at(-1))s.records.at(-1).shots[m.kind]++;if(s.records.at(-1)?.modules?.[m.id])s.records.at(-1).modules[m.id].shots++;s.stats.peakMissiles=Math.max(s.stats.peakMissiles,s.missiles.length);}
 function tick(s,dt){
  s.effects=s.effects.filter(e=>e.kind!=='tractor');
  s.time+=dt;for(const list of [s.effects,s.shards]){for(const e of list)e.life-=dt;for(let i=list.length-1;i>=0;i--)if(list[i].life<=0)list.splice(i,1);}
  if(s.phase!=='battle')return;s.waveTime+=dt;
  for(const p of s.platforms){const siege=p.siege;if(!siege)continue;if(siege.activeRemaining>0){siege.activeRemaining=Math.max(0,siege.activeRemaining-dt);if(siege.activeRemaining===0){siege.ventRemaining=TD_SIEGE.vent;for(const m of p.modules){m.salvoRemaining=0;m.cooldown=0;}event(s,'siegeVenting',{anchorId:p.id,x:p.x,y:p.y,duration:TD_SIEGE.vent});}}else siege.ventRemaining=Math.max(0,siege.ventRemaining-dt);}
- while(s.spawnQueue.length&&s.spawnQueue[0].time<=s.waveTime){const entry=s.spawnQueue.shift(),spec=TD_ENEMIES[entry.kind];s.enemies.push({id:nextId(s,'enemy'),kind:entry.kind,...spec,maxHp:spec.hp,progress:0,...pointOnTDRoute(0)});}
+ while(s.spawnQueue.length&&s.spawnQueue[0].time<=s.waveTime){const entry=s.spawnQueue.shift(),spec=TD_ENEMIES[entry.kind];s.enemies.push({id:nextId(s,'enemy'),kind:entry.kind,...spec,maxHp:spec.hp,progress:0,...pointOnTDRoute(0,s)});}
  for(const e of s.enemies){e.speedFactor=1;e.slowSourceIds=[];}
- for(const p of s.platforms)for(const m of p.modules){if(m.kind!=='tractor'||p.siege?.ventRemaining>0)continue;const w=TD_WEAPONS.tractor,origin={...batteryOriginTD(p,m),priority:p.priority},e=target(s,origin,weaponRangeTD(p,m));m.targetId=e?.id??null;if(!e)continue;e.speedFactor=Math.min(e.speedFactor,p.siege?.activeRemaining>0?.3:w.slow);e.slowSourceIds.push(m.id);effect(s,'tractor',e.x,e.y,9,{fromX:origin.x,fromY:origin.y,color:w.color,life:.07,maxLife:.07});}
- for(const e of s.enemies){if(e.hp<=0)continue;if(e.speedFactor<1&&s.records.at(-1))s.records.at(-1).slowedSeconds+=dt;e.progress+=e.speed*e.speedFactor*dt;Object.assign(e,pointOnTDRoute(e.progress));if(e.progress>=TD_ROUTE_LENGTH){e.hp=0;s.gateHp=Math.max(0,s.gateHp-e.leak);s.stats.leaks++;const r=s.records.at(-1);if(r)r.leaks[e.kind]=(r.leaks[e.kind]||0)+1;effect(s,'leak',e.x,e.y,50,{color:'#ff6473'});event(s,'leak',{kind:e.kind,damage:e.leak});}}
+ for(const p of s.platforms)for(const m of p.modules){if(m.kind!=='tractor'||p.siege?.ventRemaining>0)continue;const w=tdWeapons(s).tractor,origin={...batteryOriginTD(p,m),priority:p.priority},e=target(s,origin,weaponRangeTD(p,m,s));m.targetId=e?.id??null;if(!e)continue;const held=[e];if(w.targets)for(const other of s.enemies){if(held.length>=w.targets)break;if(other!==e&&other.hp>0&&distance(other,e)<=90&&distance(other,origin)<=w.range)held.push(other);}for(const victim of held){victim.speedFactor=Math.min(victim.speedFactor,p.siege?.activeRemaining>0?.3:w.slow);victim.slowSourceIds.push(m.id);const mr=s.records.at(-1)?.modules?.[m.id];if(mr)mr.slowedSeconds+=dt;effect(s,'tractor',victim.x,victim.y,9,{fromX:origin.x,fromY:origin.y,color:w.color,life:.07,maxLife:.07});}}
+ for(const e of s.enemies){if(e.hp<=0)continue;if(e.speedFactor<1&&s.records.at(-1))s.records.at(-1).slowedSeconds+=dt;e.progress+=e.speed*e.speedFactor*dt;Object.assign(e,pointOnTDRoute(e.progress,s));if(e.progress>=(s.scenario==='killbox'?routeSegments(s).reduce((a,b)=>a+b,0):TD_ROUTE_LENGTH)){const escapedHp=e.hp;e.hp=0;s.gateHp=Math.max(0,s.gateHp-e.leak);s.stats.leaks++;const r=s.records.at(-1);if(r){r.leaks[e.kind]=(r.leaks[e.kind]||0)+1;r.leakDetails.push({kind:e.kind,hp:escapedHp,maxHp:e.maxHp,x:e.x,y:e.y,time:s.waveTime});}effect(s,'leak',e.x,e.y,50,{color:'#ff6473'});event(s,'leak',{kind:e.kind,damage:e.leak});}}
  if(s.gateHp<=0){s.phase='lost';s.missiles=[];Object.assign(s.records.at(-1),{gateAfter:0,outcome:'lost',duration:s.waveTime});event(s,'lost',{wave:s.wave});return;}
  for(const p of s.platforms)for(const m of p.modules){
-  if(m.kind==='tractor'||p.siege?.ventRemaining>0)continue;const origin={...batteryOriginTD(p,m),id:p.id,priority:p.priority},w=TD_WEAPONS[m.kind],surge=p.siege?.activeRemaining>0,rate=surge?TD_SIEGE.fireRate:1;m.cooldown-=dt*rate;m.salvoTimer-=dt;const e=target(s,origin,weaponRangeTD(p,m));if(!e)continue;
+  if(m.kind==='tractor'||p.siege?.ventRemaining>0)continue;const origin={...batteryOriginTD(p,m),id:p.id,priority:p.priority},w=tdWeapons(s)[m.kind],surge=p.siege?.activeRemaining>0,rate=surge?TD_SIEGE.fireRate:1;m.cooldown-=dt*rate;m.salvoTimer-=dt;const e=target(s,origin,weaponRangeTD(p,m,s));if(!e)continue;
   if(m.kind==='missile'){
    if(m.cooldown<=0&&m.salvoRemaining<=0){m.salvoRemaining=w.salvo*(surge?2:1);m.cooldown=w.reload;}
    if(m.salvoRemaining>0&&m.salvoTimer<=0){launchProjectile(s,origin,m,e);m.salvoRemaining--;m.salvoTimer=surge?.025:.055;}
-  }else if(m.cooldown<=0){m.cooldown=w.reload;if(m.kind==='cannon'){effect(s,'pulse',e.x,e.y,w.splash,{fromX:origin.x,fromY:origin.y,color:w.color,life:.18,maxLife:.18});for(const other of s.enemies)if(other.hp>0&&distance(e,other)<=w.splash)damage(s,other,w.damage,'cannon');s.stats.launched++;if(s.records.at(-1))s.records.at(-1).shots.cannon++;}else launchProjectile(s,origin,m,e);}
+  }else if(m.cooldown<=0){m.cooldown=w.reload;if(m.kind==='cannon'){effect(s,'pulse',e.x,e.y,w.splash,{fromX:origin.x,fromY:origin.y,color:w.color,life:.18,maxLife:.18});for(const other of s.enemies)if(other.hp>0&&distance(e,other)<=w.splash)damage(s,other,w.damage,'cannon',m.id);s.stats.launched++;if(s.records.at(-1))s.records.at(-1).shots.cannon++;if(s.records.at(-1)?.modules?.[m.id])s.records.at(-1).modules[m.id].shots++;}else launchProjectile(s,origin,m,e);}
  }
  for(const m of s.missiles){m.life-=dt;m.age+=dt;let e=s.enemies.find(e=>e.id===m.targetId&&e.hp>0);if(!e){e=s.enemies.filter(e=>e.hp>0).sort((a,b)=>distance(a,m)-distance(b,m))[0];if(e)m.targetId=e.id;}if(!e){m.life=0;continue;}
-  const w=TD_WEAPONS[m.kind],dx=e.x-m.x,dy=e.y-m.y,d=Math.hypot(dx,dy)||1,blend=1-Math.exp(-dt*7);m.vx+=(dx/d*w.speed-m.vx)*blend;m.vy+=(dy/d*w.speed-m.vy)*blend;
+  const w=tdWeapons(s)[m.kind],dx=e.x-m.x,dy=e.y-m.y,d=Math.hypot(dx,dy)||1,blend=1-Math.exp(-dt*7);m.vx+=(dx/d*w.speed-m.vx)*blend;m.vy+=(dy/d*w.speed-m.vy)*blend;
   m.trail.push({x:m.x,y:m.y});if(m.trail.length>7)m.trail.shift();m.x+=m.vx*dt;m.y+=m.vy*dt;
   if(m.kind==='missile'&&e.kind==='screen'&&distance(m,e)<65&&!m.screenChecked){m.screenChecked=true;if(random(s)<.48){m.life=0;s.stats.intercepted++;effect(s,'intercept',m.x,m.y,9,{color:'#8eeac2'});continue;}}
-  if(distance(m,e)<e.radius+7){damage(s,e,w.damage,m.kind);if(w.splash)for(const other of s.enemies)if(other!==e&&other.hp>0&&distance(e,other)<w.splash)damage(s,other,w.damage*.4,m.kind);effect(s,'hit',m.x,m.y,m.kind==='torpedo'?38:10,{color:w.color});m.life=0;}
+  if(distance(m,e)<e.radius+7){damage(s,e,w.damage,m.kind,m.moduleId);if(w.splash)for(const other of s.enemies)if(other!==e&&other.hp>0&&distance(e,other)<w.splash)damage(s,other,w.damage*.4,m.kind,m.moduleId);effect(s,'hit',m.x,m.y,m.kind==='torpedo'?38:10,{color:w.color});m.life=0;}
  }
  s.missiles=s.missiles.filter(m=>m.life>0);s.enemies=s.enemies.filter(e=>e.hp>0);
- if(!s.spawnQueue.length&&!s.enemies.length){s.missiles=[];const reward=TD_WAVES[s.wave-1].reward;s.credits+=reward;s.stats.earned+=reward;s.phase=s.wave===TD_WAVES.length?'won':'prep';Object.assign(s.records.at(-1),{gateAfter:s.gateHp,outcome:s.phase==='won'?'won':'cleared',duration:s.waveTime,reward});event(s,s.phase==='won'?'won':'waveCleared',{wave:s.wave,reward});}
+ if(!s.spawnQueue.length&&!s.enemies.length){s.missiles=[];const reward=tdWaves(s)[s.wave-1].reward;s.credits+=reward;s.stats.earned+=reward;s.phase=s.wave===tdWaves(s).length?'won':'prep';Object.assign(s.records.at(-1),{gateAfter:s.gateHp,outcome:s.phase==='won'?'won':'cleared',duration:s.waveTime,reward});event(s,s.phase==='won'?'won':'waveCleared',{wave:s.wave,reward});}
 }
 function stepTD(s,dt){if(!Number.isFinite(dt)||dt<=0)return s;let remaining=Math.min(dt,2);while(remaining>1e-9){const slice=Math.min(1/30,remaining);tick(s,slice);remaining-=slice;}return s;}
 
-return {TD_WIDTH,TD_HEIGHT,TD_SIEGE,TD_ROUTE,TD_ANCHORS,TD_WEAPONS,TD_ENEMIES,TD_WAVES,TD_ROUTE_LENGTH,createTD,getTDCost,platformRadiusTD,weaponRangeTD,batteryOriginTD,buildTD,eraseTD,undoTD,setPriorityTD,unleashTD,launchTD,pointOnTDRoute,stepTD};
+return {TD_WIDTH,TD_HEIGHT,TD_SIEGE,TD_ROUTE,TD_ANCHORS,TD_WEAPONS,TD_ENEMIES,TD_WAVES,TD_KILLBOX_ROUTE,TD_KILLBOX_ANCHORS,TD_KILLBOX_WEAPONS,TD_KILLBOX_WAVES,tdRoute,tdWaves,tdWeapons,TD_ROUTE_LENGTH,createTD,getTDCost,platformRadiusTD,weaponRangeTD,batteryOriginTD,buildTD,eraseTD,undoTD,repositionKillbox,setPriorityTD,unleashTD,launchTD,pointOnTDRoute,damageFactorTD,stepTD};
 })();
 modules["toy-td-render.mjs"]=(()=>{
-const {TD_ROUTE,TD_WEAPONS,batteryOriginTD,platformRadiusTD,weaponRangeTD} = modules["toy-td-core.mjs"];
+const {tdRoute,tdWeapons,batteryOriginTD,platformRadiusTD,weaponRangeTD} = modules["toy-td-core.mjs"];
 const INK={missile:'#ffd17e',cannon:'#89e9ff',torpedo:'#ff91e3',tractor:'#7cf5a5',reactor:'#7cf5a5',siege:'#ffbd76',armour:'#d8e9ef'};
 const TAU=Math.PI*2;
+
+// Preview the route itself, not only a range circle that disappears outside
+// the drawing camera. Sampling is bounded and uses the simulation's origins.
+function routeCoverageTD(state,selected,pen='missile',stroke=null){
+ const chosen=state.platforms.find(p=>p.id===selected),spec=tdWeapons(state)[pen];
+ const preview=chosen&&spec?{origin:stroke?.length?batteryOriginTD(chosen,{points:stroke}):chosen,range:weaponRangeTD(chosen,{kind:pen},state),kind:pen}:null;
+ const batteries=state.platforms.flatMap(p=>p.modules.map(m=>({origin:batteryOriginTD(p,m),range:weaponRangeTD(p,m,state),kind:m.kind})));
+ const route=tdRoute(state),spans=[];let coveredLength=0,overlapLength=0,totalLength=0;
+ const reaches=(b,q)=>Math.hypot(b.origin.x-q.x,b.origin.y-q.y)<=b.range;
+ for(let i=1;i<route.length;i++){
+  const a=route[i-1],b=route[i],length=Math.hypot(b.x-a.x,b.y-a.y),count=Math.max(1,Math.ceil(length/18));
+  for(let j=0;j<count;j++){
+   const point=t=>({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t}),start=point(j/count),end=point((j+1)/count),mid=point((j+.5)/count);
+   const covered=!!preview&&reaches(preview,mid),hits=batteries.filter(m=>reaches(m,mid));
+   const guns=hits.filter(m=>m.kind!=='tractor').length+(covered&&pen!=='tractor'?1:0),tractor=hits.some(m=>m.kind==='tractor')||(covered&&pen==='tractor');
+   const overlap=covered&&guns>0&&tractor;
+   spans.push({a:start,b:end,covered,overlap,guns,tractor});totalLength+=length/count;if(covered)coveredLength+=length/count;if(overlap)overlapLength+=length/count;
+  }
+ }
+ return {spans,coveredLength,overlapLength,totalLength};
+}
 
 // All weapons stay at the exact points the player drew. Widths, labels and
 // emission accents have a screen-space minimum so those marks survive on phones.
 function drawTDBattle(ctx,state,{width,height,view,selected,pen='missile',stroke=null,time=0}){
- const z=view.z,px=1/z,prep=state.phase==='prep',focused=prep&&!view.rotated&&z>1;
+ const z=view.z,px=1/z,prep=state.phase==='prep',killbox=state.scenario==='killbox',route=tdRoute(state);
+ const focused=prep&&!view.rotated&&(z>1||(killbox&&state.platforms.some(p=>p.id===selected&&Math.abs(p.x-view.x)<1&&Math.abs(p.y-view.y)<1)));
  const line=(points)=>{if(!points?.length)return;ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);for(let i=1;i<points.length;i++)ctx.lineTo(points[i].x,points[i].y);ctx.stroke();};
  const ring=(x,y,r,color,w=1,fill=false)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx[fill?'fillStyle':'strokeStyle']=color;ctx.lineWidth=w;fill?ctx.fill():ctx.stroke();};
  const text=(s,x,y,size,color,dy=0)=>{ctx.save();ctx.translate(x,y);if(view.rotated)ctx.rotate(-Math.PI/2);ctx.font=`800 ${size*px}px ui-rounded, system-ui, sans-serif`;ctx.fillStyle=color;ctx.textAlign='center';ctx.fillText(s,0,dy*px);ctx.restore();};
@@ -4184,13 +4251,15 @@ function drawTDBattle(ctx,state,{width,height,view,selected,pen='missile',stroke
  for(let i=0;i<110;i++){const x=(i*137.37+17)%width,y=(i*i*31.71+29)%height;ctx.fillStyle=i%13===0?'#c8dfe67a':'#7da5b022';ctx.fillRect(x,y,i%13===0?2:1,1);}
  ctx.translate(width/2,height/2);ctx.scale(z,z);if(view.rotated)ctx.rotate(Math.PI/2);ctx.translate(-view.x,-view.y);ctx.lineJoin='round';ctx.lineCap='round';
  // The chalk corridor is subordinate to ships: a broad, quiet continuous path.
- ctx.strokeStyle='#112b37';ctx.lineWidth=52;line(TD_ROUTE);ctx.strokeStyle='#34535d';ctx.lineWidth=1.1*px;ctx.setLineDash([2*px,9*px]);line(TD_ROUTE);ctx.setLineDash([]);
- for(let i=1;i<TD_ROUTE.length;i++){const a=TD_ROUTE[i-1],b=TD_ROUTE[i],d=Math.hypot(b.x-a.x,b.y-a.y);if(d<180)continue;const t=.56;ctx.save();ctx.translate(a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t);ctx.rotate(Math.atan2(b.y-a.y,b.x-a.x));ctx.strokeStyle='#78929a';ctx.lineWidth=1.7*px;ctx.beginPath();ctx.moveTo(-6*px,-5*px);ctx.lineTo(0,0);ctx.lineTo(-6*px,5*px);ctx.stroke();ctx.restore();}
+ ctx.strokeStyle='#112b37';ctx.lineWidth=52;line(route);ctx.strokeStyle='#34535d';ctx.lineWidth=1.1*px;ctx.setLineDash([2*px,9*px]);line(route);ctx.setLineDash([]);
+ if(killbox&&prep){const coverage=routeCoverageTD(state,selected,pen,stroke);for(const span of coverage.spans){if(!span.covered)continue;ctx.strokeStyle=span.overlap?'#a5ffb980':(INK[pen]||'#ffe5a5')+'70';ctx.lineWidth=span.overlap?12*px:7*px;line([span.a,span.b]);ctx.strokeStyle=span.overlap?'#d9ffe6':INK[pen]||'#ffe5a5';ctx.lineWidth=2*px;line([span.a,span.b]);}}
+ for(let i=1;i<route.length;i++){const a=route[i-1],b=route[i],d=Math.hypot(b.x-a.x,b.y-a.y);if(d<180)continue;const t=.56;ctx.save();ctx.translate(a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t);ctx.rotate(Math.atan2(b.y-a.y,b.x-a.x));ctx.strokeStyle='#78929a';ctx.lineWidth=1.7*px;ctx.beginPath();ctx.moveTo(-6*px,-5*px);ctx.lineTo(0,0);ctx.lineTo(-6*px,5*px);ctx.stroke();ctx.restore();}
  const chosen=state.platforms.find(p=>p.id===selected);
- if(prep&&chosen){const weapon=TD_WEAPONS[pen];if(weapon){let origin=chosen;const m=chosen.modules.find(m=>m.kind===pen);if(stroke)origin=batteryOriginTD(chosen,{points:stroke});else if(m)origin=batteryOriginTD(chosen,m);ctx.setLineDash([3*px,9*px]);ring(origin.x,origin.y,weaponRangeTD(chosen,m||{kind:pen}),'#d8d19736',px);ctx.setLineDash([]);}}
+ if(prep&&chosen){const weapon=tdWeapons(state)[pen];if(weapon){let origin=chosen;const m=chosen.modules.find(m=>m.kind===pen);if(stroke)origin=batteryOriginTD(chosen,{points:stroke});else if(m&&!killbox)origin=batteryOriginTD(chosen,m);ctx.setLineDash([3*px,9*px]);ring(origin.x,origin.y,weaponRangeTD(chosen,m||{kind:pen},state),'#d8d19736',px);ctx.setLineDash([]);}}
  for(let index=0;index<state.platforms.length;index++){
   const p=state.platforms[index],active=p.id===selected,built=p.strokes.length>0;
   const buildRadius=platformRadiusTD(p);
+  if(killbox&&!prep&&built&&active){ring(p.x,p.y,buildRadius+7*px,'#ffe1a614',0,true);ctx.setLineDash([3*px,6*px]);ring(p.x,p.y,buildRadius+7*px,'#ffe1a6',1.5*px);ctx.setLineDash([]);}
   if(prep){ctx.setLineDash([5*px,7*px]);ring(p.x,p.y,buildRadius,active?'#ffdb92':'#75929899',active?2*px:px);ctx.setLineDash([]);if(active)ring(p.x,p.y,buildRadius,'#ffd17e09',0,true);}
   if(built){
    // A crooked cut-paper chassis envelopes the player's own geometry.
@@ -4211,13 +4280,14 @@ function drawTDBattle(ctx,state,{width,height,view,selected,pen='missile',stroke
    for(const m of p.modules){const o=batteryOriginTD(p,m),color=INK[m.kind];ring(o.x,o.y,2.5*px,color,0,true);if(m.salvoRemaining>0){const a=time*19;ctx.strokeStyle='#fff5d2';ctx.lineWidth=2*px;ctx.beginPath();ctx.moveTo(o.x-Math.cos(a)*7*px,o.y-Math.sin(a)*7*px);ctx.lineTo(o.x+Math.cos(a)*7*px,o.y+Math.sin(a)*7*px);ctx.stroke();}}
    if(p.siege){const firing=p.siege.activeRemaining>0,vent=p.siege.ventRemaining>0;text(firing?'UNLEASHED':vent?'VENTING':'SIEGE HEART',view.rotated?maxX+34*px:p.x,view.rotated?p.y:maxY+24*px,9,firing?'#ffe6aa':vent?'#ffc2a1':'#d5e7e9');}
   }
-  if(prep){const offset=built?76:0;ring(p.x,p.y+offset,11*px,'#10212f',0,true);text(String(index+1),p.x,p.y+offset,12,active?'#ffe1a6':'#d6e9ea',4);if(!built&&!focused)text('DRAW',p.x,p.y,8,'#b9ced3',21);}
+  if(prep){const offset=built?76:0;ring(p.x,p.y+offset,11*px,'#10212f',0,true);text(String(index+1),p.x,p.y+offset,12,active?'#ffe1a6':'#d6e9ea',4);if(!built&&!focused)text('DRAW',p.x,p.y,8,'#b9ced3',21);if(killbox&&!focused&&p.name)text(p.name.toUpperCase(),view.rotated?p.x+54*px:p.x,view.rotated?p.y:p.y+54*px,10,active?'#ffe1a6':'#d1e5ec');}
+  if(killbox&&!prep&&built){const labelX=view.rotated?p.x+buildRadius+13*px:p.x,labelY=view.rotated?p.y:p.y+buildRadius+13*px;ring(labelX,labelY,9*px,'#10212f',0,true);text(String(index+1),labelX,labelY,11,active?'#ffe1a6':'#d6e9ea',4);}
  }
  // A recognisable evacuation aperture with a broken, hand-inked space-station rim.
- const gate=TD_ROUTE[TD_ROUTE.length-1],gateColor=state.gateHp<=6?'#ff8a84':'#8bffcf';
+ const gate=route[route.length-1],gateColor=state.gateHp<=6?'#ff8a84':'#8bffcf';
  ctx.save();ctx.translate(gate.x,gate.y);const gr=Math.max(31,15*px);ring(0,0,gr*1.16,'#102c35',0,true);ctx.strokeStyle=gateColor;ctx.lineWidth=3*px;
  for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(0,0,gr,i*TAU/3+.12,(i+1)*TAU/3-.12);ctx.stroke();}
- ring(0,0,gr*.66,gateColor+'55',2*px);ring(0,0,gr*.34,gateColor+'33',0,true);ctx.restore();text('LAST EXIT',gate.x,gate.y,10,'#c3ffe7',31);
+ ring(0,0,gr*.66,gateColor+'55',2*px);ring(0,0,gr*.34,gateColor+'33',0,true);ctx.restore();text('LAST EXIT',gate.x,gate.y,10,'#c3ffe7',killbox?-25:31);
  // Draw the flagship above its escorts, so a tightly packed column cannot
  // erase the most important enemy silhouette on the phone battlefield.
  for(let layer=0;layer<2;layer++)for(const e of state.enemies){
@@ -4235,6 +4305,7 @@ function drawTDBattle(ctx,state,{width,height,view,selected,pen='missile',stroke
   ctx.strokeStyle='#fff2d8';ctx.lineWidth=1.4*px;ctx.beginPath();ctx.moveTo(size*.25,0);ctx.lineTo(-size*.2,0);ctx.stroke();
   if(heavy||boss){ctx.strokeStyle=color;ctx.lineWidth=1.1*px;ctx.beginPath();ctx.moveTo(-size*.5,-size*.3);ctx.lineTo(size*.3,-size*.25);ctx.moveTo(-size*.5,size*.3);ctx.lineTo(size*.3,size*.25);ctx.stroke();}
   ctx.restore();
+  if(killbox&&e.speedFactor<1){const radius=size+5*px;ctx.strokeStyle='#a4ffd2';ctx.lineWidth=2*px;for(let j=0;j<3;j++){ctx.beginPath();ctx.arc(e.x,e.y,radius,j*TAU/3-time*.8,j*TAU/3+1.25-time*.8);ctx.stroke();}if(e===state.enemies.find(q=>q.speedFactor<1))text('PINNED',e.x,e.y,10,'#bdffda',27);}
   if(shield){ctx.save();ctx.strokeStyle='#9fffc16b';ctx.lineWidth=1.5*px;ctx.beginPath();ctx.arc(e.x,e.y,65,time*.6,time*.6+TAU*.72);ctx.stroke();ctx.restore();}
   if(e.hp<e.maxHp){ctx.save();ctx.translate(e.x,e.y);if(view.rotated)ctx.rotate(-Math.PI/2);const bar=(boss?46:20)*px;ctx.fillStyle='#020912';ctx.fillRect(-bar/2,-size-7*px,bar,3*px);ctx.fillStyle=color;ctx.fillRect(-bar/2,-size-7*px,bar*Math.max(0,e.hp/e.maxHp),3*px);ctx.restore();}
   if(boss){const labelX=e.x+(view.rotated?-27:-59)*px,labelY=e.y+(view.rotated?59:-27)*px;ctx.strokeStyle='#ff9ebb99';ctx.lineWidth=px;ctx.beginPath();ctx.moveTo(e.x,e.y);ctx.lineTo(labelX,labelY);ctx.stroke();ctx.save();ctx.translate(labelX,labelY);if(view.rotated)ctx.rotate(-Math.PI/2);ctx.fillStyle='#241623';ctx.fillRect(-28*px,-11*px,56*px,17*px);ctx.restore();text('SIEGE',labelX,labelY,10,'#ffd0df');}
@@ -4257,9 +4328,23 @@ function drawTDBattle(ctx,state,{width,height,view,selected,pen='missile',stroke
   for(let i=0;i<14;i++){const progress=(time*.12+i/14)%1,x=gate.x-170+progress*210,y=gate.y+(i%5-2)*17;ctx.strokeStyle=i%3?'#a7ffda':'#ffdda1';ctx.lineWidth=2*px;ctx.beginPath();ctx.moveTo(x-10,y-4);ctx.lineTo(x,y);ctx.lineTo(x-10,y+4);ctx.moveTo(x-17,y);ctx.lineTo(x-27,y);ctx.stroke();}
  }
  ctx.restore();
+ if(killbox&&focused&&width>=360&&height>=260){
+  // Keep the strategic consequence in view while the main camera is close
+  // enough to draw. This is the actual route/range, not a decorative minimap.
+  const coverage=routeCoverageTD(state,selected,pen,stroke),iw=112,ih=78,ix=width-iw-10,iy=62;
+  const bounds=route.reduce((b,p)=>({minX:Math.min(b.minX,p.x),maxX:Math.max(b.maxX,p.x),minY:Math.min(b.minY,p.y),maxY:Math.max(b.maxY,p.y)}),{minX:Infinity,maxX:-Infinity,minY:Infinity,maxY:-Infinity});
+  const scale=Math.min((iw-14)/(bounds.maxX-bounds.minX),(ih-28)/(bounds.maxY-bounds.minY));
+  const point=p=>({x:ix+7+(p.x-bounds.minX)*scale,y:iy+22+(p.y-bounds.minY)*scale});
+  ctx.save();ctx.fillStyle='#07121eee';ctx.fillRect(ix,iy,iw,ih);ctx.strokeStyle='#5c7887';ctx.lineWidth=1;ctx.strokeRect(ix,iy,iw,ih);
+  ctx.font='800 9px system-ui, sans-serif';ctx.textAlign='left';ctx.fillStyle='#dceaf0';ctx.fillText('FIRING COVERAGE',ix+7,iy+13);
+  ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#496370';ctx.lineWidth=3;line(route.map(point));
+  for(const span of coverage.spans){if(!span.covered)continue;ctx.strokeStyle=span.overlap?'#c0ffcf':INK[pen]||'#fff0b5';ctx.lineWidth=span.overlap?5:3;line([point(span.a),point(span.b)]);}
+  for(const p of state.platforms){const q=point(p);ctx.beginPath();ctx.arc(q.x,q.y,p.id===selected?3.5:2,0,TAU);ctx.fillStyle=p.id===selected?'#fff4d8':'#8299a5';ctx.fill();}
+  ctx.restore();
+ }
 }
 
-return {drawTDBattle};
+return {routeCoverageTD,drawTDBattle};
 })();
 modules["toy-td-audio.mjs"]=(()=>{
 const {createToyAudio} = modules["toy-audio.mjs"];
@@ -4296,6 +4381,133 @@ function createTDAudio({engine=createToyAudio()}={}){
 
 return {createTDAudio};
 })();
+modules["toy-td-record.mjs"]=(()=>{
+// Portable, local-only evidence. A report is data, never executable HTML or a replay script.
+const TD_REPORT_VERSION=1;
+const TD_REPORT_MAX_BYTES=2*1024*1024;
+const MAX_ACTIONS=500;
+const ACTION_BYTES=256*1024;
+const fields=['initialSeed','seed','scenario','scenarioId','nextId','eventSeq','time','phase','wave','gateHp','maxGateHp','credits','platforms','enemies','missiles','effects','shards','events','records','spawnQueue','waveTime','stats'];
+const bytes=value=>new TextEncoder().encode(typeof value==='string'?value:JSON.stringify(value)).length;
+function copyData(value,depth=0,budget={nodes:0}){
+ if(depth>24||++budget.nodes>300000)throw new Error('Report data is too complex.');
+ if(value===null||typeof value==='boolean')return value;
+ if(typeof value==='number'){if(!Number.isFinite(value))throw new Error('Report numbers must be finite.');return value;}
+ if(typeof value==='string'){if(value.length>20000||/[<>]/.test(value))throw new Error('Report strings must be plain text.');return value;}
+ if(Array.isArray(value)){if(value.length>20000)throw new Error('Report array is too large.');return value.map(item=>copyData(item,depth+1,budget));}
+ if(!value||typeof value!=='object'||![Object.prototype,null].includes(Object.getPrototypeOf(value)))throw new Error('Report accepts plain JSON data only.');
+ const result={};
+ for(const key of Object.keys(value)){
+  if(['__proto__','prototype','constructor'].includes(key))throw new Error('Unsafe report property.');
+  if(key.length>100||/[<>]/.test(key))throw new Error('Invalid report property.');
+  const descriptor=Object.getOwnPropertyDescriptor(value,key);
+  if(!descriptor||!('value' in descriptor))throw new Error('Report accessors are not supported.');
+  result[key]=copyData(descriptor.value,depth+1,budget);
+ }
+ return result;
+}
+function validState(s){
+ if(!s||!['prep','battle','won','lost'].includes(s.phase)||!Array.isArray(s.platforms)||s.platforms.length>32)throw new Error('Invalid TD snapshot.');
+ for(const key of ['time','wave','gateHp','credits'])if(!Number.isFinite(s[key])||s[key]<0)throw new Error(`Invalid snapshot ${key}.`);
+ if(!Number.isInteger(s.wave))throw new Error('Invalid wave.');
+ for(const p of s.platforms){
+  if(!p||typeof p.id!=='string'||!Number.isFinite(p.x)||!Number.isFinite(p.y)||!Array.isArray(p.strokes)||p.strokes.length>80||!Array.isArray(p.modules)||p.modules.length>80)throw new Error('Invalid defence platform.');
+  for(const part of [...p.strokes,...p.modules]){
+   if(!part||typeof part.id!=='string'||typeof part.kind!=='string'||!Array.isArray(part.points)||!part.points.length||part.points.length>180)throw new Error('Invalid drawn part.');
+   for(const point of part.points)if(!point||!Number.isFinite(point.x)||!Number.isFinite(point.y)||Math.abs(point.x)>100000||Math.abs(point.y)>100000)throw new Error('Invalid drawing coordinate.');
+  }
+ }
+ return s;
+}
+// Call at the time of the action: drawing points are copied, not retained by reference.
+function recordTDAction(state,action,data={}){
+ if(typeof action!=='string'||!action.length||action.length>80)throw new Error('Invalid action name.');
+ const entry=copyData({seq:(state.actionSeq||0)+1,time:state.time,wave:state.wave,action,data});
+ if(bytes(entry)>65536)throw new Error('Action is too large.');
+ state.actionSeq=entry.seq;
+ if(!Array.isArray(state.actionHistory))state.actionHistory=[];
+ state.actionHistory.push(entry);
+ while(state.actionHistory.length>MAX_ACTIONS||bytes(state.actionHistory)>ACTION_BYTES){state.actionHistory.shift();state.actionHistoryDropped=(state.actionHistoryDropped||0)+1;}
+ return entry;
+}
+function exportTDRun(state){
+ const selected={};for(const key of fields)if(state[key]!==undefined)selected[key]=state[key];
+ const snapshot=validState(copyData(selected));
+ const report={format:'surely-td-run',version:TD_REPORT_VERSION,seed:{initial:state.initialSeed??null,current:state.seed??null,initialKnown:Number.isInteger(state.initialSeed)},snapshot,actions:copyData((state.actionHistory||[]).slice(-MAX_ACTIONS)),actionsDropped:state.actionHistoryDropped||0};
+ // Undo stacks duplicate every drawing many times; they are intentionally not exported.
+ if(bytes(report)>TD_REPORT_MAX_BYTES)throw new Error('This run exceeds the 2 MB report limit.');
+ return parseTDReport(report);
+}
+function parseTDReport(input){
+ if(typeof input==='string'&&bytes(input)>TD_REPORT_MAX_BYTES)throw new Error('Report exceeds the 2 MB limit.');
+ let value;try{value=typeof input==='string'?JSON.parse(input):input;}catch{throw new Error('Report is not valid JSON.');}
+ const report=copyData(value);
+ if(bytes(report)>TD_REPORT_MAX_BYTES)throw new Error('Report exceeds the 2 MB limit.');
+ if(report.format!=='surely-td-run'||report.version!==TD_REPORT_VERSION)throw new Error('Unsupported TD report format.');
+ validState(report.snapshot);
+ if(!report.seed||typeof report.seed.initialKnown!=='boolean'||![report.seed.initial,report.seed.current].every(n=>n===null||(Number.isInteger(n)&&n>=0&&n<=4294967295)))throw new Error('Invalid seed provenance.');
+ if(report.seed.initialKnown!==(report.seed.initial!==null))throw new Error('Invalid initial seed provenance.');
+ if(!Array.isArray(report.actions)||report.actions.length>MAX_ACTIONS||!Number.isInteger(report.actionsDropped)||report.actionsDropped<0)throw new Error('Invalid action history.');
+ for(const action of report.actions)if(!action||typeof action.action!=='string'||!action.action.length||action.action.length>80||!Number.isFinite(action.time)||!Number.isInteger(action.wave)||!Number.isInteger(action.seq)||action.seq<1)throw new Error('Invalid action entry.');
+ return report;
+}
+
+return {TD_REPORT_VERSION,TD_REPORT_MAX_BYTES,recordTDAction,exportTDRun,parseTDReport};
+})();
+modules["toy-td-killbox-session.mjs"]=(()=>{
+const {createTD} = modules["toy-td-core.mjs"];
+const {parseTDReport,recordTDAction} = modules["toy-td-record.mjs"];
+const sessionClone=value=>JSON.parse(JSON.stringify(value));
+function requireKillbox(state){
+ if(state?.scenario!=='killbox')throw new Error('This defence is not a Killbox run.');
+ if(!Array.isArray(state.platforms)||state.platforms.length!==4)throw new Error('Invalid Killbox positions.');
+ const ids=new Set();
+ for(const p of state.platforms){
+  if(!p||ids.has(p.id)||!Array.isArray(p.strokes)||!Array.isArray(p.modules)||p.modules.length>4)throw new Error('Invalid Killbox defence.');
+  ids.add(p.id);
+  for(const part of p.strokes)if(!['missile','cannon','tractor','armour'].includes(part.kind)||!Number.isFinite(part.cost)||part.cost<0)throw new Error('Invalid Killbox part.');
+  for(const m of p.modules)if(!['missile','cannon','tractor'].includes(m.kind)||!p.strokes.some(part=>part.id===m.id&&part.kind===m.kind))throw new Error('Invalid Killbox battery.');
+ }
+}
+function copyActions(target,source){
+ target.actionHistory=sessionClone(source.actionHistory||[]);
+ target.actionHistoryDropped=source.actionHistoryDropped||0;
+ target.actionSeq=Math.max(source.actionSeq||0,...target.actionHistory.map(a=>a.seq),0);
+}
+// Keep the player's exact geometry and targeting, not battle damage/cooldowns/earnings.
+function reworkKillbox(state){
+ requireKillbox(state);
+ const next=createTD(state.initialSeed??42,'killbox');
+ next.platforms=sessionClone(state.platforms);
+ const spent=next.platforms.reduce((total,p)=>total+p.strokes.reduce((n,part)=>n+part.cost,0),0);
+ if(!Number.isFinite(spent)||spent<0||spent>240)throw new Error('This defence exceeds the 240 Warshard budget.');
+ next.stats.spent=spent;next.credits=240-spent;
+ next.nextId=Math.max(Number.isInteger(state.nextId)?state.nextId:0,...next.platforms.flatMap(p=>p.strokes.map(part=>Number(part.id.match(/-(\d+)$/)?.[1])||0)));
+ for(const p of next.platforms){
+  for(const m of p.modules){m.cooldown=0;m.salvoRemaining=0;m.salvoTimer=0;delete m.targetId;}
+ }
+ copyActions(next,state);
+ recordTDAction(next,'rework',{previous:{gate:state.gateHp,kills:state.stats?.kills||0,waveTime:state.waveTime||0,records:sessionClone(state.records||[])}});
+ return next;
+}
+// Start with schema defaults, then retain every exported current simulation counter.
+// The report remains detached; continuing cannot mutate the saved evidence object.
+function restoreKillboxReport(input){
+ const report=parseTDReport(input),snapshot=report.snapshot;
+ requireKillbox(snapshot);
+ const next=Object.assign(createTD(report.seed.initial??42,'killbox'),snapshot,{history:[]});
+ if(!report.seed.initialKnown)delete next.initialSeed;
+ else next.initialSeed=report.seed.initial;
+ if(report.seed.current!==null)next.seed=report.seed.current;
+ for(const key of ['enemies','missiles','effects','shards','events','records','spawnQueue'])if(!Array.isArray(next[key]))throw new Error(`Invalid saved ${key}.`);
+ if(!next.stats||typeof next.stats!=='object'||!Number.isFinite(next.stats.spent))throw new Error('Invalid saved statistics.');
+ if(next.enemies.some(e=>!['scout','runner','armour','screen','flagship'].includes(e.kind))||next.spawnQueue.some(e=>!['scout','runner','armour','screen','flagship'].includes(e.kind))||next.missiles.some(m=>!['missile','torpedo'].includes(m.kind)))throw new Error('Invalid saved convoy.');
+ copyActions(next,{actionHistory:report.actions,actionHistoryDropped:report.actionsDropped});
+ return next;
+}
+
+return {reworkKillbox,restoreKillboxReport};
+})();
 modules["toy-td.mjs"]=(()=>{
 const {createTD,buildTD,eraseTD,undoTD,setPriorityTD,launchTD,stepTD,unleashTD,TD_SIEGE,batteryOriginTD,TD_ROUTE,TD_ANCHORS,TD_WEAPONS,TD_WAVES} = modules["toy-td-core.mjs"];
 const {createTDAudio} = modules["toy-td-audio.mjs"];
@@ -4307,9 +4519,10 @@ function initTD(){
   app.innerHTML=`<header class="td-header"><div class="td-brand">LAST EXIT<small>A DRAWN TOWER DEFENCE · ONE RUN</small></div><div class="td-meters"><div><strong id="td-gate"></strong><span>Gate integrity</span></div><div class="td-money"><strong id="td-money"></strong><span>Warshards</span></div></div></header><div class="td-main"><section class="td-arena" aria-label="Defence map"><canvas id="td-canvas" aria-label="Tap a numbered platform to build your defences"></canvas><div class="td-arena-tools"><button id="td-map">Whole route</button><span class="td-map-label" id="td-map-label">ENEMY APPROACH → EVACUATION GATE</span></div><div class="td-banner" id="td-banner">Tap a numbered platform. Draw a missile battery.</div><div class="td-result" id="td-result" hidden></div></section><aside class="td-side"><div class="td-briefing"><div class="td-eyebrow" id="td-phase"></div><h1 id="td-heading"></h1><p class="td-description" id="td-brief"></p><div class="td-wave-progress" id="td-progress"></div></div><section class="td-platform" id="td-platform" hidden><div class="td-platform-title"><span id="td-site"></span><span class="td-capacity" id="td-capacity"></span></div><div class="td-pens" id="td-pens"></div><p class="td-tool-note" id="td-tool-note"></p><div class="td-priority"><span>Target</span><button data-priority="First">First</button><button data-priority="Strong">Strong</button><button id="td-undo">Undo</button></div></section><div class="td-status" id="td-status" role="status" aria-live="polite"></div><div class="td-actions"><button class="td-launch" id="td-launch"></button><div class="td-secondary"><button id="td-deselect">View route</button><button id="td-speed">Speed · 1×</button></div><div class="td-footer"><a href="${free.href}">Back to Free Draw</a><button id="td-mobile-speed">1× speed</button><button id="td-sound">Sound on</button></div></div></aside></div>`;
   document.body.append(app);
   const $=s=>app.querySelector(s),canvas=$('#td-canvas'),ctx=canvas.getContext('2d'),audio=createTDAudio();
+  const killboxURL=new URL(location.href);killboxURL.searchParams.set('encounter','killbox');const killboxLink=document.createElement('a');killboxLink.href=killboxURL.href;killboxLink.textContent='New: The Killbox · a short tactical encounter';killboxLink.style.cssText='display:block;color:#bfffd5;font-size:13px;margin-bottom:12px';$('.td-briefing').prepend(killboxLink);
   let state=createTD(),selected=null,pen='missile',stroke=null,zoomed=false,speed=1,last=0,acc=0,eventSeen=0,shotsSeen=0,sound=true,paused=false,raf,view={x:600,y:380,z:1},noticeUntil=0,doneAt=0;
   const colours={missile:'#ffc56f',cannon:'#a2e4ff',torpedo:'#f0a0fc',tractor:'#7dffc0',reactor:'#85f2c4',siege:'#ff956e',armour:'#d0dfea',erase:'#ffffff'};
-  const tools=[['missile','Missiles','30 · swarm salvo'],['cannon','Cannon','25 · close defence'],['torpedo','Torpedoes','45 · armour killer'],['tractor','Tractor','35 · slows one ship'],['reactor','Reactor','50 · +4 batteries'],['siege','Siege heart','90 · forge a flagship'],['armour','Hull','Free · your design'],['erase','Erase','Full refund']];
+  const tools=[['missile','Missiles','30 · swarm salvo'],['cannon','Cannon','25 · close defence'],['torpedo','Torpedoes','45 · armour killer'],['tractor','Stasis beam','35 · slows one ship'],['reactor','Reactor','50 · +4 batteries'],['siege','Siege heart','90 · forge a flagship'],['armour','Hull','Free · your design'],['erase','Erase','Full refund']];
   $('#td-pens').innerHTML=tools.map(([id,name,sub])=>`<button data-pen="${id}" style="--pen:${colours[id]}"><strong><span class="td-pen-dot"></span>${name}</strong><small>${sub}</small></button>`).join('');
   const picker=document.createElement('div');picker.className='td-picker';$('#td-pens').before(picker);picker.innerHTML='<h2>What will you draw?</h2>';picker.append($('#td-pens'));const closePicker=document.createElement('button');closePicker.textContent='Back to drawing';closePicker.className='td-picker-close';picker.append(closePicker);const pickerButton=document.createElement('button');pickerButton.id='td-picker-open';picker.before(pickerButton);pickerButton.onclick=()=>picker.classList.add('open');closePicker.onclick=()=>picker.classList.remove('open');
   const platform=()=>state.platforms.find(p=>p.id===selected);
@@ -4373,11 +4586,139 @@ function initTD(){
 
 return {initTD};
 })();
+modules["toy-td-killbox.mjs"]=(()=>{
+const {createTD,buildTD,eraseTD,undoTD,setPriorityTD,launchTD,stepTD,tdWaves,tdWeapons,damageFactorTD,repositionKillbox} = modules["toy-td-core.mjs"];
+const {drawTDBattle} = modules["toy-td-render.mjs"];
+const {createTDAudio} = modules["toy-td-audio.mjs"];
+const {recordTDAction,exportTDRun,parseTDReport} = modules["toy-td-record.mjs"];
+const {reworkKillbox,restoreKillboxReport} = modules["toy-td-killbox-session.mjs"];
+// A separate presentation of the same engine. No Free Draw state is read or written.
+function initKillbox(){
+ document.body.classList.add('td-mode');
+ const app=document.createElement('main');app.id='td-app';app.className='kb-app';
+ app.innerHTML=`<header class="kb-header"><div><strong>THE KILLBOX</strong><small>A DRAWN DEFENCE · ONE ASSAULT</small></div><div class="kb-meters"><div><b id="kb-money">240</b><small>WARSHARDS</small></div><div><b id="kb-gate">8 / 8</b><small>GATE</small></div></div></header>
+ <div class="kb-main"><section class="kb-arena"><canvas id="kb-canvas" aria-label="Defence map. Select a position below, then draw your weapons."></canvas><div class="kb-view-controls"><button id="kb-map">Whole battlefield</button><button id="kb-view" hidden>Draw close-up</button></div><div id="kb-battle-call" class="kb-battle-call"></div><div class="kb-map-key" id="kb-key">Tap a position to start your defence</div></section>
+ <aside class="kb-dock"><section id="kb-brief"><span class="kb-eyebrow">THE JOB</span><h1>Make them regret this route.</h1><p>Stop the convoy reaching the gate. Build a killing zone—or spread your fire. You have one budget.</p><button id="kb-threats-toggle" aria-expanded="false">What’s coming? <span>View the convoy</span></button><div id="kb-threats" hidden></div></section>
+ <nav class="kb-sites" id="kb-sites" aria-label="Defence positions"></nav>
+ <section id="kb-workbench" hidden><div class="kb-site-heading"><strong id="kb-site-name"></strong><span id="kb-slots"></span></div><div id="kb-tools" class="kb-tools"></div><p id="kb-tool-fact" class="kb-tool-fact"></p><div class="kb-edit-row"><button id="kb-hull">Hull · free</button><button id="kb-erase">Erase · refund</button><button id="kb-move">Move ship</button><button id="kb-undo">Undo</button></div><p class="kb-honest">One stroke = one battery. Shape is yours; weapon and position change the fight.</p></section>
+ <section id="kb-inspect" hidden><strong id="kb-inspect-title"></strong><p id="kb-inspect-data"></p><div class="kb-target"><span>Target</span><button data-kb-target="First">Nearest gate</button><button data-kb-target="Strong">Strongest</button></div></section>
+ <section id="kb-result" hidden></section><div id="kb-status" role="status" aria-live="polite"></div>
+ <div class="kb-actions"><button id="kb-launch" class="kb-primary">Draw your first battery</button><div class="kb-utilities"><button id="kb-share">Share run</button><button id="kb-speed">1×</button><button id="kb-sound">Sound on</button><button id="kb-more">More</button></div></div>
+ </aside></div><dialog id="kb-menu"><h2>Your defence</h2><p>Share run saves your drawings and battle records. Nothing is uploaded automatically.</p><button id="kb-share-menu">Share this run</button><button id="kb-rework-menu">Rework this defence</button><button id="kb-clear">Start a blank defence</button><a id="kb-classic">Original six-wave TD</a><a id="kb-free">Unrestricted Free Draw</a><button id="kb-close-menu">Back to game</button></dialog>`;
+ document.body.append(app);
+ const $=q=>app.querySelector(q),canvas=$('#kb-canvas'),ctx=canvas.getContext('2d'),audio=createTDAudio();
+ const free=new URL(location.href);free.searchParams.delete('mode');free.searchParams.delete('encounter');$('#kb-free').href=free.href;
+ const classic=new URL(free);classic.searchParams.set('mode','td');$('#kb-classic').href=classic.href;
+ let state=createTD(42,'killbox'),selected=null,pen='missile',close=false,stroke=null,paused=false,speed=2,sound=true,last=0,acc=0,raf=0,noticeUntil=0,lastResult=null,resultShown=false,view={x:600,y:380,z:1,rotated:false},lastStored=0,menuWasPaused=false,moving=false;
+ const clone=v=>JSON.parse(JSON.stringify(v));
+ const platform=()=>state.platforms.find(p=>p.id===selected);
+ const names={missile:'Missiles',cannon:'Blast cannon',tractor:'Stasis beam'};
+ const colours={missile:'#ffd17e',cannon:'#89e9ff',tractor:'#7cf5a5'};
+ const specs=()=>tdWeapons(state);
+ const siteName=p=>p?.label||p?.name||`Position ${state.platforms.indexOf(p)+1}`;
+ const action=(kind,data={})=>{try{recordTDAction(state,kind,data);}catch{notice('That action was too large to log. Your drawing is still in the run snapshot.');}};
+ function notice(message){$('#kb-status').textContent=message;noticeUntil=performance.now()+5000;}
+ function storeReport(){lastStored=state.time;if(!state.platforms.some(p=>p.strokes.length)&&!state.records.length)return;try{localStorage.setItem('surely.killbox.last-run.v1',JSON.stringify(exportTDRun(state)));}catch{notice('Could not save on this device. Use Share run to keep a copy.');}}
+ let saved=null;try{const raw=localStorage.getItem('surely.killbox.last-run.v1');if(raw){const report=parseTDReport(raw);if(report.snapshot.scenario==='killbox')saved=report;}}catch{/* An invalid old save must not prevent a fresh run. */}
+ if(saved){const resume=document.createElement('button');resume.id='kb-continue';resume.textContent='Continue your saved defence';$('#kb-brief').prepend(resume);resume.onclick=()=>{try{state=restoreKillboxReport(saved);const previous=state.actionHistory?.findLast(a=>a.action==='rework')?.data?.previous;if(previous)lastResult={gate:previous.gate,kills:previous.kills};paused=state.phase==='battle';resultShown=false;selected=null;close=false;resume.remove();notice(paused?'Your battle is paused. Resume when ready.':'Your drawings are back.');sync();}catch{notice('That saved run could not be restored. You can still start a new defence.');}};}
+ async function share(){
+  let file;try{file=new File([JSON.stringify(exportTDRun(state),null,2)],'killbox-run.json',{type:'application/json'});}catch{notice('This run could not be exported. Try sharing a smaller defence.');return;}
+  try{if(navigator.canShare?.({files:[file]})&&navigator.share){await navigator.share({files:[file],title:'My Killbox defence'});return;}}catch(e){if(e.name==='AbortError')return;}
+  const url=URL.createObjectURL(file),a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Run saved. Attach killbox-run.json here so I can see your drawings and battle.');
+ }
+ $('#kb-share').onclick=$('#kb-share-menu').onclick=share;
+ $('#kb-more').onclick=()=>{menuWasPaused=paused;if(state.phase==='battle')paused=true;$('#kb-menu').showModal();sync();};
+ $('#kb-close-menu').onclick=()=>$('#kb-menu').close();
+ $('#kb-menu').addEventListener('close',()=>{if(state.phase==='battle')paused=menuWasPaused;sync();});
+ function rework(blank=false){
+  storeReport();if(state.records.length)lastResult={gate:state.gateHp,kills:state.stats.kills};
+  state=blank?createTD(42,'killbox'):reworkKillbox(state);
+  selected=null;close=false;stroke=null;paused=false;resultShown=false;lastStored=0;acc=0;moving=false;$('#kb-result').hidden=true;
+  if(blank)lastResult=null;
+  $('#kb-menu').close();notice(blank?'Fresh budget. Draw a new defence.':'Your drawings and pre-battle budget are back. Same convoy. Try a different plan.');sync();
+ }
+ $('#kb-rework-menu').onclick=()=>rework();
+ $('#kb-clear').onclick=()=>{if(confirm('Start a blank defence? Your current run is saved locally and can be shared before clearing.'))rework(true);};
+ $('#kb-threats-toggle').onclick=()=>{const panel=$('#kb-threats');panel.hidden=!panel.hidden;$('#kb-threats-toggle').setAttribute('aria-expanded',String(!panel.hidden));};
+ function select(id){if(moving){const from=selected;moving=false;if(id!==from){const result=repositionKillbox(state,from,id);action('reposition',{from,to:id,ok:result.ok});notice(result.ok?'Ship repositioned. Same weapons, different firing opportunities.':result.reason);storeReport();}selected=id;close=false;}else{selected=id;close=state.phase==='prep';}stroke=null;sync();render();}
+ $('#kb-sites').innerHTML=state.platforms.map((p,i)=>`<button data-kb-site="${p.id}"><b>${i+1}</b><span>${siteName(p)}</span></button>`).join('');
+ app.querySelectorAll('[data-kb-site]').forEach(b=>b.onclick=()=>select(b.dataset.kbSite));
+ $('#kb-tools').innerHTML=['missile','cannon','tractor'].map(kind=>`<button data-kb-pen="${kind}" style="--ink:${colours[kind]}"><strong>${names[kind]}</strong><span>${specs()[kind].cost} shards</span></button>`).join('');
+ app.querySelectorAll('[data-kb-pen]').forEach(b=>b.onclick=()=>{pen=b.dataset.kbPen;sync();});
+ $('#kb-hull').onclick=()=>{pen='armour';sync();};$('#kb-erase').onclick=()=>{pen='erase';sync();};
+ $('#kb-move').onclick=()=>{moving=true;close=false;notice('Choose a destination. Occupied positions swap ships. No cost.');sync();};
+ $('#kb-undo').onclick=()=>{if(undoTD(state)){action('undo');storeReport();notice('Undone. Full refund.');sync();}};
+ $('#kb-map').onclick=()=>{close=false;moving=false;sync();};$('#kb-view').onclick=()=>{close=!close;sync();};
+ app.querySelectorAll('[data-kb-target]').forEach(b=>b.onclick=()=>{setPriorityTD(state,selected,b.dataset.kbTarget);action('target',{platformId:selected,priority:b.dataset.kbTarget});sync();});
+ $('#kb-speed').onclick=()=>{speed=speed===1?2:speed===2?4:1;action('speed',{speed});sync();};
+ $('#kb-sound').onclick=()=>{sound=!sound;audio.setEnabled(sound);if(sound)audio.unlock();sync();};
+ $('#kb-launch').onclick=()=>{
+  audio.unlock();if(state.phase==='battle'){paused=!paused;action('pause',{paused});sync();return;}
+  if(state.phase!=='prep'){rework();return;}
+  if(!state.platforms.some(p=>p.modules.length)){notice('Choose a position, then draw a missile rack.');return;}
+  action('launch',{platforms:state.platforms});launchTD(state);paused=false;close=false;selected=null;resultShown=false;notice('Convoy inbound. Watch where your fire overlaps.');storeReport();audio.event({type:'wave'});sync();
+ };
+ function sync(){
+  const p=platform(),battle=state.phase==='battle',done=state.phase==='won'||state.phase==='lost';
+  app.classList.toggle('kb-battle',battle);app.classList.toggle('kb-done',done);app.classList.toggle('kb-building',!!p&&!battle&&!done);app.classList.toggle('kb-moving',moving);
+  $('#kb-money').textContent=battle||done?state.stats.kills:Math.floor(state.credits);$('#kb-money').nextElementSibling.textContent=battle||done?'DESTROYED':'WARSHARDS';$('#kb-gate').textContent=`${state.gateHp} / ${state.maxGateHp}`;
+  $('#kb-brief').hidden=!!p||battle||done;$('#kb-workbench').hidden=!p||battle||done||moving;$('#kb-sites').hidden=done;$('#kb-inspect').hidden=!p||!battle;
+  $('#kb-view').hidden=!p||battle||done||moving;$('#kb-view').textContent=close?'See firing coverage':'Draw close-up';
+  app.querySelectorAll('[data-kb-site]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kbSite===selected)));
+  if(p){$('#kb-site-name').textContent=siteName(p);$('#kb-slots').textContent=`${p.modules.length} / ${p.capacity} batteries`;
+   app.querySelectorAll('[data-kb-pen]').forEach(b=>{b.setAttribute('aria-pressed',String(pen===b.dataset.kbPen));b.disabled=false;b.title=state.credits<specs()[b.dataset.kbPen].cost?'Inspect this weapon. Erase a part to afford it.':p.modules.length>=p.capacity?'Inspect this weapon. Erase a battery to make space.':'Choose this weapon to draw it.';});
+   for(const [id,kind] of [['#kb-hull','armour'],['#kb-erase','erase']])$(id).setAttribute('aria-pressed',String(pen===kind));
+   const w=specs()[pen],facts={missile:'Long reach. A stream of homing missiles; weaker per hit than the cannon.',cannon:'Short reach. Every blast hits a cluster. Pinned enemies stay in the blast zone.',tractor:'Holds up to 3 nearby enemies at 35% speed. No damage. Does not collect Warshards.'};
+   $('#kb-tool-fact').textContent=w?`${facts[pen]} ${pen==='tractor'?'':pen==='missile'?`${w.salvo} × ${w.damage} damage (${+(w.damage*damageFactorTD(state,'armour',pen)).toFixed(1)} each vs armour).`:`${w.damage} per target (${+(w.damage*damageFactorTD(state,'armour',pen)).toFixed(1)} vs armour).`}`:pen==='armour'?'Free hull artwork. Does not add armour or firepower in this mode.':'Tap a drawn part to remove it. Every Warshard comes back.';
+   $('#kb-undo').disabled=!state.history.length;
+   $('#kb-move').disabled=!p.strokes.length;
+   $('#kb-inspect-title').textContent=siteName(p);const rows=Object.values(state.records.at(-1)?.modules||{}).filter(m=>m.platformId===p.id);$('#kb-inspect-data').textContent=`${Math.round(rows.reduce((n,m)=>n+(m.damage||0),0))} damage · ${rows.reduce((n,m)=>n+(m.kills||0),0)} kills`;
+   app.querySelectorAll('[data-kb-target]').forEach(b=>b.setAttribute('aria-pressed',String(p.priority===b.dataset.kbTarget)));
+  }
+  $('#kb-key').textContent=moving?'Choose the ship’s new position · occupied positions swap':done?'Your defence stays. Rework it and face the same convoy.':battle?(paused?'PAUSED · inspect your positions':'Tap a position to inspect its contribution'):!p?'Choose a position. Build your own killing zone.':close?'Draw inside the ring · lift your finger to build':'Bright route = firing reach · choose Draw close-up to build';
+  const count=state.platforms.reduce((n,p)=>n+p.modules.length,0);
+  $('#kb-launch').textContent=battle?(paused?'Resume assault':'Pause & inspect'):done?'Rework this defence':count?'Run this defence →':'Draw your first battery';
+  $('#kb-speed').textContent=`${speed}×`;$('#kb-sound').textContent=sound?'Sound on':'Sound off';
+  const groups=tdWaves(state)[0].groups;$('#kb-threats').textContent=groups.map(([kind,n])=>`${n} ${kind==='armour'?'armoured cruisers':kind==='runner'?'fast runners':'raiders'}`).join(' → ')+'. Same attack on every retry. No surprise immunities.';
+  if(battle){const pinned=state.enemies.filter(e=>e.speedFactor<1).length;$('#kb-battle-call').textContent=pinned?`${pinned} PINNED · KEEP THEM UNDER FIRE`:state.enemies.some(e=>e.kind==='armour')?'ARMOURED CONVOY':`${state.enemies.length} on route · ${state.spawnQueue.length} incoming`;}
+  else $('#kb-battle-call').textContent='';
+  if(done&&!resultShown){resultShown=true;storeReport();showResult();}
+ }
+ function showResult(){
+  const r=state.records.at(-1),damage=Object.values(r?.modules||{}),best=state.platforms.map(p=>({name:siteName(p),damage:damage.filter(m=>m.platformId===p.id).reduce((n,m)=>n+(m.damage||0),0)})).sort((a,b)=>b.damage-a.damage)[0];
+  const leaks=Object.entries(r?.leaks||{}).map(([kind,n])=>`${n} ${kind==='armour'?'cruisers':kind==='runner'?'runners':'raiders'}`).join(', ');
+  const compare=lastResult?`Previous: ${lastResult.gate} gate. Now: ${state.gateHp}. ${state.gateHp>lastResult.gate?'Your changes held more of the line.':state.gateHp<lastResult.gate?'That change let more through.':'Same gate result. Try moving firepower.'}`:'';
+  const result=$('#kb-result');result.hidden=false;result.replaceChildren();
+  for(const [tag,value] of [['span','ASSAULT COMPLETE'],['h2',state.gateHp===state.maxGateHp?'Not one got through.':state.phase==='won'?'The gate held.':'They broke through.'],['p',`${state.stats.kills} destroyed · ${state.gateHp} gate remaining${leaks?`. Escaped: ${leaks}.`:'.'}`],['p',best?.damage?`${best.name} delivered the most damage: ${Math.round(best.damage)}.`:'No weapon landed a hit.'],['p',compare]]){if(!value)continue;const el=document.createElement(tag);el.textContent=value;result.append(el);}
+  const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Battle breakdown';details.append(summary);
+  for(const p of state.platforms){const rows=damage.filter(m=>m.platformId===p.id);if(!rows.length)continue;const line=document.createElement('p');line.textContent=`${siteName(p)}: ${Math.round(rows.reduce((n,m)=>n+m.damage,0))} damage · ${rows.reduce((n,m)=>n+m.kills,0)} kills`;details.append(line);}
+  for(const escape of r?.leakDetails||[]){const line=document.createElement('p');line.textContent=`Escaped ${escape.kind==='armour'?'cruiser':escape.kind}: ${Math.round(escape.hp)} / ${escape.maxHp} hull left`;details.append(line);}
+  result.append(details);
+ }
+ function screenPoint(e){const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/view.z,y=(e.clientY-r.top-r.height/2)/view.z;return view.rotated?{x:y+view.x,y:-x+view.y}:{x:x+view.x,y:y+view.y};}
+ function screenPointFor(p){render();const r=canvas.getBoundingClientRect(),x=p.x-view.x,y=p.y-view.y;return{x:r.left+r.width/2+(view.rotated?-y:x)*view.z,y:r.top+r.height/2+(view.rotated?x:y)*view.z};}
+ canvas.addEventListener('pointerdown',e=>{audio.unlock();if(!['prep','battle'].includes(state.phase))return;const q=screenPoint(e);if(!close||state.phase==='battle'){const p=state.platforms.find(p=>Math.hypot(p.x-q.x,p.y-q.y)<100);if(p)select(p.id);return;}if(!selected)return;canvas.setPointerCapture(e.pointerId);if(pen==='erase'){const result=eraseTD(state,selected,q);action('erase',{platformId:selected,point:q,result});notice(result.ok?'Part erased. Full refund.':result.reason);storeReport();sync();return;}stroke=[q];});
+ canvas.addEventListener('pointermove',e=>{if(stroke){const q=screenPoint(e);if(stroke.length<10000&&Math.hypot(q.x-stroke.at(-1).x,q.y-stroke.at(-1).y)>2)stroke.push(q);}});
+ canvas.addEventListener('pointerup',()=>{if(!stroke)return;const points=stroke;stroke=null;const result=buildTD(state,selected,pen,points);action('draw',{platformId:selected,kind:pen,points,ok:result.ok,reason:result.reason||null});notice(result.ok?pen==='armour'?'Your hull. Purely your design.':`${names[pen]} online. ${state.credits} Warshards left.`:result.reason);if(result.ok){audio.event({type:'build'});storeReport();}sync();});
+ canvas.addEventListener('pointercancel',()=>{stroke=null;});
+ function render(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(canvas.width!==Math.round(r.width*d)||canvas.height!==Math.round(r.height*d)){canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);}const p=platform(),portrait=r.height>r.width*1.08;view=close&&p?{x:p.x,y:p.y,z:Math.min(r.width/260,r.height/260),rotated:false}:{x:600,y:380,z:portrait?Math.min((r.width-36)/760,(r.height-108)/1200):Math.min((r.width-40)/1200,(r.height-100)/760),rotated:portrait};ctx.setTransform(d,0,0,d,0,0);drawTDBattle(ctx,state,{width:r.width,height:r.height,view,selected,pen,stroke,time:performance.now()/1000});}
+ function frame(t){const dt=Math.min(.05,(t-last)/1000||0);last=t;if(!document.hidden){acc+=paused?0:dt*speed;while(acc>=1/60){stepTD(state,1/60);acc-=1/60;}render();if(t-(frame.synced||0)>150){sync();frame.synced=t;}if(noticeUntil&&t>noticeUntil){$('#kb-status').textContent='';noticeUntil=0;}if(state.phase==='battle'&&state.time-lastStored>5)storeReport();audio.update(state);}else acc=0;raf=requestAnimationFrame(frame);}
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){storeReport();audio.background();}});
+ window.addEventListener('pagehide',storeReport);
+ window.td={state:()=>state,screenPointFor,status:()=>({phase:state.phase,selected,pen,close,view,paused,speed}),report:()=>exportTDRun(state),step:(seconds=1)=>{for(let t=0;t<seconds;t+=1/60)stepTD(state,1/60);sync();return state;},dispose:()=>{cancelAnimationFrame(raf);audio.dispose();}};
+ sync();raf=requestAnimationFrame(frame);return window.td;
+}
+
+return {initKillbox};
+})();
 modules["toy-entry.mjs"]=(()=>{
 const {startFreeDraw} = modules["toy.mjs"];
 const {initTD} = modules["toy-td.mjs"];
+const {initKillbox} = modules["toy-td-killbox.mjs"];
 // Only the chosen mode starts: TD never loads or changes a Free Draw save.
-if(new URLSearchParams(location.search).get('mode')==='td')initTD();
+if(new URLSearchParams(location.search).get('mode')==='td'){
+ if(new URLSearchParams(location.search).get('encounter')==='killbox')initKillbox();else initTD();
+}
 else{
  startFreeDraw();
  const destination=new URL(location.href);destination.searchParams.set('mode','td');
@@ -4386,6 +4727,8 @@ else{
   const link=document.createElement('a');link.href=destination.href;link.className='td-mode-link';link.textContent='Last Exit · Play tower defence';
   link.style.cssText='display:block;padding:16px;margin:8px 0;color:#b7efda;border:1px solid #b7efda;border-radius:12px;font:650 18px/1.4 system-ui';
   target.append(link);
+  const experiment=new URL(destination);experiment.searchParams.set('encounter','killbox');
+  const killboxLink=link.cloneNode();killboxLink.href=experiment.href;killboxLink.textContent='The Killbox · Short tactical encounter';target.append(killboxLink);
  }
 }
 
