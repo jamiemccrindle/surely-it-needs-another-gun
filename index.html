@@ -85,6 +85,25 @@ body.shipyard{height:100dvh;min-height:650px;min-width:360px;padding:0 16px 10px
 @media(max-height:550px) and (max-width:950px){.active-tool{display:none}.build-sidebar{flex-basis:83px;grid-template-rows:38px 30px}.build-sidebar .toolbar{grid-template-rows:1fr}.shipyard header{max-height:70px;min-height:65px}.arena-actions{grid-template-columns:repeat(4,1fr)}#touch-navigation{position:absolute;left:14px;right:auto;bottom:105px;z-index:6}#touch-navigation span{display:none}}
 #welcome-start-top{margin:0 0 18px}.welcome-dialog #welcome-start-top{background:transparent;color:#23414a;border-color:#6b8384}
 #intro-readable-caption{font-size:17px;line-height:1.55;color:#fff5dc;border-left:3px solid #b8ef95;padding-left:12px}
+.mobile-battle-controls{display:none}
+body.shipyard.mobile-battle{padding:0}
+.mobile-battle .stage{position:fixed;inset:0;width:100vw;height:100dvh;min-height:0;border:0;border-radius:0;z-index:40}
+.mobile-battle header,.mobile-battle .build-sidebar,.mobile-battle .battle-sidebar,.mobile-battle .arena-actions,.mobile-battle .active-tool,.mobile-battle #touch-navigation,.mobile-battle footer{display:none!important}
+.mobile-battle .mobile-battle-controls{display:flex;position:absolute;top:max(10px,env(safe-area-inset-top));left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right));gap:6px;z-index:8}
+.shipyard .mobile-battle-controls button{min-height:44px;font-size:11px;padding:9px;background:#102533e8;border-color:#6d9ca8}.mobile-battle-controls #battle-more{margin-left:auto;color:#ffd4aa}
+.mobile-battle #mode{top:calc(max(10px,env(safe-area-inset-top)) + 55px)}.mobile-battle #boss-status{top:calc(max(10px,env(safe-area-inset-top)) + 79px)}
+.mobile-battle .camera{bottom:max(12px,env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right))}.mobile-battle #canvas-caption{display:none}
+@media(max-width:360px){.shipyard .mobile-battle-controls button{font-size:10px;padding:7px}.mobile-battle .mobile-battle-controls{gap:4px}}
+@media(max-width:800px),(max-width:950px) and (pointer:coarse){
+ .shipyard:not(.mobile-battle) .arena-actions #attack,.shipyard:not(.mobile-battle) .arena-actions #open-encounters{display:none}
+ .shipyard:not(.mobile-battle) .arena-actions{grid-template-columns:1fr 1fr}
+ .shipyard .arena-actions button,.shipyard header nav button,#touch-navigation button,.shipyard .camera button{min-height:44px}
+ .shipyard header{min-height:88px;max-height:100px}
+ .build-sidebar{flex-basis:151px;grid-template-rows:94px 44px}.shipyard .build-sidebar .toolbar button,.shipyard .build-sidebar>button{min-height:44px}
+ .mobile-inspect .battle-sidebar{top:100px}
+ .mobile-battle .camera button{min-width:44px}
+}
+@media(max-height:550px) and (max-width:950px){.shipyard header{min-height:76px;max-height:80px}.build-sidebar{flex-basis:99px;grid-template-rows:44px 44px}#touch-navigation{bottom:121px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.canvas-caption,.toast{transition:none}}
 </style></head>
 <body class="shipyard">
@@ -2517,7 +2536,7 @@ modules["toy-bundle.mjs"]=(()=>{
 // Deliberately public-only. Never traverse server imports or configuration.
 const GAME_FILES = ['toy.html','toy.css','toy-crew.mjs','toy-power.mjs','toy-structure.mjs','toy-shields.mjs','toy-warshards.mjs','toy-flight.mjs','toy-restore.mjs','toy-core.mjs','toy-launch-preview.mjs','toy-audio.mjs','toy-capital-render.mjs','toy-reactor-render.mjs','toy-shield-render.mjs','toy-warshard-render.mjs','toy-flight-render.mjs','toy-save.mjs','toy-bundle.mjs','toy-export.mjs','toy-recorder.mjs','toy.mjs'];
 
-GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs');
+GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs');
 
 async function buildStandalone(read) {
   const sources=Object.fromEntries(await Promise.all(GAME_FILES.map(async name=>[name,await read(name)])));
@@ -2802,7 +2821,7 @@ const steps=[
  ['CONNECT','Armour','Start on the gold bridge. Draw out to a protective outline. Keep it all connected.',2],
  ['ARM','Missiles','Scribble red zigzags touching the outside edge. Keep the outward launch path clear.',3],
  ['MOVE','Engines','Attach a blue cluster. Without connected engines, your ship has no thrust.',4],
- ['FIGHT','Send in an attack','The fleet fights automatically. Space / Freeze & Draw gives you the pen back.',5],
+ ['FIGHT','Let it fly → More Enemies','On mobile, fly first, then send enemies in. On desktop, use Send in an attack. Freeze & Draw gives you the pen back.',5],
  ['COLLECT → REBUILD','Tractor Beam / Fast Restore','Attached green tractors scoop up Warshards while time runs. With no enemies left, spend them to restore your fleet.',6]
 ];
 function initWelcome({fresh=false,pause=()=>{},resume=()=>{}}={}){
@@ -2815,7 +2834,7 @@ function initWelcome({fresh=false,pause=()=>{},resume=()=>{}}={}){
  '<div class="safety-strip"><b>Before launch</b><span>Reactor → connected armour → missiles → engines</span></div>'+
  '<div class="safety-grid">'+steps.map(([title,tool,detail,n])=>'<article class="safety-card"><div class="safety-card-title"><span>'+n+'</span><h3>'+title+'</h3></div>'+diagram(n)+'<b>'+tool+'</b><p>'+detail+'</p></article>').join('')+'</div>'+
  '<section class="safety-checks"><h3>IF IT DOESN’T WORK</h3><div><p><b>Grey weapons?</b> Join their armour to their own gold bridge. A gap breaks the connection.</p><p><b>Firing stops?</b> Check power. Enlarge that ship’s reactor; unfreeze to recharge. Hover a mount on desktop to check its launch.</p><p><b>Need to change something?</b> Freeze, use Eraser, then redraw. Undo restores a mistaken cut.</p><p><b>Building an escort?</b> Each one needs its own reactor, connected weapons and engines. Ships cannot share power.</p></div></section>'+
- '<p class="welcome-controls">Desktop: drag to draw · scroll to pan · pinch to zoom · F to fit · Space to freeze.<br>Phone experiment: DRAW / PAN switches your finger’s job. Use + / − to zoom.</p>'+
+ '<p class="welcome-controls">Desktop: drag to draw · scroll to pan · pinch to zoom · F to fit · Space to freeze.<br>Phone: one finger draws, two fingers pan and pinch to zoom. PAN switches to one-finger camera movement. Let it fly opens full-screen battle; exiting freezes the game.</p>'+
  '<div class="welcome-bottom"><button id="welcome-start" class="primary">GIVE ME THE PEN →</button><span>This guide is always under HOW TO PLAY.</span></div>';
  const video=dialog.querySelector('video'),watch=dialog.querySelector('#watch-intro');
  const bytes=Math.floor((introVideo.length-introVideo.indexOf(',')-1)*.75);
@@ -2841,8 +2860,78 @@ function initWelcome({fresh=false,pause=()=>{},resume=()=>{}}={}){
 
 return {initWelcome};
 })();
+modules["toy-mobile-battle.mjs"]=(()=>{
+// Full-viewport fallback also works on phones without the Fullscreen API.
+function initMobileBattle({isPaused,isDefeated,freeze,setPan,attack,chooseEnemy}){
+ const stage=document.querySelector('#stage'),root=document.documentElement;
+ const mobile=matchMedia('(max-width:800px), (max-width:950px) and (pointer:coarse)');
+ const controls=document.createElement('nav');controls.className='mobile-battle-controls';controls.setAttribute('aria-label','Full-screen battle controls');
+ controls.innerHTML='<button id="battle-exit">✕ FREEZE & DRAW</button><button id="battle-more">MORE ENEMIES +</button><button id="battle-choose" aria-label="Choose an enemy encounter">CHOOSE</button>';
+ stage.append(controls);
+ let active=false,native=false,pending=false;
+ function leave(pauseGame){
+  if(!active)return;
+  active=false;document.body.classList.remove('mobile-battle');setPan(false);
+  if(document.fullscreenElement===root)void document.exitFullscreen().catch(()=>{});
+  native=false;
+  if(pauseGame)freeze();
+ }
+ function sync(){
+  if(active&&native&&!document.fullscreenElement&&!pending){leave(true);return;}
+  const wanted=mobile.matches&&!isPaused()&&!isDefeated();
+  if(!wanted){leave(false);return;}
+  if(active)return;
+  active=true;document.body.classList.remove('mobile-inspect');document.body.classList.add('mobile-battle');setPan(true);
+  document.querySelector('#mobile-status').setAttribute('aria-expanded','false');document.querySelector('#mobile-status').textContent='FLEET STATUS';
+  // Browser chrome can only be hidden when entry follows a user gesture.
+  if(root.requestFullscreen&&navigator.userActivation?.isActive&&!pending){
+   pending=true;
+   void root.requestFullscreen().then(()=>{native=true;if(!active&&document.fullscreenElement===root)void document.exitFullscreen().catch(()=>{});}).catch(()=>{native=false;}).finally(()=>{pending=false;});
+  }
+ }
+ controls.querySelector('#battle-exit').onclick=()=>leave(true);
+ controls.querySelector('#battle-more').onclick=attack;
+ controls.querySelector('#battle-choose').onclick=chooseEnemy;
+ document.addEventListener('fullscreenchange',()=>{
+  if(document.fullscreenElement===root){native=true;return;}
+  if(native){native=false;leave(true);}
+ });
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&active&&!document.querySelector('dialog[open]'))leave(true);});
+ mobile.addEventListener('change',()=>{if(active&&!mobile.matches)leave(true);else sync();});
+ return {sync};
+}
+
+return {initMobileBattle};
+})();
+modules["toy-touch-camera.mjs"]=(()=>{
+function initTouchCamera({canvas,readView,screenToWorld,applyView,cancelStroke,finish}){
+ const fingers=new Map();let gesture=null,consumed=false;
+ const point=e=>{const r=canvas.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};};
+ const pair=()=>{const [a,b]=[...fingers.values()];return {middle:{x:(a.x+b.x)/2,y:(a.y+b.y)/2},distance:Math.max(1,Math.hypot(a.x-b.x,a.y-b.y))};};
+ function handle(e){
+  if(e.pointerType!=='touch'){if(e.isPrimary===false)e.stopImmediatePropagation();return;}
+  if(e.type==='pointerdown'){
+   fingers.set(e.pointerId,point(e));
+   if(fingers.size===2&&!consumed){const p=pair();cancelStroke();gesture={anchor:screenToWorld(p.middle),zoom:readView().zoom,distance:p.distance};consumed=true;}
+   if(consumed)canvas.setPointerCapture(e.pointerId);
+  }else if(e.type==='pointermove'){
+   if(fingers.has(e.pointerId))fingers.set(e.pointerId,point(e));
+   if(gesture&&fingers.size>=2){const p=pair(),r=canvas.getBoundingClientRect(),zoom=Math.max(.025,Math.min(3,gesture.zoom*p.distance/gesture.distance));applyView({zoom,x:gesture.anchor.x-(p.middle.x-r.width/2)/zoom,y:gesture.anchor.y-(p.middle.y-r.height/2)/zoom});}
+  }else{
+   fingers.delete(e.pointerId);
+   if(consumed){gesture=null;e.stopImmediatePropagation();if(!fingers.size){consumed=false;finish();}return;}
+  }
+  if(consumed||e.isPrimary===false)e.stopImmediatePropagation();
+ }
+ for(const event of ['pointerdown','pointermove','pointerup','pointercancel'])canvas.addEventListener(event,handle,true);
+}
+
+return {initTouchCamera};
+})();
 modules["toy.mjs"]=(()=>{
 const {initWelcome} = modules["toy-welcome.mjs"];
+const {initMobileBattle} = modules["toy-mobile-battle.mjs"];
+const {initTouchCamera} = modules["toy-touch-camera.mjs"];
 const {fleetAdvice} = modules["toy-readiness.mjs"];
 const {createWorld,addStroke,addEscort,stepWorld,sendWave,sendCapital,sendConvoy,shipBounds,addReactor,powerSummary,setPowerMode,beamStats} = modules["toy-core.mjs"];
 const {setCrewMode,syncCrew,rescueCrew,crewSummary,assignCrew,crewRoleFor,crewOperational} = modules["toy-crew.mjs"];
@@ -2882,7 +2971,10 @@ let selectedCrew=null,rosterSignature='',offlineWeapons=new Set(),connectionHint
 let width=800,height=500,ratio=1;
 let hoverScreen=null,launchCheck=null;
 let touchPanMode=false;
-for(const event of ['pointerdown','pointermove','pointerup','pointercancel'])canvas.addEventListener(event,e=>{if(e.isPrimary===false)e.stopImmediatePropagation();},true);
+let mobileBattle=null;
+initTouchCamera({canvas,readView:()=>view,screenToWorld:toWorld,applyView:next=>{view=next;},cancelStroke:()=>{
+ if(stroke){const previous=history.pop();if(previous){world.parts=structuredClone(previous.parts||previous);if(previous.parts)world.blueprint=structuredClone(previous.blueprint);}stroke=null;}pan=null;hoverScreen=null;
+},finish:()=>{save();updateUI();}});
 const firingKinds=new Set(['missile','gun','torpedo','beam']);
 canvas.addEventListener('pointermove',e=>{hoverScreen=pointer(e);});
 canvas.addEventListener('pointerleave',()=>{if(!stroke)hoverScreen=null;});
@@ -3038,6 +3130,7 @@ const lines=['DAMAGE BY SHIP / WEAPON',...totals.slice(-24).map(t=>`Wave ${t.wav
  $('#battle-records-dialog').showModal();
 };
 function updateUI(){
+ mobileBattle?.sync();
  $('#active-tool-hint').textContent=$('#tool-hint').textContent;
  $('#friendly-fire').textContent=world.friendlyFire===false?'FRIENDLY FIRE: OFF':'FRIENDLY FIRE: ON';$('#friendly-fire').setAttribute('aria-pressed',String(world.friendlyFire!==false));
  $('#friendly-fire-detail').textContent=(world.friendlyFire===false?'Friendly armour stops shots harmlessly.':'Other ships can take friendly hits.')+' Your own ship is always protected.';
@@ -3337,6 +3430,7 @@ $('#touch-draw').onclick=()=>touchMode(false);$('#touch-pan').onclick=()=>touchM
 document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>touchMode(false)));
 $('#mobile-status').onclick=()=>{const open=document.body.classList.toggle('mobile-inspect');$('#mobile-status').setAttribute('aria-expanded',String(open));$('#mobile-status').textContent=open?'CLOSE STATUS':'FLEET STATUS';};
 initWelcome({fresh:world.parts.length<=1&&world.wave===0,pause:()=>{const was=world.paused;world.paused=true;updateUI();return was;},resume:was=>{world.paused=was;updateUI();}});
+mobileBattle=initMobileBattle({isPaused:()=>world.paused,isDefeated:()=>world.defeated,freeze:()=>{world.paused=true;updateUI();save();},setPan:touchMode,attack:()=>attack(),chooseEnemy:()=>$('#encounters-dialog').showModal()});
 
 return {};
 })();</script>
