@@ -132,6 +132,9 @@ body.shipyard.mobile-battle{padding:0}
 }
 #tool-scroll-hint{font-size:10px;color:#a8c6cd;white-space:nowrap;margin-left:auto}
 .mobile-battle #boss-status{top:calc(max(10px,env(safe-area-inset-top)) + 108px)}
+@media(max-width:800px),(max-width:950px) and (pointer:coarse){
+ #touch-navigation button[aria-pressed=true]{background:#263f49;color:#e0f4ef;border-color:#8bb9b4}
+}
 </style></head>
 <body class="shipyard">
 <header><h1>Surely it needs <i>another gun.</i></h1><div class="warshards-hud"><span>WARSHARDS</span><b id="warshards">0</b><small id="warshards-detail">Draw a tractor beam to harvest.</small></div><nav aria-label="Game menus"><button id="mobile-status" aria-expanded="false">FLEET STATUS</button><button id="open-help">HOW TO PLAY</button><button id="open-experiments">EXPERIMENTS</button><button id="open-menu">SAVE & SHARE</button></nav></header>
@@ -158,7 +161,7 @@ body.shipyard.mobile-battle{padding:0}
 <button id="test-fire" title="Freeze time first. Test a copy without damaging your fleet.">TEST FIRE · SAFE COPY</button>
 <div class="instructions"><span id="tool-hint">Armour intercepts shots. Draw a protective outline, not a filled-in shape.</span></div>
 </aside>
-<div class="arena-column"><div class="arena-actions" aria-label="Battle controls"><button id="pause">▶ LET IT FLY <kbd>Space</kbd></button><button id="attack" class="primary">SEND IN AN ATTACK →</button><button id="open-encounters">CHOOSE ENEMY</button><button id="fast-restore" title="Immediately restore everything your Warshards can afford">FAST RESTORE</button></div><div class="active-tool"><b>DRAWING TOOL</b><span id="active-tool-hint"></span></div>
+<div class="arena-column"><div class="arena-actions" aria-label="Battle controls"><button id="pause">LET IT FLY <kbd>Space</kbd></button><button id="attack" class="primary">SEND IN AN ATTACK →</button><button id="open-encounters">CHOOSE ENEMY</button><button id="fast-restore" title="Immediately restore everything your Warshards can afford">FAST RESTORE</button></div><div class="active-tool"><b>DRAWING TOOL</b><span id="active-tool-hint"></span></div>
   <section class="stage" id="stage">
     <canvas id="space" aria-label="Spaceship drawing and battle canvas"></canvas>
     <section id="boss-status" class="boss-status" aria-label="Boss status" hidden><b id="boss-name"></b><span id="boss-phase"></span><meter id="boss-health" min="0" max="1" value="1" aria-label="Boss hull"></meter><div id="boss-bays"></div><small id="boss-hint"></small></section>
@@ -3308,7 +3311,7 @@ function updateUI(){
  $('#canvas-caption').style.opacity=world.parts.length<=1&&!world.enemies.length&&!world.bossResult?'1':'0';
  $('#mode').textContent=world.defeated?'CORE LOST · YOUR DRAWING IS STILL HERE':world.paused?'TIME FROZEN · THE PEN IS YOUR SUPERPOWER':`LIVE FIRE · ATTACK ${world.wave} · SPACE TO FREEZE & DRAW`;
  $('#mode').style.color=world.paused?'#77e9dc':'#ffb47c';
- $('#pause').innerHTML=world.defeated?'REBUILD COMMAND CORE':world.paused?'▶ LET IT FLY <kbd>Space</kbd>':'❚❚ FREEZE & DRAW <kbd>Space</kbd>';
+ $('#pause').innerHTML=world.defeated?'REBUILD COMMAND CORE':world.paused?'Let it fly <kbd>Space</kbd>':'Freeze & draw <kbd>Space</kbd>';
  $('#attack').textContent=world.enemies.length?'MORE TROUBLE →':'SEND IN AN ATTACK →';$('#zoom').textContent=`${Math.round(view.zoom*100)}%`;
  $('#readout').textContent=`${(pods*10).toLocaleString()} missiles / salvo\n${world.parts.filter(p=>p.kind==='torpedo').length} torpedo tubes · ${world.parts.filter(p=>p.kind==='beam').length} spinal beams\n${escorts} escorts\n${world.parts.length.toLocaleString()} fleet parts\nCore ${Math.ceil(core?.hp||0)} / 240\n${world.enemies.length} hostiles · ${world.stats.enemyKills} wrecks`;
  $('#sound').textContent=sound?'SOUND ON':'SOUND OFF';$('#sound').setAttribute('aria-pressed',String(sound));$('#undo').disabled=!history.length;
@@ -3520,7 +3523,7 @@ $('#encounters-dialog').addEventListener('click',event=>{if(event.target.closest
 for(const button of document.querySelectorAll('[data-tool]'))button.title=hints[button.dataset.tool]||'Erase whole parts. Undo restores them.';
 choose(tool);
 
-const touchNav=document.createElement('div');touchNav.id='touch-navigation';touchNav.innerHTML='<button id="touch-draw" aria-pressed="true">✎ DRAW</button><button id="touch-pan" aria-pressed="false">↔ PAN</button><span>Swipe tools below →</span>';
+const touchNav=document.createElement('div');touchNav.id='touch-navigation';touchNav.innerHTML='<button id="touch-draw" aria-pressed="true">Draw</button><button id="touch-pan" aria-pressed="false">Pan</button><span>Swipe tools below →</span>';
 $('.active-tool').before(touchNav);
 function touchMode(panMode){touchPanMode=panMode;$('#touch-pan').setAttribute('aria-pressed',String(panMode));$('#touch-draw').setAttribute('aria-pressed',String(!panMode));canvas.style.cursor=panMode?'grab':'crosshair';}
 $('#touch-draw').onclick=()=>touchMode(false);$('#touch-pan').onclick=()=>touchMode(true);
