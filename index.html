@@ -60,6 +60,7 @@ body.shipyard{height:100dvh;min-height:650px;min-width:360px;padding:0 16px 10px
 #fleet-power{padding:12px;border:1px solid #347d80;border-radius:9px;background:#102b32;min-height:174px;box-sizing:border-box}#fleet-power b,#fleet-power strong,#fleet-power span,#fleet-power small{display:block}#fleet-power b{font-size:15px;color:#91ffe3}#fleet-power strong{font-size:21px;margin:7px 0}#fleet-power meter{display:block;width:100%;height:22px;accent-color:#75ffcf}#fleet-power span,#fleet-power small{font-size:15px;line-height:1.4;margin-top:6px}#fleet-power.low{border-color:#ff976e;background:#35201c}#fleet-power.low b{color:#ffb18c}#fleet-power.low meter{accent-color:#ff976e}
 #ship-power-list{max-height:240px;overflow:auto;margin-top:10px}#ship-power-list>div{border-top:1px solid #477777;padding:9px 0;min-height:80px}#ship-power-list>div.low{color:#ffbc99}#ship-power-list b{font-size:16px}#ship-power-list span{font-size:14px}#ship-power-list meter{height:16px}
 .friendly-fire-control{padding:10px;border:1px solid #5e7187;border-radius:9px;background:#172331}.friendly-fire-control button{width:100%;font-size:15px}.friendly-fire-control small{display:block;font-size:14px;line-height:1.4;margin-top:7px;color:#d8e4ef}
+#fleet-capacity{padding:10px 12px;border:1px solid #536d7c;border-radius:9px;background:#162734;color:#e2edf3}#fleet-capacity b{display:block;font-size:16px;font-variant-numeric:tabular-nums}#fleet-capacity meter{display:block;width:100%;height:14px;accent-color:#b7efda}#fleet-capacity small{display:block;font-size:13px;line-height:1.5;margin-top:4px}#fleet-capacity.near-limit{border-color:#ffda87}#fleet-capacity.near-limit b{color:#ffda87}#fleet-capacity-message{font-size:15px;line-height:1.4;color:#ffdfa5;margin:8px 0 0}
 /* Share-ready shipyard: primary actions never scroll out of the arena. */
 .arena-actions{display:grid;grid-template-columns:1fr 1.2fr 1fr 1fr;gap:7px;flex-shrink:0}.arena-actions button{font-size:13px;min-height:48px;padding:8px}.arena-actions #pause{border-color:#7fe2da;color:#bbfff4}.arena-actions kbd{display:none}
 .active-tool{height:76px;box-sizing:border-box;overflow:auto;padding:10px 13px;background:#132a37;border:1px solid #355362;border-radius:8px;margin:8px 0;flex-shrink:0;font-size:14px;line-height:1.45}.active-tool b{font-size:11px;letter-spacing:.12em;color:#8be8d6;margin-right:9px}.active-tool span{color:#e0edf2}
@@ -146,6 +147,8 @@ body.sketchbook button:disabled{opacity:.5}
 body.sketchbook #sketch-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:5px}
 body.sketchbook #sketch-title{font-size:21px;line-height:1.2}
 body.sketchbook #sketch-wallet{display:block;font-size:16px;line-height:1.4;color:#b7efda;margin-top:3px}
+body.sketchbook #sketch-capacity{display:block;font-size:14px;line-height:1.4;color:#d7e5ed;font-variant-numeric:tabular-nums}
+body.sketchbook #sketch-capacity.near-limit,body.sketchbook #sketch-instruction.capacity-warning{color:#ffda87}
 body.sketchbook #sketch-instruction{font-size:17px;line-height:1.35;color:#e2edf3;min-height:23px}
 body.sketchbook #sketch-stage-slot{min-height:0;position:relative}
 body.sketchbook #stage{width:100%;height:100%;min-height:0;border:1px solid #5b7487;border-radius:15px;overflow:hidden}
@@ -196,6 +199,13 @@ body.sketchbook .boss-status{top:8px;right:8px;max-width:calc(100% - 16px)}
  body.sketchbook #sketch-restoration{grid-column:2;grid-row:2;align-self:end;z-index:1}
  body.sketchbook:has(#sketch-restoration:not([hidden])) #sketch-instruction{display:none}
 }
+
+#challenge-bar{position:fixed;top:0;left:0;right:0;height:64px;z-index:50;display:flex;gap:10px;align-items:center;padding:8px 12px;background:#132b37;border-bottom:1px solid #7997a2;box-sizing:border-box;color:#f4fafc}#challenge-bar>div{flex:1;min-width:0}#challenge-bar b,#challenge-bar span{display:block;font:700 15px/1.3 system-ui,sans-serif}#challenge-bar span{font-size:12px;font-weight:400;color:#c4dbe3}#challenge-bar button{min-height:44px;font-size:14px}#challenge-fight{background:#b7efda;color:#123c32}#challenge-budget.over-budget{color:#ffb18e}body.challenge-session{padding-top:64px!important}body.sketchbook.challenge-session #sketch-shell{height:calc(100dvh - 64px)}#challenge-dialog{width:min(560px,calc(100vw - 24px));max-height:85dvh;box-sizing:border-box;padding:22px;color:#edf7fa;background:#122735;border:1px solid #a2bec8;border-radius:16px;font:17px/1.5 system-ui,sans-serif}#challenge-dialog .challenge-heading{display:flex;justify-content:space-between;gap:12px;align-items:center}#challenge-dialog h2{font-size:23px;line-height:1.2;margin:0}#challenge-dialog button{min-height:46px;margin:7px 0;font-size:16px}#challenge-dialog label{display:block;margin:14px 0}#challenge-dialog input,#challenge-dialog select{font:inherit;padding:8px;max-width:100%;margin-left:8px}#challenge-dialog a{color:#b7efda}#challenge-notice{color:#ffdcaa;white-space:pre-wrap}#challenge-dialog [hidden]{display:none!important}#challenge-players{padding-left:24px}#challenge-players li{margin:10px 0}body.challenge-session #challenge-dialog::backdrop{background:#030b13dd}@media(max-width:500px){#challenge-bar{gap:6px;padding:6px}#challenge-bar button{font-size:12px;padding:8px;min-width:50px}#challenge-bar b{font-size:13px}#challenge-bar span{font-size:11px}}
+#challenge-dialog #challenge-rule-budget{width:120px}
+body.challenge-session #sketch-wallet,body.challenge-session .warshards-hud{display:none!important}
+#challenge-battle{position:fixed;inset:0;z-index:90;background:#06121d;color:#eaffff;font:16px/1.4 system-ui}#challenge-battle canvas{width:100%;height:100%;display:block}#challenge-battle header{position:absolute;top:18px;left:16px;right:16px;text-align:center;pointer-events:none}#challenge-battle header b{display:block;font-size:clamp(24px,5vw,40px);letter-spacing:.06em}#challenge-battle header span{font-size:14px;color:#c4d9e6}.challenge-scoreboard{position:absolute;top:100px;left:12px;right:12px;display:flex;gap:8px;pointer-events:none}.challenge-scoreboard>div{flex:1;padding:7px;background:#10222ce8;border-top:3px solid;min-width:0}.challenge-scoreboard b,.challenge-scoreboard small{display:block}.challenge-scoreboard small{font-size:11px}.challenge-scoreboard progress{width:100%;height:7px}#challenge-battle footer{position:absolute;bottom:max(12px,env(safe-area-inset-bottom));left:12px;right:12px;display:flex;justify-content:center;gap:8px}#challenge-battle button{min-height:46px;font:600 15px system-ui;padding:10px 16px;background:#d7fff1;color:#143a33;border:0;border-radius:10px}#challenge-battle [hidden]{display:none}
+body.challenge-session #pause,body.challenge-session #attack,body.challenge-session #open-encounters,body.challenge-session #fast-restore,body.challenge-session #sketch-watch,body.challenge-session #sketch-add,body.challenge-session #sketch-restore{display:none!important}
+body.challenge-locked #undo,body.challenge-locked #sketch-undo,body.challenge-locked #new,body.challenge-locked #import-ship,body.challenge-locked #monster,body.challenge-locked #design-library{pointer-events:none;opacity:.45}
 </style></head>
 <body class="shipyard">
 <header><h1>Surely it needs <i>another gun.</i></h1><div class="warshards-hud"><span>WARSHARDS</span><b id="warshards">0</b><small id="warshards-detail">Draw a tractor beam to harvest.</small></div><nav aria-label="Game menus"><button id="mobile-status" aria-expanded="false">FLEET STATUS</button><button id="open-help">HOW TO PLAY</button><button id="open-experiments">EXPERIMENTS</button><button id="open-menu">SAVE & SHARE</button></nav></header>
@@ -238,6 +248,7 @@ body.sketchbook .boss-status{top:8px;right:8px;max-width:calc(100% - 16px)}
 <section class="friendly-fire-control"><button id="friendly-fire" aria-pressed="true">FRIENDLY FIRE: ON</button><small id="friendly-fire-detail">Other ships can take friendly hits. A weapon never damages its own ship.</small></section>
 
 <section id="fleet-power" aria-label="Fleet power"><b id="fleet-power-status">POWER · REACTORS ONLINE</b><strong id="fleet-power-amount"></strong><meter id="fleet-power-meter" min="0" max="1" value="1" aria-label="Fleet energy reserve"></meter><span id="fleet-power-flow"></span><small id="fleet-power-advice"></small><details><summary>Per-ship reserves</summary><div id="ship-power-list" aria-label="Individual ship reserves"></div></details></section>
+<section id="fleet-capacity" aria-label="Fleet drawing capacity"><b id="fleet-capacity-status">Fleet capacity 0%</b><meter id="fleet-capacity-meter" min="0" max="1" value="0" aria-label="Fleet drawing capacity used"></meter><small id="fleet-capacity-detail"></small><p id="fleet-capacity-message" role="status" hidden></p></section>
 
 <section class="power-panel"><p id="pd-status" style="font-size:15px;line-height:1.4;color:#b8ffda">Draw point defence on escorts to protect nearby ships.</p></section>
 <details class="fleet-performance"><summary>Speed & mass by ship</summary><div id="ship-performance"></div><small id="ship-performance-note">Freighter cruise speed: 60. Acceleration is speed gained each second.</small></details>
@@ -294,6 +305,33 @@ body.sketchbook .boss-status{top:8px;right:8px;max-width:calc(100% - 16px)}
 <dialog id="import-dialog"><h2>Replace your current ship?</h2><p id="import-summary"></p><p>Your current ship and battle will be replaced. Cancel and export your current ship first if you want to keep it.</p><form method="dialog"><button value="cancel" autofocus>KEEP CURRENT SHIP</button><button value="import">IMPORT THIS SHIP</button></form></dialog>
 <script type="module">globalThis.TOY_STANDALONE=true;
 const modules={};
+modules["toy-limits.mjs"]=(()=>{
+// Performance limits, not currency. Existing oversized saves remain recoverable.
+const FLEET_LIMITS = Object.freeze({parts:600,points:12000,weapons:120,ships:13});
+const WEAPONS = new Set(['missile','gun','torpedo','beam','pd']);
+function fleetCapacity(world) {
+ const parts=world.parts||[];
+ const usage={parts:parts.length,points:parts.reduce((n,p)=>n+(p.points?.length||0),0),weapons:parts.filter(p=>WEAPONS.has(p.kind)).length,ships:parts.filter(p=>['core','escortCore'].includes(p.kind)).length};
+ const limits=FLEET_LIMITS,ratio=Math.max(...Object.keys(limits).map(k=>usage[k]/limits[k]));
+ const exceeded=Object.keys(limits).filter(k=>usage[k]>limits[k]);
+ return {...usage,limits,ratio,full:ratio>=1,message:exceeded.length?`Fleet capacity exceeded (${exceeded.join(', ')}). Erase parts before adding more.`:ratio>=1?'Fleet capacity reached. Erase parts to make room.':''};
+}
+function allowConstruction(world, added, replaced=[]) {
+ const removed=new Set(replaced),parts=[...world.parts.filter(p=>!removed.has(p)),...added];
+ const status=fleetCapacity({parts});
+ if(Object.keys(status.limits).some(k=>status[k]>status.limits[k])){
+  world.buildLimitMessage=status.message;return false;
+ }
+ world.buildLimitMessage='';return true;
+}
+function assertFleetCapacity(world) {
+ const status=fleetCapacity(world);
+ if(Object.keys(status.limits).some(k=>status[k]>status.limits[k]))throw Error(status.message);
+ return status;
+}
+
+return {FLEET_LIMITS,fleetCapacity,allowConstruction,assertFleetCapacity};
+})();
 modules["toy-crew.mjs"]=(()=>{
 // A finite cast, not a per-compartment population counter. No combat RNG used.
 const CAST = [
@@ -505,7 +543,13 @@ function buckets(a, b, r, visit) {
   }
 }
 function structureState(w) {
-  const parts = w.parts.filter(p => p.hp > 0 && p.kind !== 'shield'), hubs = new Map(parts.filter(p => ['core', 'escortCore'].includes(p.kind)).map(p => [p.id, p]));
+  const parts = w.parts.filter(p => p.hp > 0 && p.kind !== 'shield');
+  // Arena drawings cannot change during combat. Rigid flight changes no edges;
+  // destruction does. Keep original local geometry so drifting wreckage never
+  // becomes reattached merely by crossing a living ship on a later tick.
+  const arenaKey=w.arenaTeamId!=null?'arena:'+parts.map(p=>p.id).join('|'):null;
+  if(arenaKey&&caches.get(w)?.key===arenaKey)return caches.get(w).value;
+  const hubs = new Map(parts.filter(p => ['core', 'escortCore'].includes(p.kind)).map(p => [p.id, p]));
   const local = p => {
     const hub = hubs.get(p.shipId) || { x: 0, y: 0 };
     const points = p.points?.length ? p.points : [p];
@@ -516,8 +560,9 @@ function structureState(w) {
       return { x: Math.round((dx * c + dy * s) * 1000) / 1000, y: Math.round((-dx * s + dy * c) * 1000) / 1000 };
     });
   };
-  const geometries = parts.map(local);
-  const key = parts.map((p, i) => `${p.id}:${p.shipId}:${p.kind}:${thickness(p)}:${geometries[i].map(q => `${q.x},${q.y}`).join(';')}`).join('|');
+  const snapshot=arenaKey?(w.arenaStructureGeometry||={}):null;
+  const geometries = parts.map(p=>snapshot?(snapshot[p.id]||=local(p)):local(p));
+  const key = arenaKey||parts.map((p, i) => `${p.id}:${p.shipId}:${p.kind}:${thickness(p)}:${geometries[i].map(q => `${q.x},${q.y}`).join(';')}`).join('|');
   if (caches.get(w)?.key === key) return caches.get(w).value;
   const parent = parts.map((_, i) => i), find = i => { while (parent[i] !== i) { parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
   const grid = new Map();
@@ -601,6 +646,7 @@ return {structureState,structureSummary,coreConnectionHints,setStructureMode,hul
 })();
 modules["toy-shields.mjs"]=(()=>{
 const { crewOperational } = modules["toy-crew.mjs"];
+const {allowConstruction} = modules["toy-limits.mjs"];
 const {availablePower,spendPower} = modules["toy-power.mjs"];
 const MAX_CHARGE = 240;
 const fieldBodies = new WeakMap();
@@ -617,9 +663,13 @@ function addShield(w, rawPoints, ownerId = null) {
   if (!owner) return [];
   const shieldRadius = Math.max(40, Math.min(20000, Math.max(...points.map(p => Math.hypot(p.x - owner.x, p.y - owner.y)))));
   let part = w.parts.find(p => p.kind === 'shield' && p.shipId === owner.id && p.hp > 0);
-  if (part) Object.assign(part, { x: owner.x, y: owner.y, points, shieldRadius });
+  if (part) {
+    if(!allowConstruction(w,[{...part,points}],[part]))return [];
+    Object.assign(part, { x: owner.x, y: owner.y, points, shieldRadius });
+  }
   else {
     part = { id: `shield-${++w._id}`, kind: 'shield', shipId: owner.id, x: owner.x, y: owner.y, angle: 0, radius: 18, hp: 120, maxHp: 120, cooldown: 0, points, shieldRadius, shieldCharge: 0, shieldDelay: 0 };
+    if(!allowConstruction(w,[part]))return [];
     w.parts.push(part);
   }
   emit(w, 'construction', { kind: 'shield', count: 1 }); return [part];
@@ -1027,6 +1077,7 @@ return {rebuildPrice,captureBlueprint,restorationSummary,restorationGhosts,start
 })();
 modules["toy-core.mjs"]=(()=>{
 // A deterministic, DOM-free construction toy. Coordinates are world units.
+const {allowConstruction} = modules["toy-limits.mjs"];
 const { reactorPolygon, reactorCells, powerSummary : summarizePower, setPowerMode : switchPowerMode, advancePower, availablePower, spendPower, localPowerCoverage } = modules["toy-power.mjs"];
 const { evacuateCrew, stepCrew, crewOperational } = modules["toy-crew.mjs"];
 const { structureState, hullIndex, nearbyHull } = modules["toy-structure.mjs"];
@@ -1136,7 +1187,7 @@ function stepTestFire(trial) {
  trial.done=trial.elapsed>=trial.duration||trial.world.defeated;
 }
 function cleanPoints(rawPoints) {
-  return Array.isArray(rawPoints) ? rawPoints.filter(p => p && Number.isFinite(p.x) && Number.isFinite(p.y)).map(p => ({ x: clamp(p.x, -100000, 100000), y: clamp(p.y, -100000, 100000) })) : [];
+  return Array.isArray(rawPoints) && rawPoints.length<=12000 ? rawPoints.filter(p => p && Number.isFinite(p.x) && Number.isFinite(p.y)).map(p => ({ x: clamp(p.x, -100000, 100000), y: clamp(p.y, -100000, 100000) })) : [];
 }
 function outlineCenter(points) {
   return { x: (Math.min(...points.map(p => p.x)) + Math.max(...points.map(p => p.x))) / 2, y: (Math.min(...points.map(p => p.y)) + Math.max(...points.map(p => p.y))) / 2 };
@@ -1171,6 +1222,7 @@ function addStroke(w, kind, rawPoints, ownerId = null) {
     const owner=ownerId||hubs.sort((a,b)=>dist(a,center)-dist(b,center))[0]?.id;
     if(!owner)return [];
     const p={id:id(w,'beam'),strokeId:id(w,'stroke'),shipId:owner,kind:'beam',...points[0],points,angle:Math.atan2(points.at(-1).y-points[0].y,points.at(-1).x-points[0].x),radius:18,hp:180,maxHp:180,cooldown:0};
+    if(!allowConstruction(w,[p]))return [];
     w.parts.push(p);emit(w,'construction',{kind:'beam',count:1});return [p];
   }
   if (kind === 'reactor') return addReactor(w, rawPoints, ownerId);
@@ -1198,6 +1250,7 @@ function addStroke(w, kind, rawPoints, ownerId = null) {
   const owner = ownerId || hubs.sort((a, b) => dist(a, center) - dist(b, center))[0]?.id || null;
   const strokeId = id(w, 'stroke');
   const added = chunks.map((chunk, i) => ({ id: id(w, kind), strokeId, shipId: owner, kind, ...chunk[0], angle: chunk.length > 1 ? Math.atan2(chunk[1].y - chunk[0].y, chunk[1].x - chunk[0].x) : 0, radius: kind === 'hull' ? 14 : 18, hp: kind === 'hull' ? 85 : 65, maxHp: kind === 'hull' ? 85 : 65, cooldown: kind === 'missile' ? i * .035 : .1, points: chunk.map(p => ({ ...p })), salvoRemaining: 0, salvoTimer: 0 }));
+  if(!allowConstruction(w,added))return [];
   w.parts.push(...added);
   emit(w, 'construction', { kind, count: added.length });
   return added;
@@ -1209,10 +1262,19 @@ function addReactor(w, rawPoints, ownerId = null) {
   const owner = hubs.find(p => p.id === ownerId) || hubs.sort((a, b) => dist(a, polygon) - dist(b, polygon))[0];
   if (!owner || !reactorCells(polygon.points, owner).length) return [];
   const part = { id: id(w, 'reactor'), strokeId: id(w, 'stroke'), shipId: owner.id, kind: 'reactor', x: polygon.x, y: polygon.y, angle: 0, radius: Math.max(18, Math.min(120, Math.sqrt(polygon.area / Math.PI))), hp: 180, maxHp: 180, cooldown: 0, points: polygon.points };
+  if(!allowConstruction(w,[part]))return [];
   w.parts.push(part); emit(w, 'construction', { kind: 'reactor', count: 1 });
   return [part];
 }
 function addEscort(w, rawPoints) {
+  const trial={...w,parts:[...w.parts],events:[],diagnostic:undefined};
+  const added=buildEscort(trial,rawPoints);
+  if(!added.length||trial.buildLimitMessage){w.buildLimitMessage=trial.buildLimitMessage||'';return [];}
+  Object.assign(w,{parts:trial.parts,_id:trial._id,_random:trial._random,buildLimitMessage:''});
+  for(const event of trial.events){const {type,...data}=event;emit(w,type,data);}
+  return added;
+}
+function buildEscort(w, rawPoints) {
   const points = cleanPoints(rawPoints);
   if (points.length < 2 || w.parts.filter(p => p.kind === 'escortCore').length >= 12) return [];
   const center = outlineCenter(points), coreId = id(w, 'escort');
@@ -1226,7 +1288,8 @@ function addShipCore(w, point){
  if(!point||!Number.isFinite(point.x)||!Number.isFinite(point.y)||Math.abs(point.x)>100000||Math.abs(point.y)>100000)return [];
  const hubs=w.parts.filter(p=>['core','escortCore'].includes(p.kind)&&p.hp>0);
  if(hubs.filter(p=>p.kind==='escortCore').length>=12||hubs.some(p=>dist(p,point)<60))return [];
- const coreId=id(w,'escort'),core={id:coreId,shipId:coreId,kind:'escortCore',x:point.x,y:point.y,homeX:point.x,homeY:point.y,vx:0,vy:0,navPhase:random(w)*TAU,angle:0,radius:18,hp:160,maxHp:160,cooldown:0,points:[]};
+  const coreId=id(w,'escort'),core={id:coreId,shipId:coreId,kind:'escortCore',x:point.x,y:point.y,homeX:point.x,homeY:point.y,vx:0,vy:0,navPhase:random(w)*TAU,angle:0,radius:18,hp:160,maxHp:160,cooldown:0,points:[]};
+ if(!allowConstruction(w,[core]))return [];
  w.parts.push(core);emit(w,'escortBuilt',{shipId:coreId,x:core.x,y:core.y});return [core];
 }
 function sendWave(w, { siege = false, missileStorm = false } = {}) {
@@ -1308,6 +1371,7 @@ function updateCapitalGeometry(capital) {
   for (const p of [...capital.modules, ...capital.hullTiles]) { p.x = capital.x + p.localX * cos - p.localY * sin; p.y = capital.y + p.localX * sin + p.localY * cos; p.angle = capital.angle; if (p.kind === 'hullTile') p.hp = capital.hp; }
 }
 function enemyTargets(w) {
+  if(w.arenaOpponents)return w.arenaOpponents.flatMap(other=>other.parts.filter(p=>p.hp>0));
   return w.enemies.filter(e => e.hp > 0 && !(e.arrivalRemaining > 0)&&!e.overloading).flatMap(e => e.kind === 'capital' ? [...e.modules.filter(p => p.hp > 0&&(p.role!=='enemyReactor'||dreadnoughtStatus(e).exposed)), ...e.hullTiles.filter(p=>!(e.capitalClass==='dreadnought'&&dreadnoughtStatus(e).exposed&&Math.abs(p.localX)<e.length*.2))] : [e]);
 }
 function dreadnoughtStatus(e){
@@ -1385,6 +1449,7 @@ function destroyPart(w, part, cause = 'direct') {
 }
 function damageEnemy(w, enemy, damage) { hitEnemy(w, enemy, damage); }
 function hitEnemy(w, enemy, damage) {
+  if(w.arenaOpponents){const owner=w.arenaTargetOwners?.get(enemy.id);if(owner&&owner!==w&&enemy.hp>0)w.arenaHits.push({owner,part:enemy,damage,attackerId:w.arenaTeamId});return;}
   if (enemy.hp <= 0) return;
   if(enemy.overloading)return;
   if (enemy.parentId) {
@@ -1467,7 +1532,7 @@ const missileGuidance = new WeakMap();
 const launchMounts = new WeakMap();
 function mountingClearance(w, projectile, hull, grid, dt) {
   if (!projectile.launchOrigin || projectile.age-dt >= (projectile.torpedo ? .6 : .35)) return hull;
-  let mounts=launchMounts.get(projectile);
+  let mounts=w.arenaTeamId!=null&&projectile.arenaLaunchMounts?new Map(projectile.arenaLaunchMounts.map(m=>[m.id,{body:w.parts.find(p=>p.id===m.id)||m.body,entered:m.entered}])):launchMounts.get(projectile);
   if (!mounts) {
     const source=w.parts.find(p=>p.id===projectile.sourceId);
     mounts=new Map();
@@ -1485,6 +1550,7 @@ function mountingClearance(w, projectile, hull, grid, dt) {
     if(mount.entered&&!inside)mounts.delete(id);
     else if(inside)mount.entered=true;
   }
+  if(w.arenaTeamId!=null)projectile.arenaLaunchMounts=[...mounts].map(([id,m])=>({id,entered:m.entered,body:{x:m.body.x,y:m.body.y,radius:m.body.radius}}));
   return hull.filter(p=>!mounts.has(p.id));
 }
 function torpedoTarget(p, targets, enemies) {
@@ -1532,7 +1598,7 @@ function stepWorld(w, dt) {
 }
 function stepPointDefence(w,dt,connected,grid) {
  const cells=new Map(),size=240;
- for(const m of w.missiles)if(m.side==='enemy'&&m.life>0){const key=`${Math.floor(m.x/size)},${Math.floor(m.y/size)}`;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(m);}
+ for(const m of w.arenaIncoming||w.missiles)if((w.arenaIncoming||m.side==='enemy')&&m.life>0){const key=`${Math.floor(m.x/size)},${Math.floor(m.y/size)}`;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(m);}
  let budget=64;
  for(const p of w.parts){if(p.kind!=='pd'||p.hp<=0)continue;p.cooldown=Math.max(0,(p.cooldown||0)-dt);
   if(!cells.size||!budget||p.cooldown>0||(connected&&!connected.has(p.id))||!crewOperational(w,p)||(w.powerMode&&availablePower(w,p)<2))continue;
@@ -1570,17 +1636,7 @@ function stepEnemyPointDefence(w,dt) {
   emit(w,'enemyInterception',{x:target.x,y:target.y,sourceId:p.id,shipId:p.parentId,projectileId:target.id,torpedo:!!target.torpedo,hits:target.pdHits,destroyed});
  }
 }
-function tick(w, dt) {
-  w.time += dt;
-  stepCrew(w, dt);
-  if (w.flightMode) stepFleetFlight(w, dt); else moveEscorts(w, dt);
-  const power = w.powerMode ? advancePower(w, dt) : null;
-  const shields = w.shieldMode ? stepShields(w, dt) : null;
-  const structure = w.structureMode ? structureState(w) : null;
-  if (structure) decaySeveredParts(w, dt, structure.connected);
-  stepWarshards(w, dt, structure?.connected);
-  const friendlyHull = w.structureMode ? hullIndex(w) : null;
-  const liveEnemies = w.enemies.filter(e => e.hp > 0), targets = enemyTargets(w), bounds = shipBounds(w);
+function firePlayerWeapons(w,dt,{power=null,structure=null,friendlyHull=null,liveEnemies=w.enemies,targets=enemyTargets(w)}={}) {
   const exposedModules = new Set(targets.filter(t => t.kind === 'module').map(t => t.parentId));
   const aimTargets = targets.filter(t => t.kind !== 'hullTile' || !exposedModules.has(t.parentId));
   const powerStart = power ? (w.powerCursor || 0) % Math.max(1, w.parts.length) : 0;
@@ -1588,8 +1644,10 @@ function tick(w, dt) {
   for (let partIndex = 0; partIndex < w.parts.length; partIndex++) {
     const actualIndex = (partIndex + powerStart) % w.parts.length, p = w.parts[actualIndex];
     if (!['missile', 'gun', 'torpedo'].includes(p.kind) || !targets.length) continue;
+    if(w.arenaTeamId!=null&&((p.kind==='gun'&&w.bullets.length>=w.arenaProjectileCap)||(p.kind!=='gun'&&w.missiles.length>=w.arenaProjectileCap)))continue;
     if ((structure && !structure.connected.has(p.id)) || !crewOperational(w, p)) continue;
     p.cooldown -= dt; p.salvoTimer -= dt;
+    if(p.kind==='missile'?(p.cooldown>0&&!(p.salvoRemaining&&p.salvoTimer<=0)):p.cooldown>0)continue;
     let target = aimTargets[0];
     for (const e of aimTargets) if (dist(p, e) < dist(p, target)) target = e;
     // Convoys must be intercepted: racks cannot acquire the escaping cargo
@@ -1626,6 +1684,106 @@ function tick(w, dt) {
       if (!holdFire(w,p,obstruction)) { w.bullets.push({ id: id(w, 'bullet'), side: 'player', sourceId: p.id, sourceShipId:p.shipId, sourceX:p.x, sourceY:p.y, age: 0, launchOrigin: { x: p.x, y: p.y }, ...muzzle, vx: Math.cos(angle) * 900, vy: Math.sin(angle) * 900, angle, life: 2, damage: 12 }); effect(w, 'muzzle', muzzle.x, muzzle.y, 13); emit(w, 'gunShot', muzzle); }
     }
   }
+}
+function projectileTargetGrid(bodies){
+ const cells=new Map(),size=128;
+ for(let index=0;index<bodies.length;index++){const body=bodies[index];if(body.hp<=0)continue;const radius=body.radius||0;
+  for(let x=Math.floor((body.x-radius)/size);x<=Math.floor((body.x+radius)/size);x++)for(let y=Math.floor((body.y-radius)/size);y<=Math.floor((body.y+radius)/size);y++){const key=x+','+y;let bucket=cells.get(key);if(!bucket){bucket=[];cells.set(key,bucket);}bucket.push(index);}
+ }return {cells,bodies,size};
+}
+function projectileTargetCandidates(grid,a,b,padding=0){
+ const indices=new Set(),size=grid.size;
+ for(let x=Math.floor((Math.min(a.x,b.x)-padding)/size);x<=Math.floor((Math.max(a.x,b.x)+padding)/size);x++)for(let y=Math.floor((Math.min(a.y,b.y)-padding)/size);y<=Math.floor((Math.max(a.y,b.y)+padding)/size);y++)for(const index of grid.cells.get(x+','+y)||[])indices.add(index);
+ return [...indices].sort((a,b)=>a-b).map(index=>grid.bodies[index]);
+}
+function advancePlayerProjectiles(w,dt,{shields=null,friendlyHull=null,targets=enemyTargets(w),liveEnemies=w.enemies,hostileShields=fortressFields(w)}={}) {
+ const exposedModules=new Set(targets.filter(t=>t.kind==='module').map(t=>t.parentId));
+ const aimTargets=targets.filter(t=>t.kind!=='hullTile'||!exposedModules.has(t.parentId));
+ const targetById=new Map(targets.map(p=>[p.id,p])),partById=new Map(w.parts.map(p=>[p.id,p]));
+ const nearest=(origin,bodies)=>{let best=null,distance=Infinity;for(const body of bodies)if(body.hp>0){const d=(origin.x-body.x)**2+(origin.y-body.y)**2;if(d<distance){distance=d;best=body;}}return best;};
+ const targetGrid=w.arenaTeamId!=null?projectileTargetGrid(targets):null;
+ const collisionTargets=(a,b,padding)=>targetGrid?projectileTargetCandidates(targetGrid,a,b,padding):targets;
+  for (const m of w.missiles) {
+    if(m.life<=0)continue;
+    if (m.torpedo && m.embedded) {
+      const candidates = m.embedded.friendly ? w.parts : enemyTargets(w);
+      const body = candidates.find(p => p.id === m.embedded.bodyId && p.hp > 0);
+      if(m.embedded.friendly&&body&&!friendlyDamageAllowed(w,body,m)){safeContact(w,body,m);m.life=0;continue;}
+      if (body) { const angle = body.angle || 0; m.x = body.x + Math.cos(angle) * m.embedded.offsetX - Math.sin(angle) * m.embedded.offsetY; m.y = body.y + Math.sin(angle) * m.embedded.offsetX + Math.cos(angle) * m.embedded.offsetY; }
+      m.fuse -= dt; if (m.fuse <= 1e-8) detonateTorpedo(w, m);
+      continue;
+    }
+    m.age += dt; m.life -= dt;
+    const candidates = m.side === 'enemy' ? w.parts : targets;
+    let target = (m.side==='enemy'?partById:targetById).get(m.targetId);if(target?.hp<=0)target=null;
+    if (!target) { target = m.torpedo ? torpedoTarget(m, targets, liveEnemies) : nearest(m,m.side==='enemy'?candidates:aimTargets); if (target) m.targetId = target.id; }
+    if (m.age > (m.torpedo ? .6 : .3) && (target || (friendlyHull && m.side !== 'enemy' && !m.torpedo))) {
+      let wanted = target ? Math.atan2(target.y - m.y, target.x - m.x) : m.angle;
+      if (friendlyHull && m.side !== 'enemy' && !m.torpedo) {
+        let plan=w.arenaTeamId!=null?m.arenaGuidance:missileGuidance.get(m);
+        if (!plan || w.time >= plan.until) {
+          plan={angle:missileAvoidanceAngle(m,wanted,Math.min(580,155+m.age*350),friendlyHull),until:w.time+.12};if(w.arenaTeamId!=null)m.arenaGuidance=plan;else missileGuidance.set(m,plan);
+        }
+        wanted=plan.angle;
+      }
+      const delta = Math.atan2(Math.sin(wanted - m.angle), Math.cos(wanted - m.angle));
+      const turn = m.torpedo ? .65 : m.side === 'enemy' ? 2.8 : 5; m.angle += clamp(delta, -dt * turn, dt * turn);
+    }
+    const speed = m.torpedo ? Math.min(240, 90 + m.age * 60) : m.side === 'enemy' ? Math.min(320, 110 + m.age * 130) : Math.min(580, 155 + m.age * 350); m.vx = Math.cos(m.angle) * speed; m.vy = Math.sin(m.angle) * speed;
+    const next = { x: m.x + m.vx * dt, y: m.y + m.vy * dt };
+    let hit = firstHit(m, next, m.side==='enemy'?candidates:collisionTargets(m,next,5), 5), friendly = false;
+    const shieldHit = shields && m.side === 'enemy' ? firstShieldHit(m, next, shields) : null;
+    if (shieldHit && (!hit || shieldHit.t <= hit.t) && absorbShieldHit(w, shieldHit, m.damage)) { m.x = shieldHit.x; m.y = shieldHit.y; m.life = 0; continue; }
+    if (friendlyHull && m.side !== 'enemy') {
+      let hull = nearbyHull(friendlyHull, m, next, 5);
+      hull = mountingClearance(w,m,hull,friendlyHull,dt);
+      const ownHit = firstHit(m, next, hull, 5);
+      if (ownHit && (!hit || ownHit.t <= hit.t)) { hit = ownHit; friendly = true; }
+    }
+    const hostileShieldHit = m.side !== 'enemy' && firstShieldHit(m,next,hostileShields);
+    if(hostileShieldHit && (!hit || hostileShieldHit.t<=hit.t)){absorbFortressHit(w,hostileShieldHit,m.damage);m.life=0;continue;}
+    m.trail.push({ x: m.x, y: m.y }); if (m.trail.length > 22) m.trail.shift();
+    m.x = next.x; m.y = next.y;
+    if(hit&&friendly&&!friendlyDamageAllowed(w,hit.body,m)){safeContact(w,hit.body,m);m.life=0;continue;}
+    if (hit && m.torpedo) {
+      const angle = hit.body.angle || 0, dx = hit.x - hit.body.x, dy = hit.y - hit.body.y;
+      m.embedded = { bodyId: hit.body.id, parentId: hit.body.parentId, friendly, offsetX: dx * Math.cos(angle) + dy * Math.sin(angle), offsetY: -dx * Math.sin(angle) + dy * Math.cos(angle) };
+      m.fuse = .35; m.life = Math.max(m.life, .36); m.x = hit.x; m.y = hit.y; m.vx = 0; m.vy = 0;
+      emit(w, 'torpedoImpact', { x: m.x, y: m.y, bodyId: hit.body.id, friendly }); continue;
+    }
+    if (hit) { if (m.side === 'enemy' || friendly) damagePart(w, hit.body, m.damage, friendly ? 'missile' : 'enemy',m,hit); else hitEnemy(w, hit.body, m.damage); m.life = 0; effect(w, 'missileImpact', hit.x, hit.y, 32); }
+  }
+  for (const b of w.bullets) {
+    b.age=(b.age||0)+dt;
+    b.life -= dt;
+    const next = { x: b.x + b.vx * dt, y: b.y + b.vy * dt };
+    let hit = firstHit(b, next, b.side === 'enemy' ? w.parts : collisionTargets(b,next,2), 2), friendly = false;
+    const shieldHit = shields && b.side === 'enemy' ? firstShieldHit(b, next, shields) : null;
+    if (shieldHit && (!hit || shieldHit.t <= hit.t) && absorbShieldHit(w, shieldHit, b.damage)) { b.x = shieldHit.x; b.y = shieldHit.y; b.life = 0; continue; }
+    if (friendlyHull && b.side !== 'enemy') {
+      const ownHit = firstHit(b, next, mountingClearance(w,b,nearbyHull(friendlyHull,b,next,2),friendlyHull,dt), 2);
+      if (ownHit && (!hit || ownHit.t <= hit.t)) { hit = ownHit; friendly = true; }
+    }
+    const hostileShieldHit = b.side !== 'enemy' && firstShieldHit(b,next,hostileShields);
+    if(hostileShieldHit && (!hit || hostileShieldHit.t<=hit.t)){absorbFortressHit(w,hostileShieldHit,b.damage);b.life=0;continue;}
+    b.x = next.x; b.y = next.y;
+    if (hit) { if (b.side === 'enemy' || friendly) damagePart(w, hit.body, b.damage, friendly ? 'cannon' : 'enemy',b,hit); else hitEnemy(w, hit.body, b.damage); b.life = 0; }
+  }
+  w.missiles = w.missiles.filter(m => m.life > 0);
+  w.bullets = w.bullets.filter(b => b.life > 0);
+}
+function tick(w, dt) {
+  w.time += dt;
+  stepCrew(w, dt);
+  if (w.flightMode) stepFleetFlight(w, dt); else moveEscorts(w, dt);
+  const power = w.powerMode ? advancePower(w, dt) : null;
+  const shields = w.shieldMode ? stepShields(w, dt) : null;
+  const structure = w.structureMode ? structureState(w) : null;
+  if (structure) decaySeveredParts(w, dt, structure.connected);
+  stepWarshards(w, dt, structure?.connected);
+  const friendlyHull = w.structureMode ? hullIndex(w) : null;
+  const liveEnemies = w.enemies.filter(e => e.hp > 0), targets = enemyTargets(w), bounds = shipBounds(w);
+  firePlayerWeapons(w,dt,{power,structure,friendlyHull,liveEnemies,targets});
   let hostileMissiles=w.missiles.filter(m=>m.side==='enemy'&&m.life>0).length;
   for (const e of liveEnemies) {
     if (e.kind === 'capital') { stepCapital(w, e, dt, bounds); continue; }
@@ -1662,74 +1820,7 @@ function tick(w, dt) {
   stepBeams(w,dt,targets,hostileShields,structure?.connected);
   stepPointDefence(w,dt,structure?.connected,friendlyHull);
   stepEnemyPointDefence(w,dt);
-  for (const m of w.missiles) {
-    if(m.life<=0)continue;
-    if (m.torpedo && m.embedded) {
-      const candidates = m.embedded.friendly ? w.parts : enemyTargets(w);
-      const body = candidates.find(p => p.id === m.embedded.bodyId && p.hp > 0);
-      if(m.embedded.friendly&&body&&!friendlyDamageAllowed(w,body,m)){safeContact(w,body,m);m.life=0;continue;}
-      if (body) { const angle = body.angle || 0; m.x = body.x + Math.cos(angle) * m.embedded.offsetX - Math.sin(angle) * m.embedded.offsetY; m.y = body.y + Math.sin(angle) * m.embedded.offsetX + Math.cos(angle) * m.embedded.offsetY; }
-      m.fuse -= dt; if (m.fuse <= 1e-8) detonateTorpedo(w, m);
-      continue;
-    }
-    m.age += dt; m.life -= dt;
-    const candidates = m.side === 'enemy' ? w.parts : targets;
-    let target = candidates.find(e => e.id === m.targetId && e.hp > 0);
-    if (!target) { target = m.torpedo ? torpedoTarget(m, targets, liveEnemies) : (m.side === 'enemy' ? candidates : aimTargets).filter(e => e.hp > 0).sort((a, b) => dist(m, a) - dist(m, b))[0]; if (target) m.targetId = target.id; }
-    if (m.age > (m.torpedo ? .6 : .3) && (target || (friendlyHull && m.side !== 'enemy' && !m.torpedo))) {
-      let wanted = target ? Math.atan2(target.y - m.y, target.x - m.x) : m.angle;
-      if (friendlyHull && m.side !== 'enemy' && !m.torpedo) {
-        let plan=missileGuidance.get(m);
-        if (!plan || w.time >= plan.until) {
-          plan={angle:missileAvoidanceAngle(m,wanted,Math.min(580,155+m.age*350),friendlyHull),until:w.time+.12};missileGuidance.set(m,plan);
-        }
-        wanted=plan.angle;
-      }
-      const delta = Math.atan2(Math.sin(wanted - m.angle), Math.cos(wanted - m.angle));
-      const turn = m.torpedo ? .65 : m.side === 'enemy' ? 2.8 : 5; m.angle += clamp(delta, -dt * turn, dt * turn);
-    }
-    const speed = m.torpedo ? Math.min(240, 90 + m.age * 60) : m.side === 'enemy' ? Math.min(320, 110 + m.age * 130) : Math.min(580, 155 + m.age * 350); m.vx = Math.cos(m.angle) * speed; m.vy = Math.sin(m.angle) * speed;
-    const next = { x: m.x + m.vx * dt, y: m.y + m.vy * dt };
-    let hit = firstHit(m, next, candidates, 5), friendly = false;
-    const shieldHit = shields && m.side === 'enemy' ? firstShieldHit(m, next, shields) : null;
-    if (shieldHit && (!hit || shieldHit.t <= hit.t) && absorbShieldHit(w, shieldHit, m.damage)) { m.x = shieldHit.x; m.y = shieldHit.y; m.life = 0; continue; }
-    if (friendlyHull && m.side !== 'enemy') {
-      let hull = nearbyHull(friendlyHull, m, next, 5);
-      hull = mountingClearance(w,m,hull,friendlyHull,dt);
-      const ownHit = firstHit(m, next, hull, 5);
-      if (ownHit && (!hit || ownHit.t <= hit.t)) { hit = ownHit; friendly = true; }
-    }
-    const hostileShieldHit = m.side !== 'enemy' && firstShieldHit(m,next,hostileShields);
-    if(hostileShieldHit && (!hit || hostileShieldHit.t<=hit.t)){absorbFortressHit(w,hostileShieldHit,m.damage);m.life=0;continue;}
-    m.trail.push({ x: m.x, y: m.y }); if (m.trail.length > 22) m.trail.shift();
-    m.x = next.x; m.y = next.y;
-    if(hit&&friendly&&!friendlyDamageAllowed(w,hit.body,m)){safeContact(w,hit.body,m);m.life=0;continue;}
-    if (hit && m.torpedo) {
-      const angle = hit.body.angle || 0, dx = hit.x - hit.body.x, dy = hit.y - hit.body.y;
-      m.embedded = { bodyId: hit.body.id, parentId: hit.body.parentId, friendly, offsetX: dx * Math.cos(angle) + dy * Math.sin(angle), offsetY: -dx * Math.sin(angle) + dy * Math.cos(angle) };
-      m.fuse = .35; m.life = Math.max(m.life, .36); m.x = hit.x; m.y = hit.y; m.vx = 0; m.vy = 0;
-      emit(w, 'torpedoImpact', { x: m.x, y: m.y, bodyId: hit.body.id, friendly }); continue;
-    }
-    if (hit) { if (m.side === 'enemy' || friendly) damagePart(w, hit.body, m.damage, friendly ? 'missile' : 'enemy',m,hit); else hitEnemy(w, hit.body, m.damage); m.life = 0; effect(w, 'missileImpact', hit.x, hit.y, 32); }
-  }
-  for (const b of w.bullets) {
-    b.age=(b.age||0)+dt;
-    b.life -= dt;
-    const next = { x: b.x + b.vx * dt, y: b.y + b.vy * dt };
-    let hit = firstHit(b, next, b.side === 'enemy' ? w.parts : targets, 2), friendly = false;
-    const shieldHit = shields && b.side === 'enemy' ? firstShieldHit(b, next, shields) : null;
-    if (shieldHit && (!hit || shieldHit.t <= hit.t) && absorbShieldHit(w, shieldHit, b.damage)) { b.x = shieldHit.x; b.y = shieldHit.y; b.life = 0; continue; }
-    if (friendlyHull && b.side !== 'enemy') {
-      const ownHit = firstHit(b, next, mountingClearance(w,b,nearbyHull(friendlyHull,b,next,2),friendlyHull,dt), 2);
-      if (ownHit && (!hit || ownHit.t <= hit.t)) { hit = ownHit; friendly = true; }
-    }
-    const hostileShieldHit = b.side !== 'enemy' && firstShieldHit(b,next,hostileShields);
-    if(hostileShieldHit && (!hit || hostileShieldHit.t<=hit.t)){absorbFortressHit(w,hostileShieldHit,b.damage);b.life=0;continue;}
-    b.x = next.x; b.y = next.y;
-    if (hit) { if (b.side === 'enemy' || friendly) damagePart(w, hit.body, b.damage, friendly ? 'cannon' : 'enemy',b,hit); else hitEnemy(w, hit.body, b.damage); b.life = 0; }
-  }
-  w.missiles = w.missiles.filter(m => m.life > 0);
-  w.bullets = w.bullets.filter(b => b.life > 0);
+  advancePlayerProjectiles(w,dt,{shields,friendlyHull,targets,liveEnemies,hostileShields});
   w.enemies = w.enemies.filter(e => e.hp > 0);
   for (const d of w.debris) { d.x += d.vx * dt; d.y += d.vy * dt; d.angle += dt; d.life -= dt; }
   w.debris = w.debris.filter(d => d.life > 0);
@@ -1789,9 +1880,11 @@ function stepBeams(w,dt,targets,fields,connected) {
   }
 }
 function fortressFields(w) {
+  if(w.arenaHostileFields)return w.arenaHostileFields;
   return w.enemies.filter(e=>e.capitalClass==='fortress'&&e.hp>0&&!e.arrivalRemaining).flatMap(e=>e.modules.filter(m=>m.role==='generator').map(m=>({x:e.x+Math.cos(e.angle)*m.fieldX,y:e.y+Math.sin(e.angle)*m.fieldX,radius:240,maxCharge:1800,generator:m,get operational(){return e.hp>0&&m.hp>0;},get charge(){return m.shieldCharge;}})));
 }
 function absorbFortressHit(w,hit,damage) {
+  if(hit.field.arenaWorld)return absorbShieldHit(hit.field.arenaWorld,hit,damage);
   const m=hit.field.generator;m.shieldCharge=Math.max(0,m.shieldCharge-damage);m.shieldDelay=3;
   effect(w,'shieldHit',hit.x,hit.y,35);
   if(!m.shieldCharge)effect(w,'shieldBreak',hit.field.x,hit.field.y,hit.field.radius);
@@ -1925,7 +2018,7 @@ function moveEscorts(w, dt) {
   }
 }
 
-return {powerSummary,setPowerMode,createWorld,shipBounds,repairLegacyRebuiltCore,rebuildCore,createTestFire,stepTestFire,eraseParts,addStroke,addReactor,addEscort,addShipCore,sendWave,sendConvoy,sendCapital,enemyTargets,dreadnoughtStatus,firstHit,damagePart,damageEnemy,missileAvoidanceAngle,torpedoLaunchAngle,stepWorld,beamStats,fortressFields};
+return {powerSummary,setPowerMode,createWorld,shipBounds,repairLegacyRebuiltCore,rebuildCore,createTestFire,stepTestFire,eraseParts,addStroke,addReactor,addEscort,addShipCore,sendWave,sendConvoy,sendCapital,enemyTargets,dreadnoughtStatus,firstHit,damagePart,damageEnemy,missileAvoidanceAngle,torpedoLaunchAngle,stepWorld,stepPointDefence,firePlayerWeapons,projectileTargetGrid,projectileTargetCandidates,advancePlayerProjectiles,decaySeveredParts,beamStats,stepBeams,fortressFields};
 })();
 modules["toy-launch-preview.mjs"]=(()=>{
 const { firstHit, torpedoLaunchAngle } = modules["toy-core.mjs"];
@@ -2492,6 +2585,7 @@ return {drawEngines};
 })();
 modules["toy-save.mjs"]=(()=>{
 const MAX_SHIP_FILE_BYTES = 16 * 1024 * 1024;
+const {assertFleetCapacity} = modules["toy-limits.mjs"];
 const {rebuildPrice,captureBlueprint} = modules["toy-restore.mjs"];
 function saveShipDesign(world,shipId,name='Unnamed ship'){
  const hub=world.parts.find(p=>p.id===shipId&&['core','escortCore'].includes(p.kind)&&p.hp>0);
@@ -2515,7 +2609,7 @@ function buildShipDesign(world,raw,position){
  const design=validateShipDesign(raw),cost=shipDesignCost(design);
  if(!world.paused||world.enemies.some(e=>e.hp>0))throw Error('Build copies while time is frozen and the field is clear.');
  if(world.parts.filter(p=>p.kind==='escortCore').length>=12)throw Error('Escort limit reached (12).');
- if(world.parts.length+design.ship.parts.length>10000||[...world.parts,...design.ship.parts].reduce((n,p)=>n+p.points.length,0)>200000)throw Error('Fleet capacity reached.');
+ assertFleetCapacity({parts:[...world.parts,...design.ship.parts]});
  if((world.warshards||0)<cost)throw Error(`Need ${cost-(world.warshards||0)} more Warshards.`);
  const hub=design.ship.parts.find(p=>p.kind==='escortCore'),parts=structuredClone(design.ship.parts);let next=world._id;
  const ids=new Map(parts.map(p=>[p.id,`${p.kind==='escortCore'?'escort':p.kind}-${++next}`]));
@@ -2696,6 +2790,8 @@ const GAME_FILES = ['toy.html','toy.css','toy-crew.mjs','toy-power.mjs','toy-str
 
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs','toy-mobile-craft.mjs','toy-enemy-visibility.mjs');
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-sketchbook-storage.mjs','toy-sketchbook-camera.mjs','toy-sketchbook.mjs','toy-sketchbook.css');
+GAME_FILES.splice(GAME_FILES.indexOf('toy-crew.mjs'),0,'toy-limits.mjs');
+GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'challenge-fleet.mjs','challenge-ui.mjs','challenge-ui.css','toy-arena.mjs','challenge-battle.mjs');
 
 async function buildStandalone(read) {
   const sources=Object.fromEntries(await Promise.all(GAME_FILES.map(async name=>[name,await read(name)])));
@@ -2711,9 +2807,9 @@ async function buildStandalone(read) {
     return `modules[${JSON.stringify(name)}]=(()=>{\n${source}\nreturn {${exports.join(',')}};\n})();`;
   }).join('\n');
   const script=`globalThis.TOY_STANDALONE=true;\nconst modules={};\n${code}`.replace(/<\/script/gi,'<\\/script');
-  const css=(sources['toy.css']+'\n'+sources['toy-sketchbook.css']).replace(/^@import[^\n]*\n/gm,'');
+  const css=(sources['toy.css']+'\n'+sources['toy-sketchbook.css']+'\n'+sources['challenge-ui.css']).replace(/^@import[^\n]*\n/gm,'');
   if(/url\s*\(/i.test(css))throw Error('Standalone CSS needs embedded assets, not URL references');
-  return sources['toy.html'].replace('<link rel="stylesheet" href="toy-sketchbook.css">','').replace('<link rel="stylesheet" href="toy.css">',()=>`<style>${css}</style>`)
+  return sources['toy.html'].replace('<link rel="stylesheet" href="challenge-ui.css">','').replace('<link rel="stylesheet" href="toy-sketchbook.css">','').replace('<link rel="stylesheet" href="toy.css">',()=>`<style>${css}</style>`)
     .replace('<script type="module" src="toy.mjs"><\/script>',()=>`<script type="module">${script}<\/script>`);
 }
 
@@ -3323,7 +3419,7 @@ function initSketchbook(api) {
  },0),true);
  const shell = document.createElement('section');
  shell.id = 'sketch-shell';
- shell.innerHTML = `<div id="sketch-heading"><div><strong id="sketch-title">Your sketchbook</strong><span id="sketch-wallet"></span></div><button id="sketch-menu" aria-label="Open sketchbook menu">Menu</button></div>
+ shell.innerHTML = `<div id="sketch-heading"><div><strong id="sketch-title">Your sketchbook</strong><span id="sketch-wallet"></span><span id="sketch-capacity"></span></div><button id="sketch-menu" aria-label="Open sketchbook menu">Menu</button></div>
  <div id="sketch-instruction"></div><div id="sketch-stage-slot"></div>
  <div id="sketch-restoration" hidden><button id="sketch-restore"></button><span id="sketch-repair-detail"></span></div>
  <nav id="sketch-draw-controls" aria-label="Drawing controls"><button id="sketch-parts" aria-haspopup="dialog"><span id="sketch-part-name"></span><span>Change part ▾</span></button><button id="sketch-move" aria-pressed="false">Move</button><button id="sketch-undo">Undo</button><button id="sketch-fit">Find fleet</button><button id="sketch-watch" class="sketch-primary">Watch fleet</button></nav>
@@ -3374,10 +3470,16 @@ function initSketchbook(api) {
   $('#sketch-title').textContent=drawing?(state.tool==='escort'?'Place a new ship':state.buildShip?`Editing ${state.buildShip.label}`:'Your sketchbook'):'Your fleet, alive';
   $('#sketch-title').dataset.buildShip=drawing&&state.buildShip?state.buildShip.id:'';
   $('#sketch-wallet').textContent=`${state.warshards.toLocaleString()} Warshards`;
+  const capacity=state.capacity;
+  $('#sketch-capacity').textContent=capacity?`Fleet capacity ${Math.round(capacity.ratio*100)}%`:'';
+  $('#sketch-capacity').classList.toggle('near-limit',(capacity?.ratio||0)>=.85);
   $('#sketch-draw-controls').hidden=!drawing;$('#sketch-battle-controls').hidden=drawing;
   $('#sketch-part-name').textContent=part[1];$('#sketch-parts').setAttribute('aria-label',`Change part: ${part[1]}`);
   $('#sketch-move').setAttribute('aria-pressed',String(state.moving));$('#sketch-move').textContent=state.moving?'Draw':'Move';
   $('#sketch-instruction').textContent=drawing?(state.moving?'Drag to move. Pinch to zoom.':state.parts.length<=1&&state.tool==='reactor'?'Close a reactor room near the gold bridge.':part[2]):state.enemies.some(e=>e.hp>0)?'Fighting automatically · Pinch to zoom':'All quiet. Add enemies when you’re ready.';
+  const capacityMessage=state.buildLimitMessage||capacity?.message||'';
+  if(drawing&&capacityMessage)$('#sketch-instruction').textContent=capacityMessage;
+  $('#sketch-instruction').classList.toggle('capacity-warning',drawing&&!!capacityMessage);
   $('#sketch-camera').textContent=state.camera==='overview'?'Follow fleet':state.camera==='manual'?'Follow fleet':'Overview';
   $('#sketch-undo').disabled=$('#undo').disabled;
   $('#sketch-watch').textContent=state.defeated?'Rebuild bridge':'Watch fleet';
@@ -3393,6 +3495,308 @@ function initSketchbook(api) {
 
 return {initSketchbook};
 })();
+modules["challenge-fleet.mjs"]=(()=>{
+const {parseShipImport} = modules["toy-save.mjs"];
+const {assertFleetCapacity} = modules["toy-limits.mjs"];
+const {reactorPolygon,powerGeometry} = modules["toy-power.mjs"];
+const CHALLENGE_VERSION = 1;
+const ARMADA_BUDGET = 12000;
+const PART_PRICES = Object.freeze({core:400,escortCore:250,hull:12,missile:120,gun:90,torpedo:350,pd:120,engine:60,tractor:30,reactor:80,shield:200,beam:400});
+const HP={core:240,escortCore:160,hull:85,reactor:180,shield:120,beam:180};
+// The wire format carries a drawing, not trusted health, damage or power stats.
+function validateChallengeFleet(raw,{budget=ARMADA_BUDGET,players=2}={}) {
+ return inspectFleet(raw,{budget,players,enforceBudget:true});
+}
+function priceChallengeFleet(raw,{players=2}={}) {
+ return inspectFleet(raw,{budget:24000,players,enforceBudget:false});
+}
+function inspectFleet(raw,{budget,players,enforceBudget}) {
+ if(!Number.isInteger(budget)||budget<1000||budget>24000)throw Error('Budget must be 1,000–24,000.');
+ if(!Number.isInteger(players)||players<2||players>4)throw Error('Challenges support 2–4 players.');
+ if(raw?.version!==CHALLENGE_VERSION||!Array.isArray(raw.parts))throw Error('Unsupported challenge fleet.');
+ const capacity=assertFleetCapacity(raw);
+ const ids=new Set(raw.parts.map(p=>p.id));
+ const hubs=new Map(raw.parts.filter(p=>['core','escortCore'].includes(p.kind)).map(p=>[p.id,p]));
+ if(raw.parts.filter(p=>p.kind==='core').length!==1)throw Error('Build one flagship core.');
+ if(ids.size!==raw.parts.length||raw.parts.some(p=>!hubs.has(p.shipId)))throw Error('Every part must belong to a ship.');
+ const normalized=raw.parts.map(p=>{
+  if(!Object.hasOwn(PART_PRICES,p.kind))throw Error('Unsupported part.');
+  const hp=HP[p.kind]||65;
+  // No transient state or supplied weapon stats cross the trust boundary.
+  const part={id:p.id,shipId:p.shipId,kind:p.kind,x:p.x,y:p.y,angle:p.angle??0,points:p.points,hp,maxHp:hp,radius:p.kind==='core'?24:p.kind==='hull'?14:18};
+  if(!['core','escortCore','reactor','shield','beam'].includes(p.kind)){
+   if(!Array.isArray(p.points)||!p.points.length||p.points.some(q=>!Number.isFinite(q?.x)||!Number.isFinite(q?.y)))throw Error('Invalid part outline.');
+   const length=p.points.slice(1).reduce((n,q,i)=>n+Math.hypot(q.x-p.points[i].x,q.y-p.points[i].y),0),maximum=p.kind==='hull'?22:p.kind==='torpedo'?152:76;
+   if(length>maximum+.01)throw Error('Part outline exceeds its construction size. Redraw this part in the shipyard.');
+   part.x=p.points[0].x;part.y=p.points[0].y;
+  }
+  if(p.strokeId!==undefined)part.strokeId=p.strokeId;
+  if(p.kind==='reactor'){
+   const polygon=reactorPolygon(p.points);if(!polygon)throw Error('Invalid reactor outline.');
+   part.x=polygon.x;part.y=polygon.y;
+   part.radius=Math.max(18,Math.min(120,Math.sqrt(polygon.area/Math.PI)));
+  }
+  if(p.kind==='beam'&&Array.isArray(p.points)&&p.points.length){part.x=p.points[0].x;part.y=p.points[0].y;}
+  if(p.kind==='shield'){
+   const hub=hubs.get(p.shipId);
+   if(!Array.isArray(p.points)||p.points.length<4||p.points.some(q=>!Number.isFinite(q?.x)||!Number.isFinite(q?.y)))throw Error('Invalid shield outline.');
+   if(Math.hypot(p.points[0].x-p.points.at(-1).x,p.points[0].y-p.points.at(-1).y)>24)throw Error('Close the shield outline.');
+   part.x=hub.x;part.y=hub.y;
+   // Maximum, not minimum distance, defines the drawn shield's coverage.
+   part.shieldRadius=Math.max(40,Math.min(20000,Math.max(...p.points.map(q=>Math.hypot(q.x-hub.x,q.y-hub.y)))));
+  }
+  if(['core','escortCore'].includes(p.kind))part.flightHeading=p.flightHeading??p.angle??0;
+  return part;
+ });
+ const ship=parseShipImport(JSON.stringify({format:'one-more-gun.ship',version:1,parts:normalized,stats:{},wave:0,id:0,view:{x:0,y:0,zoom:1},sound:false}));
+ const points=ship.parts.flatMap(p=>[p,...p.points]);
+ const span=Math.max(Math.max(...points.map(p=>p.x))-Math.min(...points.map(p=>p.x)),Math.max(...points.map(p=>p.y))-Math.min(...points.map(p=>p.y)));
+ if(span>4000)throw Error('Keep your fleet within 4,000 units for the challenge arena.');
+ const reactorCells=powerGeometry({...ship,crewMode:false}).cells;
+ let cost=ship.parts.reduce((n,p)=>n+PART_PRICES[p.kind]+(p.kind==='shield'?Math.ceil(p.shieldRadius*2):0)+(p.kind==='beam'?Math.ceil(Math.min(1000,Math.hypot(p.points.at(-1).x-p.points[0].x,p.points.at(-1).y-p.points[0].y))):0),0)+Math.ceil(reactorCells*20);
+ if(enforceBudget&&cost>budget)throw Error(`Over budget by ${(cost-budget).toLocaleString()} (${cost.toLocaleString()} / ${budget.toLocaleString()}).`);
+ return {version:CHALLENGE_VERSION,parts:ship.parts,cost,capacity};
+}
+
+return {CHALLENGE_VERSION,ARMADA_BUDGET,PART_PRICES,validateChallengeFleet,priceChallengeFleet};
+})();
+modules["challenge-ui.mjs"]=(()=>{
+const {validateChallengeFleet,priceChallengeFleet} = modules["challenge-fleet.mjs"];
+// Challenge saves never fall back to, copy, or overwrite Free Draw saves.
+function challengeStorage(storage,roomId){
+ const prefix=`one-more-gun.challenge.${encodeURIComponent(roomId)}.`;
+ return {getItem:key=>storage.getItem(prefix+key),setItem:(key,value)=>storage.setItem(prefix+key,value),removeItem:key=>storage.removeItem(prefix+key)};
+}
+
+function initChallengeUI({getFleet,loadFleet,setLocked,onBattle,onRoundStart}){
+ const params=new URLSearchParams(location.search),initial=params.get('challenge');
+ const entry=document.createElement('a');entry.textContent='New private fleet challenge';const startURL=new URL(location.protocol==='file:'?'https://jamiemccrindle.github.io/surely-it-needs-another-gun/':location.href);startURL.searchParams.set('challenge','new');startURL.searchParams.delete('mode');startURL.hash='';entry.href=startURL.href;document.querySelector('#menu-dialog')?.append(entry);
+ document.querySelector('#sketch-menu-dialog .sketch-menu-items')?.append(entry.cloneNode(true));
+ if(!initial)return {sync(){}};
+ document.body.classList.add('challenge-session');setLocked(true);
+ let roomId=initial,credentials=null,room=null,busy=false,lastBattle='',networkError='',preview=null,hydrated=false;
+ const storage=globalThis.localStorage,key=id=>`one-more-gun.challenge-seat.${id}`;
+ const bar=document.createElement('section');bar.id='challenge-bar';bar.innerHTML='<button id="challenge-open">Challenge lobby</button><div><b id="challenge-budget">Private fleet</b><span id="challenge-phase">Connecting…</span></div><button id="challenge-fight">Fight</button>';
+ const dialog=document.createElement('dialog');dialog.id='challenge-dialog';dialog.innerHTML='<div class="challenge-heading"><h2>Private fleet challenge</h2><button id="challenge-close">Draw</button></div><p id="challenge-explainer">Build separately. Lock your fleet when you are ready. Your Free Draw saves stay untouched.</p><section id="challenge-create"><label>Players <select id="challenge-seats"><option>2</option><option>3</option><option>4</option></select></label><label>Warshard budget <input id="challenge-rule-budget" type="number" min="1000" max="100000" step="1000" value="12000"></label><button id="challenge-create-button">Create private challenge</button></section><section id="challenge-lobby"><p id="challenge-room-detail"></p><ol id="challenge-players"></ol><button id="challenge-invite">Share invitation</button><button id="challenge-lock">Lock players & start building</button><button id="challenge-rematch">I’m in for a rematch</button></section><p id="challenge-notice" role="status"></p><a id="challenge-leave">Return to Free Draw</a>';
+ document.body.append(bar,dialog);const $=id=>document.getElementById(id);
+ $('challenge-explainer').textContent='Invite your friends, then lock the player list. Build in secret and press Fight when ready. The last surviving flagship wins—losing your main core eliminates your whole fleet. Your Free Draw saves stay untouched.';
+ $('challenge-rule-budget').max='24000';
+ const leave=new URL(location.href);leave.searchParams.delete('challenge');leave.hash='';$('challenge-leave').href=leave.href;
+ function notice(message){networkError=message;sync();}
+ function remember(data){credentials={playerId:data.playerId,seatToken:data.seatToken,inviteToken:data.inviteToken||credentials?.inviteToken};roomId=data.roomId;storage.setItem(key(roomId),JSON.stringify(credentials));const url=new URL(location.href);url.searchParams.set('challenge',roomId);url.hash='';history.replaceState(null,'',url);}
+ async function request(path,{body,auth=true}={}){
+  const base=String(globalThis.CHALLENGE_API_URL||'https://surely-challenges.inkbound-armada.workers.dev').replace(/\/$/,'');
+  const response=await fetch(base+'/api/challenges'+path,{method:body?'POST':'GET',headers:{...(body?{'Content-Type':'application/json'}:{}),...(auth&&credentials?{Authorization:`Bearer ${credentials.seatToken}`}:{})},...(body?{body:JSON.stringify(body)}:{}),cache:'no-store',referrerPolicy:'no-referrer'});
+  const data=await response.json();if(!response.ok)throw Error(data.error?.message||data.message||'Challenge request failed. Please retry.');return data;
+ }
+ async function accept(data){
+  const previousRound=room?.round;room=data.room;networkError='';
+  const own=room.players.find(p=>p.id===credentials.playerId),roundKey=`one-more-gun.challenge-loaded-round.${roomId}`,savedRound=Number(storage.getItem(roundKey));
+  const missedRematch=(previousRound&&previousRound!==room.round)||(savedRound&&savedRound!==room.round)||(!savedRound&&room.round>1);
+  if(missedRematch)onRoundStart?.(room);
+  if(own?.fleet&&(missedRematch||(!hydrated&&(own.locked||['ready','complete'].includes(room.phase)))))loadFleet(own.fleet);
+  storage.setItem(roundKey,String(room.round));hydrated=true;sync();
+  if(['ready','complete'].includes(room.phase)&&lastBattle!==`${roomId}:${room.round}`){await onBattle?.({...room,viewerId:credentials.playerId});lastBattle=`${roomId}:${room.round}`;}
+ }
+ async function action(type,extra={}){if(busy||!room)return;busy=true;sync();try{await accept(await request(`/${encodeURIComponent(roomId)}/action`,{body:{type,round:room.round,...extra}}));}catch(error){notice(error.message);}finally{busy=false;sync();}}
+ function sync(){
+  const me=room?.players.find(p=>p.id===credentials?.playerId),building=room?.phase==='building'&&!me?.locked,budget=room?.rules?.budget||12000;
+  setLocked(!building);preview=null;let invalid='';
+  if(building){try{preview=priceChallengeFleet(getFleet(),{players:room.players.length});}catch(error){invalid=error.message;}}
+  const cost=preview?.cost??me?.fleet?.cost;
+  $('challenge-budget').textContent=Number.isFinite(cost)?`${cost.toLocaleString()} / ${budget.toLocaleString()} Warshards`:`${budget.toLocaleString()} Warshard budget`;
+  $('challenge-budget').classList.toggle('over-budget',Number.isFinite(cost)&&cost>budget);
+  $('challenge-phase').textContent=!room?'Private fleet':room.phase==='lobby'?'Waiting for players':building?'Draw freely · erasing refunds cost':room.phase==='building'?'Fleet locked · waiting for friends':room.phase==='ready'?'Battle preparing':room.phase==='complete'?'Round complete':room.phase;
+  if(building&&invalid)$('challenge-phase').textContent=invalid;
+  if(building&&preview?.cost>budget)$('challenge-phase').textContent=`Erase ${(preview.cost-budget).toLocaleString()} Warshards to fight`;
+  $('challenge-fight').disabled=busy||!building||!preview||preview.cost>budget;
+  $('challenge-fight').textContent=me?.locked?'Locked':'Fight';
+  $('challenge-create').hidden=initial!=='new'||!!room;$('challenge-lobby').hidden=!room;
+  $('challenge-close').hidden=!room||room.phase==='lobby';
+  $('challenge-invite').hidden=!credentials?.inviteToken||room?.phase!=='lobby';
+  $('challenge-lock').hidden=credentials?.playerId!==room?.hostId||room?.phase!=='lobby';$('challenge-lock').disabled=busy||(room?.players.length||0)<2;
+  $('challenge-rematch').hidden=room?.phase!=='complete';$('challenge-rematch').disabled=busy||!!me?.rematch;
+  $('challenge-notice').textContent=networkError||invalid||(preview?.cost>budget?`Over budget by ${(preview.cost-budget).toLocaleString()} Warshards. Erase parts before locking your fleet.`:'');
+  if(room){$('challenge-room-detail').textContent=`Round ${room.round} · ${room.players.length} / ${room.maxSeats} players · ${budget.toLocaleString()} Warshards each`;$('challenge-players').replaceChildren(...room.players.map((p,index)=>{const item=document.createElement('li');item.textContent=`Player ${index+1}${p.id===credentials.playerId?' (you)':''}${p.id===room.hostId?' · host':''} — ${p.locked?'fleet locked':room.phase==='lobby'?'joined':'building'}${p.rematch?' · rematch ready':''}`;return item;}));}
+ }
+ $('challenge-open').onclick=()=>dialog.showModal();$('challenge-close').onclick=()=>dialog.close();
+ dialog.addEventListener('cancel',event=>{if(!room||room.phase==='lobby')event.preventDefault();});
+ $('challenge-create-button').onclick=async()=>{if(busy)return;busy=true;try{const data=await request('',{auth:false,body:{maxSeats:Number($('challenge-seats').value),budget:Number($('challenge-rule-budget').value)}});remember(data);location.replace(new URL(location.href).href);}catch(error){notice(error.message);}finally{busy=false;sync();}};
+ $('challenge-lock').onclick=()=>action('lockRoster');
+ $('challenge-fight').onclick=async()=>{try{const fleet=validateChallengeFleet(getFleet(),{budget:room.rules?.budget||12000,players:room.players.length});await action('lockFleet',{fleet});}catch(error){notice(error.message);}};
+ $('challenge-rematch').onclick=()=>action('voteRematch',{consent:true});
+ $('challenge-invite').onclick=async()=>{const url=new URL(location.href);url.hash=new URLSearchParams({invite:credentials.inviteToken}).toString();try{if(navigator.share)await navigator.share({title:'Draw your fleet. Fight mine.',url:url.href});else{await navigator.clipboard.writeText(url.href);notice('Invitation copied. Anyone with this link can join while seats remain.');}}catch(error){if(error.name!=='AbortError')notice('Could not share this invitation. Please allow clipboard access and try again.');}};
+ dialog.showModal();sync();
+ (async()=>{if(initial==='new')return;try{credentials=JSON.parse(storage.getItem(key(roomId))||'null');if(!credentials){const inviteToken=new URLSearchParams(location.hash.slice(1)).get('invite');if(!inviteToken)throw Error('This device has no seat in the challenge. Open the invitation link to join.');const data=await request(`/${encodeURIComponent(roomId)}/join`,{auth:false,body:{inviteToken}});remember(data);await accept(data);}else{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url);await accept(await request(`/${encodeURIComponent(roomId)}/state`));}if(room.phase!=='lobby')dialog.close();}catch(error){notice(error.message);}})();
+ const poll=setInterval(async()=>{if(!credentials||busy||document.hidden)return;try{await accept(await request(`/${encodeURIComponent(roomId)}/state`));}catch(error){notice(error.message);}},2000);
+ return {sync,dispose(){clearInterval(poll);bar.remove();dialog.remove();},room:()=>room};
+}
+
+return {challengeStorage,initChallengeUI};
+})();
+modules["toy-arena.mjs"]=(()=>{
+// Symmetric combat: every entrant uses the same drawn-part firing and defence rules.
+const {createWorld,enemyTargets,firePlayerWeapons,advancePlayerProjectiles,stepPointDefence,stepBeams,decaySeveredParts,damagePart} = modules["toy-core.mjs"];
+const {stepCrew} = modules["toy-crew.mjs"];
+const {stepFleetFlight} = modules["toy-flight.mjs"];
+const {advancePower,setPowerMode} = modules["toy-power.mjs"];
+const {stepShields} = modules["toy-shields.mjs"];
+const {structureState,hullIndex} = modules["toy-structure.mjs"];
+function placeArenaFleets(players,{distance=3000}={}){
+ if(!Number.isFinite(distance)||distance<500||distance>50000)throw Error('Spawn distance must be between 500 and 50000.');
+ const order=[...players].sort((a,b)=>String(a.id).localeCompare(String(b.id)));
+ return players.map(player=>{const copy=JSON.parse(JSON.stringify(player)),core=copy.parts.find(p=>p.kind==='core');if(!core)throw Error('Each fleet needs a main core.');const theta=Math.PI+order.findIndex(p=>p.id===player.id)*Math.PI*2/players.length,angle=theta+Math.PI,c=Math.cos(angle),s=Math.sin(angle),ox=core.x,oy=core.y,tx=Math.cos(theta)*distance/2,ty=Math.sin(theta)*distance/2;
+  for(const part of copy.parts){for(const p of [part,...(part.points||[])]){const x=p.x-ox,y=p.y-oy;p.x=tx+x*c-y*s;p.y=ty+x*s+y*c;}part.angle=(part.angle||0)+angle;if(['core','escortCore'].includes(part.kind)){part.flightHeading=(part.flightHeading||0)+angle;part.vx=0;part.vy=0;delete part.flight;}}return copy;});
+}
+
+function createArena(players,{seed=1,maxDuration=180,powerMode=true,structureMode=true,shieldMode=true,flightMode=true,positionFleet=true,distance=3000}={}){
+ if(!Array.isArray(players)||players.length<2||players.length>4)throw Error('An arena needs two to four players.');
+ if(new Set(players.map(p=>p.id)).size!==players.length)throw Error('Player IDs must be unique.');
+ if(positionFleet)players=placeArenaFleets(players,{distance});
+ const worlds=players.map(player=>{
+  if(!Array.isArray(player.parts)||player.parts.filter(p=>p.kind==='core'&&p.hp>0).length!==1)throw Error('Each fleet needs one live main core.');
+  const w=createWorld(seed),parts=JSON.parse(JSON.stringify(player.parts));
+  if(new Set(parts.map(p=>p.id)).size!==parts.length)throw Error('Part IDs must be unique within each fleet.');
+  const ids=new Map(parts.map(p=>[p.id,`${player.id}:${p.id}`]));
+  for(const p of parts){p.id=ids.get(p.id);p.shipId=ids.get(p.shipId)||p.id;p.cooldown=0;p.salvoRemaining=0;p.salvoTimer=0;p.beamCharge=0;p.beamFiring=0;p.beamCooldown=0;p.shieldCharge=0;p.shieldDelay=0;}
+  w.parts=parts;w._id=parts.length+100;w.paused=false;w.powerMode=powerMode;w.structureMode=structureMode;w.shieldMode=shieldMode;w.flightMode=flightMode;w.friendlyFire=false;
+  w.playerId=player.id;
+  w.arenaWeaponLaunches={missile:0,torpedo:0,gun:0};w.arenaDamageReceived=0;w.arenaDamageDealt=0;
+  // Context links deliberately remain outside JSON saves / exported battle records.
+  for(const key of ['arenaOpponents','arenaHits','arenaIncoming','arenaHostileFields','arenaTeamId','arenaProjectileCap','arenaTargetOwners'])Object.defineProperty(w,key,{writable:true,configurable:true,value:null});
+  w.arenaTeamId=player.id;
+  w.arenaProjectileCap=Math.floor(1024/players.length);
+  if(powerMode)setPowerMode(w,true);
+  return w;
+ });
+ return {seed,time:0,ticks:0,accumulator:0,phase:'battle',winnerId:null,reason:null,maxDuration,worlds,events:[]};
+}
+
+function expireVisuals(w,dt){
+ for(const d of w.debris){d.x+=d.vx*dt;d.y+=d.vy*dt;d.angle+=dt;d.life-=dt;}
+ w.debris=w.debris.filter(d=>d.life>0).slice(-1000);
+ for(const e of w.effects){if(e.delay>0)e.delay=Math.max(0,e.delay-dt);else e.life-=dt;}
+ w.effects=w.effects.filter(e=>e.life>0).slice(-1200);
+}
+
+function arenaTick(arena,dt){
+ const hits=[],contexts=new Map();arena.time+=dt;arena.ticks++;
+ const canonical=[...arena.worlds].sort((a,b)=>String(a.playerId).localeCompare(String(b.playerId))),offset=(arena.ticks+(arena.seed>>>0))%canonical.length;
+ // Shared shields/PD resolve contacts serially, but no fixed player gets first
+ // contact priority every tick. Canonical rotation is independent of input order.
+ const combatOrder=[...canonical.slice(offset),...canonical.slice(0,offset)];
+ const owners=new Map();for(const w of canonical)for(const p of w.parts)owners.set(p.id,w);
+ const hubSummaries=new Map(canonical.map(other=>[other,other.parts.filter(p=>['core','escortCore'].includes(p.kind)&&p.hp>0).map(p=>{let radius=p.radius;for(const part of other.parts)if(part.hp>0&&part.shipId===p.id&&part.kind!=='shield')for(const q of [part,...(part.points||[])])radius=Math.max(radius,Math.hypot(q.x-p.x,q.y-p.y)+(part.radius||0));return {id:p.id,x:p.x,y:p.y,hp:p.hp,radius};})]));
+ for(const w of arena.worlds){
+  w.arenaTargetOwners=owners;
+  w.arenaHits=hits;w.arenaOpponents=canonical.filter(other=>other!==w&&!other.defeated);
+  // Flight gets hostile hub summaries only; combat always targets the real parts.
+  w.enemies=w.arenaOpponents.flatMap(other=>hubSummaries.get(other));
+ }
+ for(const w of arena.worlds){
+  w.time=arena.time;
+  if(w.defeated){contexts.set(w,{targets:enemyTargets(w),liveEnemies:w.enemies});continue;}
+  stepCrew(w,dt);if(w.flightMode)stepFleetFlight(w,dt);
+  const power=w.powerMode?advancePower(w,dt):null,shields=w.shieldMode?stepShields(w,dt):[];
+  for(const field of shields)field.arenaWorld=w;
+  const structure=w.structureMode?structureState(w):null;
+  if(structure)decaySeveredParts(w,dt,structure.connected);
+  contexts.set(w,{power,shields,structure,friendlyHull:w.structureMode?hullIndex(w):null});
+ }
+ for(const w of arena.worlds){const ctx=contexts.get(w);ctx.targets=enemyTargets(w);ctx.liveEnemies=w.enemies;ctx.hostileShields=w.arenaOpponents.flatMap(other=>contexts.get(other)?.shields||[]);w.arenaHostileFields=ctx.hostileShields;}
+ // All fleets get their firing opportunity before hostile hull damage is committed.
+ for(const w of combatOrder)if(!w.defeated){const c=contexts.get(w);firePlayerWeapons(w,dt,c);stepBeams(w,dt,c.targets,c.hostileShields,c.structure?.connected);for(const projectile of [...w.missiles,...w.bullets])if(projectile.teamId==null){projectile.teamId=w.playerId;projectile.id=`${w.playerId}:${projectile.id}`;w.arenaWeaponLaunches[projectile.torpedo?'torpedo':projectile.trail?'missile':'gun']++;}}
+ for(const w of combatOrder)if(!w.defeated){const c=contexts.get(w);w.arenaIncoming=canonical.filter(other=>other!==w).flatMap(other=>other.missiles);stepPointDefence(w,dt,c.structure?.connected,c.friendlyHull);}
+ for(const w of combatOrder)advancePlayerProjectiles(w,dt,contexts.get(w));
+ for(const hit of hits){const actual=Math.min(hit.part.hp,hit.damage);if(actual<=0)continue;damagePart(hit.owner,hit.part,hit.damage,'enemy');hit.owner.arenaDamageReceived+=actual;const attacker=canonical.find(w=>w.playerId===hit.attackerId);if(attacker)attacker.arenaDamageDealt+=actual;arena.events.push({type:'damage',time:arena.time,attackerId:hit.attackerId,defenderId:hit.owner.playerId,partId:hit.part.id,kind:hit.part.kind,damage:actual});}
+ for(const w of arena.worlds)expireVisuals(w,dt);
+ if(arena.events.length>4000)arena.events.splice(0,arena.events.length-4000);
+ const alive=arena.worlds.filter(w=>!w.defeated);
+ if(alive.length<=1){arena.phase='finished';arena.winnerId=alive[0]?.playerId??null;arena.reason=alive.length?'last fleet standing':'mutual destruction';}
+ else if(arena.time>=arena.maxDuration){arena.phase='finished';arena.reason='time limit';}
+}
+
+function stepArena(arena,dt=.025){
+ if(arena.phase!=='battle'||!Number.isFinite(dt)||dt<=0)return arena;
+ arena.accumulator+=Math.min(.25,dt);while(arena.accumulator>=.025-1e-10&&arena.phase==='battle'){arena.accumulator=Math.max(0,arena.accumulator-.025);arenaTick(arena,.025);}return arena;
+}
+
+function exportArenaCheckpoint(arena){return JSON.parse(JSON.stringify({...arena,checkpointVersion:1}));}
+function restoreArenaCheckpoint(players,descriptor,checkpoint){
+ if(checkpoint?.checkpointVersion!==1||!Array.isArray(checkpoint.worlds)||checkpoint.worlds.length!==players.length)throw Error('Invalid arena checkpoint.');
+ const a=createArena(players,descriptor),snap=JSON.parse(JSON.stringify(checkpoint));
+ for(const w of a.worlds){const saved=snap.worlds.find(other=>other.playerId===w.playerId);if(!saved)throw Error('Checkpoint players do not match.');Object.assign(w,saved);}
+ for(const key of ['seed','time','ticks','accumulator','phase','winnerId','maxDuration','events','reason'])if(Object.hasOwn(snap,key))a[key]=snap[key];
+ return a;
+}
+
+return {placeArenaFleets,createArena,stepArena,exportArenaCheckpoint,restoreArenaCheckpoint};
+})();
+modules["challenge-battle.mjs"]=(()=>{
+const {createArena,stepArena} = modules["toy-arena.mjs"];
+const {drawReactor} = modules["toy-reactor-render.mjs"];
+const {drawEngines} = modules["toy-flight-render.mjs"];
+const {drawShield,drawShieldEffect} = modules["toy-shield-render.mjs"];
+const {shieldFields} = modules["toy-shields.mjs"];
+const {structureState} = modules["toy-structure.mjs"];
+const TEAM=['#6fffe0','#ffad77','#c3a0ff','#fff28c'];
+let closePrevious=null;
+function showChallengeBattle(room,{audio,onClose=()=>{}}={}){
+ if(!room.battle)throw Error('Waiting for the server to prepare this battle.');
+ if(room.battle.simulationVersion!=='arena-v1')throw Error('Reload the game to watch this battle version.');
+ closePrevious?.();
+ const players=room.players.map(p=>({id:p.id,parts:p.fleet.parts}));
+ let arena=createArena(players,room.battle),stopped=false,started=performance.now(),last=started,zoom=1,cx=arena.worlds[0].parts[0].x,cy=arena.worlds[0].parts[0].y,finishedAt=0;
+ const revealMs=players.length*1800+1400;
+ const overlay=document.createElement('section');overlay.id='challenge-battle';overlay.setAttribute('aria-label','Fleet showdown');
+ overlay.innerHTML='<canvas aria-label="Fleet battle arena"></canvas><header><b>THE REVEAL</b><span>Every fleet. Every secret. All at once.</span></header><div class="challenge-scoreboard"></div><footer><button data-battle-sound>Sound</button><button data-battle-replay hidden>Watch again</button><button data-battle-close hidden>Results & rematch</button></footer>';
+ document.body.append(overlay);document.querySelector('#challenge-dialog')?.close();
+ const canvas=overlay.querySelector('canvas'),g=canvas.getContext('2d'),title=overlay.querySelector('header b'),subtitle=overlay.querySelector('header span'),board=overlay.querySelector('.challenge-scoreboard');
+ const cards=room.players.map((p,i)=>{const card=document.createElement('div');card.style.borderColor=TEAM[i];const name=document.createElement('b'),meter=document.createElement('progress'),info=document.createElement('small');name.textContent=p.id===room.viewerId?'Your fleet':`Fleet ${i+1}`;meter.max=p.fleet.parts.reduce((n,p)=>n+p.maxHp,0);meter.value=meter.max;card.append(name,meter,info);board.append(card);return {card,meter,info};});
+ const sound=overlay.querySelector('[data-battle-sound]');sound.onclick=async()=>{audio?.setEnabled(true);await audio?.unlock();audio?.event({type:'wave'});};
+ const end=()=>{stopped=true;overlay.remove();onClose();};closePrevious=end;
+ overlay.querySelector('[data-battle-close]').onclick=end;
+ overlay.querySelector('[data-battle-replay]').onclick=()=>{arena=createArena(players,room.battle);started=performance.now();last=started;finishedAt=0;overlay.querySelectorAll('[data-battle-close],[data-battle-replay]').forEach(b=>b.hidden=true);};
+ function draw(now){
+  if(stopped)return;
+  const box=overlay.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,1.5),width=box.width,height=box.height;
+  if(canvas.width!==Math.round(width*dpr)||canvas.height!==Math.round(height*dpr)){canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);}
+  const dt=Math.min(.1,(now-last)/1000);last=now;
+  if(now-started>revealMs&&arena.phase==='battle')stepArena(arena,dt);
+  const revealIndex=Math.floor((now-started)/1800),focus=revealIndex<players.length?arena.worlds[revealIndex]:null;
+  const alive=focus?focus.parts:arena.worlds.flatMap(w=>w.parts),bounds=alive.flatMap(p=>[p,...(p.points||[])]);
+  if(bounds.length){const minX=Math.min(...bounds.map(p=>p.x)),maxX=Math.max(...bounds.map(p=>p.x)),minY=Math.min(...bounds.map(p=>p.y)),maxY=Math.max(...bounds.map(p=>p.y));const padding=focus?140:500,desired=Math.min(focus?1.4:.85,(width-48)/(maxX-minX+padding),(height-230)/(maxY-minY+padding));zoom+=(desired-zoom)*Math.min(1,dt*(focus?5:2));cx+=((minX+maxX)/2-cx)*Math.min(1,dt*(focus?5:2));cy+=((minY+maxY)/2-cy)*Math.min(1,dt*(focus?5:2));}
+  g.setTransform(dpr,0,0,dpr,0,0);g.fillStyle='#06121d';g.fillRect(0,0,width,height);
+  for(let i=0;i<90;i++){g.fillStyle=i%3?'#8baac355':'#b8ddff';g.fillRect((i*173.31)%width,(i*i*31.7)%height,1.4,1.4);}
+  g.translate(width/2,height/2+15);g.scale(zoom,zoom);g.translate(-cx,-cy);
+  for(let i=0;i<arena.worlds.length;i++){
+   const w=arena.worlds[i],color=TEAM[i],connected=w.structureMode?structureState(w).connected:null;
+   for(const p of w.parts){g.globalAlpha=connected&&!connected.has(p.id)&&!['core','escortCore','reactor','shield'].includes(p.kind)?.35:1;
+    if(p.kind==='reactor'){drawReactor(g,p,arena.time,zoom,.8,true);continue;}
+    if(p.kind==='shield')continue;
+    g.strokeStyle=({missile:'#ff8278',gun:'#ffda85',torpedo:'#ffb86f',pd:'#c5b1ff',beam:'#fff5ac',tractor:'#b8ff76'})[p.kind]||color;g.lineWidth=(p.kind==='hull'?2.2:1.5)/zoom;g.lineCap='round';g.lineJoin='round';g.beginPath();
+    if(p.points?.length>1){p.points.forEach((q,j)=>j?g.lineTo(q.x,q.y):g.moveTo(q.x,q.y));g.stroke();}
+    else{g.arc(p.x,p.y,['core','escortCore'].includes(p.kind)?p.radius:Math.max(3/zoom,7),0,Math.PI*2);g.fillStyle=color+'33';g.fill();g.stroke();}
+    if(p.beamTrace){g.strokeStyle='#fff7c0';g.lineWidth=4/zoom;g.beginPath();g.moveTo(p.beamTrace.x,p.beamTrace.y);g.lineTo(p.beamTrace.endX,p.beamTrace.endY);g.stroke();}
+   }
+   g.globalAlpha=1;drawEngines(g,w);for(const field of shieldFields(w))drawShield(g,field,arena.time,zoom);
+   for(const m of w.missiles){g.strokeStyle=color+'aa';g.lineWidth=(m.torpedo?2.5:1)/zoom;g.beginPath();(m.trail||[]).forEach((p,j)=>j?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y));g.lineTo(m.x,m.y);g.stroke();g.fillStyle=m.torpedo?'#fff1bc':'#ffffff';g.beginPath();g.arc(m.x,m.y,(m.torpedo?3:1.5)/zoom,0,Math.PI*2);g.fill();}
+   g.strokeStyle=color;g.lineWidth=1.5/zoom;g.beginPath();for(const b of w.bullets){g.moveTo(b.x,b.y);g.lineTo(b.x-b.vx*.018,b.y-b.vy*.018);}g.stroke();
+   for(const e of w.effects){if(e.kind==='shieldHit'||e.kind==='shieldBreak'){drawShieldEffect(g,e,zoom);continue;}g.globalAlpha=Math.max(0,e.life/e.maxLife);g.strokeStyle=e.kind==='explosion'||e.kind==='torpedoBlast'?'#ffd3a0':color;g.lineWidth=2/zoom;g.beginPath();if(e.kind==='intercept'){g.moveTo(e.x,e.y);g.lineTo(e.toX,e.toY);}else g.arc(e.x,e.y,e.radius*(1+(1-e.life/e.maxLife)*1.5),0,Math.PI*2);g.stroke();}g.globalAlpha=1;
+   for(const event of w.events.splice(0)){const type={missileLaunch:'launch',torpedoLaunch:'torpedo',torpedoDetonated:'torpedoBlast',partDestroyed:'explosion',gunShot:'gun',interception:'gun',shieldBreak:'explosion'}[event.type];if(type)audio?.event({type,pan:Math.max(-1,Math.min(1,((event.x||0)-cx)*zoom/(width/2)))});}
+   cards[i].meter.value=w.parts.reduce((n,p)=>n+Math.max(0,p.hp),0);cards[i].info.textContent=w.defeated?'FLAGSHIP LOST':`${w.parts.length} parts · ${w.stats.interceptions||0} intercepted`;
+  }
+  if(arena.phase==='finished'){if(!finishedAt){finishedAt=now;audio?.event({type:'torpedoBlast',power:3});}const winner=room.players.findIndex(p=>p.id===arena.winnerId);title.textContent=winner<0?'DRAW':`FLEET ${winner+1} WINS`;subtitle.textContent=`${arena.time.toFixed(1)}s · ${arena.reason}. Your original designs are safe.`;if(now-finishedAt>2000)overlay.querySelectorAll('[data-battle-close],[data-battle-replay]').forEach(b=>b.hidden=false);}
+  else{const countdown=Math.ceil((revealMs-(now-started))/1000);title.textContent=focus?`FLEET ${revealIndex+1} REVEALED`:countdown>0?'WEAPONS READY':'FLEET SHOWDOWN';subtitle.textContent=focus?`${players[revealIndex].parts.length} parts · ${room.players[revealIndex].fleet.cost.toLocaleString()} Warshards`:countdown>0?'The secrets are out.':`${arena.time.toFixed(1)}s · ${arena.worlds.filter(w=>!w.defeated).length} fleets remain`;}
+  overlay.dataset.phase=arena.phase;overlay.dataset.ticks=String(arena.ticks);overlay.dataset.winner=arena.winnerId||'';
+  requestAnimationFrame(draw);
+ }
+ requestAnimationFrame(draw);
+ return {close:end,status:()=>({phase:arena.phase,ticks:arena.ticks,winnerId:arena.winnerId,time:arena.time})};
+}
+
+return {showChallengeBattle};
+})();
 modules["toy.mjs"]=(()=>{
 const {initWelcome} = modules["toy-welcome.mjs"];
 const {initMobileBattle} = modules["toy-mobile-battle.mjs"];
@@ -3403,6 +3807,9 @@ const {sketchbookStorage} = modules["toy-sketchbook-storage.mjs"];
 const {initSketchbook} = modules["toy-sketchbook.mjs"];
 const {sketchbookFollowView,sketchbookOverviewView} = modules["toy-sketchbook-camera.mjs"];
 const {fleetAdvice} = modules["toy-readiness.mjs"];
+const {fleetCapacity,assertFleetCapacity} = modules["toy-limits.mjs"];
+const {challengeStorage,initChallengeUI} = modules["challenge-ui.mjs"];
+const {showChallengeBattle} = modules["challenge-battle.mjs"];
 const {createWorld,addStroke,addEscort,stepWorld,sendWave,sendCapital,sendConvoy,shipBounds,addReactor,powerSummary,setPowerMode,beamStats} = modules["toy-core.mjs"];
 const {setCrewMode,syncCrew,rescueCrew,crewSummary,assignCrew,crewRoleFor,crewOperational} = modules["toy-crew.mjs"];
 const {structureSummary,setStructureMode,coreConnectionHints} = modules["toy-structure.mjs"];
@@ -3427,10 +3834,15 @@ const {dreadnoughtStatus} = modules["toy-core.mjs"];
 const $=s=>document.querySelector(s),canvas=$('#space'),ctx=canvas.getContext('2d'),audio=createToyAudio();
 const mobileVisibility=matchMedia('(max-width:800px), (max-width:950px) and (pointer:coarse)');
 const sketchbookPreference=new URLSearchParams(location.search).get('sketchbook');
+const challengeId=new URLSearchParams(location.search).get('challenge');
+let challengeUI=null,challengeLocked=!!challengeId,challengePlayback=null;
 const sketchbookMode=sketchbookPreference==='1'||(sketchbookPreference!=='0'&&mobileVisibility.matches);
 document.body.classList.toggle('sketchbook',sketchbookMode);
 let localStorage=null,sketchStorageFailed=false;
-try{localStorage=sketchbookMode?sketchbookStorage(globalThis.localStorage):globalThis.localStorage;}catch{sketchStorageFailed=sketchbookMode;}
+try{localStorage=challengeId?challengeStorage(globalThis.localStorage,challengeId):sketchbookMode?sketchbookStorage(globalThis.localStorage):globalThis.localStorage;}catch{sketchStorageFailed=sketchbookMode;}
+canvas.addEventListener('pointerdown',event=>{if(challengeLocked){event.preventDefault();event.stopImmediatePropagation();}},true);
+document.addEventListener('keydown',event=>{if(challengeLocked&&!event.target.closest('dialog,input,select,textarea')){event.preventDefault();event.stopImmediatePropagation();}},true);
+document.addEventListener('click',event=>{if(challengeLocked&&event.target.closest('#undo,#sketch-undo,#new,#import-ship,#monster,#design-library')){event.preventDefault();event.stopImmediatePropagation();}},true);
 $('#friendly-fire').onclick=()=>{world.friendlyFire=world.friendlyFire===false;recorder.event('action',{name:'friendlyFire',enabled:world.friendlyFire});save();updateUI();toast(world.friendlyFire?'FRIENDLY FIRE ON · Other ships can take hits. Your own ship is protected.':'FRIENDLY FIRE OFF · Friendly hits are harmless.');};
 $('#dreadnought').onclick=()=>{void audio.unlock();const enemy=sendCapital(world,{dreadnought:true});if(!enemy){toast('Clear the battlefield and restore your fleet first.');return;}history=[];fit(true);toast('THE LAST ARGUMENT · Break two missile batteries to expose its reactor.');save();updateUI();};
 $('#open-experiments').onclick=()=>$('#experiments-dialog').showModal();
@@ -3568,7 +3980,7 @@ canvas.addEventListener('pointermove',e=>{
 },true);
 for(const event of ['pointerup','pointercancel'])canvas.addEventListener(event,e=>{
  if(stroke?.kind!=='erase')return;e.stopImmediatePropagation();
- const count=stroke.removed;stroke=null;save();updateUI();recorder.event('eraseParts',{count});
+ const count=stroke.removed;stroke=null;if(count)world.buildLimitMessage='';save();updateUI();recorder.event('eraseParts',{count});
  toast(count?`${count} parts erased · Undo restores this cut.`:'No parts here. Drag across the drawing to erase.');
 },true);
 window.addEventListener('keydown',e=>{if(!e.target.closest('dialog')&&!e.ctrlKey&&!e.metaKey&&e.key.toLowerCase()==='e')choose('erase');});
@@ -3582,10 +3994,11 @@ function end(){
   const parts=drawn.kind==='shield'?addShield(world,drawn.points,drawn.ownerId):drawn.kind==='reactor'?addReactor(world,drawn.points,drawn.ownerId):drawn.kind==='escort'?addShipCore(world,drawn.points[0]):addStroke(world,drawn.kind,drawn.points,drawn.ownerId);
   if(drawn.kind==='shield'){if(parts.length)setShieldMode(world,true);toast(parts.length?'SHIELD FIELD DRAWN · Let time run to charge it.':'Close the blue loop around a bridge. One field per ship.');}
   if(drawn.kind==='reactor')toast(parts.length?(world.powerMode?'REACTOR BUILT · More power for the barrage.':'REACTOR BUILT · Enable reactor power in Experiments.'):'Close the outline of a room: join the end back to the beginning.');
-  parts.forEach((p,i)=>born.set(p.id,performance.now()+i*17));audio.event({type:'build',power:Math.min(3,parts.length/3)});
+  parts.forEach((p,i)=>born.set(p.id,performance.now()+i*17));if(parts.length)audio.event({type:'build',power:Math.min(3,parts.length/3)});
   if(drawn.kind==='beam'&&parts.length){const stats=beamStats(parts[0]);toast(`SPINAL BEAM · ${Math.round(stats.damage)} damage/sec · ${Math.round(stats.energy)} energy when reactor power is on`);}
   if(drawn.kind==='missile')toast(`${parts.length*10} MISSILES PER SALVO · DRAWN & ARMED`);
   if(drawn.kind==='escort'){if(parts.length){buildShipId=parts[0].id;choose('reactor');toast('New ship’s bridge placed. Draw its reactor room next.');}else{history.pop();toast('Place the bridge away from other bridges. Maximum 12 escorts.');}}
+  if(!parts.length&&world.buildLimitMessage)toast(world.buildLimitMessage);
  }
  save();updateUI();
 }
@@ -3617,7 +4030,7 @@ let pendingShipImport=null,importWasPaused=true;
 function cancelShipImport(){pendingShipImport=null;world.paused=importWasPaused;updateUI();}
 $('#import-ship').onclick=()=>{importWasPaused=world.paused;world.paused=true;$('#import-ship-file').value='';$('#import-ship-file').click();updateUI();};
 $('#import-ship-file').addEventListener('cancel',cancelShipImport);
-$('#import-ship-file').addEventListener('change',async()=>{const file=$('#import-ship-file').files?.[0];if(!file){cancelShipImport();return;}try{if(file.size>MAX_SHIP_FILE_BYTES)throw new Error('Ship file is too large (maximum 16 MB).');pendingShipImport=parseShipImport(await file.text());const escorts=pendingShipImport.parts.filter(p=>p.kind==='escortCore').length;$('#import-summary').textContent=`${file.name}: ${pendingShipImport.parts.length} parts and ${escorts} escort${escorts===1?'':'s'}. It will open with time frozen and no active enemies.`;$('#import-dialog').returnValue='cancel';$('#import-dialog').showModal();}catch(error){cancelShipImport();toast(error.message||'Could not read this ship file.');}});
+$('#import-ship-file').addEventListener('change',async()=>{const file=$('#import-ship-file').files?.[0];if(!file){cancelShipImport();return;}try{if(file.size>MAX_SHIP_FILE_BYTES)throw new Error('Ship file is too large (maximum 16 MB).');pendingShipImport=parseShipImport(await file.text());assertFleetCapacity(pendingShipImport);const escorts=pendingShipImport.parts.filter(p=>p.kind==='escortCore').length;$('#import-summary').textContent=`${file.name}: ${pendingShipImport.parts.length} parts and ${escorts} escort${escorts===1?'':'s'}. It will open with time frozen and no active enemies.`;$('#import-dialog').returnValue='cancel';$('#import-dialog').showModal();}catch(error){cancelShipImport();toast(error.message||'Could not read this ship file.');}});
 $('#import-dialog').addEventListener('close',()=>{if($('#import-dialog').returnValue!=='import'||!pendingShipImport){cancelShipImport();return;}const data=pendingShipImport;pendingShipImport=null;world=recordedWorld(Date.now());world.parts=data.parts;world.blueprint=data.blueprint;world.flightMode=data.flightMode;world.flight=data.flight;world.warshards=data.warshards;world.shards=data.shards;world.crewMode=data.crewMode;world.crewVersion=data.crewVersion;world.structureMode=data.structureMode;world.shieldMode=data.shieldMode;world.crew=data.crew;world.wave=data.wave;world.stats=data.stats;world._id=data.id;world.friendlyFire=data.friendlyFire;world.powerMode=data.powerMode===true;world.powerReserves=data.powerReserves;world.powerCharge=data.powerCharge||0;world.powerInitialized=data.powerInitialized===true;world.defeated=!world.parts.some(p=>p.kind==='core');world.paused=true;view=data.view;sound=data.sound;audio.setEnabled(sound);history=[];born.clear();stroke=null;pan=null;restoreLegacyLauncherTraces();choose('hull');save();updateUI();toast('Ship imported. Time is frozen. Make it even more unreasonable.');});
 function excess(){world.paused=true;history.push(structuredClone(world.parts));for(const sign of [-1,1]){addStroke(world,'hull',[{x:-260,y:sign*80},{x:-170,y:sign*180},{x:260,y:sign*110},{x:340,y:0}]);addStroke(world,'missile',[{x:-230,y:sign*125},{x:210,y:sign*95}]);addStroke(world,'missile',[{x:-150,y:sign*215},{x:110,y:sign*210}]);addStroke(world,'gun',[{x:290,y:sign*65},{x:370,y:sign*35}]);}fit();save();toast('A starting point for excess. Keep drawing beyond it.');}
 $('#monster').onclick=()=>{void audio.unlock();excess();};
@@ -3642,6 +4055,14 @@ const lines=['DAMAGE BY SHIP / WEAPON',...totals.slice(-24).map(t=>`Wave ${t.wav
  $('#battle-records-dialog').showModal();
 };
 function updateUI(){
+ challengeUI?.sync();
+ const capacity=fleetCapacity(world),capacityPercent=Math.round(capacity.ratio*100);
+ $('#fleet-capacity-status').textContent=`Fleet capacity ${capacityPercent}%`;
+ $('#fleet-capacity').classList.toggle('near-limit',capacity.ratio>=.85);
+ $('#fleet-capacity-meter').value=Math.min(1,capacity.ratio);
+ $('#fleet-capacity-detail').textContent=`${capacity.parts} / ${capacity.limits.parts} parts · ${capacity.weapons} / ${capacity.limits.weapons} weapons · ${capacity.ships} / ${capacity.limits.ships} ships · ${capacity.points.toLocaleString()} / ${capacity.limits.points.toLocaleString()} drawing points`;
+ $('#fleet-capacity-message').textContent=world.buildLimitMessage||capacity.message||'';
+ $('#fleet-capacity-message').hidden=!(world.buildLimitMessage||capacity.message);
  if(sketchbook&&world.paused!==sketchWasPaused){sketchWasPaused=world.paused;touchMode(!world.paused);}
  $('#fit').textContent=world.paused?'Fit fleet':'Show battle';
  $('#fit').title=world.paused?'Frame your fleet':'Frame your fleet and the enemies';
@@ -3897,6 +4318,7 @@ function diagnosticSnapshot(){
  return {selfDamage:world.stats.selfDamage||0,selfHits:world.stats.selfHits||0,simTime:world.time,blueprintParts:world.blueprint?.parts.length||0,restoring:!!world.restoration?.active,bornEntries:born.size,wave:world.wave,parts:world.parts.length,points:world.parts.reduce((s,p)=>s+(p.points?.length||0),0),undoParts:history.reduce((s,h)=>s+h.length,0),undoFrames:history.length,missiles:world.missiles.length,torpedoes:world.missiles.filter(m=>m.torpedo).length,trailPoints:world.missiles.reduce((s,m)=>s+(m.trail?.length||0),0),bullets:world.bullets.length,enemies:world.enemies.length,carriers:world.enemies.filter(e=>e.capitalClass==='carrier').length,fighters:world.enemies.filter(e=>e.carrierId).length,effects:world.effects.length,debris:world.debris.length,shards:world.shards.length,warshards:world.warshards,missilesLaunched:world.stats.missilesLaunched,enemyKills:world.stats.enemyKills,partsLost:world.stats.partsLost,heapBytes:heap?.usedJSHeapSize,heapLimitBytes:heap?.jsHeapSizeLimit,zoom:view.zoom,canvasWidth:canvas.width,canvasHeight:canvas.height,dpr:ratio,paused:world.paused,hidden:document.hidden,flightMode:world.flightMode,structureMode:world.structureMode,powerMode:world.powerMode,shieldMode:world.shieldMode,crewMode:world.crewMode};
 }
 function frame(now){
+ if(document.querySelector('#challenge-battle')){last=now;requestAnimationFrame(frame);return;}
  const gap=now-last,dt=Math.min(.05,gap/1000);last=now;
  const hub=world.parts.find(p=>p.kind==='core'),ox=hub?.x||0,oy=hub?.y||0;
  let started=performance.now();stepWorld(world,dt);recorder.cost('sim',performance.now()-started);
@@ -3921,7 +4343,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)re
 async function buildFeed(){try{const b=await(await fetch(`toy-build.json?t=${Date.now()}`,{cache:'no-store'})).json();$('#build-phase').textContent=b.phase;$('#build-detail').textContent=b.detail;if(buildRevision&&buildRevision!==b.revision&&!stroke){recorder.event('buildReload',{revision:b.revision});recorder.flush();save();location.reload();}buildRevision??=b.revision;}catch{$('#build-detail').textContent='Build feed reconnecting. Your drawing stays here.';}}
 restore();if(repairLegacyRebuiltCore(world)){const core=world.parts.find(p=>p.kind==='core');view.x=core.x;view.y=core.y;save();toast('Misplaced bridge returned to its surviving ship.');}restoreLegacyLauncherTraces();resize();updateUI();requestAnimationFrame(frame);
 if(globalThis.TOY_STANDALONE){document.querySelector('#menu-dialog a[href="/"]')?.remove();$('#build-phase').textContent='Offline shipyard · Draw. Fight. Share.';$('#build-detail').textContent='Export your ship to keep a backup or send it to a friend. Download Game saves a playable HTML copy.';}else{buildFeed();setInterval(buildFeed,1500);}
-window.toy={status:()=>({parts:world.parts.length,pods:world.parts.filter(p=>p.kind==='missile').length,paused:world.paused,wave:world.wave,enemies:world.enemies.length,missiles:world.missiles.length,stats:{...world.stats},view:{...view},core:world.parts.find(p=>p.kind==='core')?.hp,tool,flight:flightSummary(world),harvest:warshardSummary(world),shields:shieldSummary(world),structure:structureSummary(world),crew:crewSummary(world),power:powerSummary(world)}),restoration:()=>restorationSummary(world),world:()=>world,logs:()=>recorder.export(),fit,excess};
+window.toy={status:()=>({parts:world.parts.length,pods:world.parts.filter(p=>p.kind==='missile').length,paused:world.paused,wave:world.wave,enemies:world.enemies.length,missiles:world.missiles.length,stats:{...world.stats},view:{...view},core:world.parts.find(p=>p.kind==='core')?.hp,tool,capacity:fleetCapacity(world),buildLimitMessage:world.buildLimitMessage||'',flight:flightSummary(world),harvest:warshardSummary(world),shields:shieldSummary(world),structure:structureSummary(world),crew:crewSummary(world),power:powerSummary(world)}),restoration:()=>restorationSummary(world),world:()=>world,logs:()=>recorder.export(),fit,excess};
 const DESIGN_KEY='one-more-gun.designs.v1';let designLibrary=[];
 try{const embedded=$('#ship-design-library')?.textContent||'[]';const raw=(!testMode&&localStorage.getItem(DESIGN_KEY))||embedded;if(raw.length>8*1024*1024)throw Error('Design library too large');const list=JSON.parse(raw);if(!Array.isArray(list)||list.length>24)throw Error('Invalid design library');designLibrary=list.map(validateShipDesign);}catch{toast('Saved designs could not be loaded. Your fleet is unaffected.');}
 function persistDesigns(){if(!testMode)try{localStorage.setItem(DESIGN_KEY,JSON.stringify(designLibrary));}catch{$('#design-message').textContent='Browser storage is full. Designs remain in this page; Download Game to keep a copy.';}}
@@ -3960,7 +4382,7 @@ if(!sketchbookMode){
  mobileCraft=initMobileCraft({getTool:()=>tool,getHint:()=>$('#tool-hint').textContent,getAudio:()=>audio.status(),toggleSound,isPaused:()=>world.paused,testSound:async()=>{sound=true;audio.setEnabled(true);const ready=await audio.unlock();if(ready)audio.event({type:'build'});$('#sound-check-result').textContent=ready?'Test chime sent. If you cannot hear it, check media volume and your speaker/headphone output. Older iPhones may also need Silent Mode off.':'The browser has not enabled audio. Tap Play test sound again. If it stays silent, reload the page.';save();updateUI();}});
 }else{
  sketchbook=initSketchbook({
-  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,enemies:world.enemies,warshards:world.warshards,restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent,buildShip:buildShip()}),
+  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,enemies:world.enemies,warshards:world.warshards,capacity:fleetCapacity(world),buildLimitMessage:world.buildLimitMessage||'',restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent,buildShip:buildShip()}),
   choose:kind=>{choose(kind);touchMode(false);updateUI();},move:value=>{touchMode(value);updateUI();},undo:()=>$('#undo').click(),
   watch:()=>{void audio.unlock();if(world.paused&&!world.defeated)sketchCamera='follow';if(world.paused||world.defeated)togglePause();},
   resume:()=>{if(world.paused&&!world.defeated)togglePause();},pause:()=>{world.paused=true;updateUI();save();},
@@ -3979,6 +4401,13 @@ if(!sketchbookMode){
   document.body.append(warning);$('#sketch-storage-return').href=$('#sketch-normal').href;$('#sketch-temporary').onclick=()=>warning.close();warning.showModal();
  }
 }
+challengeUI=initChallengeUI({
+ getFleet:()=>({version:1,parts:structuredClone(world.parts)}),
+ loadFleet:fleet=>{world=recordedWorld(Date.now());world.parts=structuredClone(fleet.parts);world._id=Math.max(1,...world.parts.map(p=>Number(String(p.id).match(/-(\d+)$/)?.[1])||Number(p.id)||0));world.paused=true;world.defeated=false;history=[];born.clear();stroke=null;pan=null;choose('reactor');save();fit();updateUI();},
+ setLocked:value=>{challengeLocked=value;document.body.classList.toggle('challenge-locked',value);if(challengeId){world.paused=true;if(value)stroke=null;}},
+ onBattle:room=>{challengePlayback=showChallengeBattle(room,{audio,onClose:()=>{const dialog=$('#challenge-dialog');if(!dialog.open)dialog.showModal();}});},
+ onRoundStart:()=>{challengePlayback?.close();challengePlayback=null;$('#challenge-dialog')?.close();}
+});
 
 return {};
 })();</script>
