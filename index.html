@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-4l/+AHKIqTsbFtukqZ5AN56X93Rbp+0jyPW6YQ483iM='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-So22TdUF3kylmfOlXdkHrqE5jObKV4YqmGaV37v/pD4='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
 *{box-sizing:border-box}body{margin:0;padding:18px 24px 10px;min-width:360px}button,a{-webkit-tap-highlight-color:transparent}button{font:700 13px 'DM Sans',sans-serif;color:inherit;background:#182535;border:1px solid #3e5266;border-radius:7px;padding:12px 15px;cursor:pointer}button:hover{background:#273d50;border-color:#7ba0b7}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.45;cursor:default}header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:16px}header a{color:#aebfcd;font-size:13px}.eyebrow{font-size:11px;letter-spacing:.18em;color:#a7b9c8}h1{font:800 clamp(25px,3.5vw,43px)/1 'Barlow Condensed',sans-serif;margin:6px 0 0}h1 i{color:var(--red);font-style:normal}.toolbar{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:10px}.toolbar button{text-align:left;padding:12px 14px;border-bottom:3px solid var(--paper)}.toolbar button[data-tool=missile]{border-bottom-color:var(--red)}.toolbar button[data-tool=gun]{border-bottom-color:var(--gold)}.toolbar button[data-tool=repair]{border-bottom-color:var(--cyan)}.toolbar b{display:block;font-size:14px}.toolbar small{display:block;color:#bdcad4;font-weight:400;margin-top:5px;font-size:12px}.toolbar .selected{background:#304357;box-shadow:inset 0 0 0 1px #aec0cf}.stage{height:calc(100dvh - 300px);min-height:380px;position:relative;overflow:hidden;border:1px solid #425368;border-radius:12px;background:#101b29}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.canvas-caption{pointer-events:none;position:absolute;top:28%;width:100%;text-align:center;transition:opacity .3s}.canvas-caption b{display:block;font:600 25px 'Barlow Condensed';color:#bbcbd8}.canvas-caption span{display:block;margin-top:8px;font-size:14px;color:#8ea5b9}.mode{position:absolute;top:15px;left:18px;font-size:12px;letter-spacing:.06em;color:var(--cyan);pointer-events:none}.readout{position:absolute;bottom:15px;left:18px;pointer-events:none;font-size:13px;color:#bdceda;line-height:1.7;white-space:pre-line}.toast{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);width:max-content;max-width:85%;text-align:center;background:#0c1422ed;border:1px solid #57788f;padding:11px 17px;border-radius:8px;font-size:16px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.visible{opacity:1}.controls{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}.primary{background:var(--red);border-color:var(--red);color:#211b20}.primary:hover{background:#ff947b}.camera{display:flex;align-items:center;gap:6px;margin-left:auto}.camera button{padding:10px 13px}.camera span{font-size:12px;min-width:36px;text-align:center}kbd{margin-left:8px;color:#8babc3;font-size:10px}.instructions{display:flex;justify-content:space-between;gap:16px;color:#b6c4d0;font-size:12px;line-height:1.5;margin-top:10px}footer{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #26394c}footer>div{flex:1}footer b{display:block;color:var(--cyan);font-size:15px}footer span{display:block;color:#afbfcb;font-size:13px;margin-top:4px}footer button{font-size:11px;padding:9px}dialog{max-width:450px;background:#182535;color:var(--paper);border:1px solid #678095;border-radius:12px;padding:25px}dialog::backdrop{background:#02050bbd}dialog p{line-height:1.6}dialog form{display:flex;gap:12px}#space:active{cursor:crosshair}
 .toast{bottom:82px}
 .warshards-hud{position:absolute;right:18px;top:14px;text-align:right;pointer-events:none;color:#ceff9e;max-width:42%;text-shadow:0 2px 5px #08131f}.warshards-hud span{display:block;font-size:12px;letter-spacing:.15em}.warshards-hud b{display:block;font-size:28px;font-variant-numeric:tabular-nums;line-height:1.2}.warshards-hud small{display:block;font-size:12px;color:#bad4a7;margin-top:4px}
@@ -2237,9 +2237,69 @@ function launchPreview(w, part, { targetAngle = part?.angle || 0 } = {}) {
 
 return {launchPreview};
 })();
+modules["toy-impact-synthesis.mjs"]=(()=>{
+// Original stochastic pressure/fracture model. No recorded audio is read or copied.
+const IMPACT_STYLES=Object.freeze(['tungsten','planet','demolition','rolling','pressure']);
+const SHAPES={
+ tungsten:{decay:1.05,bass:1,roar:.34,crack:.52,events:[[0,1],[.34,.2],[.72,.12]],cutoff:86},
+ planet:{decay:2.7,hold:1,bass:1.5,roar:.27,crack:.24,events:[[0,1],[.18,.35]],cutoff:62},
+ demolition:{decay:.83,bass:1.1,roar:.43,crack:.46,events:[[0,1],[.46,.75],[1.08,.64],[1.88,.27]],cutoff:92},
+ rolling:{decay:2.2,hold:.55,bass:1.2,roar:.4,crack:.27,events:[[0,1],[1.35,.9],[2.9,.73]],cutoff:73},
+ pressure:{decay:3,hold:.8,bass:1.45,roar:.17,crack:.8,events:[[0,1],[.09,.22]],cutoff:53}
+};
+function randomSource(seed){let value=seed>>>0||0x72a46b91;return ()=>{value^=value<<13;value^=value>>>17;value^=value<<5;return (value>>>0)/2147483648-1;};}
+function lowpass(rate,frequency,q=.707){
+ frequency=Math.min(frequency,rate*.45);
+ const w=2*Math.PI*frequency/rate,c=Math.cos(w),alpha=Math.sin(w)/(2*q),a0=1+alpha,b0=(1-c)/2/a0,b1=(1-c)/a0,a1=-2*c/a0,a2=(1-alpha)/a0;let x1=0,x2=0,y1=0,y2=0;
+ return x=>{const y=b0*x+b1*x1+b0*x2-a1*y1-a2*y2;x2=x1;x1=x;y2=y1;y1=y;return y;};
+}
+function synthesizeImpact({sampleRate=22050,style='planet',duration,seed=0x5d177a,weapon=false}={}){
+ if(!IMPACT_STYLES.includes(style))throw Error('Unknown impact style.');
+ if(!Number.isInteger(sampleRate)||sampleRate<8000||sampleRate>96000)throw Error('Sample rate must be between 8000 and 96000 Hz.');
+ duration=duration??(weapon?1.65:6);if(!Number.isFinite(duration)||duration<.8||duration>(weapon?2:12))throw Error('Invalid impact duration.');
+ const length=Math.round(sampleRate*duration),left=new Float32Array(length),right=new Float32Array(length),shape=SHAPES[style],random=randomSource(seed),timeScale=duration/6;
+ // For short weapon hits, retain a punchy initial body rather than miniature chirps.
+ const tailScale=weapon?.48:duration/6;
+ const attackStep=Math.exp(-1/(sampleRate*.006)),riseStep=Math.exp(-1/(sampleRate*.045)),envelopeStep=Math.exp(-1/(sampleRate*shape.decay*tailScale)),crackStep=Math.exp(-1/(sampleRate*.024)),fractureStep=Math.exp(-1/(sampleRate*.0007));
+ const bassWeight=shape.bass,roarWeight=shape.roar,widthWeight=.15*shape.roar,crackWeight=shape.crack,holdSamples=Math.round((shape.hold||0)*timeScale*sampleRate);
+ for(const [eventIndex,[position,weight]]of shape.events.entries()){
+  const start=Math.round(position*timeScale*sampleRate),available=length-start;
+  const sub=lowpass(sampleRate,shape.cutoff*.65,.86),body=lowpass(sampleRate,shape.cutoff,1.05),hullLow=lowpass(sampleRate,135),hullHigh=lowpass(sampleRate,350),roarLow=lowpass(sampleRate,220),roarHigh=lowpass(sampleRate,1700),sideLow=lowpass(sampleRate,280),sideHigh=lowpass(sampleRate,2400),fracture=lowpass(sampleRate,5000);
+  const dcL=lowpass(sampleRate,22),dcR=lowpass(sampleRate,22);let turbulence=0;const turbulenceRate=1-Math.exp(-2*Math.PI*13/sampleRate);
+  const pan=eventIndex===0?0:(eventIndex%2?-.5:.5),panLeft=1-pan*.15,panRight=1+pan*.15;
+  let attackDecay=1,riseDecay=1,envelopeDecay=1,crackDecay=1,fractureDecay=1;
+  for(let i=0;i<available;i++){
+   const n=random(),side=random();turbulence+=(n-turbulence)*turbulenceRate;
+   const envelope=(1-attackDecay)*(.38+.62*(1-riseDecay))*envelopeDecay;
+   const irregular=Math.max(.36,Math.min(1.5,.83+turbulence*3.5));
+   // Broad noise resonances, never oscillator sweeps. Multipliers compensate
+   // the energy removed by each narrow low-frequency pressure filter.
+   const low=(sub(n)*10+body(n)*3.7)*bassWeight;
+   const hull=(hullHigh(n)-hullLow(n))*1.0;
+   const roar=(roarHigh(n)-roarLow(n))*roarWeight;
+   const width=(sideHigh(side)-sideLow(side))*widthWeight;
+   const crack=fracture(n)*crackWeight*crackDecay*(1-fractureDecay);
+   const tail=envelope*irregular,mono=(low+hull+roar)*tail+crack;
+   const l=weight*(mono*panLeft+width*tail),r=weight*(mono*panRight-width*tail);
+   left[start+i]+=l-dcL(l);right[start+i]+=r-dcR(r);
+   // Avoid spending the silent tail multiplying denormals on mobile CPUs.
+   attackDecay=attackDecay>1e-20?attackDecay*attackStep:0;riseDecay=riseDecay>1e-20?riseDecay*riseStep:0;if(i>=holdSamples)envelopeDecay*=envelopeStep;crackDecay=crackDecay>1e-20?crackDecay*crackStep:0;fractureDecay=fractureDecay>1e-20?fractureDecay*fractureStep:0;
+  }
+ }
+ // Linear peak normalisation preserves transients; no flat-topped waveshaper.
+ // Fade the last 180ms to avoid truncation clicks on deliberately short clips.
+ let peak=0;const fade=Math.min(.18,duration*.12)*sampleRate;
+ for(let i=0;i<length;i++){const end=Math.min(1,(length-1-i)/fade);left[i]*=end;right[i]*=end;peak=Math.max(peak,Math.abs(left[i]),Math.abs(right[i]));}
+ const gain=peak>0?.74/peak:0;for(let i=0;i<length;i++){left[i]*=gain;right[i]*=gain;}left[length-1]=0;right[length-1]=0;
+ return {left,right,sampleRate,duration:length/sampleRate};
+}
+
+return {IMPACT_STYLES,synthesizeImpact};
+})();
 modules["toy-audio.mjs"]=(()=>{
 // A gesture-unlocked, bounded WebAudio score for the drawing toy.
 // All sounds are synthesized locally; no requests, keys, or downloaded assets.
+const {IMPACT_STYLES,synthesizeImpact} = modules["toy-impact-synthesis.mjs"];
 function createToyAudio({ contextFactory, session = globalThis.navigator?.audioSession } = {}) {
   let context;
   let master;
@@ -2249,6 +2309,8 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
   let voiceCount = 0;
   const active = new Set();
   const lastPlayed = new Map();
+  const impacts=new Map(),heavy=new Set();let preparationTimer=null,preparationStarted=false;
+  const styles=IMPACT_STYLES.map(s=>typeof s==='string'?s:s.id);
   const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
   function sessionType(type){try{if(session)session.type=type;}catch{/* Optional on older browsers. */}}
 
@@ -2289,8 +2351,29 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
     try {
       if(enabled)sessionType('playback');
       if (context.state === 'suspended'||context.state === 'interrupted') await context.resume();
+      if(context.state==='running'&&!preparationStarted){preparationStarted=true;prepareImpact(styles[0]);prepareImpact('planet',true);let next=1;const batch=()=>{preparationTimer=null;if(disposed||next>=styles.length)return;prepareImpact(styles[next++]);if(next<styles.length)preparationTimer=setTimeout(batch,20);};preparationTimer=setTimeout(batch,20);}
       return context.state === 'running';
     } catch { return false; }
+  }
+
+  function prepareImpact(style,weapon=false){
+    const key=weapon?'weapon':style;if(disposed||impacts.has(key))return;
+    const pcm=synthesizeImpact({sampleRate:22050,style,duration:weapon?1.8:4.8,seed:7411,weapon});
+    const buffer=context.createBuffer(2,pcm.left.length,pcm.sampleRate);
+    buffer.getChannelData(0).set(pcm.left);buffer.getChannelData(1).set(pcm.right);impacts.set(key,buffer);
+  }
+
+  function heavyImpact({finale=false,style,pan=0,power=1}){
+    if(finale&&[...heavy].filter(h=>h.finale).length>=2)return false;
+    if(heavy.size>=3){if(!finale)return false;const expendable=[...heavy].find(h=>!h.finale);if(!expendable)return false;try{expendable.source.stop();}catch{}expendable.finish();}
+    if(voiceCount>=56)return false;
+    const selected=styles.includes(style)?style:styles[Math.floor(Math.random()*styles.length)];
+    const buffer=impacts.get(finale?selected:'weapon')||impacts.get(styles[0]);if(!buffer)return false;
+    const source=context.createBufferSource(),envelope=context.createGain(),stereo=context.createStereoPanner();source.buffer=buffer;stereo.pan.value=pan;
+    envelope.gain.value=(finale?.95:.65)*Math.min(1.15,Math.sqrt(power))/(1+heavy.size*.35);
+    source.connect(envelope);envelope.connect(stereo);stereo.connect(master);voiceCount++;active.add(source);
+    const entry={source,finale,finish:()=>{if(!active.delete(source))return;voiceCount--;heavy.delete(entry);source.disconnect();envelope.disconnect();stereo.disconnect();}};
+    source.onended=entry.finish;heavy.add(entry);source.start(context.currentTime);source.stop(context.currentTime+buffer.duration+.025);return true;
   }
 
   function setEnabled(value) {
@@ -2306,7 +2389,7 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
     noise = false, filter = 'lowpass', cutoff = 2000, endCutoff = cutoff,
     duration = 0.3, delay = 0, gain = 0.2, attack = 0.005, pan = 0 }) {
     // This bounds nodes as well as sound level during huge missile salvos.
-    if (voiceCount >= 56) return;
+    if (voiceCount >= 54) return; // Two source slots remain available for finales.
     const t = context.currentTime + delay;
     const source = noise ? context.createBufferSource() : context.createOscillator();
     if (noise) {
@@ -2346,16 +2429,17 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
     if (!enabled || disposed || !context || context.state !== 'running') return false;
     let type = data.type || data.kind;
     type = ({ missile: 'launch', missileLaunch: 'launch', fire: 'gun', destroy: 'explosion' })[type] || type;
-    const gaps = { beamCharge: .65, beamFire: .5, torpedo: .18, torpedoBlast: .2, launch: 0.055, explosion: 0.07, gun: 0.045, build: 0.07, hit: 0.07, wave: 0.8, collect: 0.12 };
+    const gaps = { finale:.35, beamCharge: .65, beamFire: .5, torpedo: .18, torpedoBlast: .35, launch: 0.055, explosion: 0.07, gun: 0.045, build: 0.07, hit: 0.07, wave: 0.8, collect: 0.12 };
     if (!(type in gaps)) return false;
     const now = context.currentTime;
     if (now - (lastPlayed.get(type) ?? -Infinity) < gaps[type]) return false;
-    if (voiceCount > (type === 'explosion' || type === 'torpedoBlast' ? 48 : 36)) return false;
+    if (type!=='finale'&&voiceCount > (type === 'explosion' || type === 'torpedoBlast' ? 48 : 36)) return false;
     lastPlayed.set(type, now);
     const rawPower = Number(data.power ?? 1);
     const power = clamp(Number.isFinite(rawPower) ? rawPower : 1, 0.25, 3);
     const rawPan = Number(data.pan ?? data.x ?? 0);
     const pan = clamp(Number.isFinite(rawPan) ? rawPan : 0, -1, 1);
+    if(type==='finale'||type==='torpedoBlast')return heavyImpact({finale:type==='finale',style:data.style,pan,power});
     const add = options => layer({ pan, ...options });
     const variation = 0.92 + Math.random() * 0.16;
     if(type === 'beamCharge') {
@@ -2373,11 +2457,6 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
       add({frequency:90,endFrequency:32,duration:.5,gain:.35});
       add({noise:true,cutoff:300,endCutoff:1500,duration:1.1,attack:.12,gain:.32});
       add({frequency:160,endFrequency:65,wave:'triangle',duration:.8,gain:.12});
-    } else if(type === 'torpedoBlast') {
-      add({noise:true,cutoff:7000,endCutoff:140,duration:1.2,gain:.5});
-      add({frequency:100,endFrequency:26,duration:1.6,gain:.5});
-      add({frequency:44,endFrequency:25,delay:.08,duration:1.8,gain:.23});
-      add({noise:true,filter:'bandpass',cutoff:900,endCutoff:140,delay:.18,duration:1.5,gain:.22});
     } else if (type === 'launch') {
       // Rack-door punch, pressure ignition, then a climbing exhaust ribbon.
       add({ frequency: 150 * variation, endFrequency: 48, duration: 0.17, gain: 0.26 });
@@ -2414,6 +2493,7 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
 
   function dispose() {
     disposed = true;
+    clearTimeout(preparationTimer);preparationTimer=null;impacts.clear();heavy.clear();
     sessionType('auto');
     for (const source of active) { try { source.stop(); } catch { /* already ended */ } }
     active.clear(); voiceCount = 0;
@@ -2944,6 +3024,7 @@ const GAME_FILES = ['toy.html','toy.css','toy-crew.mjs','toy-power.mjs','toy-str
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-readiness.mjs','toy-intro-media.mjs','toy-welcome.mjs','toy-mobile-battle.mjs','toy-touch-camera.mjs','toy-mobile-craft.mjs','toy-enemy-visibility.mjs');
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-sketchbook-storage.mjs','toy-sketchbook-camera.mjs','toy-sketchbook.mjs','toy-sketchbook.css');
 GAME_FILES.splice(GAME_FILES.indexOf('toy-crew.mjs'),0,'toy-limits.mjs');
+GAME_FILES.splice(GAME_FILES.indexOf('toy-audio.mjs'),0,'toy-impact-synthesis.mjs');
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'toy-share-card.mjs','toy-social.mjs','toy-death-scene.mjs','challenge-fleet.mjs','challenge-poll.mjs','challenge-ui.mjs','challenge-ui.css','toy-arena.mjs','challenge-battle.mjs');
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'feedback-contract.mjs','toy-feedback.mjs','toy-feedback.css','toy-landing-media.mjs','toy-landing.mjs','toy-landing.css');
 GAME_FILES.splice(GAME_FILES.indexOf('challenge-ui.mjs'),0,'challenge-library.mjs','challenge-library.css');
@@ -3768,6 +3849,7 @@ const DEATH_VARIANTS=Object.freeze(['Reactor sunrise','Gravity funeral','Magazin
 function freeDeathSeed(previous,id,random=()=>globalThis.crypto.getRandomValues(new Uint32Array(1))[0]){
  return previous?.id===id&&Number.isFinite(previous.seed)?previous.seed>>>0:random()>>>0;
 }
+function deathAudioEvent(cue){return cue?.finale?{...cue,type:'finale'}:null;}
 const CUES=[{at:0,type:'beamCharge',power:1},{at:.5,type:'torpedoBlast',power:3},{at:1.2,type:'explosion',power:2},{at:2,type:'explosion',power:1}];
 function createDeathScene({id,parts=[],core={x:0,y:0},color='#ffbe83',seed=1,reducedMotion=false}={}){
  let rng=seed>>>0;const random=()=>{rng=(Math.imul(rng,1664525)+1013904223)>>>0;return rng/4294967296;};
@@ -3789,7 +3871,7 @@ function createDeathScene({id,parts=[],core={x:0,y:0},color='#ffbe83',seed=1,red
 function advanceDeathScene(scene,dt){
  const audioCues=[];if(scene.done||!Number.isFinite(dt)||dt<0)return {audioCues,done:scene.done};
  scene.time=Math.min(scene.duration,scene.time+Math.min(dt,.25));
- while(scene.nextCue<CUES.length&&CUES[scene.nextCue].at<=scene.time){const cue=CUES[scene.nextCue++];audioCues.push({type:cue.type,power:cue.power,x:scene.x,y:scene.y});}
+ while(scene.nextCue<CUES.length&&CUES[scene.nextCue].at<=scene.time){const cue=CUES[scene.nextCue++];audioCues.push({type:cue.type,power:cue.power,x:scene.x,y:scene.y,finale:cue.type==='torpedoBlast',style:['tungsten','planet','demolition','rolling','pressure'][scene.variant]});}
  scene.done=scene.time>=scene.duration;return {audioCues,done:scene.done};
 }
 function deathSceneBounds(scene){return {x:scene.x,y:scene.y,radius:scene.radius*1.8};}
@@ -3853,7 +3935,7 @@ function drawDeathScene(g,scene,{zoom=1}={}){
  g.globalAlpha=energy*fade*.7;g.fillStyle='#fffef2';g.beginPath();g.arc(0,0,r*.11,0,TAU);g.fill();g.restore();
 }
 
-return {DEATH_VARIANTS,freeDeathSeed,createDeathScene,advanceDeathScene,deathSceneBounds,drawDeathScene};
+return {DEATH_VARIANTS,freeDeathSeed,deathAudioEvent,createDeathScene,advanceDeathScene,deathSceneBounds,drawDeathScene};
 })();
 modules["challenge-fleet.mjs"]=(()=>{
 const {parseShipImport} = modules["toy-save.mjs"];
@@ -4309,7 +4391,7 @@ const {drawEngines} = modules["toy-flight-render.mjs"];
 const {drawShield,drawShieldEffect} = modules["toy-shield-render.mjs"];
 const {shieldFields} = modules["toy-shields.mjs"];
 const {structureState} = modules["toy-structure.mjs"];
-const {createDeathScene,advanceDeathScene,drawDeathScene,deathSceneBounds} = modules["toy-death-scene.mjs"];
+const {createDeathScene,advanceDeathScene,drawDeathScene,deathSceneBounds,deathAudioEvent} = modules["toy-death-scene.mjs"];
 const {crownModel} = modules["challenge-crown.mjs"];
 const TEAM=['#6fffe0','#ffad77','#c3a0ff','#fff28c'];
 let closePrevious=null;
@@ -4352,7 +4434,7 @@ function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,o
   if(now-snapshotAt>=100)snapshotAt=now;
   if(now-started>revealMs&&arena.phase==='battle')stepArena(arena,dt);
   for(const w of arena.worlds)if(w.defeated&&!destroyed.has(w.playerId)){const snapshot=snapshots.get(w.playerId);if(snapshot){destroyed.set(w.playerId,snapshot.shipId);scenes.push(snapshot.scene);}}
-  for(const scene of scenes)for(const cue of advanceDeathScene(scene,dt).audioCues)audio?.event({...cue,pan:Math.max(-1,Math.min(1,(cue.x-cx)*zoom/(width/2)))});
+  for(const scene of scenes)for(const cue of advanceDeathScene(scene,dt).audioCues){const sound=deathAudioEvent(cue);if(sound)audio?.event({...sound,pan:Math.max(-1,Math.min(1,(cue.x-cx)*zoom/(width/2)))});}
   const revealIndex=Math.floor((now-started)/1800),focus=!practice&&revealIndex<players.length?arena.worlds[revealIndex]:null;
   const alive=focus?focus.parts:arena.worlds.flatMap(w=>w.parts),bounds=alive.flatMap(p=>[p,...(p.points||[])]);
   for(const scene of scenes)if(!scene.done){const b=deathSceneBounds(scene);bounds.push({x:b.x-b.radius,y:b.y-b.radius},{x:b.x+b.radius,y:b.y+b.radius});}
@@ -4694,7 +4776,7 @@ const {initLanding} = modules["toy-landing.mjs"];
 const {initChallengeLibrary} = modules["challenge-library.mjs"];
 const {initFeedback} = modules["toy-feedback.mjs"];
 const {initPublicPlaytestUI} = modules["toy-social.mjs"];
-const {createDeathScene,advanceDeathScene,drawDeathScene,freeDeathSeed} = modules["toy-death-scene.mjs"];
+const {createDeathScene,advanceDeathScene,drawDeathScene,freeDeathSeed,deathAudioEvent} = modules["toy-death-scene.mjs"];
 const {initMobileBattle} = modules["toy-mobile-battle.mjs"];
 const {initTouchCamera} = modules["toy-touch-camera.mjs"];
 const {initMobileCraft} = modules["toy-mobile-craft.mjs"];
@@ -5255,7 +5337,7 @@ function advanceFreeDeaths(dt){
  if(world.defeated&&flagshipDeathSnapshot){add(flagshipDeathSnapshot);flagshipDeathSnapshot=null;}
  const alive=new Set(world.enemies.filter(e=>e.hp>0).map(e=>e.id));
  for(const [id,scene]of capitalDeathSnapshots)if(!alive.has(id)){add(scene);capitalDeathSnapshots.delete(id);}
- for(let i=freeDeathScenes.length-1;i>=0;i--){const scene=freeDeathScenes[i];for(const cue of advanceDeathScene(scene,dt).audioCues)audio.event({...cue,pan:clamp((scene.x-view.x)*view.zoom/(width*.5),-1,1)});if(scene.done)freeDeathScenes.splice(i,1);}
+ for(let i=freeDeathScenes.length-1;i>=0;i--){const scene=freeDeathScenes[i];for(const cue of advanceDeathScene(scene,dt).audioCues){const sound=deathAudioEvent(cue);if(sound)audio.event({...sound,pan:clamp((scene.x-view.x)*view.zoom/(width*.5),-1,1)});}if(scene.done)freeDeathScenes.splice(i,1);}
  canvas.dataset.deathScenes=String(freeDeathScenes.length);
 }
 function frame(now){
