@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3/TEH/krE3cRtumrfYwtBqSrEj91Uciq6ZT7vtepolk='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-e14uxrGuVFsfDN3HPiHoGAWcg0p+XJkUNJxS1Gl1c00='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
 *{box-sizing:border-box}body{margin:0;padding:18px 24px 10px;min-width:360px}button,a{-webkit-tap-highlight-color:transparent}button{font:700 13px 'DM Sans',sans-serif;color:inherit;background:#182535;border:1px solid #3e5266;border-radius:7px;padding:12px 15px;cursor:pointer}button:hover{background:#273d50;border-color:#7ba0b7}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.45;cursor:default}header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:16px}header a{color:#aebfcd;font-size:13px}.eyebrow{font-size:11px;letter-spacing:.18em;color:#a7b9c8}h1{font:800 clamp(25px,3.5vw,43px)/1 'Barlow Condensed',sans-serif;margin:6px 0 0}h1 i{color:var(--red);font-style:normal}.toolbar{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:10px}.toolbar button{text-align:left;padding:12px 14px;border-bottom:3px solid var(--paper)}.toolbar button[data-tool=missile]{border-bottom-color:var(--red)}.toolbar button[data-tool=gun]{border-bottom-color:var(--gold)}.toolbar button[data-tool=repair]{border-bottom-color:var(--cyan)}.toolbar b{display:block;font-size:14px}.toolbar small{display:block;color:#bdcad4;font-weight:400;margin-top:5px;font-size:12px}.toolbar .selected{background:#304357;box-shadow:inset 0 0 0 1px #aec0cf}.stage{height:calc(100dvh - 300px);min-height:380px;position:relative;overflow:hidden;border:1px solid #425368;border-radius:12px;background:#101b29}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.canvas-caption{pointer-events:none;position:absolute;top:28%;width:100%;text-align:center;transition:opacity .3s}.canvas-caption b{display:block;font:600 25px 'Barlow Condensed';color:#bbcbd8}.canvas-caption span{display:block;margin-top:8px;font-size:14px;color:#8ea5b9}.mode{position:absolute;top:15px;left:18px;font-size:12px;letter-spacing:.06em;color:var(--cyan);pointer-events:none}.readout{position:absolute;bottom:15px;left:18px;pointer-events:none;font-size:13px;color:#bdceda;line-height:1.7;white-space:pre-line}.toast{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);width:max-content;max-width:85%;text-align:center;background:#0c1422ed;border:1px solid #57788f;padding:11px 17px;border-radius:8px;font-size:16px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.visible{opacity:1}.controls{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}.primary{background:var(--red);border-color:var(--red);color:#211b20}.primary:hover{background:#ff947b}.camera{display:flex;align-items:center;gap:6px;margin-left:auto}.camera button{padding:10px 13px}.camera span{font-size:12px;min-width:36px;text-align:center}kbd{margin-left:8px;color:#8babc3;font-size:10px}.instructions{display:flex;justify-content:space-between;gap:16px;color:#b6c4d0;font-size:12px;line-height:1.5;margin-top:10px}footer{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #26394c}footer>div{flex:1}footer b{display:block;color:var(--cyan);font-size:15px}footer span{display:block;color:#afbfcb;font-size:13px;margin-top:4px}footer button{font-size:11px;padding:9px}dialog{max-width:450px;background:#182535;color:var(--paper);border:1px solid #678095;border-radius:12px;padding:25px}dialog::backdrop{background:#02050bbd}dialog p{line-height:1.6}dialog form{display:flex;gap:12px}#space:active{cursor:crosshair}
 .toast{bottom:82px}
 .warshards-hud{position:absolute;right:18px;top:14px;text-align:right;pointer-events:none;color:#ceff9e;max-width:42%;text-shadow:0 2px 5px #08131f}.warshards-hud span{display:block;font-size:12px;letter-spacing:.15em}.warshards-hud b{display:block;font-size:28px;font-variant-numeric:tabular-nums;line-height:1.2}.warshards-hud small{display:block;font-size:12px;color:#bad4a7;margin-top:4px}
@@ -2289,9 +2289,10 @@ function synthesizeImpact({sampleRate=22050,style='planet',duration,seed=0x5d177
  }
  // Smooth broadband compression controls rare crests without hard clipping or
  // favouring hiss over bass. Final linear normalisation keeps explicit headroom.
- // Fade the last 180ms to avoid truncation clicks on deliberately short clips.
- let peak=0;const fade=Math.min(.18,duration*.12)*sampleRate;
- for(let i=0;i<length;i++){const end=Math.min(1,(length-1-i)/fade);left[i]=left[i]/(1+.8*Math.abs(left[i]))*end;right[i]=right[i]/(1+.8*Math.abs(right[i]))*end;peak=Math.max(peak,Math.abs(left[i]),Math.abs(right[i]));}
+ // Weapon tails start dissolving after the initial punch; a raised cosine
+ // meets both the body and silence with zero slope. Finales keep their long bed.
+ let peak=0;const fade=(weapon?duration*.8:Math.min(.18,duration*.12))*sampleRate;
+ for(let i=0;i<length;i++){const remaining=Math.min(1,(length-1-i)/fade),end=weapon?.5-.5*Math.cos(Math.PI*remaining):remaining;left[i]=left[i]/(1+.8*Math.abs(left[i]))*end;right[i]=right[i]/(1+.8*Math.abs(right[i]))*end;peak=Math.max(peak,Math.abs(left[i]),Math.abs(right[i]));}
  const gain=peak>0?.86/peak:0;for(let i=0;i<length;i++){left[i]*=gain;right[i]*=gain;}left[length-1]=0;right[length-1]=0;
  return {left,right,sampleRate,duration:length/sampleRate};
 }
@@ -2348,19 +2349,21 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
     }
   }
 
-  async function unlock() {
+  async function unlock({finaleStyle} = {}) {
     if (!connectGraph()) return false;
     try {
       if(enabled)sessionType('playback');
       if (context.state === 'suspended'||context.state === 'interrupted') await context.resume();
       if(context.state==='running'&&!preparationStarted){preparationStarted=true;prepareImpact(styles[0]);prepareImpact('planet',true);let next=1;const batch=()=>{preparationTimer=null;if(disposed||next>=styles.length)return;prepareImpact(styles[next++]);if(next<styles.length)preparationTimer=setTimeout(batch,20);};preparationTimer=setTimeout(batch,20);}
+      // Explicit auditions must not race the background cache and play a fallback.
+      if(context.state==='running'&&styles.includes(finaleStyle))prepareImpact(finaleStyle);
       return context.state === 'running';
     } catch { return false; }
   }
 
   function prepareImpact(style,weapon=false){
     const key=weapon?'weapon':style;if(disposed||impacts.has(key))return;
-    const pcm=synthesizeImpact({sampleRate:22050,style,duration:weapon?1.8:4.8,seed:7411,weapon});
+    const pcm=synthesizeImpact({sampleRate:22050,style,duration:weapon?.9:4.8,seed:7411,weapon});
     const buffer=context.createBuffer(2,pcm.left.length,pcm.sampleRate);
     buffer.getChannelData(0).set(pcm.left);buffer.getChannelData(1).set(pcm.right);impacts.set(key,buffer);
   }
@@ -2372,7 +2375,7 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
     const selected=styles.includes(style)?style:styles[Math.floor(Math.random()*styles.length)];
     const buffer=impacts.get(finale?selected:'weapon')||impacts.get(styles[0]);if(!buffer)return false;
     const source=context.createBufferSource(),envelope=context.createGain(),stereo=context.createStereoPanner();source.buffer=buffer;stereo.pan.value=pan;
-    envelope.gain.value=(finale?.95:.65)*Math.min(1.15,Math.sqrt(power))/(1+heavy.size*.35);
+    envelope.gain.value=(finale?.95:.42)*Math.min(1.15,Math.sqrt(power))/(1+heavy.size*.35);
     source.connect(envelope);envelope.connect(stereo);stereo.connect(master);voiceCount++;active.add(source);
     const entry={source,finale,finish:()=>{if(!active.delete(source))return;voiceCount--;heavy.delete(entry);source.disconnect();envelope.disconnect();stereo.disconnect();}};
     source.onended=entry.finish;heavy.add(entry);source.start(context.currentTime);source.stop(context.currentTime+buffer.duration+.025);return true;
@@ -2442,42 +2445,44 @@ function createToyAudio({ contextFactory, session = globalThis.navigator?.audioS
     const rawPan = Number(data.pan ?? data.x ?? 0);
     const pan = clamp(Number.isFinite(rawPan) ? rawPan : 0, -1, 1);
     if(type==='finale'||type==='torpedoBlast')return heavyImpact({finale:type==='finale',style:data.style,pan,power});
-    const add = options => layer({ pan, ...options });
+    // Bring ordinary weapons forward without lifting UI chimes or finale levels.
+    const weaponGain=['beamCharge','beamFire','torpedo','launch','explosion','gun','hit'].includes(type)?1.2:1;
+    const add = options => layer({ pan, ...options, gain:(options.gain??.2)*weaponGain });
     const variation = 0.92 + Math.random() * 0.16;
     if(type === 'beamCharge') {
       // A rising electromagnetic whine, not a spoken warning. Three voices max.
       add({frequency:62,endFrequency:620,wave:'triangle',cutoff:1800,duration:2,attack:1.35,gain:.23});
-      add({frequency:67,endFrequency:660,wave:'sine',duration:2,attack:1.45,gain:.14});
+      add({frequency:48,endFrequency:95,wave:'triangle',cutoff:420,duration:2,attack:1.1,gain:.25});
       add({noise:true,filter:'bandpass',cutoff:180,endCutoff:2700,duration:2,attack:1.5,gain:.14});
     } else if(type === 'beamFire') {
       // Low impact plus a sustained, gritty beam body; no per-frame nodes.
-      add({frequency:130,endFrequency:30,duration:.32,gain:.4});
+      add({frequency:105,endFrequency:38,wave:'triangle',cutoff:700,duration:.48,gain:.48});
       add({frequency:47,endFrequency:38,wave:'sawtooth',cutoff:650,endCutoff:220,duration:1.45,attack:.08,gain:.28});
-      add({frequency:59,endFrequency:51,wave:'triangle',duration:1.4,attack:.09,gain:.25});
+      add({frequency:64,endFrequency:44,wave:'triangle',duration:1.4,attack:.07,gain:.34});
       add({noise:true,filter:'bandpass',cutoff:1900,endCutoff:480,duration:1.5,attack:.07,gain:.3});
     } else if (type === 'torpedo') {
-      add({frequency:90,endFrequency:32,duration:.5,gain:.35});
+      add({frequency:95,endFrequency:38,wave:'triangle',cutoff:650,duration:.6,gain:.46});
       add({noise:true,cutoff:300,endCutoff:1500,duration:1.1,attack:.12,gain:.32});
-      add({frequency:160,endFrequency:65,wave:'triangle',duration:.8,gain:.12});
+      add({frequency:145,endFrequency:58,wave:'triangle',duration:.8,gain:.2});
     } else if (type === 'launch') {
       // Rack-door punch, pressure ignition, then a climbing exhaust ribbon.
-      add({ frequency: 150 * variation, endFrequency: 48, duration: 0.17, gain: 0.26 });
+      add({ frequency: 120 * variation, endFrequency: 42, wave:'triangle',cutoff:850, duration: 0.28, gain: 0.42 });
       add({ noise: true, cutoff: 850, endCutoff: 3400, duration: 0.46, attack: 0.028, gain: 0.28 });
       add({ noise: true, filter: 'bandpass', cutoff: 3900, endCutoff: 680, delay: 0.045, duration: 0.58, gain: 0.12 });
     } else if (type === 'explosion') {
       // A sharp initial fracture over a falling body and irregular secondary debris.
-      add({ frequency: 115 * variation, endFrequency: 27, duration: 0.78 + power * 0.17, gain: 0.5 });
+      add({ frequency: 100 * variation, endFrequency: 35, wave:'triangle',cutoff:650, duration: 0.78 + power * 0.17, gain: 0.6 });
       add({ noise: true, cutoff: 5500, endCutoff: 120, duration: 0.75 + power * 0.2, gain: 0.46 });
-      add({ frequency: 48, endFrequency: 24, delay: 0.045, duration: 1.1, gain: 0.25 });
+      add({ frequency: 62, endFrequency: 32, delay: 0.045, duration: 1.1, gain: 0.34 });
       for (let i = 0; i < 3; i++) add({ noise: true, filter: 'bandpass', cutoff: 1000 + i * 660,
         endCutoff: 200, delay: 0.11 + i * 0.12 + Math.random() * 0.05,
         duration: 0.18 + i * 0.09, gain: 0.14 / (i + 1), pan: clamp(pan + (i - 1) * 0.18, -1, 1) });
     } else if (type === 'gun') {
-      add({ frequency: 185 * variation, endFrequency: 42, duration: 0.16, gain: 0.27 });
+      add({ frequency: 135 * variation, endFrequency: 45, wave:'triangle',cutoff:1000, duration: 0.25, gain: 0.46 });
       add({ noise: true, cutoff: 4700, endCutoff: 700, duration: 0.095, gain: 0.28 });
     } else if (type === 'hit') {
       add({ noise: true, filter: 'bandpass', cutoff: 1800, endCutoff: 300, duration: 0.16, gain: 0.17 });
-      add({ frequency: 260 * variation, endFrequency: 85, duration: 0.13, gain: 0.09 });
+      add({ frequency: 160 * variation, endFrequency: 55, wave:'triangle',cutoff:900, duration: 0.23, gain: 0.23 });
     } else if (type === 'collect') {
       const note = [523.25, 659.25, 783.99, 1046.5][Math.floor(now * 5) % 4];
       add({ frequency: note, endFrequency: note, wave: 'sine', duration: .23, gain: .12 });
