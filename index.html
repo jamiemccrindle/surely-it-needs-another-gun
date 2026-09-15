@@ -409,10 +409,19 @@ function localPoint(point, hub) {
   const c = Math.cos(heading), s = Math.sin(heading), dx = point.x - hub.x, dy = point.y - hub.y;
   return {x: Math.round((dx * c + dy * s) * 10000) / 10000, y: Math.round((-dx * s + dy * c) * 10000) / 10000};
 }
+// Call after validating points. Forgive a small gap, not a missing side.
+function loopAlmostClosed(points){
+ const gap=Math.hypot(points[0].x-points.at(-1).x,points[0].y-points.at(-1).y);
+ if(gap<=24)return true;
+ const xs=points.map(p=>p.x),ys=points.map(p=>p.y);
+ const diagonal=Math.hypot(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys));
+ let length=0;for(let i=1;i<points.length;i++)length+=Math.hypot(points[i].x-points[i-1].x,points[i].y-points[i-1].y);
+ return gap<=Math.min(96,Math.max(48,diagonal*.15))&&gap<=length*.14;
+}
 function reactorPolygon(raw) {
   if (!Array.isArray(raw) || raw.length < 4 || raw.length > 2048 || raw.some(p => !p || !Number.isFinite(p.x) || !Number.isFinite(p.y) || Math.abs(p.x) > 100000 || Math.abs(p.y) > 100000)) return null;
   const points = raw.map(p => ({ x: p.x, y: p.y }));
-  if (Math.hypot(points[0].x - points.at(-1).x, points[0].y - points.at(-1).y) > 24) return null;
+  if (!loopAlmostClosed(points)) return null;
   points[points.length - 1] = { ...points[0] };
   const xs = points.map(p => p.x), ys = points.map(p => p.y);
   const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
@@ -522,7 +531,7 @@ function advancePower(w, dt) {
   return geometry;
 }
 
-return {REACTOR_CELL,reactorPolygon,reactorCells,powerGeometry,powerSummary,availablePower,spendPower,localPowerCoverage,setPowerMode,advancePower};
+return {REACTOR_CELL,loopAlmostClosed,reactorPolygon,reactorCells,powerGeometry,powerSummary,availablePower,spendPower,localPowerCoverage,setPowerMode,advancePower};
 })();
 modules["toy-structure.mjs"]=(()=>{
 // Physical drawing connectivity, independent of shared stroke IDs.
@@ -649,13 +658,13 @@ return {structureState,structureSummary,coreConnectionHints,setStructureMode,hul
 modules["toy-shields.mjs"]=(()=>{
 const { crewOperational } = modules["toy-crew.mjs"];
 const {allowConstruction} = modules["toy-limits.mjs"];
-const {availablePower,spendPower} = modules["toy-power.mjs"];
+const {availablePower,spendPower,loopAlmostClosed} = modules["toy-power.mjs"];
 const MAX_CHARGE = 240;
 const fieldBodies = new WeakMap();
 function emit(w, type, extra = {}) { w.events.push({ type, time: w.time, ...extra }); if (w.events.length > 80) w.events.shift(); }
 function addShield(w, rawPoints, ownerId = null) {
   if (!Array.isArray(rawPoints) || rawPoints.length < 4 || rawPoints.length > 2048 || rawPoints.some(p => !p || !Number.isFinite(p.x) || !Number.isFinite(p.y) || Math.abs(p.x) > 100000 || Math.abs(p.y) > 100000)) return [];
-  if (Math.hypot(rawPoints[0].x - rawPoints.at(-1).x, rawPoints[0].y - rawPoints.at(-1).y) > 24) return [];
+  if (!loopAlmostClosed(rawPoints)) return [];
   const points = rawPoints.map(p => ({ x: p.x, y: p.y })); points[points.length - 1] = { ...points[0] };
   let area = 0; for (let i = 1; i < points.length; i++) area += points[i - 1].x * points[i].y - points[i].x * points[i - 1].y;
   if (Math.abs(area) < 1800) return [];
@@ -3103,6 +3112,7 @@ function initWelcome({fresh=false,pause=()=>{},resume=()=>{},storage,challenge=f
   dialog.querySelector('.welcome-controls').textContent='Desktop: drag to draw, scroll to pan, pinch to zoom, F to fit. Phone: one finger draws; two fingers pan and pinch to zoom. The challenge lobby is available at the top. Fight locks your design; the engine flies your fleet.';
  }
  const pickerTip=document.createElement('p');pickerTip.className='safety-strip';pickerTip.textContent=document.querySelector('#sketch-parts')?'FIRST: tap CHOOSE PARTS below the drawing area. That button opens reactors, armour, missiles and engines. Choose a part, draw it, then open CHOOSE PARTS again for the next system.':'FIRST: choose a part from the build tools beside the drawing area. Choose Reactor, draw it, then choose Armour, Missiles and Engines in turn.';dialog.querySelector('.welcome-premise').after(pickerTip);
+ const closureTip=document.createElement('p');closureTip.textContent='Reactor and shield loops do not need a perfect join: small gaps snap closed when you finish drawing.';dialog.querySelector('.safety-checks').append(closureTip);
  const video=dialog.querySelector('video'),watch=dialog.querySelector('#watch-intro');
  const bytes=Math.floor((introVideo.length-introVideo.indexOf(',')-1)*.75);
  dialog.querySelector('#intro-weight').textContent='Actual gameplay · large captions · silent · '+(bytes/1024/1024).toFixed(2)+' MB';
