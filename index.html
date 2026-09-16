@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-/qjAJuI5aflVSVl/ifYQ/E1UuSOXMQvaDrsjaqKHGNw='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-9OMOnNM039wpcX0LLb+AEWx9Gn4lBtaA/JtaarVBr4k='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
 *{box-sizing:border-box}body{margin:0;padding:18px 24px 10px;min-width:360px}button,a{-webkit-tap-highlight-color:transparent}button{font:700 13px 'DM Sans',sans-serif;color:inherit;background:#182535;border:1px solid #3e5266;border-radius:7px;padding:12px 15px;cursor:pointer}button:hover{background:#273d50;border-color:#7ba0b7}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.45;cursor:default}header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:16px}header a{color:#aebfcd;font-size:13px}.eyebrow{font-size:11px;letter-spacing:.18em;color:#a7b9c8}h1{font:800 clamp(25px,3.5vw,43px)/1 'Barlow Condensed',sans-serif;margin:6px 0 0}h1 i{color:var(--red);font-style:normal}.toolbar{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:10px}.toolbar button{text-align:left;padding:12px 14px;border-bottom:3px solid var(--paper)}.toolbar button[data-tool=missile]{border-bottom-color:var(--red)}.toolbar button[data-tool=gun]{border-bottom-color:var(--gold)}.toolbar button[data-tool=repair]{border-bottom-color:var(--cyan)}.toolbar b{display:block;font-size:14px}.toolbar small{display:block;color:#bdcad4;font-weight:400;margin-top:5px;font-size:12px}.toolbar .selected{background:#304357;box-shadow:inset 0 0 0 1px #aec0cf}.stage{height:calc(100dvh - 300px);min-height:380px;position:relative;overflow:hidden;border:1px solid #425368;border-radius:12px;background:#101b29}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.canvas-caption{pointer-events:none;position:absolute;top:28%;width:100%;text-align:center;transition:opacity .3s}.canvas-caption b{display:block;font:600 25px 'Barlow Condensed';color:#bbcbd8}.canvas-caption span{display:block;margin-top:8px;font-size:14px;color:#8ea5b9}.mode{position:absolute;top:15px;left:18px;font-size:12px;letter-spacing:.06em;color:var(--cyan);pointer-events:none}.readout{position:absolute;bottom:15px;left:18px;pointer-events:none;font-size:13px;color:#bdceda;line-height:1.7;white-space:pre-line}.toast{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);width:max-content;max-width:85%;text-align:center;background:#0c1422ed;border:1px solid #57788f;padding:11px 17px;border-radius:8px;font-size:16px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.visible{opacity:1}.controls{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}.primary{background:var(--red);border-color:var(--red);color:#211b20}.primary:hover{background:#ff947b}.camera{display:flex;align-items:center;gap:6px;margin-left:auto}.camera button{padding:10px 13px}.camera span{font-size:12px;min-width:36px;text-align:center}kbd{margin-left:8px;color:#8babc3;font-size:10px}.instructions{display:flex;justify-content:space-between;gap:16px;color:#b6c4d0;font-size:12px;line-height:1.5;margin-top:10px}footer{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #26394c}footer>div{flex:1}footer b{display:block;color:var(--cyan);font-size:15px}footer span{display:block;color:#afbfcb;font-size:13px;margin-top:4px}footer button{font-size:11px;padding:9px}dialog{max-width:450px;background:#182535;color:var(--paper);border:1px solid #678095;border-radius:12px;padding:25px}dialog::backdrop{background:#02050bbd}dialog p{line-height:1.6}dialog form{display:flex;gap:12px}#space:active{cursor:crosshair}
 .toast{bottom:82px}
 .warshards-hud{position:absolute;right:18px;top:14px;text-align:right;pointer-events:none;color:#ceff9e;max-width:42%;text-shadow:0 2px 5px #08131f}.warshards-hud span{display:block;font-size:12px;letter-spacing:.15em}.warshards-hud b{display:block;font-size:28px;font-variant-numeric:tabular-nums;line-height:1.2}.warshards-hud small{display:block;font-size:12px;color:#bad4a7;margin-top:4px}
@@ -254,6 +254,11 @@ body.challenge-locked #undo,body.challenge-locked #sketch-undo,body.challenge-lo
 .challenge-session #challenge-fight{max-width:136px;white-space:normal;line-height:1.15}
 #challenge-battle [data-battle-dethrone]{background:#f4ce7f;color:#172b29;font-weight:850;white-space:normal}
 #challenge-battle [data-battle-dethrone]:disabled{opacity:.7}
+.challenge-result-dock{position:absolute;bottom:max(12px,env(safe-area-inset-bottom));left:12px;right:12px;max-height:calc(100% - 185px);display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:none}
+#challenge-battle .challenge-result-dock footer{position:static;flex-shrink:0;width:100%;pointer-events:auto}
+.challenge-coach{box-sizing:border-box;width:min(100%,560px);min-height:0;overflow:auto;overscroll-behavior:contain;pointer-events:auto;background:#102832f5;border:1px solid #b1d9c6;border-top:3px solid #f4ce7f;border-radius:14px;padding:18px 20px;box-shadow:0 12px 60px #0008;text-align:left}
+.challenge-coach h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:#f4ce7f;margin:0 0 8px}.challenge-coach h3{font-size:23px;line-height:1.15;margin:16px 0 10px;color:#fff}.challenge-coach p{font-size:16px;line-height:1.45;margin:8px 0;color:#f0f7fa}.challenge-coach h2+p{font-size:13px;color:#bcd4df}.challenge-coach small{display:block;font-size:14px;line-height:1.4;color:#bcd4df;margin-top:12px}.challenge-coach summary{cursor:pointer;padding:14px 0 0;color:#c1f6dc;font-size:15px}.challenge-coach details{border-top:1px solid #52717b;margin-top:14px}
+@media(max-height:550px){.challenge-result-dock{max-height:calc(100% - 120px);left:auto;width:55%}.challenge-coach{padding:12px}.challenge-coach h3{font-size:20px}}
 #challenge-battle[data-crown="true"] header{display:block;min-height:0;max-height:none;padding:0}
 #challenge-battle[data-crown-offer="true"] header{display:block;min-height:0;max-height:none;padding:0}
 @media(max-width:520px){#challenge-battle [data-battle-dethrone]{flex:1 0 100%}}
@@ -3153,6 +3158,7 @@ GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'feedback-contract.mjs','toy-f
 GAME_FILES.splice(GAME_FILES.indexOf('challenge-ui.mjs'),0,'challenge-library.mjs','challenge-library.css');
 GAME_FILES.splice(GAME_FILES.indexOf('challenge-library.mjs'),0,'challenge-crown.mjs','challenge-crown.css');
 GAME_FILES.splice(GAME_FILES.indexOf('toy.mjs'),0,'challenge-practice.mjs','challenge-practice-ui.mjs','challenge-practice.css');
+GAME_FILES.splice(GAME_FILES.indexOf('challenge-battle.mjs'),0,'challenge-coach.mjs');
 
 async function buildStandalone(read) {
   const sources=Object.fromEntries(await Promise.all(GAME_FILES.map(async name=>[name,await read(name)])));
@@ -4618,6 +4624,108 @@ function restoreArenaCheckpoint(players,descriptor,checkpoint){
 
 return {COMBAT_BALANCE_V2,placeArenaFleets,createArena,stepArena,exportArenaCheckpoint,restoreArenaCheckpoint};
 })();
+modules["challenge-coach.mjs"]=(()=>{
+const {powerSummary} = modules["toy-power.mjs"];
+const {structureState} = modules["toy-structure.mjs"];
+const ATTACK=new Set(['missile','torpedo','gun','beam']);
+const count=(parts,kind)=>parts.filter(p=>p.kind===kind&&p.hp>0).length;
+const number=n=>Math.round(n||0).toLocaleString('en');
+
+// Read-only replay observer. Bounded by fleet size; no RNG, events or physics writes.
+function createBattleCoach(arena,viewerId){
+ const own=arena.worlds.find(w=>w.playerId===viewerId);
+ if(!own)return {observe(){},report:()=>null};
+ const parts=own.parts.filter(p=>p.hp>0),weapons=parts.filter(p=>ATTACK.has(p.kind));
+ const connected=own.structureMode?structureState(own).connected:new Set(parts.map(p=>p.id));
+ const offline=weapons.filter(p=>!connected.has(p.id)).length;
+ const ships=parts.filter(p=>['core','escortCore'].includes(p.kind));
+ const names=new Map(ships.map((p,i)=>[p.id,p.kind==='core'?'Flagship':`Escort ${i}`]));
+ const power=own.powerMode?powerSummary(own):null,powerByShip=new Map(power?.ships.map(s=>[s.shipId,s])||[]);
+ const initialPD=count(parts,'pd'),initialRepair=count(parts,'repair');
+ const blocked=new Map(),hungry=new Map();let nextSample=.25;
+ function observe(){
+  if(arena.time<nextSample||own.defeated)return;
+  nextSample=arena.time+.25;
+  const live=own.parts.filter(p=>p.hp>0),online=own.structureMode?structureState(own).connected:null;
+  const liveShips=new Set(live.filter(p=>['core','escortCore'].includes(p.kind)).map(p=>p.id));
+  const hungryNow=new Set();
+  for(const p of live){
+   if(!ATTACK.has(p.kind)||!liveShips.has(p.shipId)||(online&&!online.has(p.id)))continue;
+   if(p.blocked)blocked.set(p.id,(blocked.get(p.id)||0)+1);
+   const cost=p.kind==='missile'?10:p.kind==='torpedo'?30:0;
+   const bank=powerByShip.get(p.shipId);
+   const charge=bank?.kind==='core'?own.powerCharge:own.powerReserves?.[p.shipId];
+   if(bank&&cost&&p.cooldown<=0&&!p.salvoRemaining&&(charge||0)<cost)hungryNow.add(p.shipId);
+  }
+  for(const id of hungryNow)hungry.set(id,(hungry.get(id)||0)+1);
+ }
+ function report(){
+  if(arena.phase!=='finished'||arena.winnerId===viewerId)return null;
+  const ideas=[];
+  const add=(id,title,evidence,tryNext,check)=>ideas.push({id,title,evidence,tryNext,check});
+  if(!weapons.length)add('unarmed','Give your fleet some teeth',
+   'Your fleet entered without any attack weapons.',
+   'Draw Missile racks touching the armour of a ship with a reactor. Point defence and tractor beams do not attack ships.',
+   'Send a test enemy before locking in. You should see a salvo leave your ship.');
+  else if(offline)add('offline','Bring your weapons into the fight',
+   `${offline} of your ${weapons.length} attack mounts started grey and unable to fire.`,
+   own.armourAnchors?'Extend the same ship’s armour until it touches those grey mounts. The armour does not need a wire back to the gold core.':'These older rules require a connected path from the weapons to the gold core.',
+   'Before Fight, check that the mounts regain their colour. Then send a test enemy.');
+  const held=[...blocked.values()].filter(n=>n>=4).length;
+  if(held)add('blocked','Give the launchers an exit',
+   `${held} attack mount${held===1?' was':'s were'} repeatedly marked as holding fire behind friendly structure during this replay.`,
+   'Erase a small launch corridor or move the affected mounts to the outer edge. Keep them touching their own armour.',
+   'Use Test fire: watch for shots leaving the hull, not just weapons changing colour.');
+  const starved=[...hungry].filter(([,n])=>n>=4).sort((a,b)=>b[1]-a[1])[0];
+  if(starved){const bank=power.ships.find(s=>s.shipId===starved[0]);add('power',`Feed the ${names.get(starved[0]).toLowerCase()}`,
+   `${names.get(starved[0])} repeatedly had a ready launcher with too little stored energy for its next salvo. It started with ${number(bank.generation)} power/s generation.`,
+   'Enlarge the cyan reactor loop on that ship—not on a neighbour. Or trade a few launchers for a reactor so the remaining racks can keep firing.',
+   'Compare a test battle: does the second salvo arrive sooner? A bigger opening salvo is still a valid trade-off.');}
+  const opponents=arena.worlds.filter(w=>w!==own),enemyShots=opponents.reduce((n,w)=>n+(w.arenaWeaponLaunches?.missile||0)+(w.arenaWeaponLaunches?.torpedo||0),0);
+  const intercepted=own.stats.interceptions||0;
+  if(enemyShots>=30&&initialPD===0)add('defence','Make their missile spam pay',
+   `The opposing fleet${opponents.length===1?'':'s'} launched ${number(enemyShots)} missiles and torpedoes. You brought no point-defence mounts.`,
+   'Try trading a small strip of missile racks for Point defence from More parts, on the side meeting the incoming swarm. Give that ship reactor headroom too.',
+   'Look for your interception count to rise. Point defence buys time; it is not a guarantee against an enormous swarm.');
+  if(opponents.length===1){const launched=(own.arenaWeaponLaunches?.missile||0)+(own.arenaWeaponLaunches?.torpedo||0),caught=opponents[0].stats.interceptions||0;
+   if(launched>=20&&caught>=launched*.4)add('counter-pd','Stop feeding their point defence',
+    `Their defences intercepted ${number(caught)} of your ${number(launched)} launched missiles and torpedoes.`,
+    'Keep your favourite racks, but trade a section for Cannons from More parts. Point defence cannot intercept cannon rounds.',
+    'Test the mixed loadout against the same fleet. Compare hull damage dealt, not just how spectacular the salvo looks.');
+  }
+  if(initialRepair&&own.repairMode&&!(own.stats.repairHP>0))add('repair','Get the repair ship into reach',
+   'Your repair beams restored no hull or equipment HP in this battle.',
+   'They need a damaged, still-living OTHER ship within reach. Give the support ship engines and its own reactor, and start it near the ships it should help.',
+   'Look for pink repair links. They cannot rebuild parts that have already been destroyed.');
+  if(!ideas.length&&ships.length===1&&own.lastShipStanding)add('redundancy','Make them win twice',
+   'All your weapons depended on one ship surviving. In these rules, every ship must be destroyed to eliminate you.',
+   'Try splitting a portion of this design into an escort with its own reactor, armour, engines and weapons. Keep the total budget the same.',
+   'Watch whether it keeps fighting after the flagship goes. Splitting the fleet also means less protection on each ship.');
+  if(!ideas.length)add('experiment','Change one thing—not the whole fleet',
+   'This replay does not show a clear launch or power fault. There is no single proven fix for this loss.',
+   'Try moving a small part of your weapon budget into shielding on the ship you lose first. Keep the rest of your design intact.',
+   'Replay against the same opponent. Compare damage dealt and when your first ship falls; keep the change only if it helps.');
+  const first=arena.battleStats?.shipLosses.find(s=>s.playerId===viewerId);
+  return {title:arena.winnerId?'Your next move':'Break the deadlock',
+   summary:`${number(own.arenaDamageDealt)} hull / equipment damage dealt${first?` · ${names.get(first.shipId)||'First ship'} lost at ${first.time.toFixed(1)}s`:''}.`,
+   credit:intercepted?`Keep this working: your point defence stopped ${number(intercepted)} incoming projectiles.`:own.stats.repairHP>0?`Your support ships restored ${number(own.stats.repairHP)} HP.`:null,
+   primary:ideas[0],secondary:ideas[1]||null};
+ }
+ return {observe,report};
+}
+
+function renderBattleCoach(element,report){
+ element.replaceChildren();element.hidden=!report;if(!report)return;
+ const node=(tag,text)=>{const el=document.createElement(tag);el.textContent=text;return el;};
+ element.append(node('h2',report.title),node('p',report.summary));
+ const idea=(parent,item)=>{parent.append(node('h3',item.title),node('p',item.evidence),node('p',`Try this: ${item.tryNext}`),node('small',item.check));};
+ idea(element,report.primary);
+ if(report.credit)element.append(node('p',report.credit));
+ if(report.secondary){const details=node('details','');details.append(node('summary','One more idea'));idea(details,report.secondary);element.append(details);}
+}
+
+return {createBattleCoach,renderBattleCoach};
+})();
 modules["challenge-battle.mjs"]=(()=>{
 const {createArena,stepArena} = modules["toy-arena.mjs"];
 const {drawReactor} = modules["toy-reactor-render.mjs"];
@@ -4628,6 +4736,7 @@ const {shieldFields} = modules["toy-shields.mjs"];
 const {structureState} = modules["toy-structure.mjs"];
 const {createDeathScene,advanceDeathScene,drawDeathScene,deathSceneBounds,deathAudioEvent} = modules["toy-death-scene.mjs"];
 const {crownModel} = modules["challenge-crown.mjs"];
+const {createBattleCoach,renderBattleCoach} = modules["challenge-coach.mjs"];
 const TEAM=['#6fffe0','#ffad77','#c3a0ff','#fff28c'];
 let closePrevious=null;
 function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,onAwaitResult,researchFlight}={}){
@@ -4651,6 +4760,10 @@ function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,o
  if(practice){overlay.querySelector('[data-battle-share]').remove();overlay.querySelector('.challenge-result-copy').remove();overlay.querySelector('[data-battle-close]').textContent='Back to drawing';overlay.querySelector('[data-battle-replay]').textContent='Retry test';Object.assign(overlay.querySelector('header').style,{display:'block',minHeight:'0',maxHeight:'none',padding:'0'});overlay.querySelector('header b').textContent='PRIVATE TEST';overlay.querySelector('header span').textContent='Testing a copy. Your drawing stays safe.';}
  const canvas=overlay.querySelector('canvas'),g=canvas.getContext('2d'),title=overlay.querySelector('header b'),subtitle=overlay.querySelector('header span'),board=overlay.querySelector('.challenge-scoreboard');
  const names=room.players.map((p,i)=>practice?(p.name|| (i===0?'Your fleet':'Test enemy')):p.id===room.viewerId?'Your fleet':`Fleet ${i+1}`);
+ let coach=createBattleCoach(arena,room.viewerId),coachShown=false;
+ const resultDock=document.createElement('div');resultDock.className='challenge-result-dock';
+ const coachPanel=document.createElement('section');coachPanel.className='challenge-coach';coachPanel.hidden=true;coachPanel.setAttribute('aria-label','Rematch advice');
+ resultDock.append(coachPanel,overlay.querySelector('footer'));overlay.append(resultDock);
  const cards=room.players.map((p,i)=>{const card=document.createElement('div');card.style.borderColor=TEAM[i];const name=document.createElement('b'),meter=document.createElement('progress'),info=document.createElement('small');name.textContent=names[i];meter.max=p.fleet.parts.reduce((n,p)=>n+p.maxHp,0);meter.value=meter.max;card.append(name,meter,info);board.append(card);return {card,meter,info};});
  const sound=overlay.querySelector('[data-battle-sound]');
  const syncSound=()=>{const state=audio?.status();sound.textContent=!state?.enabled?'Sound off · Turn on':state.state==='running'?'Sound on · Turn off':'Sound on · Tap to start';sound.setAttribute('aria-pressed',String(!!state?.enabled));};
@@ -4661,6 +4774,7 @@ function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,o
  overlay.querySelector('[data-battle-replay]').onclick=()=>{arena=makeArena();started=performance.now();last=started;finishedAt=0;snapshots.clear();destroyed.clear();scenes.length=0;snapshotAt=-Infinity;resultText='';retryError='';dethrone.hidden=true;overlay.querySelector('[data-battle-replay]').hidden=true;if(!practice){overlay.querySelector('[data-battle-share]').hidden=true;overlay.querySelector('.challenge-result-copy').hidden=true;}overlay.querySelector('[data-battle-close]').textContent=practice?'Back to drawing':'Exit battle';};
  function draw(now){
   if(stopped)return;
+  if(arena.time===0&&coachShown){coach=createBattleCoach(arena,room.viewerId);coachShown=false;coachPanel.hidden=true;}
   const box=overlay.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,1.5),width=box.width,height=box.height;
   if(canvas.width!==Math.round(width*dpr)||canvas.height!==Math.round(height*dpr)){canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);}
   const dt=Math.min(.1,(now-last)/1000);last=now;
@@ -4673,6 +4787,7 @@ function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,o
   }
   if(now-snapshotAt>=100)snapshotAt=now;
   if(now-started>revealMs&&arena.phase==='battle')stepArena(arena,dt);
+  coach.observe();
   const livingShips=new Set(arena.worlds.flatMap(w=>w.parts.filter(p=>p.hp>0).map(p=>p.id)));
   for(const [id,snapshot] of snapshots)if(!livingShips.has(id)&&!destroyed.has(id)){destroyed.set(id,true);scenes.push(snapshot.scene);}
   for(const scene of scenes)for(const cue of advanceDeathScene(scene,dt).audioCues){const sound=deathAudioEvent(cue);if(sound)audio?.event({...sound,pan:Math.max(-1,Math.min(1,(cue.x-cx)*zoom/(width/2)))});}
@@ -4703,6 +4818,7 @@ function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,o
   }
   for(const scene of scenes)drawDeathScene(g,scene,{zoom});
   const deathActive=scenes.some(scene=>!scene.done);
+  if(arena.phase==='finished'&&!deathActive&&finishedAt&&now-finishedAt>500&&!coachShown){renderBattleCoach(coachPanel,coach.report());coachShown=true;}
   if(arena.phase==='finished'){if(!finishedAt)finishedAt=now;const winner=room.players.findIndex(p=>p.id===arena.winnerId);title.textContent=practice?'PRIVATE TEST':deathActive?'SHIP BREAKING APART':winner<0?'DRAW':`FLEET ${winner+1} WINS`;subtitle.textContent=practice?(deathActive?'Ship destroyed. Your drawing is unchanged.':`${winner<0?'Draw':names[winner]+' wins'} · ${arena.time.toFixed(1)}s · Your drawing is unchanged.`):deathActive?'The reactor is gone. The echoes remain.':`${arena.time.toFixed(1)}s · ${arena.reason}. Your original designs are safe.`;if(!deathActive&&now-finishedAt>500){overlay.querySelector('[data-battle-replay]').hidden=false;if(!practice){overlay.querySelector('[data-battle-share]').hidden=false;overlay.querySelector('[data-battle-close]').textContent='REMATCH';resultText=`${winner<0?'A draw':`Fleet ${winner+1} won`} in ${arena.time.toFixed(1)} seconds. ${players.length} hand-drawn fleets. Surely it needs another gun.`;if(!resultAnnounced){resultAnnounced=true;document.dispatchEvent(new CustomEvent('game:first-battle-result',{detail:{mode:'challenge'}}));}}}}
   else{const countdown=Math.ceil((revealMs-(now-started))/1000);title.textContent=practice?'PRIVATE TEST':focus?`FLEET ${revealIndex+1} REVEALED`:countdown>0?'WEAPONS READY':'FLEET SHOWDOWN';subtitle.textContent=practice?(countdown>0?'Testing a copy. Your drawing stays safe.':`${arena.time.toFixed(1)}s · ${arena.worlds.filter(w=>!w.defeated).length} fleets remain · Nothing submitted`):focus?`${players[revealIndex].parts.length} parts · ${room.players[revealIndex].fleet.cost.toLocaleString()} Warshards`:countdown>0?'The secrets are out.':`${arena.time.toFixed(1)}s · ${arena.worlds.filter(w=>!w.defeated).length} fleets remain`;}
   if(!practice&&onRetry&&players.length===2){
@@ -4838,7 +4954,7 @@ function initFeedback({getParts=()=>[],getRecorder=()=>({}),getMode=()=> 'free-d
  function dismissPulse(){try{storage?.setItem(PULSE_KEY,'seen');}catch{}pulse?.remove();pulse=null;}
  function offerFirstBattle(){
   if(disposed||pulse||pulseTimer||pulseSeen())return;
-  const offer=()=>{pulseTimer=null;if(disposed||pulseSeen())return;if(document.hidden||document.querySelector('dialog[open]')||document.body.classList.contains('landing-open')){pulseTimer=setTimeout(offer,2000);return;}
+  const offer=()=>{pulseTimer=null;if(disposed||pulseSeen())return;if(document.hidden||document.querySelector('dialog[open], #challenge-battle')||document.body.classList.contains('landing-open')){pulseTimer=setTimeout(offer,2000);return;}
    pulse=document.createElement('aside');pulse.id='first-battle-feedback';pulse.setAttribute('aria-label','Optional first battle feedback');pulse.innerHTML='<button data-pulse-close aria-label="Dismiss first battle question">×</button><strong>Did that make you want to build another ship?</strong><div><button data-answer="yes">Absolutely</button><button data-answer="maybe">Maybe</button><button data-answer="no">Not really</button></div><small>Optional feedback. Nothing is sent until you choose Send.</small>';document.body.append(pulse);pulse.querySelector('[data-pulse-close]').onclick=dismissPulse;for(const b of pulse.querySelectorAll('[data-answer]'))b.onclick=()=>{dismissPulse();open({answer:b.dataset.answer});};
    positionPulse();
   };pulseTimer=setTimeout(offer,800);
