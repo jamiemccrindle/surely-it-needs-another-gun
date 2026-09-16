@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-8oRz+XmGx/zSjpELxhHUEQmCPpjWSbtE1W6QyAFi+Qo='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-dktIyFaOCCqyPSefmAUhtVvf0yJWJsQuv7cS4dWur5s='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; connect-src https://surely-challenges.inkbound-armada.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Surely it needs another gun. — Draw something unreasonable.</title><meta name="description" content="Scribble a spaceship. Give it far too many missiles. Watch it fight—or challenge friends to build secret fleets. Free browser game. No account."><meta property="og:title" content="Surely it needs another gun."><meta property="og:description" content="Draw something unreasonable. Build ridiculous missile fleets and challenge your friends. Free, in your browser."><meta property="og:type" content="website"><style>:root{color-scheme:dark;--paper:#f2eddb;--red:#ff7058;--gold:#ffc765;--cyan:#77e9dc;font-family:'DM Sans',system-ui,sans-serif;background:#0b111c;color:var(--paper)}
 *{box-sizing:border-box}body{margin:0;padding:18px 24px 10px;min-width:360px}button,a{-webkit-tap-highlight-color:transparent}button{font:700 13px 'DM Sans',sans-serif;color:inherit;background:#182535;border:1px solid #3e5266;border-radius:7px;padding:12px 15px;cursor:pointer}button:hover{background:#273d50;border-color:#7ba0b7}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.45;cursor:default}header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:16px}header a{color:#aebfcd;font-size:13px}.eyebrow{font-size:11px;letter-spacing:.18em;color:#a7b9c8}h1{font:800 clamp(25px,3.5vw,43px)/1 'Barlow Condensed',sans-serif;margin:6px 0 0}h1 i{color:var(--red);font-style:normal}.toolbar{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:10px}.toolbar button{text-align:left;padding:12px 14px;border-bottom:3px solid var(--paper)}.toolbar button[data-tool=missile]{border-bottom-color:var(--red)}.toolbar button[data-tool=gun]{border-bottom-color:var(--gold)}.toolbar button[data-tool=repair]{border-bottom-color:var(--cyan)}.toolbar b{display:block;font-size:14px}.toolbar small{display:block;color:#bdcad4;font-weight:400;margin-top:5px;font-size:12px}.toolbar .selected{background:#304357;box-shadow:inset 0 0 0 1px #aec0cf}.stage{height:calc(100dvh - 300px);min-height:380px;position:relative;overflow:hidden;border:1px solid #425368;border-radius:12px;background:#101b29}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}.canvas-caption{pointer-events:none;position:absolute;top:28%;width:100%;text-align:center;transition:opacity .3s}.canvas-caption b{display:block;font:600 25px 'Barlow Condensed';color:#bbcbd8}.canvas-caption span{display:block;margin-top:8px;font-size:14px;color:#8ea5b9}.mode{position:absolute;top:15px;left:18px;font-size:12px;letter-spacing:.06em;color:var(--cyan);pointer-events:none}.readout{position:absolute;bottom:15px;left:18px;pointer-events:none;font-size:13px;color:#bdceda;line-height:1.7;white-space:pre-line}.toast{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);width:max-content;max-width:85%;text-align:center;background:#0c1422ed;border:1px solid #57788f;padding:11px 17px;border-radius:8px;font-size:16px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.visible{opacity:1}.controls{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}.primary{background:var(--red);border-color:var(--red);color:#211b20}.primary:hover{background:#ff947b}.camera{display:flex;align-items:center;gap:6px;margin-left:auto}.camera button{padding:10px 13px}.camera span{font-size:12px;min-width:36px;text-align:center}kbd{margin-left:8px;color:#8babc3;font-size:10px}.instructions{display:flex;justify-content:space-between;gap:16px;color:#b6c4d0;font-size:12px;line-height:1.5;margin-top:10px}footer{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #26394c}footer>div{flex:1}footer b{display:block;color:var(--cyan);font-size:15px}footer span{display:block;color:#afbfcb;font-size:13px;margin-top:4px}footer button{font-size:11px;padding:9px}dialog{max-width:450px;background:#182535;color:var(--paper);border:1px solid #678095;border-radius:12px;padding:25px}dialog::backdrop{background:#02050bbd}dialog p{line-height:1.6}dialog form{display:flex;gap:12px}#space:active{cursor:crosshair}
 .toast{bottom:82px}
 .warshards-hud{position:absolute;right:18px;top:14px;text-align:right;pointer-events:none;color:#ceff9e;max-width:42%;text-shadow:0 2px 5px #08131f}.warshards-hud span{display:block;font-size:12px;letter-spacing:.15em}.warshards-hud b{display:block;font-size:28px;font-variant-numeric:tabular-nums;line-height:1.2}.warshards-hud small{display:block;font-size:12px;color:#bad4a7;margin-top:4px}
@@ -184,6 +184,7 @@ body.sketchbook #sketch-title{font-size:21px;line-height:1.2}
 body.sketchbook #sketch-wallet{display:block;font-size:16px;line-height:1.4;color:#b7efda;margin-top:3px}
 body.sketchbook #sketch-capacity{display:block;font-size:14px;line-height:1.4;color:#d7e5ed;font-variant-numeric:tabular-nums}
 body.sketchbook #sketch-capacity.near-limit,body.sketchbook #sketch-instruction.capacity-warning{color:#ffda87}
+body.sketchbook #sketch-instruction.weapon-warning{color:#ffda87;font-weight:700}
 body.sketchbook #sketch-instruction{font-size:17px;line-height:1.35;color:#e2edf3;min-height:23px}
 body.sketchbook #sketch-stage-slot{min-height:0;position:relative}
 body.sketchbook #stage{width:100%;height:100%;min-height:0;border:1px solid #5b7487;border-radius:15px;overflow:hidden}
@@ -253,6 +254,14 @@ body.challenge-locked #undo,body.challenge-locked #sketch-undo,body.challenge-lo
 #challenge-battle[data-crown="true"] header{display:block;min-height:0;max-height:none;padding:0}
 #challenge-battle[data-crown-offer="true"] header{display:block;min-height:0;max-height:none;padding:0}
 @media(max-width:520px){#challenge-battle [data-battle-dethrone]{flex:1 0 100%}}
+#challenge-ready-dialog{box-sizing:border-box;width:min(480px,calc(100vw - 24px));max-height:90dvh;overflow:auto;padding:24px;border:1px solid #d9b878;border-radius:16px;background:#112b38;color:#f3f8f6;font:17px/1.5 system-ui}
+#challenge-ready-dialog::backdrop{background:#020b13dd}
+#challenge-ready-dialog h2{font-size:25px;line-height:1.2;margin-top:0;color:#ffdc92}
+#challenge-ready-dialog>div{display:grid;gap:10px}
+#challenge-ready-dialog button{min-height:48px;font:700 17px system-ui;padding:12px;border-radius:10px}
+#challenge-ready-error{color:#ffb9a0}
+body.sketchbook #challenge-fight{grid-column:1/-1;width:100%;max-width:none;background:#c8f5d7;color:#102f28;border:2px solid #e3ffe9;min-height:52px;font-size:20px;font-weight:850}
+body.sketchbook #challenge-fight:disabled{background:#29483f;color:#c2dbce}
 
 #feedback-dialog{box-sizing:border-box;width:min(620px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:24px;border:1px solid #8aa5b5;border-radius:20px;background:#102133;color:#f3f6f7;font:17px/1.5 system-ui,sans-serif;overflow-y:auto}
 #feedback-dialog .feedback-heading{display:flex;align-items:start;justify-content:space-between;gap:16px;position:sticky;top:-24px;background:#102133;padding:12px 0;z-index:2}
@@ -388,7 +397,7 @@ body.landing-open{overflow:hidden}
 <footer><div><b id="build-phase">Shipyard ready</b><span id="build-detail">Your build feed stays here.</span></div></footer>
 </main>
 <dialog id="encounters-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Choose your next mistake</h2><button data-close-dialog>BACK</button></div><p>Regular attacks grow with your wave count. These are special encounters — choose what you want to test your fleet against. Time continues unless you freeze it.</p><div class="encounter-grid"><section><button id="capital">CAPITAL SHIP</button><p>A bigger hull to tear apart.</p></section><section><button id="missile-storm">MISSILE STORM</button><p>Hostile missile volleys. Bring point defence.</p></section><section><button id="aegis">AEGIS · ENEMY POINT DEFENCE</button><p>Enemy interceptors will thin your salvos.</p></section><section><button id="convoy" title="Catch a fleeing freighter. Break its engines before it jumps away.">RAID A CONVOY</button><p>A fleeing prize. Fast escorts and engines matter.</p></section><section><button id="carrier">UNLEASH A CARRIER</button><p>Break its hangars to stop reinforcements.</p></section><section><button id="fortress">SHIELD FORTRESS</button><p>Destroy exposed generators to bring down its shields.</p></section><section><button id="dreadnought" title="A major encounter. Clear the current battle first.">SIEGE DREADNOUGHT</button><p>The major siege encounter. Bring an unreasonable fleet.</p></section></div></dialog>
-<dialog id="guide-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Your first unreasonable ship</h2><button data-close-dialog>LET ME DRAW</button></div><ol class="build-guide"><li><b>Power it.</b> Select Reactor Room and draw a closed cyan loop. More area supports more sustained fire. Each ship needs its own supply.</li><li><b>Connect it.</b> Draw armour touching the gold bridge, then attach weapons and engines to that armour. Grey parts are offline. Eraser removes whole pieces; Undo brings them back.</li><li><b>Arm it.</b> Draw red missile racks. Longer strokes launch bigger salvos. Keep their outward exit clear of armour. While frozen, hover a mount for a firing check, or use Test Fire on a safe copy.</li><li><b>Move it.</b> Add engines to each ship. Bigger ships need more thrust. Choose New ship, tap to place its bridge, then equip it just like your flagship. Tap any bridge to switch ships.</li><li><b>Make trouble.</b> Send in an attack. Space switches between drawing and automatic flight. You manage the design; the fleet fights itself.</li><li><b>Get paid. Rebuild. Go bigger.</b> Connected green tractors collect Warshards automatically while time runs. When enemies are gone, Fast Restore spends them to rebuild your pre-battle fleet.</li></ol><p>Scroll to pan · Pinch to zoom · F to fit the fleet. Shields and point defence are optional ways to survive bigger fights. Friendly fire can hurt other ships when switched on; weapons never damage their own ship.</p></dialog>
+<dialog id="guide-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Your first unreasonable ship</h2><button data-close-dialog>LET ME DRAW</button></div><ol class="build-guide"><li><b>Power it.</b> Select Reactor Room and draw a closed cyan loop. More area supports more sustained fire. Each ship needs its own supply.</li><li><b>Protect it.</b> Draw armour around your ship—no connection to the gold bridge needed. Attach weapons and engines to that armour. Grey parts are offline. Eraser removes whole pieces; Undo brings them back.</li><li><b>Arm it.</b> Draw red missile racks. Longer strokes launch bigger salvos. Keep their outward exit clear of armour. While frozen, hover a mount for a firing check, or use Test Fire on a safe copy.</li><li><b>Move it.</b> Add engines to each ship. Bigger ships need more thrust. Choose New ship, tap to place its bridge, then equip it just like your flagship. Tap any bridge to switch ships.</li><li><b>Make trouble.</b> Send in an attack. Space switches between drawing and automatic flight. You manage the design; the fleet fights itself.</li><li><b>Get paid. Rebuild. Go bigger.</b> Connected green tractors collect Warshards automatically while time runs. When enemies are gone, Fast Restore spends them to rebuild your pre-battle fleet.</li></ol><p>Scroll to pan · Pinch to zoom · F to fit the fleet. Shields and point defence are optional ways to survive bigger fights. Friendly fire can hurt other ships when switched on; weapons never damage their own ship.</p></dialog>
 <dialog id="test-fire-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Live-fire range · Safe copy</h2><button data-close-dialog>BACK TO DRAWING</button></div><p>8 seconds against an unarmed target. Weapons start ready; your current power, connections, crew and flight rules apply. Your real fleet stays untouched.</p><label>Target starts <select id="test-bearing"><option value="0">Right</option><option value="3.141592653589793">Left</option><option value="-1.5707963267948966">Above</option><option value="1.5707963267948966">Below</option></select></label> <button id="test-again">RUN AGAIN</button><canvas id="test-canvas" width="900" height="460" style="display:block;width:100%;height:auto;background:#0b1725;margin-top:12px" aria-label="Simulated test fleet and friendly impacts"></canvas><p id="test-result" style="font-size:17px;min-height:3em"></p><p>Red × = friendly hit. Amber ring = launcher responsible. Last 128 impacts shown. No hits is not a guarantee against other enemy positions or a longer battle.</p></dialog>
 <dialog id="battle-records-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Battle black box</h2><button data-close-dialog aria-label="Close battle records">DONE</button></div><p>Protected damage and destruction records. Older battles before this update cannot be reconstructed. Export the flight recorder from Menu for the full retained data.</p><pre id="battle-records-text" style="white-space:pre-wrap;font:15px/1.6 system-ui;max-height:65vh;overflow:auto"></pre></dialog>
 <dialog id="experiments-dialog" class="utility-dialog"><div class="dialog-heading"><h2>Experiments</h2><button data-close-dialog aria-label="Close experiments">DONE</button></div><p>Try different rules. Your drawings stay yours.</p>
@@ -680,7 +689,8 @@ function structureState(w) {
   // Arena drawings cannot change during combat. Rigid flight changes no edges;
   // destruction does. Keep original local geometry so drifting wreckage never
   // becomes reattached merely by crossing a living ship on a later tick.
-  const arenaKey=w.arenaTeamId!=null?'arena:'+parts.map(p=>p.id).join('|'):null;
+  const ruleKey=w.armourAnchors?'armour:':'bridge:';
+  const arenaKey=w.arenaTeamId!=null?ruleKey+'arena:'+parts.map(p=>p.id).join('|'):null;
   if(arenaKey&&caches.get(w)?.key===arenaKey)return caches.get(w).value;
   const hubs = new Map(parts.filter(p => ['core', 'escortCore'].includes(p.kind)).map(p => [p.id, p]));
   const local = p => {
@@ -695,7 +705,7 @@ function structureState(w) {
   };
   const snapshot=arenaKey?(w.arenaStructureGeometry||={}):null;
   const geometries = parts.map(p=>snapshot?(snapshot[p.id]||=local(p)):local(p));
-  const key = arenaKey||parts.map((p, i) => `${p.id}:${p.shipId}:${p.kind}:${thickness(p)}:${geometries[i].map(q => `${q.x},${q.y}`).join(';')}`).join('|');
+  const key = arenaKey||ruleKey+parts.map((p, i) => `${p.id}:${p.shipId}:${p.kind}:${thickness(p)}:${geometries[i].map(q => `${q.x},${q.y}`).join(';')}`).join('|');
   if (caches.get(w)?.key === key) return caches.get(w).value;
   const parent = parts.map((_, i) => i), find = i => { while (parent[i] !== i) { parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
   const grid = new Map();
@@ -720,7 +730,12 @@ function structureState(w) {
     }
   }
   const roots = new Map(parts.map((p, i) => [p.id, i]));
-  const connected = new Set(parts.filter((p, i) => roots.has(p.shipId) && hubs.has(p.shipId) && find(i) === find(roots.get(p.shipId))).map(p => p.id));
+  // Armour is the ship, not wiring to its centre marker. Only live, owned
+  // armour anchors equipment; destroying a mounting section still severs it.
+  const anchors=new Set();
+  for(let i=0;i<parts.length;i++)if(hubs.has(parts[i].shipId)&&
+    (parts[i].id===parts[i].shipId||(w.armourAnchors&&parts[i].kind==='hull')))anchors.add(find(i));
+  const connected = new Set(parts.filter((p, i) => roots.has(p.shipId) && hubs.has(p.shipId) && anchors.has(find(i))).map(p => p.id));
   const value = { connected };
   caches.set(w, { key, value }); return value;
 }
@@ -730,7 +745,7 @@ function structureSummary(w) {
 }
 // A suggested bridge, never an implicit topology edge or a geometry edit.
 function coreConnectionHints(w, connectedSet = null) {
-  if (!w.structureMode) return [];
+  if (!w.structureMode || w.armourAnchors) return [];
   const connected = connectedSet || structureState(w).connected;
   const live = w.parts.filter(p => p.hp > 0), hints = [];
   for (const core of live.filter(p => ['core', 'escortCore'].includes(p.kind)).slice(0, 13)) {
@@ -3313,6 +3328,13 @@ return {RECORDER_KEY,createRecorder};
 })();
 modules["toy-readiness.mjs"]=(()=>{
 // Advice, not build restrictions. Use the same summaries as the simulation HUD.
+function weaponReadiness(world,structure){
+ const weapons=world.parts.filter(p=>p.hp>0&&['missile','gun','torpedo','beam'].includes(p.kind));
+ const connected=new Set(structure.connectedIds||[]);
+ const offline=world.structureMode?weapons.filter(p=>!connected.has(p.id)):[];
+ return {total:weapons.length,online:weapons.length-offline.length,offlineIds:offline.map(p=>p.id),
+  warning:!weapons.length?'No attack weapons. Draw missile racks on your armour.':offline.length===weapons.length?'Your weapons won’t fire. Join the grey mounts to your armour.':offline.length?`${offline.length} grey weapons won’t fire. Join them to your armour.`:''};
+}
 function fleetAdvice(world, power, flight, structure) {
  const advice=[];
  if(!world.parts.some(p=>p.hp>0&&['missile','gun','torpedo','beam'].includes(p.kind))) advice.push({tool:'missile',title:'Give it some teeth',detail:'Draw red missile racks touching your armour. Longer strokes make bigger salvos.'});
@@ -3322,11 +3344,11 @@ function fleetAdvice(world, power, flight, structure) {
   else if(power.ships.some(s=>s.demand>s.generation))advice.push({tool:'reactor',title:'Weapons can drain their reserves',detail:'Enlarge the reactor on the hungry ship for sustained fire. A short, enormous salvo is also a valid design.'});
  }
  if(flight.enabled&&flight.ships.some(s=>!s.engines))advice.push({tool:'engine',title:'Some ships have no connected engines',detail:'They cannot manoeuvre under their own thrust. Draw engines touching their connected armour. Each escort needs its own.'});
- if(world.structureMode&&structure.disconnectedWeapons)advice.push({tool:'hull',title:`${structure.disconnectedWeapons} grey weapons are offline`,detail:'Draw an unbroken armour connection from those mounts to their own gold bridge. Nearby is not the same as attached.'});
+ if(world.structureMode&&structure.disconnectedWeapons)advice.unshift({tool:'hull',title:`${structure.disconnectedWeapons} grey weapons won’t fire`,detail:world.armourAnchors?'Extend armour to touch the grey mounts. Armour does not need to touch the gold bridge.':'These older battle rules require a connection to the gold bridge.'});
  return advice;
 }
 
-return {fleetAdvice};
+return {weaponReadiness,fleetAdvice};
 })();
 modules["toy-intro-media.mjs"]=(()=>{
 // Generated by scripts/record-intro.mjs from actual game play.
@@ -3341,7 +3363,7 @@ const {introVideo,introStills,introChapters} = modules["toy-intro-media.mjs"];
 const bridge='<path d="M0 -13 14 0 0 14 -14 0Z" fill="#ffd37b" stroke="#fff1bd"/>';
 const paths=[
  ['#69ffe4','M-57 -43 50 -47 57 42 -52 46 -57 -43'],
- ['#eee7cf','M0 0 -77 0 -80 -66 74 -69 84 63 -77 67 -77 0'],
+ ['#eee7cf','M-77 0 -80 -66 74 -69 84 63 -77 67 -77 0'],
  ['#ff7967','M-67 -68 -60 -106 -48 -69 -37 -103 -23 -69 -8 -111 5 -69 21 -108 36 -69 48 -102 65 -69 M-67 66 -53 106 -41 66 -26 113 -11 66 3 103 19 65 34 107 50 65 65 103 76 65'],
  ['#7ee5ff','M-78 -55 -118 -45 -79 -33 -121 -23 -78 -12 -114 1 -77 12 -121 23 -78 35 -116 48 -78 56'],
  ['#b8ff76','M83 -24 108 -39 119 -20 102 -5 84 0 109 13 118 34 101 40 84 24']
@@ -3349,11 +3371,11 @@ const paths=[
 function diagram(n){
  const shape=paths.slice(0,Math.min(n,5)).map(([color,d],i)=>'<path d="'+d+'" stroke="'+color+'" stroke-width="'+(i===n-1?4:2.5)+'" fill="'+(i===0?'#69ffe418':'none')+'" stroke-linejoin="round" stroke-linecap="round"/>').join('');
  const extra=n===6?'<path d="M105 0 170 -36 M105 0 176 35" stroke="#b8ff76" stroke-width="2"/><g fill="#b8ff76"><path d="M166 -42 178 -36 168 -29 160 -35Z"/><path d="M175 29 186 34 178 43 168 37Z"/></g>':n===5?'<g stroke="#ff7967" stroke-width="3"><path d="M86 -87 146 -104 M95 80 157 104 M89 -58 163 -76"/></g><path d="M174 -37 194 0 174 37 151 23 151 -23Z" stroke="#e0a9f3" stroke-width="3" fill="#402b53"/>':'';
- return '<svg viewBox="-150 -135 355 270" role="img" aria-label="'+['','Closed reactor beside the gold bridge','Armour connected directly to the bridge','Missile zigzags touching the outer armour','Engine cluster attached at the rear','Missiles flying towards an enemy','Green tractor beams pulling in Warshards'][n]+'">'+shape+bridge+extra+'</svg>';
+ return '<svg viewBox="-150 -135 355 270" role="img" aria-label="'+['','Closed reactor beside the gold bridge','Armour surrounding the bridge','Missile zigzags touching the outer armour','Engine cluster attached at the rear','Missiles flying towards an enemy','Green tractor beams pulling in Warshards'][n]+'">'+shape+bridge+extra+'</svg>';
 }
 const steps=[
  ['POWER','Reactor Room','Close a cyan loop near the gold bridge. Bigger rooms sustain more firing.',1],
- ['CONNECT','Armour','Start on the gold bridge. Draw out to a protective outline. Keep it all connected.',2],
+ ['PROTECT','Armour','Draw a protective outline around your ship. Armour does not need to touch the gold bridge.',2],
  ['ARM','Missiles','Scribble red zigzags touching the outside edge. Keep the outward launch path clear.',3],
  ['MOVE','Engines','Attach a blue cluster. Without connected engines, your ship has no thrust.',4],
  ['FIGHT','Let it fly → More Enemies','On mobile, fly first, then send enemies in. On desktop, use Send in an attack. Freeze & Draw gives you the pen back.',5],
@@ -3369,11 +3391,11 @@ function initWelcome({fresh=false,pause=()=>{},resume=()=>{},storage,challenge=f
  '<section class="intro-film"><button id="watch-intro">▶ WATCH A SHIP COME ALIVE</button><span id="intro-weight"></span><video id="intro-video" controls playsinline preload="none" hidden aria-label="Captioned recording: drawing and fighting a first ship"></video><p id="intro-fallback" hidden>Video unavailable? The complete illustrated guide is below. Nothing to download.</p></section><button id="welcome-start-top">I’LL TRY DRAWING →</button>'+
  '<div class="safety-strip"><b>Before launch</b><span>Reactor → connected armour → missiles → engines</span></div>'+
  '<div class="safety-grid">'+steps.map(([title,tool,detail,n])=>'<article class="safety-card"><div class="safety-card-title"><span>'+n+'</span><h3>'+title+'</h3></div>'+diagram(n)+'<b>'+tool+'</b><p>'+detail+'</p></article>').join('')+'</div>'+
- '<section class="safety-checks"><h3>IF IT DOESN’T WORK</h3><div><p><b>Grey weapons?</b> Join their armour to their own gold bridge. A gap breaks the connection.</p><p><b>Firing stops?</b> Check power. Enlarge that ship’s reactor; unfreeze to recharge. Hover a mount on desktop to check its launch.</p><p><b>Need to change something?</b> Freeze, use Eraser, then redraw. Undo restores a mistaken cut.</p><p><b>Building an escort?</b> Choose New ship and tap to place its bridge. Draw its reactor, connected armour, weapons and engines. Tap another bridge to switch ships.</p></div></section>'+
+ '<section class="safety-checks"><h3>IF IT DOESN’T WORK</h3><div><p><b>Grey weapons?</b> Extend armour to touch the grey weapons. Armour does not need to touch the gold bridge.</p><p><b>Firing stops?</b> Check power. Enlarge that ship’s reactor; unfreeze to recharge. Hover a mount on desktop to check its launch.</p><p><b>Need to change something?</b> Freeze, use Eraser, then redraw. Undo restores a mistaken cut.</p><p><b>Building an escort?</b> Choose New ship and tap to place its bridge. Draw its reactor, armour, weapons and engines. Tap another bridge to switch ships.</p></div></section>'+
  '<p class="welcome-controls">Desktop: drag to draw · scroll to pan · pinch to zoom · F to fit · Space to freeze.<br>Phone: one finger draws, two fingers pan and pinch to zoom. PAN switches to one-finger camera movement. Let it fly opens full-screen battle; exiting freezes the game.</p>'+
  '<div class="welcome-bottom"><button id="welcome-start" class="primary">GIVE ME THE PEN →</button><span>This guide is always under HOW TO PLAY.</span></div>';
  if(challenge){
-  dialog.querySelector('.welcome-premise').textContent='Build your fleet in secret within the shared Warshard budget. Start with a reactor, connected armour, missiles and engines. Erasing refunds the cost. Protect your main core: losing it eliminates your fleet.';
+  dialog.querySelector('.welcome-premise').textContent='Build your fleet in secret within the shared Warshard budget. Start with a reactor, armour, missiles and engines. Erasing refunds the cost. Protect your main core: losing it eliminates your fleet.';
   dialog.querySelector('.intro-film').hidden=true;
   const cards=dialog.querySelectorAll('.safety-card');
   cards[4].querySelector('b').textContent='Fight';cards[4].querySelector('p').textContent='Once the host starts building, draw your fleet and press Fight to lock it. The battle begins when everyone is ready. You cannot edit a locked fleet.';
@@ -3484,7 +3506,7 @@ return {initTouchCamera};
 modules["toy-mobile-craft.mjs"]=(()=>{
 const tools={
  reactor:['Reactor room','Close a loop. More area supplies more power.'],
- hull:['Armour','Draw walls touching the gold bridge.'],
+ hull:['Armour','Draw armour around your ship. No bridge connection needed.'],
  engine:['Engines','Connect engines to each ship’s armour.'],
  shield:['Shield field','Draw a closed loop around your ship.'],
  missile:['Missiles','Scribble along your armour’s edge. Longer racks fire more.'],
@@ -3688,7 +3710,7 @@ return {sketchbookFollowView,sketchbookOverviewView};
 modules["toy-sketchbook.mjs"]=(()=>{
 const PARTS = [
  ['reactor','Reactor room','Close a loop to supply power.','◇','Build'],
- ['hull','Armour','Draw walls touching your ship’s bridge.','⬡','Build'],
+ ['hull','Armour','Draw armour around your ship. No bridge connection needed.','⬡','Build'],
  ['engine','Engines','Connect thrust to your ship’s armour.','≋','Build'],
  ['escort','New ship','Tap empty space to place a new ship’s bridge.','+','Build'],
  ['missile','Missiles','Draw racks along armour. Longer racks fire more.','↗','Weapons'],
@@ -3777,6 +3799,9 @@ function initSketchbook(api) {
   $('#sketch-instruction').textContent=drawing?(state.moving?'Drag to move. Pinch to zoom.':state.parts.length<=1&&state.tool==='reactor'?'Close a reactor room near the gold bridge.':part[2]):state.enemies.some(e=>e.hp>0)?'Fighting automatically · Pinch to zoom':'All quiet. Add enemies when you’re ready.';
   const capacityMessage=state.buildLimitMessage||capacity?.message||'';
   if(drawing&&capacityMessage)$('#sketch-instruction').textContent=capacityMessage;
+  const warning=drawing&&state.readiness?.warning;
+  if(warning)$('#sketch-instruction').textContent=warning;
+  $('#sketch-instruction').classList.toggle('weapon-warning',!!warning);
   $('#sketch-instruction').classList.toggle('capacity-warning',drawing&&!!capacityMessage);
   $('#sketch-camera').textContent=state.camera==='overview'?'Follow fleet':state.camera==='manual'?'Follow fleet':'Overview';
   $('#sketch-undo').disabled=$('#undo').disabled;
@@ -4250,13 +4275,18 @@ const {validateChallengeFleet,priceChallengeFleet} = modules["challenge-fleet.mj
 const {createChallengePoller} = modules["challenge-poll.mjs"];
 const {cacheChallenge,defaultChallengeName} = modules["challenge-library.mjs"];
 const {crownModel,initCrownPanel} = modules["challenge-crown.mjs"];
+function fightBudgetCheck(cost,budget){
+ if(!Number.isFinite(cost)||cost<0||!Number.isFinite(budget)||budget<=0)throw Error('Invalid fleet budget.');
+ return {confirm:cost<budget*.5,percent:Math.floor(cost/budget*100),remaining:Math.max(0,budget-cost)};
+}
+
 // Challenge saves never fall back to, copy, or overwrite Free Draw saves.
 function challengeStorage(storage,roomId){
  const prefix=`one-more-gun.challenge.${encodeURIComponent(roomId)}.`;
  return {getItem:key=>storage.getItem(prefix+key),setItem:(key,value)=>storage.setItem(prefix+key,value),removeItem:key=>storage.removeItem(prefix+key)};
 }
 
-function initChallengeUI({getFleet,loadFleet,setLocked,onBattle,onRoundStart,onPractice,onState}){
+function initChallengeUI({getFleet,getReadiness,loadFleet,setLocked,onBattle,onRoundStart,onPractice,onState}){
  const params=new URLSearchParams(location.search),initial=params.get('challenge');
  const entry=document.createElement('a');entry.textContent='New private fleet challenge';const startURL=new URL(location.protocol==='file:'?'https://jamiemccrindle.github.io/surely-it-needs-another-gun/':location.href);startURL.searchParams.set('challenge','new');startURL.searchParams.delete('mode');startURL.hash='';entry.href=startURL.href;document.querySelector('#menu-dialog')?.append(entry);
  document.querySelector('#sketch-menu-dialog .sketch-menu-items')?.append(entry.cloneNode(true));
@@ -4271,6 +4301,11 @@ function initChallengeUI({getFleet,loadFleet,setLocked,onBattle,onRoundStart,onP
  const bar=document.createElement('section');bar.id='challenge-bar';bar.innerHTML='<button id="challenge-open">Challenge lobby</button><div><b id="challenge-budget">Private fleet</b><span id="challenge-phase">Connecting…</span></div><button id="challenge-fight">Fight</button>';
  const dialog=document.createElement('dialog');dialog.id='challenge-dialog';dialog.innerHTML='<div class="challenge-heading"><h2>Private fleet challenge</h2><button id="challenge-close">Draw</button></div><p id="challenge-explainer">Build separately. Lock your fleet when you are ready. Your Free Draw saves stay untouched.</p><section id="challenge-create"><label>Players <select id="challenge-seats"><option>2</option><option>3</option><option>4</option></select></label><label>Warshard budget <input id="challenge-rule-budget" type="number" min="1000" max="100000" step="1000" value="12000"></label><button id="challenge-create-button">Create private challenge</button></section><section id="challenge-lobby"><p id="challenge-room-detail"></p><ol id="challenge-players"></ol><button id="challenge-invite">Share invitation</button><button id="challenge-lock">Lock players & start building</button><button id="challenge-rematch">I’m in for a rematch</button></section><p id="challenge-notice" role="status"></p><a id="challenge-leave">Return to Free Draw</a>';
  document.body.append(bar,dialog);const $=id=>document.getElementById(id);
+ const ready=document.createElement('dialog');ready.id='challenge-ready-dialog';ready.setAttribute('aria-labelledby','challenge-ready-title');
+ ready.innerHTML='<h2 id="challenge-ready-title"></h2><p id="challenge-ready-detail"></p><p>Fight locks this design. The battle begins once everyone is ready.</p><p id="challenge-ready-error" role="alert"></p><div><button id="challenge-keep-building" autofocus>Keep building</button><button id="challenge-confirm-fight">Fight with this fleet</button></div>';
+ document.body.append(ready);let pendingRound=null;
+ $('challenge-keep-building').onclick=()=>ready.close();ready.addEventListener('close',()=>{pendingRound=null;});
+ if(document.body.classList.contains('sketchbook'))$('sketch-draw-controls').append($('challenge-fight'));
  const test=document.createElement('button');test.id='challenge-test';test.textContent='Test fleet';test.disabled=true;
  (document.body.classList.contains('sketchbook')?$('sketch-watch'):$('pause'))?.after(test);
  test.onclick=()=>{if(test.disabled)return;try{onPractice?.({fleet:getFleet(),budget:room.rules?.budget||12000});}catch(error){notice(error.message);}};
@@ -4314,21 +4349,25 @@ function initChallengeUI({getFleet,loadFleet,setLocked,onBattle,onRoundStart,onP
  function sync(){
   if(disposed)return;
   const me=room?.players.find(p=>p.id===credentials?.playerId),building=room?.phase==='building'&&!me?.locked,budget=room?.rules?.budget||(room?12000:Number($('challenge-rule-budget').value)||7200);
+  if(ready.open&&(!building||pendingRound!==room?.round))ready.close();
+  $('challenge-confirm-fight').disabled=busy||!building;
+  $('challenge-keep-building').disabled=busy;
   const fixed=room?.rosterMode==='fixed',missing=Math.max(0,(room?.maxSeats||0)-(room?.players.length||0)),inviting=room?.phase==='lobby'||(fixed&&room?.phase==='building'&&room?.round===1&&missing>0),playerCount=fixed?room.maxSeats:Math.max(2,room?.players.length||2);
   setLocked(!building);preview=null;let invalid='';
   if(building){try{preview=priceChallengeFleet(getFleet(),{players:playerCount});}catch(error){invalid=error.message;}}
   const cost=preview?.cost??me?.fleet?.cost;
   $('challenge-budget').textContent=Number.isFinite(cost)?`${cost.toLocaleString()} / ${budget.toLocaleString()} Warshards`:`${budget.toLocaleString()} Warshard budget`;
   $('challenge-budget').classList.toggle('over-budget',Number.isFinite(cost)&&cost>budget);
-  $('challenge-phase').textContent=!room?'Private fleet':room.phase==='lobby'?'Waiting for players':building?'Draw freely · erasing refunds cost':room.phase==='building'?'Fleet locked · waiting for friends':room.phase==='ready'?'Battle preparing':room.phase==='complete'?'Round complete':room.phase;
+  $('challenge-phase').textContent=!room?'Private fleet':room.phase==='lobby'?'Waiting for players':building?'Done drawing? Press Fight to lock your fleet.':room.phase==='building'?'Fleet locked · waiting for friends':room.phase==='ready'?'Battle preparing':room.phase==='complete'?'Round complete':room.phase;
   if(fixed&&room?.phase==='building'&&missing)$('challenge-phase').textContent=building?`Draw now · ${room.players.length} of ${room.maxSeats} players joined`:`Fleet locked · waiting for ${missing} ${missing===1?'player':'players'} to join`;
   if(building&&invalid)$('challenge-phase').textContent=invalid;
   if(building&&preview?.cost>budget)$('challenge-phase').textContent=`Erase ${(preview.cost-budget).toLocaleString()} Warshards to fight`;
   $('challenge-fight').disabled=busy||!building||!preview||preview.cost>budget;
   test.disabled=busy||!building;test.hidden=!onPractice;
-  $('challenge-fight').textContent=me?.locked?'Locked':'Fight';
+  $('challenge-fight').textContent=me?.locked?'Fleet locked':building?'Fight · I’m ready':'Fight';
+  $('challenge-fight').title='Lock your design. Battle begins when everyone is ready.';
   const crown=crownModel(room,credentials?.playerId);crownPanel.sync(room,credentials?.playerId,busy);inspect.hidden=!crown.canInspect;inspect.disabled=busy;
-  if(crown.active){$('challenge-fight').textContent=building?'Challenge crown':crown.role==='champion'?'Crown held':'Locked';if(!invalid&&!(preview?.cost>budget))$('challenge-phase').textContent=building?`Attempt ${crown.nextAttempt} · rebuilding`:crown.role==='champion'?`${crown.defences} defences · frozen`:room.phase==='ready'?`Attempt ${crown.attempts} · preparing`:'Attempt complete';}
+  if(crown.active){$('challenge-fight').textContent=building?'Fight · Challenge crown':crown.role==='champion'?'Crown held':'Fleet locked';if(!invalid&&!(preview?.cost>budget))$('challenge-phase').textContent=building?`Attempt ${crown.nextAttempt} · Press Fight when ready`:crown.role==='champion'?`${crown.defences} defences · frozen`:room.phase==='ready'?`Attempt ${crown.attempts} · preparing`:'Attempt complete';}
   $('challenge-create').hidden=initial!=='new'||!!room;$('challenge-lobby').hidden=!room;
   guest.hidden=initial==='new'||!!credentials||!!room;
   $('challenge-explainer').hidden=!guest.hidden||!!(credentials?.inviteToken&&inviting);
@@ -4355,7 +4394,17 @@ function initChallengeUI({getFleet,loadFleet,setLocked,onBattle,onRoundStart,onP
  $('challenge-create-button').onclick=async()=>{if(busy)return;busy=true;try{const data=await request('',{auth:false,body:{name:$('challenge-name').value,maxSeats:Number($('challenge-seats').value),budget:Number($('challenge-rule-budget').value)}});remember(data);storage.setItem(inviteWelcomeKey(roomId),'1');if(challengeStorage(storage,'new').getItem('one-more-gun.welcome.v1')==='seen')challengeStorage(storage,roomId).setItem('one-more-gun.welcome.v1','seen');location.replace(new URL(location.href).href);}catch(error){notice(error.message);}finally{busy=false;sync();}};
  $('challenge-lock').onclick=()=>action('lockRoster');
  rotate.onclick=async()=>{if(!confirm('Replace the invitation? Old links will stop accepting new players. Anyone already joined keeps their seat.'))return;await action('rotateInvite');if(!networkError)notice('Invitation replaced. Share the new link with your friends.');};
- $('challenge-fight').onclick=async()=>{try{const fleet=validateChallengeFleet(getFleet(),{budget:room.rules?.budget||12000,players:room.rosterMode==='fixed'?room.maxSeats:room.players.length});await action('lockFleet',{fleet});}catch(error){notice(error.message);}};
+ async function submitFleet(confirmed=false){
+  if(busy||room?.phase!=='building'||room.players.find(p=>p.id===credentials?.playerId)?.locked)return;
+  if(confirmed&&(!ready.open||pendingRound!==room.round))return;
+  try{
+   const budget=room.rules?.budget||12000,fleet=validateChallengeFleet(getFleet(),{budget,players:room.rosterMode==='fixed'?room.maxSeats:room.players.length}),check=fightBudgetCheck(fleet.cost,budget);
+   const readiness=getReadiness?.(),unarmed=readiness&&readiness.online===0;
+   if((check.confirm||unarmed)&&!confirmed){pendingRound=room.round;$('challenge-ready-title').textContent=unarmed?'Your fleet has no working attack weapons':`You’ve used ${check.percent}% of your budget`;$('challenge-ready-detail').textContent=(unarmed?readiness.warning+' ':'')+`${fleet.cost.toLocaleString()} of ${budget.toLocaleString()} Warshards spent. You can add ${check.remaining.toLocaleString()} more—or fight with this fleet.`;$('challenge-ready-error').textContent='';if(!ready.open)ready.showModal();$('challenge-keep-building').focus();return;}
+   const ok=await action('lockFleet',{fleet});if(ok&&ready.open)ready.close();else if(!ok&&ready.open)$('challenge-ready-error').textContent=networkError||'Could not lock your fleet. Please try again.';
+  }catch(error){if(ready.open)$('challenge-ready-error').textContent=error.message;notice(error.message);}
+ }
+ $('challenge-fight').onclick=()=>submitFleet();$('challenge-confirm-fight').onclick=()=>submitFleet(true);
  $('challenge-rematch').onclick=()=>action('voteRematch',{consent:true});
  function invitationURL(){const url=new URL(location.href);url.search='';url.searchParams.set('challenge',roomId);url.hash=new URLSearchParams({invite:credentials.inviteToken}).toString();return url.href;}
  copyInvite.onclick=async()=>{if(!credentials?.inviteToken)return;const link=invitationURL();try{await navigator.clipboard.writeText(link);notice('Link copied. Send it to your friends.');}catch{const field=$('challenge-copy-fallback');field.value=link;field.hidden=false;field.focus();field.select();notice('Select and copy this invitation link. It lets a new player join while a seat remains.');}};
@@ -4367,10 +4416,10 @@ function initChallengeUI({getFleet,loadFleet,setLocked,onBattle,onRoundStart,onP
  (async()=>{if(initial==='new')return;try{credentials=JSON.parse(storage.getItem(key(roomId))||'null');if(!credentials){await checkInvitation();return;}else{const url=new URL(location.href);url.hash='';history.replaceState(null,'',url);await accept(await request(`/${encodeURIComponent(roomId)}/state`));}const showInvite=storage.getItem(inviteWelcomeKey(roomId))==='1';storage.removeItem(inviteWelcomeKey(roomId));if(room.phase!=='lobby'&&!showInvite)dialog.close();}catch(error){notice(error.message);}finally{initializing=false;}})();
  const poll=createChallengePoller({getState:()=>({phase:room?.phase,locked:room?.players.find(p=>p.id===credentials?.playerId)?.locked}),poll:()=>{if(!credentials||busy||initializing||disposed)return null;busy=true;pollTask=(async()=>{try{await accept(await request(`/${encodeURIComponent(roomId)}/state`));return room.version;}finally{busy=false;sync();}})();return pollTask.finally(()=>{pollTask=null;});},onError:error=>notice(error.message)});
  const visibility=()=>document.hidden?poll.pause():poll.wake();document.addEventListener('visibilitychange',visibility);poll.start();
- return {sync,retryCrown,refresh:()=>poll.wake(),dispose(){disposed=true;for(const controller of activeRequests)controller.abort();poll.stop();document.removeEventListener('visibilitychange',visibility);bar.remove();dialog.remove();test.remove();inspect.remove();crownPanel.dispose();},room:()=>room};
+ return {sync,retryCrown,refresh:()=>poll.wake(),dispose(){disposed=true;for(const controller of activeRequests)controller.abort();poll.stop();document.removeEventListener('visibilitychange',visibility);$('challenge-fight')?.remove();bar.remove();dialog.remove();ready.remove();test.remove();inspect.remove();crownPanel.dispose();},room:()=>room};
 }
 
-return {challengeStorage,initChallengeUI};
+return {fightBudgetCheck,challengeStorage,initChallengeUI};
 })();
 modules["toy-arena.mjs"]=(()=>{
 // Symmetric combat: every entrant uses the same drawn-part firing and defence rules.
@@ -4390,7 +4439,7 @@ function placeArenaFleets(players,{distance=3000}={}){
 }
 
 function createArena(players,{seed=1,maxDuration=180,powerMode=true,structureMode=true,shieldMode=true,flightMode=true,positionFleet=true,distance=3000,simulationVersion='arena-v1'}={}){
- if(!['arena-v1','arena-v2'].includes(simulationVersion))throw Error('Unsupported battle rules. Refresh the game.');
+ if(!['arena-v1','arena-v2','arena-v3'].includes(simulationVersion))throw Error('Unsupported battle rules. Refresh the game.');
  if(!Array.isArray(players)||players.length<2||players.length>4)throw Error('An arena needs two to four players.');
  if(new Set(players.map(p=>p.id)).size!==players.length)throw Error('Player IDs must be unique.');
  if(positionFleet)players=placeArenaFleets(players,{distance});
@@ -4402,7 +4451,8 @@ function createArena(players,{seed=1,maxDuration=180,powerMode=true,structureMod
   for(const p of parts){p.id=ids.get(p.id);p.shipId=ids.get(p.shipId)||p.id;p.cooldown=0;p.salvoRemaining=0;p.salvoTimer=0;p.beamCharge=0;p.beamFiring=0;p.beamCooldown=0;p.shieldCharge=0;p.shieldDelay=0;}
   w.parts=parts;w._id=parts.length+100;w.paused=false;w.powerMode=powerMode;w.structureMode=structureMode;w.shieldMode=shieldMode;w.flightMode=flightMode;w.friendlyFire=false;
   w.playerId=player.id;
-  if(simulationVersion==='arena-v2')w.combatTuning={...COMBAT_BALANCE_V2};
+  if(simulationVersion!=='arena-v1')w.combatTuning={...COMBAT_BALANCE_V2};
+  w.armourAnchors=simulationVersion==='arena-v3';
   w.arenaWeaponLaunches={missile:0,torpedo:0,gun:0};w.arenaDamageReceived=0;w.arenaDamageDealt=0;
   // Context links deliberately remain outside JSON saves / exported battle records.
   for(const key of ['arenaOpponents','arenaHits','arenaIncoming','arenaHostileFields','arenaTeamId','arenaProjectileCap','arenaTargetOwners'])Object.defineProperty(w,key,{writable:true,configurable:true,value:null});
@@ -4487,7 +4537,7 @@ const TEAM=['#6fffe0','#ffad77','#c3a0ff','#fff28c'];
 let closePrevious=null;
 function showChallengeBattle(room,{audio,onClose=()=>{},practice=false,onRetry,onAwaitResult}={}){
  if(!room.battle)throw Error('Waiting for the server to prepare this battle.');
- if(!['arena-v1','arena-v2'].includes(room.battle.simulationVersion))throw Error('Reload the game to watch this battle version.');
+ if(!['arena-v1','arena-v2','arena-v3'].includes(room.battle.simulationVersion))throw Error('Reload the game to watch this battle version.');
  closePrevious?.();
  const players=room.players.map(p=>({id:p.id,parts:p.fleet.parts}));
  let arena=createArena(players,room.battle),stopped=false,raf=0,started=performance.now(),last=started,zoom=1,cx=arena.worlds[0].parts[0].x,cy=arena.worlds[0].parts[0].y,finishedAt=0;
@@ -4823,7 +4873,7 @@ function createPracticeRoom({fleet,budget,archetype='missile',strength=.5,seed=1
  return {
   name:'Private proving ground',viewerId:'practice-player',phase:'battle',
   players:[{id:'practice-player',name:'Your fleet',fleet:own},{id:'practice-enemy',name:type.label,fleet:enemy}],
-  battle:{simulationVersion:'arena-v2',seed,maxDuration:90,positionFleet:true,distance},
+  battle:{simulationVersion:'arena-v3',seed,maxDuration:90,positionFleet:true,distance},
   practice:{archetype,label:type.label,strength,budget:enemyBudget}
  };
 }
@@ -4876,7 +4926,7 @@ const {enemyCues,drawEnemyCues} = modules["toy-enemy-visibility.mjs"];
 const {sketchbookStorage} = modules["toy-sketchbook-storage.mjs"];
 const {initSketchbook} = modules["toy-sketchbook.mjs"];
 const {sketchbookFollowView,sketchbookOverviewView} = modules["toy-sketchbook-camera.mjs"];
-const {fleetAdvice} = modules["toy-readiness.mjs"];
+const {fleetAdvice,weaponReadiness} = modules["toy-readiness.mjs"];
 const {fleetCapacity,assertFleetCapacity} = modules["toy-limits.mjs"];
 const {challengeStorage,initChallengeUI} = modules["challenge-ui.mjs"];
 const {showChallengeBattle} = modules["challenge-battle.mjs"];
@@ -4926,7 +4976,7 @@ let toolboxStorage=null;try{toolboxStorage=globalThis.localStorage;}catch{}
 const toolboxMode=initialToolbox(toolboxStorage);let toolbox=null;
 let recorderStorage=null;try{if(!testMode)recorderStorage=localStorage;}catch{}
 const recorder=createRecorder({storage:recorderStorage});
-function recordedWorld(seed){const w=createWorld(seed);w.combatTuning={...COMBAT_BALANCE_V2};w.flightMode=true;w.skirmishFlight=!challengeId;try{if(localStorage?.getItem('one-more-gun.agile-escorts.v1')==='off')w.skirmishFlight=false;}catch{}w.structureMode=true;setPowerMode(w,true);w.diagnostic=recorder.event;return w;}
+function recordedWorld(seed){const w=createWorld(seed);w.armourAnchors=true;w.combatTuning={...COMBAT_BALANCE_V2};w.flightMode=true;w.skirmishFlight=!challengeId;try{if(localStorage?.getItem('one-more-gun.agile-escorts.v1')==='off')w.skirmishFlight=false;}catch{}w.structureMode=true;setPowerMode(w,true);w.diagnostic=recorder.event;return w;}
 let world=recordedWorld(20260905),view={x:0,y:0,zoom:1},tool='reactor',stroke=null,pan=null,sound=true,history=[],last=performance.now(),lastUI=0,saveAt=0,buildRevision=null,toastUntil=0;
 const agileButton=document.createElement('button');agileButton.id='agile-escorts';agileButton.hidden=!!challengeId;$('#flight-mode').after(agileButton);agileButton.onclick=()=>{world.skirmishFlight=!world.skirmishFlight;try{localStorage?.setItem('one-more-gun.agile-escorts.v1',world.skirmishFlight?'on':'off');}catch{}updateUI();toast(world.skirmishFlight?'AGILE ESCORTS ON · Light ships turn tighter and make attack runs.':'AGILE ESCORTS OFF · Previous flight behavior restored.');};
 let selectedCrew=null,rosterSignature='',offlineWeapons=new Set(),connectionHints=[],restoreGhosts=[];
@@ -5502,7 +5552,7 @@ if(!sketchbookMode){
  mobileCraft=initMobileCraft({getTool:()=>tool,getHint:()=>$('#tool-hint').textContent,getAudio:()=>audio.status(),toggleSound,isPaused:()=>world.paused,testSound:async()=>{sound=true;audio.setEnabled(true);const ready=await audio.unlock();if(ready)audio.event({type:'build'});$('#sound-check-result').textContent=ready?'Test chime sent. If you cannot hear it, check media volume and your speaker/headphone output. Older iPhones may also need Silent Mode off.':'The browser has not enabled audio. Tap Play test sound again. If it stays silent, reload the page.';save();updateUI();}});
 }else{
  sketchbook=initSketchbook({
-  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,enemies:world.enemies,warshards:world.warshards,capacity:fleetCapacity(world),buildLimitMessage:world.buildLimitMessage||'',restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent,buildShip:buildShip()}),
+  state:()=>({tool,paused:world.paused,defeated:world.defeated,parts:world.parts,readiness:weaponReadiness(world,structureSummary(world)),enemies:world.enemies,warshards:world.warshards,capacity:fleetCapacity(world),buildLimitMessage:world.buildLimitMessage||'',restoration:restorationSummary(world),moving:touchPanMode,camera:sketchCamera,sound:audio.status(),hint:$('#tool-hint').textContent,buildShip:buildShip()}),
   choose:kind=>{choose(kind);touchMode(false);updateUI();},move:value=>{touchMode(value);updateUI();},undo:()=>$('#undo').click(),
   watch:()=>{void audio.unlock();if(world.paused&&!world.defeated)sketchCamera='follow';if(world.paused||world.defeated)togglePause();},
   resume:()=>{if(world.paused&&!world.defeated)togglePause();},pause:()=>{world.paused=true;updateUI();save();},
@@ -5525,6 +5575,7 @@ const challengePractice=challengeId?initChallengePractice({audio,canPractice:()=
 toolbox=initToolbox({mode:toolboxMode,storage:toolboxStorage,getParts:()=>world.parts,getTool:()=>tool,choose:kind=>{choose(kind);updateUI();},fly:()=>{if(world.paused&&!challengeLocked)togglePause();}});
 challengeUI=initChallengeUI({
  onPractice:input=>challengePractice?.open(input),
+ getReadiness:()=>weaponReadiness(world,structureSummary(world)),
  getFleet:()=>({version:1,parts:structuredClone(world.parts)}),
  loadFleet:fleet=>{world=recordedWorld(Date.now());world.parts=structuredClone(fleet.parts);world._id=Math.max(1,...world.parts.map(p=>Number(String(p.id).match(/-(\d+)$/)?.[1])||Number(p.id)||0));world.paused=true;world.defeated=false;history=[];born.clear();stroke=null;pan=null;choose('reactor');save();fit();updateUI();},
  setLocked:value=>{challengeLocked=value;document.body.classList.toggle('challenge-locked',value);if(challengeId){world.paused=true;if(value)stroke=null;}},
